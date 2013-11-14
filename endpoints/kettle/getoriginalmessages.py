@@ -1,21 +1,23 @@
 #!/usr/bin/env python
 
+# Script for generating a language pack from an existing Pentaho installation.
+#
+# Existing translations are reused and any missing tokens are appended with "<TRANSLATE ME>"
+
+
 import os
 import sys
 import shutil
 import zipfile
 
-plugin_folder = os.path.realpath(os.path.join(os.path.dirname(sys.argv[0]), '..', '..'))
 languageCode = sys.argv[1] # language as it is typed by the user
 languageCode_underscore = languageCode.replace('-', '_').replace(' ', '_'); # this is bith the java and historic approach, we will use this
 languageCode_hyphen = languageCode.replace('_', '-').replace(' ', '-');  # this seems to be the IETF standard
 jar_whitelist = ['pivot4j-analytics', 'pivot4j-core']
 
-
-
 origin_folder = os.path.abspath(sys.argv[2].replace('file://', ''))
 destination_folder = os.path.abspath(sys.argv[3].replace('file://', ''))
-this_plugin =  os.path.realpath(os.path.join(os.getcwd(), '..', '..'))
+plugin_folder =  os.path.realpath(os.path.join(os.getcwd(), '..', '..')) # There is a subtle difference between using os.dirname(__FILE__) and os.getcwd()
 
 force = False
 
@@ -136,7 +138,7 @@ for root, dirs, filenames in os.walk('.'):
         g = f.lower()
 
         # Ignore all files belonging to this plugin
-        if this_plugin in os.path.realpath(os.path.join(origin_folder, src)):
+        if plugin_folder in os.path.realpath(os.path.join(origin_folder, src)):
             #print "Skipping file", src, ", (belongs to the plugin folder: ", plugin_folder, ')'
             continue
 
@@ -167,18 +169,6 @@ for root, dirs, filenames in os.walk('.'):
                             copy(tmpfile, dst)
                             os.remove(tmpfile)
 
-                        # elif e.endswith('messages_'+ languageCode_hyphen.lower()  +'.properties'):
-                        #     dst = os.path.realpath(os.path.join(destination_folder, root, f.replace('.jar', '_jar')))
-                        #     dst_fixed =  os.path.realpath(os.path.join(dst,  el.replace(languageCode_hyphen, languageCode_underscore) ))
-                        #     print 'Copying:\n  ' +  os.path.realpath(os.path.join(origin_folder, src, el)) + '\nto\n  ' + dst_fixed + '\n'
-                        #     tmp = os.tmpnam()
-                        #     z.extract(el, tmp)
-                        #     if os.path.exists(dst_fixed):
-                        #         copy(dst, dst_fixed)
-                        #         os.remove(dst)
-                        #     else:
-                        #         os.rename(dst, dst_fixed)
-
         # Copy all *nls/*LANG*.js
         gg = src.lower() # Notice that g means the full path
         if gg.endswith('.js') and ('nls' in g):
@@ -196,7 +186,7 @@ for root, dirs, filenames in os.walk('.'):
         src = os.path.join(root, f)
 
         # Ignore all files belonging to this plugin
-        if this_plugin in os.path.realpath(os.path.join(origin_folder, src)):
+        if plugin_folder in os.path.realpath(os.path.join(origin_folder, src)):
             continue
 
         # Patch messages_LANG.properties with missing tokens
