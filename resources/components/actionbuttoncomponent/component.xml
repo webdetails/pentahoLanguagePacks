@@ -27,6 +27,7 @@
                     <Property type="query">DataSource</Property>
                 </Definition>
                 <Property name="actionParameters">valuesArray</Property>
+                <Property>expression</Property>
                 <Property>successCallback</Property>
                 <Property>failureCallback</Property>
             </Model>
