@@ -1,3 +1,3 @@
-languagepackinstaller
+languagePackInstaller
 ===
 

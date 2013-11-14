@@ -1381,7 +1381,7 @@
    },
    {
     "id": "7ac5855c-b64e-52cf-cad5-99003b980612",
-    "type": "Componentslanguagepackinstaller_installpack_CPKENDPOINT",
+    "type": "ComponentslanguagePackInstaller_installpack_CPKENDPOINT",
     "typeDesc": "installpack Endpoint",
     "parent": "LANGUAGEPACKINSTALLER_CPKENDPOINTS",
     "properties": [
@@ -1392,12 +1392,12 @@
      }
     ],
     "meta": "CPK",
-    "meta_pluginId": "languagepackinstaller",
+    "meta_pluginId": "languagePackInstaller",
     "meta_endpoint": "installpack"
    },
    {
     "id": "28106a2b-5f6a-a0f3-98f8-294f8e697e3f",
-    "type": "Componentslanguagepackinstaller_removepack_CPKENDPOINT",
+    "type": "ComponentslanguagePackInstaller_removepack_CPKENDPOINT",
     "typeDesc": "removepack Endpoint",
     "parent": "LANGUAGEPACKINSTALLER_CPKENDPOINTS",
     "properties": [
@@ -1408,12 +1408,12 @@
      }
     ],
     "meta": "CPK",
-    "meta_pluginId": "languagepackinstaller",
+    "meta_pluginId": "languagePackInstaller",
     "meta_endpoint": "removepack"
    },
    {
     "id": "d392f018-cf03-c82a-3070-5c2758f58256",
-    "type": "Componentslanguagepackinstaller_getpackmetadata_CPKENDPOINT",
+    "type": "ComponentslanguagePackInstaller_getpackmetadata_CPKENDPOINT",
     "typeDesc": "getpackmetadata Endpoint",
     "parent": "LANGUAGEPACKINSTALLER_CPKENDPOINTS",
     "properties": [
@@ -1424,10 +1424,10 @@
      }
     ],
     "meta": "CPK",
-    "meta_pluginId": "languagepackinstaller",
+    "meta_pluginId": "languagePackInstaller",
     "meta_endpoint": "getpackmetadata"
    }
   ]
  },
- "filename": "/system/languagepackinstaller/dashboards/main.cdfde"
+ "filename": "/system/languagePackInstaller/dashboards/main.cdfde"
 }

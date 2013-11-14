@@ -7,7 +7,7 @@
   <!-- Import the common_build.xml file which contains all the default tasks -->
   <import file="build-res/subfloor-pkg.xml" id="subfloor"/>
   <property name="plugin.name"
-            value="languagepackinstaller"
+            value="languagePackInstaller"
             description="Name of the plugin"/>
   <property name="stage.dir"
             value="${bin.dir}/stage"

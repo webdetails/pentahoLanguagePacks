@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin title="languagepackinstaller" loader="DEFAULT">
+<plugin title="languagePackInstaller" loader="DEFAULT">
 	<lifecycle-listener class="pt.webdetails.cpk.CpkLifecycleListener"/>
 	<static-paths>
-		<static-path url="/languagepackinstaller/static" localFolder="static"/>
-		<static-path url="/languagepackinstaller/resources" localFolder="resources"/>
+		<static-path url="/languagePackInstaller/static" localFolder="static"/>
+		<static-path url="/languagePackInstaller/resources" localFolder="resources"/>
 	</static-paths>
 	<content-types>
 		<content-type>
@@ -13,12 +13,12 @@
 		</content-type>
 	</content-types>
 	<content-generator
-		id="languagepackinstaller"
+		id="languagePackInstaller"
 		title="Languagepackdistributor"
-		type="languagepackinstaller"
+		type="languagePackInstaller"
 		class="pt.webdetails.cpk.CpkContentGenerator"/>
 	<!-- Menu entry -->
 	<menu-items>
-		<menu-item id="languagepackinstaller_main" anchor="tools-submenu" label="Languagepackdistributor" command="content/languagepackinstaller/" type="MENU_ITEM" how="LAST_CHILD"/>
+		<menu-item id="languagePackInstaller_main" anchor="tools-submenu" label="Languagepackdistributor" command="content/languagePackInstaller/" type="MENU_ITEM" how="LAST_CHILD"/>
 	</menu-items>
 </plugin>
