@@ -5,13 +5,16 @@ import sys
 import shutil
 import zipfile
 
+plugin_folder = os.path.realpath(os.path.join(os.path.dirname(sys.argv[0]), '..', '..'))
 languageCode = sys.argv[1] # language as it is typed by the user
 languageCode_underscore = languageCode.replace('-', '_').replace(' ', '_'); # this is bith the java and historic approach, we will use this
 languageCode_hyphen = languageCode.replace('_', '-').replace(' ', '-');  # this seems to be the IETF standard
+jar_whitelist = ['pivot4j-analytics', 'pivot4j-core']
+
+
 
 origin_folder = os.path.abspath(sys.argv[2].replace('file://', ''))
 destination_folder = os.path.abspath(sys.argv[3].replace('file://', ''))
-
 this_plugin =  os.path.realpath(os.path.join(os.getcwd(), '..', '..'))
 
 force = False
@@ -28,7 +31,7 @@ def copy(src, dst):
         os.makedirs(dst_parent)
 
     # Copy files
-    print 'Copying: ' +  os.path.realpath(os.path.join(origin_folder, src)) + '\nto ' + dst + '\n'
+    print '\nCopying: ' +  os.path.realpath(os.path.join(origin_folder, src)) + '\nto ' + dst
     #shutil.copy2(src, dst)
     with open(src, 'r') as fin:
         lines_src = fin.readlines()
@@ -124,7 +127,6 @@ def convert_to_utf8(filename, backup=False):
 
 
 
-jar_whitelist = ['pivot4j-analytics', 'pivot4j-core']
 os.chdir(origin_folder)
 
 # First round: copy files that are already translated, even if only partially
@@ -133,17 +135,20 @@ for root, dirs, filenames in os.walk('.'):
         src = os.path.join(root, f)
         g = f.lower()
 
+        # Ignore all files belonging to this plugin
+        if this_plugin in os.path.realpath(os.path.join(origin_folder, src)):
+            #print "Skipping file", src, ", (belongs to the plugin folder: ", plugin_folder, ')'
+            continue
+
         # Grab *messages_LANG.properties and  *supported_languages.properties
         dst =  os.path.realpath(os.path.join(destination_folder, root, f ))
-        if not (this_plugin in os.path.realpath(os.path.join(origin_folder, src))) :
-            if g.endswith('supported_languages.properties'):
-                copy(src, dst)
-            elif g.endswith('messages_'+ languageCode_underscore.lower()  +'.properties') and not force:
-                copy(src, dst)
-
-            elif g.endswith('messages_'+ languageCode_hyphen.lower()  +'.properties') and not force:
-                dst_fixed =  os.path.realpath(os.path.join(destination_folder, root, f.replace(languageCode_hyphen, languageCode_underscore) ))
-                copy(src, dst_fixed)
+        if g.endswith('supported_languages.properties'):
+            copy(src, dst)
+        elif g.endswith('messages_'+ languageCode_underscore.lower()  +'.properties') and not force:
+            copy(src, dst)
+        elif g.endswith('messages_'+ languageCode_hyphen.lower()  +'.properties') and not force:
+            dst_fixed =  os.path.realpath(os.path.join(destination_folder, root, f.replace(languageCode_hyphen, languageCode_underscore) ))
+            copy(src, dst_fixed)
 
        # Handle existing translations in jars
         if g.endswith('.jar'):
@@ -153,14 +158,26 @@ for root, dirs, filenames in os.walk('.'):
                     z = zipfile.ZipFile(src)
                     for el in z.namelist():
                         e = el.lower()
-                        if e.endswith('supported_languages.properties') or e.endswith('messages_'+ languageCode_underscore.lower()  +'.properties'):
-                            dst = s.path.realpath(os.path.join(destination_folder, root, f.replace('.jar', '_jar'), el ))
+                        if e.endswith('supported_languages.properties') or e.endswith('messages_'+ languageCode_underscore.lower()  +'.properties') or e.endswith('messages_'+ languageCode_hyphen.lower()  +'.properties'):
+                            dst = os.path.realpath(os.path.join(destination_folder, root, f.replace('.jar', '_jar'), el.replace(languageCode_hyphen, languageCode_underscore) ))
                             print 'Copying:\n  ' +  os.path.realpath(os.path.join(origin_folder, src, el)) + '\nto\n  ' + dst + '\n'
-                            z.extract(el, dst)
-                        elif e.endswith('messages_'+ languageCode_hyphen.lower()  +'.properties'):
-                            dst_fixed =  os.path.realpath(os.path.join(destination_folder, root, f.replace('.jar', '_jar'),  el.replace(languageCode_hyphen, languageCode_underscore) ))
-                            print 'Copying:\n  ' +  os.path.realpath(os.path.join(origin_folder, src, el)) + '\nto\n  ' + dst_fixed + '\n'
-                            z.extract(el, dst_fixed)
+                            tmpfolder = os.tmpnam()
+                            z.extract(el, tmpfolder)
+                            tmpfile = os.path.join(tmpfolder, el)
+                            copy(tmpfile, dst)
+                            os.remove(tmpfile)
+
+                        # elif e.endswith('messages_'+ languageCode_hyphen.lower()  +'.properties'):
+                        #     dst = os.path.realpath(os.path.join(destination_folder, root, f.replace('.jar', '_jar')))
+                        #     dst_fixed =  os.path.realpath(os.path.join(dst,  el.replace(languageCode_hyphen, languageCode_underscore) ))
+                        #     print 'Copying:\n  ' +  os.path.realpath(os.path.join(origin_folder, src, el)) + '\nto\n  ' + dst_fixed + '\n'
+                        #     tmp = os.tmpnam()
+                        #     z.extract(el, tmp)
+                        #     if os.path.exists(dst_fixed):
+                        #         copy(dst, dst_fixed)
+                        #         os.remove(dst)
+                        #     else:
+                        #         os.rename(dst, dst_fixed)
 
         # Copy all *nls/*LANG*.js
         gg = src.lower() # Notice that g means the full path
@@ -178,13 +195,16 @@ for root, dirs, filenames in os.walk('.'):
         g = f.lower()
         src = os.path.join(root, f)
 
+        # Ignore all files belonging to this plugin
+        if this_plugin in os.path.realpath(os.path.join(origin_folder, src)):
+            continue
+
         # Patch messages_LANG.properties with missing tokens
-        if not (this_plugin in os.path.realpath(os.path.join(origin_folder, src))):
-            if g.endswith('messages.properties'):
-                dst_localised =  os.path.realpath(os.path.join(destination_folder, root, f.replace('.properties', '_' + languageCode_underscore + '.properties') ))
-                with open(src, 'r') as fin:
-                    lines_src = fin.readlines()
-                    add_missing_properties(lines_src, dst_localised)
+        if g.endswith('messages.properties'):
+            dst_localised =  os.path.realpath(os.path.join(destination_folder, root, f.replace('.properties', '_' + languageCode_underscore + '.properties') ))
+            with open(src, 'r') as fin:
+                lines_src = fin.readlines()
+            add_missing_properties(lines_src, dst_localised)
 
         # Patch messages_LANG.properties missing in jars
         if g.endswith('.jar'):
