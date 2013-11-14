@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ORIGIN=/Applications/pentaho5
-DEST=/Applications/pentaho/server/biserver-ee/pentaho-solutions/system/languagepackinstaller/data
+DEST=/Applications/pentaho/server/biserver-ee/pentaho-solutions/system/languagePackInstaller/data
 
 HERE=$(pwd)
 for locale in "$@"
