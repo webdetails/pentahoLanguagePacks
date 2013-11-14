@@ -217,7 +217,7 @@ for root, dirs, filenames in os.walk('.'):
             ff = ''
             for s in ['/en-gb/', '/en-us/', '/en/', '_en.', '-en.']: # let's use english as template
                 if (s in gg):
-                    ff = rreplace(src, s[1:-1], languageCode_hyphen.lower())
+                    ff = rreplace(src, s, s[0] + languageCode_hyphen.lower() + s[len(s)-1])
             if len(ff) > 0:
                 dst_localised =  os.path.realpath(os.path.join(destination_folder, ff ))
                 if not os.path.exists(dst_localised):
