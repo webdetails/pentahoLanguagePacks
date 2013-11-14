@@ -33,12 +33,13 @@ var ActionButtonComponent = ActionComponent.extend(new MixinButtonAPI()).extend(
         return "Button Component that triggers a server action when clicked";
     },
     draw: function() {
-        var myself = this;
+        var myself = this,
+            ad = this.actionDefinition;
         var b = $("<button type='button'/>").text(this.label).unbind("click").bind("click", function(){
             if ( _.isFunction(myself.expression) ){
                 myself.expression.apply(myself, arguments);
             }
-            if ( Dashboards.hasQuery(ad) ) {
+            if ( Dashboards.detectQueryType(ad) ) {
                 return myself.triggerAction.apply(myself);
             }
         });
