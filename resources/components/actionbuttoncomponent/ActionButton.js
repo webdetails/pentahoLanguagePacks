@@ -1,15 +1,19 @@
 var MixinButtonAPI = Base.extend({
-    _disable: function(){
+    initButtonAPI : function(bool){
+        this._isJquery = true;
+    },
+
+    disable: function(){
         if (this._isJquery){
             $('#' + this.htmlObject + ' button').attr('disabled', 'disabled');
         }
     },
-    _enable: function(){
+    enable: function(){
         if (this._isJquery){
             $('#' + this.htmlObject + ' button').removeAttr('disabled');
         }
     },
-    _setLabel: function(label){
+    setLabel: function(label){
        if (this._isJquery){
             $('#' + this.htmlObject + ' button').text(label.toString());
         }
@@ -24,13 +28,18 @@ var ActionButtonComponent = ActionComponent.extend(new MixinButtonAPI()).extend(
     draw: function() {
         var myself = this;
         var b = $("<button type='button'/>").text(this.label).unbind("click").bind("click", function(){
-            return myself.triggerAction.apply(myself);
+            if ( myself.expression ){
+                myself.expression.apply(myself, arguments);
+            }
+            if ( Dashboards.hasQuery(ad) ) {
+                return myself.triggerAction.apply(myself);
+            }
         });
         if (typeof this.buttonStyle === "undefined" || this.buttonStyle === "themeroller"){
             b.button();
-            this._isJquery = true;
+            this.initButtonAPI(true);
         } else {
-            this._isJquery = false;
+            this.initButtonAPI(false);
         }
         b.appendTo($("#"+ this.htmlObject).empty());
     }
