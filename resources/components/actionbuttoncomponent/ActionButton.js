@@ -1,6 +1,7 @@
 var MixinButtonAPI = Base.extend({
     initButtonAPI : function(bool){
-        this._isJquery = true;
+        bool = (bool == undefined) ? true : bool;
+        this._isJquery = bool;
     },
 
     disable: function(){
@@ -23,12 +24,18 @@ var MixinButtonAPI = Base.extend({
 
 var ActionButtonComponent = ActionComponent.extend(new MixinButtonAPI()).extend({
     _docstring: function (){
+        /**
+         * Available methods:
+         *   enable()/disable()
+         *   setLabel()
+
+         */
         return "Button Component that triggers a server action when clicked";
     },
     draw: function() {
         var myself = this;
         var b = $("<button type='button'/>").text(this.label).unbind("click").bind("click", function(){
-            if ( myself.expression ){
+            if ( _.isFunction(myself.expression) ){
                 myself.expression.apply(myself, arguments);
             }
             if ( Dashboards.hasQuery(ad) ) {
