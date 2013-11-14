@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CDADescriptor>
+   <DataSources>
+      <Connection id="dummy" type="sql.jndi">
+         <Jndi></Jndi>
+      </Connection>
+   </DataSources>
+   <DataAccess access="public" cache="true" cacheDuration="3600" connection="dummy" id="dummy"
+               type="sql">
+      <Columns/>
+      <Parameters/>
+      <Query></Query>
+   </DataAccess>
+</CDADescriptor>

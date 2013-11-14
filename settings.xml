@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+	<cde-styles>
+		<path>system/languagepackinstaller/resources/styles</path>
+	</cde-styles>
+  	<cde-datasources/>
+	<cde-components>
+	  <!-- paths from solution with cde component definitions to be loaded-->
+	  <path>system/languagepackinstaller/resources/components</path>
+	  <path>languagepackinstaller/components</path>
+	</cde-components>
+</settings>

@@ -1,0 +1,10 @@
+/*
+ *  borderBox.css
+ *
+ *  Sets box-sizing: border-box to all the html elements.
+ *  Overrides blueprint classes to account for the border-box model.
+ */
+/* Box model override for the entire window */
+ * { -moz-box-sizing: border-box; box-sizing: border-box; -webkit-box-sizing:border-box; }
+
+

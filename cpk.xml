@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cpk>
+    <elementTypes defaultElement="home">
+        <elementType name="Dashboard" class="pt.webdetails.cpk.elements.impl.DashboardElementType">
+            <elementLocations>
+                <elementLocation path="dashboards/" isRecursive="true" pattern="^(?!admin).*\.wcdf" adminOnly="false"/>
+                <elementLocation path="dashboards/admin" isRecursive="true" pattern=".*\.wcdf" adminOnly="true"/>
+            </elementLocations>
+        </elementType>
+        <elementType name="Kettle" class="pt.webdetails.cpk.elements.impl.KettleElementType">
+            <elementLocations>
+                <elementLocation path="endpoints/kettle/" isRecursive="true" pattern="^(?!admin).*\.(ktr|kjb)" adminOnly="false"/>
+                <elementLocation path="endpoints/kettle/admin" isRecursive="true" pattern=".*\.(ktr|kjb)" adminOnly="true"/>
+            </elementLocations>
+        </elementType>
+    </elementTypes> 
+    <info>
+        <CPK_version>3</CPK_version>
+        <name>Languagepackinstaller</name>
+        <creation_date>2013-11-05</creation_date>
+    </info>
+</cpk> 
