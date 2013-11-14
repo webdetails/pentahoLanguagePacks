@@ -154,7 +154,7 @@
       <yloc>128</yloc>
       </entry>
     <entry>
-      <name>Transformation</name>
+      <name>_get_jar_filename</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
@@ -199,7 +199,7 @@
     </hop>
     <hop>
       <from>START</from>
-      <to>Transformation</to>
+      <to>_get_jar_filename</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -207,7 +207,7 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Transformation</from>
+      <from>_get_jar_filename</from>
       <to>Zip file</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>

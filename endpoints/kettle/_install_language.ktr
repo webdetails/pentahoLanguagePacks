@@ -774,7 +774,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>      <field>        <name>filename</name>
+    <fields>      <field>        <name>uri</name>
         <rename>src_folders</rename>
         <length>-2</length>
         <precision>-2</precision>
