@@ -17,6 +17,7 @@
                 <Property name="buttonStyle">tableStyle</Property>
                 <!-- <Property>expression</Property> -->
                 <Property>executeAtStart</Property>
+                <Property>listeners</Property>
                 <Property>preExecution</Property>
                 <Property>postExecution</Property>
                 <Property>refreshPeriod</Property>
