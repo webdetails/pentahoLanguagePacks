@@ -65,368 +65,10 @@ div.container  {
 
 }
 
-/* =============================================================================
-   2. HEADER
-   ========================================================================== */
-.WDheader {
 
-    font-size:48px;
-}
 
-.WDh1 {}
-.WDh2 {}
 
 
-
-/* =============================================================================
-   3. FILTER CELLS
-   ========================================================================== */
-
-/* Filter Cells */
-.WDfilterCell {
-}
-
-/* Filter Cells header */
-.WDfilterCellHeader{
-}
-
-
-/* Filter Cells body */
-.WDfilterCellBody{
-}
-.no-svg .WDfilterCellBody{
-}
-.svg  .WDfilterCellBody{
-}
-
-.WDfilterCellBody *{
-}
-
-
-/********** FILTER ELEMENTS *********/
-
-.WDfilterCell select{
-}
-
-.WDfilterCellBody button {
-
-}
-.no-svg .WDfilterCellBody button {
-}
-.svg .WDfilterCellBody button {
-}
-
-.WDfilterCellBody button:hover {
-}
-.WDfilterCellBody button span {
-}
-
-
-/* Multi Button */
-.WDfilterCellBody .pentaho-toggle-button {
-
-}
-.no-svg .WDfilterCellBody .pentaho-toggle-button {
-}
-.svg .WDfilterCellBody .pentaho-toggle-button {
-}
-.WDfilterCellBody .pentaho-toggle-button-horizontal-first {
-}
-.WDfilterCellBody .pentaho-toggle-button-horizontal-last {
-}
-.WDfilterCellBody .pentaho-toggle-button:hover,
-  .WDfilterCellBody .pentaho-toggle-button:hover button{
-  }
-.WDfilterCellBody .pentaho-toggle-button-down {
-
-}
-.no-svg .WDfilterCellBody .pentaho-toggle-button-down {
-}
-.svg .WDfilterCellBody .pentaho-toggle-button-down {
-}
-
-.WDfilterCellBody .pentaho-toggle-button button {
-}
-.WDfilterCellBody .pentaho-toggle-button-horizontal-last button {
-}
-.WDfilterCellBody .pentaho-toggle-button-horizontal-first button {
-}
-.WDfilterCellBody .pentaho-toggle-button-down button {
-}
-
-
-/**** Chosen Select *****/
-/* All Chosen elements */
-.WDfilterCellBody .chzn-container{
-}
-.WDfilterCellBody .chzn-container * {
-}
-.WDfilterCellBody .chzn-container-active{
-}
-.WDfilterCellBody .chzn-drop{
-}
-.WDfilterCellBody .chzn-drop  .chzn-search{
-}
-.WDfilterCellBody .chzn-drop .chzn-search input{
-}
-.WDfilterCellBody .chzn-drop  .chzn-results{
-}
-.WDfilterCellBody .chzn-drop  .chzn-results li{
-
-}
-.WDfilterCellBody .chzn-drop .chzn-results em{
-}
-.WDfilterCellBody .chzn-drop  .chzn-results .active-result{
-}
-.WDfilterCellBody .chzn-drop  .chzn-results .highlighted{
-}
-.WDfilterCellBody .chzn-drop  .chzn-results .result-selected{
-}
-.WDfilterCellBody .chzn-drop  .chzn-results .no-results {
-}
-
-/* Single Select */
-.WDfilterCellBody .chzn-container-single .chzn-single{
-}
-.no-svg  .WDfilterCellBody .chzn-container-single .chzn-single{
-}
-
-.svg  .WDfilterCellBody .chzn-container-single .chzn-single{
-
-}
-.WDfilterCellBody .chzn-container-single:hover .chzn-single{
-}
-
-.WDfilterCellBody .chzn-container-single .chzn-single span{
-}
-.WDfilterCellBody .chzn-container-single .chzn-single div{ /* Arrow container */
-}
-.WDfilterCellBody .chzn-container-single .chzn-single div b,
-  .WDfilterCellBody .chzn-container-single .chzn-single-with-drop div b{ /* Arrow */
-  }
-.WDfilterCellBody .chzn-container-single:hover .chzn-single div b,
-  .WDfilterCellBody .chzn-container-single:hover .chzn-single-with-drop div b{ /* Arrow */
-  }
-.WDfilterCellBody .chzn-container-single .chzn-single.chzn-single-with-drop{
-}
-.WDfilterCellBody .chzn-container-single .chzn-single-with-drop span{
-}
-.WDfilterCellBody .chzn-container-single .chzn-single-with-drop div{ /* Arrow container */
-}
-.WDfilterCellBody .chzn-container-single .chzn-single-with-drop div b{
-}
-
-
-/* Multi Select */
-.WDfilterCellBody .chzn-container-multi.chzn-container{
-}
-.WDfilterCellBody .chzn-container-multi .chzn-drop{
-}
-.WDfilterCellBody .chzn-container-multi .chzn-drop .selectTooltipTriangle{
-}
-.WDfilterCellBody .chzn-container-multi .chzn-drop  .chzn-results{
-}
-
-.WDfilterCellBody .chzn-container-multi .chzn-choices {
-}
-.WDfilterCellBody .chzn-container-multi:hover .chzn-choices,
-  .WDfilterCellBody .chzn-container-multi.chzn-container-active .chzn-choices{
-  }
-.WDfilterCellBody .chzn-container-multi .chzn-choices  .search-choice {
-
-}
-.no-svg   .WDfilterCellBody .chzn-container-multi .chzn-choices  .search-choice {
-}
-.svg   .WDfilterCellBody .chzn-container-multi .chzn-choices  .search-choice {
-}
-.WDfilterCellBody .chzn-container-multi .chzn-choices .search-choice span{
-}
-.WDfilterCellBody .chzn-container-multi .chzn-choices .search-choice .search-choice-close{
-}
-.WDfilterCellBody .chzn-container-multi .chzn-choices .search-choice .search-choice-close:hover {
-}
-.WDfilterCellBody .chzn-container-multi .chzn-choices .search-field input{
-}
-
-
-
-/* =============================================================================
-   4. DATA CELLS
-   ========================================================================== */
-
-/* Data Cells */
-.WDdataCell {
-}
-
-/* Data Cells header*/
-.WDdataCellHeader{
-
-}
-.no-svg   .WDdataCellHeader {
-}
-.svg   .WDdataCellHeader {
-}
-
-/* Data Cells body */
-.WDdataCellBody {
-}
-
-/* =============================================================================
-   5. TABLES
-   ========================================================================== */
-
-.WDdataCellBody table {}
-
-
-/* Header */
-.WDdataCellBody  thead {}
-.WDdataCellBody thead tr {
-
-}
-.WDdataCellBody  thead th {
-
-}
-.WDdataCellBody thead th.sorting{
-}
-.WDdataCellBody thead th.sorting_asc{
-}
-.WDdataCellBody  thead th.sorting_desc{
-}
-.WDdataCellBody  thead th:first-child {
-}
-
-/* Body */
-.WDdataCellBody  tbody {}
-.WDdataCellBody  tbody tr {
-}
-.WDdataCellBody  tbody td{
-}
-.WDdataCellBody  tbody td,
-  .WDdataCellBody  tbody td.numeric,
-  .WDdataCellBody  tbody td.string {
-  }
-
-/* Footer */
-.WDdataCellBody  tfoot {
-}
-.WDdataCellBody  tfoot tr {
-}
-.WDdataCellBody  tfoot td{
-}
-.WDdataCellBody  tfoot tr:first-child td{
-}
-.WDdataCellBody  tfoot tr:last-child td{
-}
-.WDdataCellBody  tfoot td{
-}
-
-
-
-/* DataTables */
-.WDdataCellBody  .dataTables_wrapper{
-}
-.WDdataCellBody  .dataTables_wrapper tbody tr.odd td.sorting_1,
-  .WDdataCellBody  .dataTables_wrapper tbody tr.odd{
-  }
-.WDdataCellBody  .dataTables_wrapper tbody tr.even td.sorting_1,
-  .WDdataCellBody  .dataTables_wrapper tbody tr.even{
-  }
-
-/* Pagination and Page Info */
-
-.WDdataCellBody   .dataTables_info{
-}
-
-.WDdataCellBody  .dataTables_paginate{
-}
-.WDdataCellBody  .dataTables_paginate > span {
-}
-.WDdataCellBody  .dataTables_paginate > input {
-}
-.WDdataCellBody   .dataTables_paginate .paginate_button {
-}
-.WDdataCellBody  .dataTables_paginate .paginate_button.first,
-  .WDdataCellBody   .dataTables_paginate .paginate_button.last {
-  }
-.WDdataCellBody   .dataTables_paginate .paginate_button.previous {
-}
-.WDdataCellBody  .dataTables_paginate .paginate_button.next {
-}
-.WDdataCellBody   .dataTables_paginate .paginate_page {
-}
-.WDdataCellBody   .dataTables_paginate .paginate_of {
-}
-
-.WDdataCellBody   .dataTables_paginate .paginate_enabled_next {
-}
-.WDdataCellBody   .dataTables_paginate .paginate_enabled_previous{
-}
-.WDdataCellBody   .dataTables_paginate .paginate_disabled_next {
-}
-.WDdataCellBody   .dataTables_paginate .paginate_disabled_previous {
-}
-.WDdataCellBody   .dataTables_paginate .paginate_enabled_next:hover {
-}
-.WDdataCellBody   .dataTables_paginate .paginate_enabled_previous:hover {
-}
-.WDdataCellBody   .dataTables_paginate .paginate_enabled_next:active {
-}
-.WDdataCellBody   .dataTables_paginate .paginate_enabled_previous:active {
-}
-.WDdataCellBody   .dataTables_paginate .paginate_disabled_previous,
-.WDdataCellBody   .dataTables_paginate .paginate_enabled_previous,
-.WDdataCellBody   .dataTables_paginate .paginate_disabled_next,
-.WDdataCellBody  .dataTables_paginate .paginate_enabled_next {
-}
-
-/* Add Ins */
-.WDdataCellBody td .trend,
-.WDdataCellBody th .trend{
-}
-.WDdataCellBody  tfoot td .trend{
-}
-.WDdataCellBody  tfoot td .trend.down,
-.WDdataCellBody  tbody td .trend.down,
-.WDdataCellBody  thead th .trend.down {
-}
-.WDdataCellBody  tfoot td .trend.up,
-.WDdataCellBody  tbody td .trend.up,
-.WDdataCellBody  thead th .trend.up {
-}
-.WDdataCellBody  tfoot td .trend.neutral,
-.WDdataCellBody  tbody td .trend.neutral,
-.WDdataCellBody  thead th .trend.neutral {
-}
-
-
-
-/* =============================================================================
-   6. CHARTS
-   ========================================================================== */
-
-
-
-
-/* =============================================================================
-   7. SELECTORS AND BUTTONS
-   ========================================================================== */
-.WDfilterCell select{
-}
-
-button {
-}
-.no-svg   button {
-}
-.svg   button {
-}
-
-button:hover {
-}
-button span {
-}
-
-
-/* Buttons */
 
 .WDbutton button
 {
@@ -476,143 +118,6 @@ button span {
 }
 
 
-
-
-/* Multi Button */
-.pentaho-toggle-button {
-
-}
-.no-svg .pentaho-toggle-button {
-}
-.svg .pentaho-toggle-button {
-}
-.pentaho-toggle-button-horizontal-first {
-}
-.pentaho-toggle-button-horizontal-last {
-}
-.pentaho-toggle-button:hover,
-.pentaho-toggle-button:hover button{
-  }
-.pentaho-toggle-button-down {
-
-}
-.no-svg .pentaho-toggle-button-down {
-}
-.svg .pentaho-toggle-button-down {
-}
-
-.pentaho-toggle-button button {
-}
-.pentaho-toggle-button-horizontal-last button {
-}
-.pentaho-toggle-button-horizontal-first button {
-}
-.pentaho-toggle-button-down button {
-}
-
-/**** Chosen Select *****/
-/* All Chosen elements */
-.chzn-container{
-}
-.chzn-container * {
-}
-.chzn-container-active{
-}
-.chzn-drop{
-}
-.chzn-drop  .chzn-search{
-}
-.chzn-drop .chzn-search input{
-}
-.chzn-drop  .chzn-results{
-}
-.chzn-drop  .chzn-results li{
-
-}
-.chzn-drop .chzn-results em{
-}
-.chzn-drop  .chzn-results .active-result{
-}
-.chzn-drop  .chzn-results .highlighted{
-}
-.chzn-drop  .chzn-results .result-selected{
-}
-.chzn-drop  .chzn-results .no-results {
-}
-
-/* Single Select */
-.chzn-container-single .chzn-single{
-}
-.no-svg    .chzn-container-single .chzn-single{
-}
-
-.svg    .chzn-container-single .chzn-single{
-
-}
-.chzn-container-single:hover .chzn-single{
-}
-
-.chzn-container-single .chzn-single span{
-}
-.chzn-container-single .chzn-single div{ /* Arrow container */
-}
-.chzn-container-single .chzn-single div b,
-  .chzn-container-single .chzn-single-with-drop div b{ /* Arrow */
-  }
-.chzn-container-single:hover .chzn-single div b,
-  .chzn-container-single:hover .chzn-single-with-drop div b{ /* Arrow */
-  }
-.chzn-container-single .chzn-single.chzn-single-with-drop{
-}
-.chzn-container-single .chzn-single-with-drop span{
-}
-.chzn-container-single .chzn-single-with-drop div{ /* Arrow container */
-}
-.chzn-container-single .chzn-single-with-drop div b{
-}
-
-
-/* Multi Select */
-.chzn-container-multi.chzn-container{
-}
-.chzn-container-multi .chzn-drop{
-}
-.chzn-container-multi .chzn-drop .selectTooltipTriangle{
-}
-.chzn-container-multi .chzn-drop  .chzn-results{
-}
-
-.chzn-container-multi .chzn-choices {
-}
-.chzn-container-multi:hover .chzn-choices,
-  .chzn-container-multi.chzn-container-active .chzn-choices{
-  }
-.chzn-container-multi .chzn-choices  .search-choice {
-
-}
-.no-svg    .chzn-container-multi .chzn-choices  .search-choice {
-}
-.svg    .chzn-container-multi .chzn-choices  .search-choice {
-}
-.chzn-container-multi .chzn-choices .search-choice span{
-}
-.chzn-container-multi .chzn-choices .search-choice .search-choice-close{
-}
-.chzn-container-multi .chzn-choices .search-choice .search-choice-close:hover {
-}
-.chzn-container-multi .chzn-choices .search-field input{
-}
-
-
-
-/* =============================================================================
-   8. SITE MAP
-   ========================================================================== */
-
-.WDsiteMap {}
-
-
-
 /* =============================================================================
    Other
    ========================================================================== */
@@ -623,20 +128,39 @@ button span {
    Project Specific Items
    ========================================================================== */
 
-.welcomeMessage,
-.message
-{
-    font-size: 12px;
-    display: block;
-    float: left;
+
+
+
+.languageDialogContainer{
+  
 }
 
-.WDbutton
-{
 
+/* Messages */
+.languageDialogContainer .msgContainer .msg {
+  display:none;
+}
+.languageDialogContainer.welcome    .msgContainer .msg.welcome,
+.languageDialogContainer.installing .msgContainer .msg.installing,
+.languageDialogContainer.error      .msgContainer .msg.error,
+.languageDialogContainer.success    .msgContainer .msg.success{
+  display:inline-block;
 }
 
-.WDhidden
-{
-    display: none;
+
+/* Messages */
+.languageDialogContainer .btnContainer .btn {
+  display:none;
 }
+.languageDialogContainer.welcome.notInstalled    .btnContainer .btn.install,
+.languageDialogContainer.error                   .btnContainer .btn.ok,
+.languageDialogContainer.success                 .btnContainer .btn.ok{
+  display:inline-block;
+}
+
+
+
+
+
+
+
