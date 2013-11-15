@@ -797,7 +797,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n\n    this.template = Mustache.compile(        \n        \"    <div class='imageContainer/>\" +\n        \"    <div class='titleContainer'>{{appTitle}}</div>\" +\n        \"    <div class='msgContainer'>\" +\n        \"       <div class='msg welcome'>{{appWelcomeMessage}}</div>\" +\n        \"       <div class='msg installing'>Installing...</div>\" +\n        \"       <div class='msg success'>Successfully installed</div>\" +\n        \"       <div class='msg error'>Error installing</div>\" +\n        \"    </div>\" +\n        \"    <div class='infoContainer'>\" +\n        \"       <div class='logInfo'>See the log for details</div>\" +\n        \"    </div>\"\n    );\n\n}",
+      "value": "function f(){\n\n    this.template = Mustache.compile(        \n        \"    <div class='imageContainer/>\" +\n        \"    <div class='titleContainer'>{{appTitle}}</div>\" +\n        \"    <div class='msgContainer'>\" +\n        \"       <div class='msg welcome'>{{appWelcomeMessage}}</div>\" +\n        \"       <div class='msg installing'>Installing...</div>\" +\n        \"       <div class='msg success'>Successfully installed</div>\" +\n        \"       <div class='msg error'>Error installing</div>\" +\n        \"    </div>\" +\n        \"    <div class='infoContainer'>\" +\n        \"       <div class='info log'>See the log for details</div>\" +\n        \"    </div>\"\n    );\n\n}",
       "type": "JavaScript"
      },
      {

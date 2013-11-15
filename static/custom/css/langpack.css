@@ -159,6 +159,14 @@ div.container  {
 }
 
 
+/* Info */
+.languageDialogContainer        .infoContainer .info {
+  display:none;
+}
+.languageDialogContainer.error  .infoContainer .info.log{
+  display:inline-block;
+}
+
 
 
 
