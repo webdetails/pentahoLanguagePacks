@@ -6,8 +6,8 @@ DEST=/Applications/pentaho/server/biserver-ee/pentaho-solutions/system/languageP
 HERE=$(pwd)
 for locale in "$@"
 do
-    ./getoriginalmessages.py "$locale" $ORIGIN/server/biserver-ee/tomcat $DEST/"$locale"/tomcat
-    ./getoriginalmessages.py "$locale" $ORIGIN/server/biserver-ee/pentaho-solutions/system $DEST/"$locale"/system
+    ./generate_language_bundle.py "$locale" $ORIGIN/server/biserver-ee/tomcat $DEST/"$locale"/tomcat
+    ./generate_language_bundle.py "$locale" $ORIGIN/server/biserver-ee/pentaho-solutions/system $DEST/"$locale"/system
     if [ ! -f $DEST/"$locale"/metadata.json ]; then
         cp $DEST/metadata.json $DEST/"$locale"/
     fi
