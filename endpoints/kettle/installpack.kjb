@@ -23,7 +23,7 @@
         </parameter>
         <parameter>
             <name>language</name>
-            <default_value>XXXX</default_value>
+            <default_value>Klingon</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -123,11 +123,11 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>760</xloc>
-      <yloc>107</yloc>
+      <xloc>887</xloc>
+      <yloc>264</yloc>
       </entry>
     <entry>
-      <name>install_language</name>
+      <name>install_language &#x28;biserver&#x2f;pentaho-solutions&#x2f;system&#x29;</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
@@ -165,6 +165,12 @@
             </parameter>            <parameter>            <name>languageCode</name>
             <stream_name/>
             <value>&#x24;&#x7b;languageCode&#x7d;</value>
+            </parameter>            <parameter>            <name>target</name>
+            <stream_name/>
+            <value>system</value>
+            </parameter>            <parameter>            <name>target_folder</name>
+            <stream_name/>
+            <value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;</value>
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -204,16 +210,16 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>514</xloc>
-      <yloc>116</yloc>
+      <xloc>570</xloc>
+      <yloc>275</yloc>
       </entry>
     <entry>
-      <name>Transformation</name>
+      <name>get pack metadata</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;_get_language_to_install.ktr</filename>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;getpackmetadata.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -251,23 +257,115 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>652</xloc>
-      <yloc>111</yloc>
+      <xloc>703</xloc>
+      <yloc>274</yloc>
+      </entry>
+    <entry>
+      <name>install_language &#x28;biserver&#x2f;tomcat&#x29;</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;_install_language.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+            <parameter>            <name>cpk.plugin.dir</name>
+            <stream_name/>
+            <value>&#x24;&#x7b;cpk.plugin.dir&#x7d;</value>
+            </parameter>            <parameter>            <name>cpk.solution.system.dir</name>
+            <stream_name/>
+            <value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;</value>
+            </parameter>            <parameter>            <name>language</name>
+            <stream_name/>
+            <value>&#x24;&#x7b;language&#x7d;</value>
+            </parameter>            <parameter>            <name>languageCode</name>
+            <stream_name/>
+            <value>&#x24;&#x7b;languageCode&#x7d;</value>
+            </parameter>            <parameter>            <name>target</name>
+            <stream_name/>
+            <value>tomcat</value>
+            </parameter>            <parameter>            <name>target_folder</name>
+            <stream_name/>
+            <value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;biserver&#x2f;tomcat</value>
+            </parameter>      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>410</xloc>
+      <yloc>280</yloc>
+      </entry>
+    <entry>
+      <name>create jars 2</name>
+      <description/>
+      <type>JOB</type>
+      <specification_method>filename</specification_method>
+      <job_object_id/>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;_create_jar.kjb</filename>
+      <jobname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>Y</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+            <parameter>            <name>folder</name>
+            <stream_name/>
+            <value/>
+            </parameter>            <parameter>            <name>target_jar</name>
+            <stream_name/>
+            <value/>
+            </parameter>      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>564</xloc>
+      <yloc>117</yloc>
+      </entry>
+    <entry>
+      <name>Delete filenames from result 2</name>
+      <description/>
+      <type>DELETE_RESULT_FILENAMES</type>
+      <foldername/>
+      <specify_wildcard>N</specify_wildcard>
+      <wildcard/>
+      <wildcardexclude/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>696</xloc>
+      <yloc>116</yloc>
       </entry>
   </entries>
   <hops>
     <hop>
-      <from>install_language</from>
-      <to>create jars</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>START</from>
-      <to>Transformation</to>
+      <to>get pack metadata</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -275,8 +373,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Transformation</from>
-      <to>install_language</to>
+      <from>get pack metadata</from>
+      <to>install_language &#x28;biserver&#x2f;pentaho-solutions&#x2f;system&#x29;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -295,6 +393,42 @@
     <hop>
       <from>Delete filenames from result</from>
       <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>install_language &#x28;biserver&#x2f;tomcat&#x29;</from>
+      <to>create jars</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>install_language &#x28;biserver&#x2f;pentaho-solutions&#x2f;system&#x29;</from>
+      <to>create jars 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>create jars 2</from>
+      <to>Delete filenames from result 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Delete filenames from result 2</from>
+      <to>install_language &#x28;biserver&#x2f;tomcat&#x29;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
