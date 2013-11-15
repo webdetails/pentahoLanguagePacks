@@ -43,10 +43,10 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-/*margin: 0;
-padding: 0;
-border: 0;
-        font-family: Open Sans, Arial, sans-serif;*/
+/* margin: 0; */
+/* padding: 0; */
+/* border: 0; */
+        font-family: Open Sans, Arial, sans-serif;
   }
 
 
@@ -59,63 +59,14 @@ border: 0;
 
 /* Window Background */
 body{
+    background-color: #E0EBEF;
 }
 /* Dashboard Background / Blueprint Container */
 div.container  {
-
+    max-width: 700px;
+    min-width: 500px;
 }
 
-
-
-
-
-
-.WDbutton button
-{
-    border: 2px groove #fdfaf1;
-    color: #eeeeee;
-
-    border-radius: 0;
-    text-align: center;
-    font-weight: bold;
-    font-size: 12px;
-    background: #8dc53e;
-    height: 100%;
-    width: 100%;
-}
-.WDbutton button:disabled,
-.WDbutton button:disabled:hover
-{
-    background: #f9f9f9; /* Old browsers */
-    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y5ZjlmOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZGU5ZTEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(top,  #f9f9f9 0%, #ede9e1 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9f9f9), color-stop(100%,#ede9e1)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #f9f9f9 0%,#ede9e1 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #f9f9f9 0%,#ede9e1 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #f9f9f9 0%,#ede9e1 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #f9f9f9 0%,#ede9e1 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#ede9e1',GradientType=0 ); /* IE6-8 */
-    color: #CCCCCC;
-}
-.WDbutton button:hover
-{
-    color: #ffffff;
-    background: #82bc31;
-}
-.WDbuttonbutton:active
-{
-    background: #9dd53a; /* Old browsers */
-    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzlkZDUzYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0iI2ExZDU0ZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjcyJSIgc3RvcC1jb2xvcj0iIzgwYzIxNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3Y2JjMGEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(top,  #9dd53a 0%, #a1d54f 40%, #80c217 72%, #7cbc0a 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9dd53a), color-stop(40%,#a1d54f), color-stop(72%,#80c217), color-stop(100%,#7cbc0a)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #9dd53a 0%,#a1d54f 40%,#80c217 72%,#7cbc0a 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #9dd53a 0%,#a1d54f 40%,#80c217 72%,#7cbc0a 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #9dd53a 0%,#a1d54f 40%,#80c217 72%,#7cbc0a 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #9dd53a 0%,#a1d54f 40%,#80c217 72%,#7cbc0a 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dd53a', endColorstr='#7cbc0a',GradientType=0 ); /* IE6-8 */
-}
 
 
 /* =============================================================================
@@ -129,12 +80,76 @@ div.container  {
    ========================================================================== */
 
 
-
-
 .languageDialogContainer{
-  
+    margin-top: 50px;
+    padding: 20px;
+    background-color:#F5F6F8;
+    border: 1px solid #CDDFE9;
 }
 
+.languageDialogContainer .imageContainer
+{
+    background: #fff url('../img/save_document.png') -96px 0 no-repeat;
+    width: 48px;
+    height: 48px;
+    display: block;
+    float: left;
+    margin: 0 20px;
+
+}
+.languageDialogContainer .titleContainer
+{
+    color: #2076BE;
+    font-size: 16px;
+}
+
+.languageDialogContainer .msgContainer
+{
+    padding: 20px 0;
+
+}
+
+.btn button{
+    background: -moz-linear-gradient(270deg, #026d93 0%, #005879 100%);/* FF3.6+ */
+    background: -webkit-gradient(linear, 270deg, color-stop(0%, #026d93), color-stop(100%, #005879));/* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(270deg, #026d93 0%, #005879 100%);/* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(270deg, #026d93 0%, #005879 100%);/* Opera 11.10+ */
+    background: -ms-linear-gradient(270deg, #026d93 0%, #005879 100%);/* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#026d93', endColorstr='#005879', GradientType='1'); /* for IE */
+    background: linear-gradient(180deg, #026d93 0%, #005879 100%);/* W3C */
+
+    color: #CEE1E7;
+
+    height: 32px;
+    width: 94px;
+    border: 1px solid #026d93;
+    border-radius: 5px;
+    font-size: 12px;
+
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color=#c0c0c0)";/*IE 8*/
+    -moz-box-shadow: 3px 3px 3px #c0c0c0;/*FF 3.5+*/
+    -webkit-box-shadow: 3px 3px 3px #c0c0c0;/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+    box-shadow: 3px 3px 3px #c0c0c0;/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color=#c0c0c0); /*IE 5.5-7*/
+}
+.btn button:hover {
+    border: 1px solid #000;
+}
+
+
+.btnContainer .btn
+{
+    float: right;
+}
+
+
+.msgContainer .success
+{
+    background: inherit;
+    border: none;
+    color: inherit;
+    padding: 0;
+}
 
 /* Messages */
 .languageDialogContainer .msgContainer .msg {
@@ -166,9 +181,3 @@ div.container  {
 .languageDialogContainer.error  .infoContainer .info.log{
   display:inline-block;
 }
-
-
-
-
-
-
