@@ -116,13 +116,21 @@ div.container  {
   border:0;
   background:none;
 
-  display:none;
+  display: inline-block;
+
+    -webkit-transition: all 0.3s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+     -moz-transition: all 0.3s ease-out;  /* Firefox 4-15 */
+       -o-transition: all 0.3s ease-out;  /* Opera 10.50–12.00 */
+          transition: all 0.3s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+
+
+  opacity: 0;
 }
 .languageDialogContainer.welcome    .msgContainer .msg.welcome,
 .languageDialogContainer.installing .msgContainer .msg.installing,
 .languageDialogContainer.error      .msgContainer .msg.error,
 .languageDialogContainer.success    .msgContainer .msg.success{
-  display:inline-block;
+  opacity: 1;
 }
 
 
@@ -132,6 +140,7 @@ div.container  {
   margin:0;
   border:0;
   background:none;
+
 
   display:none;
 }
@@ -150,13 +159,18 @@ div.container  {
   border:0;
   background:none;
 
-  display:none;
+    -webkit-transition: all 0.3s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+     -moz-transition: all 0.3s ease-out;  /* Firefox 4-15 */
+       -o-transition: all 0.3s ease-out;  /* Opera 10.50–12.00 */
+          transition: all 0.3s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+
+  opacity: 0;
 }
 .languageDialogContainer.error   .infoContainer .info.log ,
 .languageDialogContainer.success .infoContainer .info.credits ,
 .languageDialogContainer.welcome .infoContainer .info.credits,
 .languageDialogContainer.installing .infoContainer .info.wait {
-  display:inline-block;
+  opacity: 1;
 }
 
 
@@ -228,22 +242,35 @@ div.container  {
     left:0px;
     top:100px;
     padding: 20px 0;
+
+    width:100%;
 }
 .languageDialogContainer .msgContainer .msg
 {
-    color: #333333;
-    font-size: 14px;
-    padding-right:20px;
+  color: #333333;
+  font-size: 14px;
+  padding-right:20px;
+
+  position:absolute;
+  top:0px;
+  left:0px;
 }
 
 .languageDialogContainer .infoContainer {
   position:absolute;
   left:0px;
   top:200px;
+
+  width:100%;
 }
 .languageDialogContainer .infoContainer .info {
   color: #333333;
   font-size: 12px;
+
+  display: inline-block;
+  position:absolute;
+  top:0px;
+  left:0px;
 }
 .languageDialogContainer .infoContainer .info a{
   font-family: 'OpenSansSemibold', Arial, sans-serif;
