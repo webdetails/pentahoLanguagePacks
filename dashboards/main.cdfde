@@ -412,7 +412,7 @@
     "properties": [
      {
       "name": "name",
-      "value": "buttonOkObj",
+      "value": "buttonOkErrorObj",
       "type": "Id"
      },
      {
@@ -472,7 +472,153 @@
      },
      {
       "name": "cssClass",
-      "value": "btn ok",
+      "value": "btn okError",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "b7f2af8d-58e4-4c94-c52f-2d2ed008fe6a",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "0744f991-2cab-5e2c-c0f9-0ab336305e41",
+    "properties": [
+     {
+      "name": "name",
+      "value": "buttonOkSuccessObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "btn okSuccess",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "a19354ce-256f-fddd-376e-abf4c24d5849",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "0744f991-2cab-5e2c-c0f9-0ab336305e41",
+    "properties": [
+     {
+      "name": "name",
+      "value": "buttonCancelObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "btn cancel",
       "type": "String"
      }
     ]
@@ -584,14 +730,102 @@
     ]
    },
    {
-    "id": "0117aad3-5432-bac0-52d9-0a63db02cca9",
+    "id": "d0820238-f8c3-e511-0dfa-64ae2bd53c06",
     "type": "ComponentsActionButtonComponent",
     "typeDesc": "Action Button Component",
     "parent": "OTHERCOMPONENTS",
     "properties": [
      {
       "name": "name",
-      "value": "buttonOk",
+      "value": "buttonOkSuccess",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Ok",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    window.opener = window;\n    window.close();\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "DataSource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:buttonOkSuccessObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "b546bc69-4d59-7559-5ab2-c6071d68c88f",
+    "type": "ComponentsActionButtonComponent",
+    "typeDesc": "Action Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "buttonOkError",
       "type": "Id"
      },
      {
@@ -646,7 +880,95 @@
      },
      {
       "name": "htmlObject",
-      "value": "${p:buttonOkObj}",
+      "value": "${p:buttonOkErrorObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "0117aad3-5432-bac0-52d9-0a63db02cca9",
+    "type": "ComponentsActionButtonComponent",
+    "typeDesc": "Action Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "buttonCancel",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Cancel",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    window.opener = window;\n    window.close();\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "DataSource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:buttonCancelObj}",
       "type": "HtmlObject"
      },
      {
@@ -797,7 +1119,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n\n    this.template = Mustache.compile(        \n        \"    <div class='imageContainer'/>\" +\n        \"    <div class='titleContainer'>{{appTitle}}</div>\" +\n        \"    <div class='msgContainer'>\" +\n        \"       <div class='msg welcome'>{{appWelcomeMessage}}</div>\" +\n        \"       <div class='msg installing'>Installing...</div>\" +\n        \"       <div class='msg success'>Successfully installed</div>\" +\n        \"       <div class='msg error'>Error installing</div>\" +\n        \"    </div>\" +\n        \"    <div class='infoContainer'>\" +\n        \"       <div class='info log'>See the log for details</div>\" +\n        \"    </div>\"\n    );\n\n}",
+      "value": "function f(){\n\n    this.template = Mustache.compile(     \n        \"    <div class='imageWrapper'>\" +\n        \"       <div class='imageContainer'/>\" +\n        \"    </div>\" +\n        \"    <div class='contentWrapper'>\" +\n        \"       <div class='topBar'/>\" +\n        \"       <div class='titleContainer'>{{appTitle}}</div>\" +\n        \"       <div class='msgContainer'>\" +\n        \"          <div class='msg welcome'>{{appWelcomeMessage}}</div>\" +\n        \"          <div class='msg installing'>Installing...</div>\" +\n        \"          <div class='msg success'>Successfully installed</div>\" +\n        \"          <div class='msg error'>Error installing</div>\" +\n        \"          </div>\" +\n        \"       <div class='infoContainer'>\" +\n        \"          <div class='info log'>See the log for details</div>\" +\n        \"          {{#maintainer}}\" +\n        \"             <div class='info credits'>\" +\n        \"                Credits: <a href='mailto:{{email}}'>{{name}}</a>\" +\n        \"             </div>\" +\n        \"          {{/maintainer}}\"+\n        \"          <div class='info wait'>Please wait...</div>\" +\n        \"       </div>\"+\n        \"   </div>\"\n    );\n\n}",
       "type": "JavaScript"
      },
      {
