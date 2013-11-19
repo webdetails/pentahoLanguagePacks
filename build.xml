@@ -36,9 +36,9 @@
       </fileset>
     </copy>
     <!-- create the version file -->
-	<tstamp/>			
+	<tstamp/>
 	<property name="sequential.build.id" value="manual-${DSTAMP}"/>
-	<echo file="${stage.dir}/${plugin.name}/version.xml" message="&lt;version branch='TRUNK' buildId='${sequential.build.id}'>${distribution.version}&lt;/version>"/>		       
+	<echo file="${stage.dir}/${plugin.name}/version.xml" message="&lt;version branch='TRUNK' buildId='${sequential.build.id}'>${distribution.version}&lt;/version>"/>
     <!-- create a zip file -->
     <zip zipfile="${dist.dir}/${plugin.zipfile}"
          basedir="${stage.dir}"
@@ -52,7 +52,7 @@
 		&lt;package_url>not defined&lt;/package_url>
 		&lt;description>@PLUGIN_PACKAGE_DESCRIPTION&lt;/description>
 		&lt;build_id>${sequential.build.id}&lt;/build_id>
-		&lt;/version>	</echo>         
+		&lt;/version>	</echo>
     <move tofile="${dist.dir}/${ivy.artifact.id}-${project.revision}.zip" file="${dist.dir}/${plugin.zipfile}"/>
 
 
@@ -85,5 +85,9 @@
     <delete dir="${lib.dir}" />
     <delete dir="${testlib.dir}" />
     <delete dir="${runtimelib.dir}" />
+  </target>
+  <target name="generate-pack4" description="Generates a language-pack">
+         <get src="http://127.0.0.1:8080/pentaho/content/spark/duplicatePlugin?source_pluginId=${plugin.name}&amp;dest_pluginId=langPack${languageCode}&amp;userid=${plugin.local.install.user}&amp;password=${plugin.local.install.pass}"
+         dest="${stage.dir}/blah.html"/>
   </target>
 </project>

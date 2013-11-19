@@ -7,18 +7,18 @@
 	</static-paths>
 	<content-types>
 		<content-type>
-			<title>Languagepackdistributor</title>
+			<title>LanguagepackInstaller</title>
 			<description></description>
 			<company name="" url="" logo="@PLUGIN_COMPANY_LOGO@"></company>
 		</content-type>
 	</content-types>
 	<content-generator
 		id="languagePackInstaller"
-		title="Languagepackdistributor"
+		title="Languagepackinstaller"
 		type="languagePackInstaller"
 		class="pt.webdetails.cpk.CpkContentGenerator"/>
 	<!-- Menu entry -->
 	<menu-items>
-		<menu-item id="languagePackInstaller_main" anchor="tools-submenu" label="Languagepackdistributor" command="content/languagePackInstaller/" type="MENU_ITEM" how="LAST_CHILD"/>
+		<menu-item id="languagePackInstaller_main" anchor="tools-submenu" label="LanguagePackInstaller" command="content/languagePackInstaller/" type="MENU_ITEM" how="LAST_CHILD"/>
 	</menu-items>
 </plugin>
