@@ -15,7 +15,7 @@
      },
      {
       "name": "resourceFile",
-      "value": "static/system/css/liquid.css",
+      "value": "/pentaho/api/repos/languagePackInstaller/static/system/css/liquid.css",
       "type": "ResourceFile"
      },
      {
@@ -38,7 +38,7 @@
      },
      {
       "name": "resourceFile",
-      "value": "static/system/css/borderBox.css",
+      "value": "/pentaho/api/repos/languagePackInstaller/static/system/css/borderBox.css",
       "type": "ResourceFile"
      },
      {
@@ -61,7 +61,7 @@
      },
      {
       "name": "resourceFile",
-      "value": "static/custom/css/langpack.css",
+      "value": "/pentaho/api/repos/languagePackInstaller/static/custom/css/langpack.css",
       "type": "ResourceFile"
      },
      {
