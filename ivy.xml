@@ -25,6 +25,9 @@
   		<dependency org="pt.webdetails" name="${cpk.pentaho.artifact}"
 		  rev="${dependency.cpk.revision}" transitive="false" changing="true" conf='default->default'/>
 
+		<!--dependency org="ant-contrib" name="ant-contrib" rev="1.0b3" conf="default->default"/-->
+
+		<dependency org="oopsconsultancy" name="xmltask" rev="1.16" conf="default->default"/>
 		<dependency org="org.codehaus.jackson" name="jackson-mapper-asl" rev="1.9.12" conf='default->default' />
 		<dependency org="com.fasterxml.jackson.core" name="jackson-core" rev="2.2.2" conf='default->default' />
 		<dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.2.2" conf='default->default' />

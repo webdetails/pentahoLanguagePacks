@@ -39,7 +39,7 @@ var ActionButtonComponent = ActionComponent.extend(new MixinButtonAPI()).extend(
             if ( _.isFunction(myself.expression) ){
                 myself.expression.apply(myself, arguments);
             }
-            if ( Dashboards.detectQueryType(ad) ) {
+            if ( myself.hasAction()) {
                 return myself.triggerAction.apply(myself);
             }
         });

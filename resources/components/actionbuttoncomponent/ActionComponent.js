@@ -114,8 +114,22 @@ var ActionComponent = UnmanagedComponent.extend(new HelpMixin()).extend({
 
         return Dashboards.getQuery(ad).fetchData(params, _.bind(successCallback, this), _.bind(failureCallback, this));
         if (Dashboards.debug) {
-            Dashboards.log('ActionComponent.triggerAction('+ qd.pluginId + ', ' + qd.endpoint + ') was called', 'debug');
+            Dashboards.log('ActionComponent.triggerAction('+ ad.pluginId + ', ' + ad.endpoint + ') was called', 'debug');
         }
+    },
+    hasAction: function(){
+        /**
+         Detect if the endpoint is defined
+         */
+        if ( ! this.actionDefinition){
+            return false;
+        }
+        if (Dashboards.detectQueryType){
+            return !! Dashboards.detectQueryType(this.actionDefinition);
+        } else {
+            return !! this.actionDefinition.queryType && Dashboards.hasQuery(this.actionDefinition.queryType);
+        }
+
     }
 
 

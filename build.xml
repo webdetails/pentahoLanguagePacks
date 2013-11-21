@@ -1,93 +1,313 @@
 <project name="" basedir="." default="jar"
          xmlns:ivy="antlib:org.apache.ivy.ant">
-  <description>
-    This build file is used to create the Languagepackdistributor project
-    and works with the common_build.xml file.
-  </description>
-  <!-- Import the common_build.xml file which contains all the default tasks -->
-  <import file="build-res/subfloor-pkg.xml" id="subfloor"/>
-  <property name="plugin.name"
-            value="languagePackInstaller"
-            description="Name of the plugin"/>
-  <property name="stage.dir"
-            value="${bin.dir}/stage"
-            description="Name of the resource directory"/>
-  <tstamp/>
-  <!-- Build the project.revision property -->
-  <property name="distribution.version" value="${project.stage}-${project.version}"/>
-  <echo>distribution.version = ${distribution.version}</echo>
-  <property name="plugin.artifact.id" value="${plugin.name}"/>
-  <property name="plugin.zipfile" value="${plugin.artifact.id}-${distribution.version}.zip"/>
-  <!--=======================================================================
-              dist
-              Creates a distribution of this project's plugin zip
-              ====================================================================-->
-  <target name="dist" depends="clean,resolve" description="Creates a distribution">
-    <!-- delete and re-create the plugin dist folder tree -->
-    <mkdir dir="${stage.dir}"/>
-    <mkdir dir="${stage.dir}/${plugin.name}"/>
-    <mkdir dir="${stage.dir}/${plugin.name}"/>
-    <mkdir dir="${dist.dir}"/>
-    <!-- copy the entire plugin to that folder  -->
-    <copy todir="${stage.dir}/${plugin.name}/" overwrite="true">
-      <fileset dir=".">
-        <include name="**/*"/>
-		  <exclude name="bin/"/>
-      </fileset>
-    </copy>
-    <!-- create the version file -->
+    <description>
+        This build file is used to create the languagePackInstaller project
+        and works with the common_build.xml file.
+    </description>
+    <!-- Import the common_build.xml file which contains all the default tasks -->
+    <import file="build-res/subfloor-pkg.xml" id="subfloor"/>
+    <property name="plugin.name"
+              value="languagePackInstaller"
+              description="Name of the plugin"/>
+    <property name="stage.dir"
+              value="${bin.dir}/stage"
+              description="Name of the resource directory"/>
+    <tstamp/>
+    <!-- Build the project.revision property -->
+    <property name="distribution.version" value="${project.stage}-${project.version}"/>
+    <echo>distribution.version = ${distribution.version}</echo>
+    <property name="plugin.artifact.id" value="${plugin.name}"/>
+    <property name="plugin.zipfile" value="${plugin.artifact.id}-${distribution.version}.zip"/>
+    <!--=======================================================================
+        dist
+        Creates a distribution of this project's plugin zip
+        ====================================================================-->
+    <target name="dist" depends="clean,resolve" description="Creates a distribution">
+        <!-- delete and re-create the plugin dist folder tree -->
+        <mkdir dir="${stage.dir}"/>
+        <mkdir dir="${stage.dir}/${plugin.name}"/>
+        <mkdir dir="${stage.dir}/${plugin.name}"/>
+        <mkdir dir="${dist.dir}"/>
+        <!-- copy the entire plugin to that folder  -->
+        <copy todir="${stage.dir}/${plugin.name}/" overwrite="true">
+            <fileset dir=".">
+                <include name="**/*"/>
+		<exclude name="bin/"/>
+            </fileset>
+        </copy>
+        <!-- create the version file -->
 	<tstamp/>
 	<property name="sequential.build.id" value="manual-${DSTAMP}"/>
 	<echo file="${stage.dir}/${plugin.name}/version.xml" message="&lt;version branch='TRUNK' buildId='${sequential.build.id}'>${distribution.version}&lt;/version>"/>
-    <!-- create a zip file -->
-    <zip zipfile="${dist.dir}/${plugin.zipfile}"
-         basedir="${stage.dir}"
-         includes="${plugin.name}/**/*"
-         excludes="**/Thumbs.db"/>
+        <!-- create a zip file -->
+        <zip zipfile="${dist.dir}/${plugin.zipfile}"
+             basedir="${stage.dir}"
+             includes="${plugin.name}/**/*"
+             excludes="**/Thumbs.db"/>
 
 	<echo file="${dist.dir}/marketplace.xml">&lt;version>
-	    &lt;branch>TRUNK&lt;/branch>
-		&lt;version>${distribution.version}&lt;/version>
-		&lt;name>Trunk&lt;/name>
-		&lt;package_url>not defined&lt;/package_url>
-		&lt;description>@PLUGIN_PACKAGE_DESCRIPTION&lt;/description>
-		&lt;build_id>${sequential.build.id}&lt;/build_id>
-		&lt;/version>	</echo>
-    <move tofile="${dist.dir}/${ivy.artifact.id}-${project.revision}.zip" file="${dist.dir}/${plugin.zipfile}"/>
+	&lt;branch>TRUNK&lt;/branch>
+	&lt;version>${distribution.version}&lt;/version>
+	&lt;name>Trunk&lt;/name>
+	&lt;package_url>not defined&lt;/package_url>
+	&lt;description>@PLUGIN_PACKAGE_DESCRIPTION&lt;/description>
+	&lt;build_id>${sequential.build.id}&lt;/build_id>
+	&lt;/version>	</echo>
+        <move tofile="${dist.dir}/${ivy.artifact.id}-${project.revision}.zip" file="${dist.dir}/${plugin.zipfile}"/>
 
 
-  </target>
-  <!--=======================================================================
-              install-plugin
-              Installs the plugin locally
-              ====================================================================-->
-  <target name="install-plugin" depends="clean, resolve, dist" description="Installs the plugin locally">
-    <fail message="plugin.local.install.solutions.dir not set - cannot copy"
-          unless="plugin.local.install.solutions.dir"/>
-    <delete dir="${plugin.local.install.solutions.dir}/system/${plugin.name}"/>
-    <copy todir="${plugin.local.install.solutions.dir}/system/${plugin.name}">
-      <fileset dir="${stage.dir}/${plugin.name}">
-        <include name="**/*"/>
-      </fileset>
-    </copy>
-    <get src="http://127.0.0.1:8080/pentaho/Publish?publish=now&amp;class=org.pentaho.platform.plugin.services.pluginmgr.PluginAdapter&amp;userid=${plugin.local.install.user}&amp;password=${plugin.local.install.pass}"
-         dest="${stage.dir}/blah.html"/>
-  </target>
-  <!-- Overriding resolve target so we can add resolve-dev -->
-  <target name="resolve"
-          depends="resolve-default, resolve-test, resolve-codegen, resolve-runtime, ivy.check-releasable"
-          description="Retrieves all the dependent libraries" />
-  <target name="resolve-runtime" depends="resolve-init">
-    <ivy:resolve file="${ivyfile}" conf="runtime" />
-    <ivy:retrieve conf="runtime" pattern="${runtimelib.dir}/[module]-[revision](-[classifier]).[ext]" />
-  </target>
-  <target name="clean-jars">
-    <delete dir="${lib.dir}" />
-    <delete dir="${testlib.dir}" />
-    <delete dir="${runtimelib.dir}" />
-  </target>
-  <target name="generate-pack4" description="Generates a language-pack">
-         <get src="http://127.0.0.1:8080/pentaho/content/spark/duplicatePlugin?source_pluginId=${plugin.name}&amp;dest_pluginId=langPack${languageCode}&amp;userid=${plugin.local.install.user}&amp;password=${plugin.local.install.pass}"
-         dest="${stage.dir}/blah.html"/>
-  </target>
+    </target>
+    <!--=======================================================================
+        install-plugin
+        Installs the plugin locally
+        ====================================================================-->
+    <target name="install-plugin" depends="clean, resolve, dist" description="Installs the plugin locally">
+        <fail message="plugin.local.install.solutions.dir not set - cannot copy"
+              unless="plugin.local.install.solutions.dir"/>
+        <delete dir="${plugin.local.install.solutions.dir}/system/${plugin.name}"/>
+        <copy todir="${plugin.local.install.solutions.dir}/system/${plugin.name}">
+            <fileset dir="${stage.dir}/${plugin.name}">
+                <include name="**/*"/>
+            </fileset>
+        </copy>
+        <get src="http://127.0.0.1:8080/pentaho/Publish?publish=now&amp;class=org.pentaho.platform.plugin.services.pluginmgr.PluginAdapter&amp;userid=${plugin.local.install.user}&amp;password=${plugin.local.install.pass}"
+             dest="${stage.dir}/blah.html"/>
+    </target>
+    <!-- Overriding resolve target so we can add resolve-dev -->
+    <target name="resolve"
+            depends="resolve-default, resolve-test, resolve-codegen, resolve-runtime, ivy.check-releasable"
+            description="Retrieves all the dependent libraries" />
+    <target name="resolve-runtime" depends="resolve-init">
+        <ivy:resolve file="${ivyfile}" conf="runtime" />
+        <ivy:retrieve conf="runtime" pattern="${runtimelib.dir}/[module]-[revision](-[classifier]).[ext]" />
+    </target>
+    <target name="clean-jars">
+        <delete dir="${lib.dir}" />
+        <delete dir="${testlib.dir}" />
+        <delete dir="${runtimelib.dir}" />
+    </target>
+    <!--=======================================================================
+        build-language-pack
+        Builds a language pack: duplicate the plugin, delete
+        unnecessary files
+        ====================================================================-->
+    <target name="build-language-pack-lazy4" description="Builds a specific language pack in a lazy way: duplicate the plugin using sparkl, delete unnecessary files">
+        <property name="langpack.name">languagePack-${langCode}</property>
+        <!-- lazyiest approach using 4.8 -->
+        <get src="http://127.0.0.1:8080/pentaho/content/sparkl/duplicatePlugin?source_pluginId=${plugin.name}&amp;dest_pluginId=${langpack.name}&amp;userid=${plugin.local.install.user}&amp;password=${plugin.local.install.pass}"
+             dest="${stage.dir}/blah.html"/>
+    </target>
+    <target name="build-language-pack-lazy" description="Builds a specific language pack in a lazy way: duplicate the plugin using sparkl, delete unnecessary files">
+        <fail message="plugin.local.install.solutions.dir not set - cannot copy"
+              unless="plugin.local.install.solutions.dir"/>
+        <property name="langpack.name">languagePack-${langCode}</property>
+        <!-- lazyiest approach using 5.0+ -->
+        <get src="http://127.0.0.1:8080/pentaho/plugin/sparkl/api/duplicatePlugin?paramsource_pluginId=${plugin.name}&amp;paramdest_pluginId=${langpack.name}"
+             username="${plugin.local.install.user}"
+             password="${plugin.local.install.pass}"
+             dest="${stage.dir}/blah.html"/>
+        <delete includeemptydirs="true">
+            <fileset dir="${plugin.local.install.solutions.dir}/system/${langpack.name}/data"
+                     excludes="${langCode}/**/*" />
+        </delete>
+        <move file="${plugin.local.install.solutions.dir}/system/${langpack.name}/data/${langCode}/metadata.json"
+              tofile="${plugin.local.install.solutions.dir}/system/${langpack.name}/data/metadata.json"/>
+    </target>
+
+    <scriptdef language="javascript" name="upper">
+        <attribute name="string" />
+        <attribute name="to" />
+        project.setProperty( attributes.get( "to" ),
+        attributes.get( "string" ).toUpperCase() );
+    </scriptdef>
+
+    <scriptdef language="javascript" name="lower">
+        <attribute name="string" />
+        <attribute name="to" />
+        project.setProperty( attributes.get( "to" ),
+        attributes.get( "string" ).toLowerCase() );
+    </scriptdef>
+
+    <scriptdef language="javascript" name="ucfirst">
+        <attribute name="string" />
+        <attribute name="to" />
+        var the_string = attributes.get( "string" );
+        project.setProperty( attributes.get( "to" ),
+        the_string.substr(0,1).toUpperCase() + the_string.substr(1) );
+    </scriptdef>
+
+    <scriptdef language="javascript" name="capitalize">
+        <attribute name="string" />
+        <attribute name="to" />
+        var s = new String( attributes.get( "string" ) );
+        project.setProperty( attributes.get( "to" ),
+        s.toLowerCase().replace( /^.|\s\S/g,
+        function(a) { return a.toUpperCase(); }) );
+    </scriptdef>
+
+    <target name="build-language-pack"
+            description="Builds a specific language pack: duplicate the plugin, delete unnecessary files. Invoke using -DlangCode=pt_PT">
+        <property name="langpack.name">languagePack_${langCode}</property>
+        <taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask">
+            <classpath path="${basedir}/lib/xmltask-1.16.jar" />
+        </taskdef>
+        <echo>Generating ${langpack.name}</echo>
+        <sequential>
+            <!-- delete and re-create the plugin dist folder tree -->
+            <!-- <mkdir dir="${stage.dir}"/> -->
+            <mkdir dir="${stage.dir}/${langpack.name}"/>
+            <mkdir dir="${dist.dir}"/>
+            <!-- duplicate plugin into a staging folder  -->
+            <basename property="bin.dir.relative" file="${bin.dir}"/>
+            <basename property="dist.dir.relative" file="${dist.dir}"/>
+            <copy todir="${stage.dir}/${langpack.name}/" overwrite="true">
+                <fileset dir="${basedir}">
+                    <include name="**/*"/>
+                    <exclude name="${bin.dir.relative}/**"/> <!-- It doesn't seem to work with ${bin.dir} -->
+                    <exclude name="data/**"/>
+                    <exclude name="${dist.dir.relative}/**"/> <!-- It doesn't seem to work with ${dist.dir} -->
+                </fileset>
+                <fileset dir="${basedir}">
+                    <include name="data/${langCode}/**"/>
+                </fileset>
+            </copy>
+            <property name="metadata.json" value="${stage.dir}/${langpack.name}/data/metadata.json"/>
+            <copy file="${stage.dir}/${langpack.name}/data/${langCode}/metadata.json"
+                  tofile="${metadata.json}"/>
+
+            <loadresource property="langpackMetadata">
+                <file file="${metadata.json}"/>
+            </loadresource>
+
+            <echo>Importing metadata...</echo>
+            <script language="javascript"><![CDATA[
+
+            // Evaluate the serialized JSON
+            var struct = eval("(" + langpackMetadata + ")");
+
+            // Set each property in the project environment.
+            for (i in struct) {
+            echo = project.createTask("echo");
+            if (typeof struct[i] != "object"){
+            echo.setMessage(i + "=" + struct[i]);
+            echo.perform();
+            project.setProperty('langpack.metadata.' + i,struct[i]);
+            }
+            }
+            ]]></script>
+
+            <!-- create the version file -->
+            <tstamp/>
+            <property name="sequential.build.id" value="manual-${DSTAMP}"/>
+            <echo file="${stage.dir}/${langpack.name}/version.xml" message="&lt;version branch='TRUNK' buildId='${sequential.build.id}'>${distribution.version}&lt;/version>"/>
+
+
+            <!-- Update plugin metadata -->
+            <echo>Updating metadata for ${langpack.name}...</echo>
+            <xmltask source="${stage.dir}/${langpack.name}/cpk.xml" dest="${stage.dir}/${langpack.name}/cpk.xml">
+                <replace path="cpk/info/name/text()" withText="${langpack.metadata.appTitle}"/>
+                <replace path="cpk/info/description/text()" withText="${langpack.metadata.appWelcomeMessage}"/>
+            </xmltask>
+            <!-- replace file="${stage.dir}/${langpack.name}/cpk.xml" token="Language Pack Installer" value="${langpack.name}"/ -->
+
+            <echo>Updating metadata for ${stage.dir}/${langpack.name}/plugin.xml...</echo>
+            <xmltask source="${stage.dir}/${langpack.name}/plugin.xml" dest="${stage.dir}/${langpack.name}/plugin.xml">
+                <replace path="plugin/static-paths/static-path[@localFolder='static']/url/text()" withText="/${langpack.name}/static"/>
+                <replace path="plugin/static-paths/static-path[@localFolder='resources']/url/text()" withText="/${langpack.name}/resources"/>
+                <print path="plugin/static-paths/static-path[@localFolder='resources']/url/text()" comment="Here is some text"/>
+                <replace path="plugin/content-types/content-type/description/text()" withText="${langpack.metadata.appWelcomeMessage}"/>
+                <replace path="plugin/content-types/content-type/title/text()" withText="${langpack.metadata.appTitle}"/>
+
+                <replace path="plugin/content-generator/id/text()" withText="${langpack.name}"/>
+                <replace path="plugin/content-generator/type/text()" withText="${langpack.name}"/>
+                <replace path="plugin/content-generator/title/text()" withText="${langpack.metadata.appTitle}"/>
+            </xmltask>
+            <!--replace file="${stage.dir}/${langpack.name}/plugin.xml" token="${plugin.name}" value="${langpack.name}"/-->
+        </sequential>
+        <replace file="${stage.dir}/${langpack.name}/plugin.spring.xml" token="${plugin.name}.api" value="${langpack.name}.api"/>
+        <replace file="${stage.dir}/${langpack.name}/settings.xml" token="${plugin.name}" value="${langpack.name}"/>
+        <replace file="${stage.dir}/${langpack.name}/build.xml" token="value=&quot;${plugin.name}" value="value=&quot;${langpack.name}"/>
+
+        <propertyfile file="${stage.dir}/${langpack.name}/build.properties">
+            <entry key="ivy.artifact.id" value="${langpack.name}" />
+            <entry key="impl.title" value="${langpack.metadata.appTitle}" />
+        </propertyfile>
+        <!-- Update dashboards -->
+        <upper string="${plugin.name}" to="plugin.NAME" />
+        <upper string="${langpack.name}" to="langpack.NAME" />
+        <replace dir="${stage.dir}/${langpack.name}/dashboards" includes="*.cdfde">
+            <replacefilter token="&quot;${plugin.name}&quot;" value="&quot;${langpack.name}&quot;"/> <!--covers: meta_pluginID -->
+            <replacefilter token="Components${plugin.name}_" value="Components${langpack.name}_"/> <!--covers: CPK datasources -->
+            <replacefilter token="/${plugin.name}/" value="/${langpack.name}/"/> <!--covers: resource paths -->
+            <replacefilter token="${plugin.NAME}" value="${langpack.NAME}"/> <!--covers: CPK datasources -->
+        </replace>
+
+        <!-- Inherit the project.revision property -->
+        <property name="langpack.artifact.id" value="${langpack.name}"/>
+        <property name="langpack.zipfile" value="${langpack.artifact.id}-${distribution.version}.zip"/>
+
+        <!-- create a zip file -->
+        <zip zipfile="${dist.dir}/${langpack.zipfile}"
+             basedir="${stage.dir}/${langpack.name}"
+             excludes="**/Thumbs.db **/.DS_Store"/>
+        <!-- includes="${langpack.name}/**/*" -->
+
+        <echoxml file="${dist.dir}/${langpack.name}.marketplace.xml">
+            <version>
+                <branch>TRUNK</branch>
+                <version>${distribution.version}</version>
+                <name>Trunk</name>
+                <package_url>not defined</package_url>
+                <description>${langpack.metadata.appTitle}</description>
+                <build_id>${sequential.build.id}</build_id>
+            </version>
+        </echoxml>
+        <move tofile="${dist.dir}/${langpack.name}-${project.revision}.zip" file="${dist.dir}/${langpack.zipfile}"/>
+    </target>
+
+    <!--=======================================================================
+        build-language-packs
+        Builds all language packs
+        ====================================================================-->
+    <target name="infer-and-build-language-pack">
+        <basename property="langCode" file="${langCodeFolder}"/>
+        <echo>Found language code: ${langCode} </echo>
+        <antcall target="build-language-pack" inheritall="true"/>
+    </target>
+
+    <target name="build-language-packs" depends="clean, resolve"
+            description="Builds all language packs">
+        <antcall target="install-antcontrib"/>
+        <foreach target="infer-and-build-language-pack" param="langCodeFolder">
+            <path>
+                <dirset dir="${basedir}/data/">
+                    <include name="*"/>
+                </dirset>
+            </path>
+        </foreach>
+    </target>
+
+    <target name="read-metadata">
+        <property name="metadata.json" value="./data/metadata.json"/>
+        <loadresource property="langpackMetadata">
+            <file file="${metadata.json}"/>
+        </loadresource>
+        <echo>Reading metadata...</echo>
+        <script language="javascript"><![CDATA[
+
+        // Evaluate the serialized JSON
+        var struct = eval("(" + langpackMetadata + ")");
+
+        // Set each property in the project environment.
+        for (i in struct) {
+        echo = project.createTask("echo");
+        if (typeof struct[i] != "object"){
+        echo.setMessage(i + "=" + struct[i]);
+        echo.perform();
+        project.setProperty('langpack.metadata.' + i,struct[i]);
+        }
+        }
+        ]]></script>
+    </target>
+
 </project>
