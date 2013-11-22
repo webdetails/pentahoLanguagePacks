@@ -195,7 +195,7 @@
             }
             }
             ]]></script>
-
+</sequential>
             <!-- create the version file -->
             <tstamp/>
             <property name="sequential.build.id" value="manual-${DSTAMP}"/>
@@ -211,7 +211,7 @@
             <!-- replace file="${stage.dir}/${langpack.name}/cpk.xml" token="Language Pack Installer" value="${langpack.name}"/ -->
 
             <echo>Updating metadata for ${stage.dir}/${langpack.name}/plugin.xml...</echo>
-            <xmltask source="${stage.dir}/${langpack.name}/plugin.xml" dest="${stage.dir}/${langpack.name}/plugin.xml">
+<!--             <xmltask source="${stage.dir}/${langpack.name}/plugin.xml" dest="${stage.dir}/${langpack.name}/plugin.xml">
                 <replace path="plugin/static-paths/static-path[@localFolder='static']/url/text()" withText="/${langpack.name}/static"/>
                 <replace path="plugin/static-paths/static-path[@localFolder='resources']/url/text()" withText="/${langpack.name}/resources"/>
                 <print path="plugin/static-paths/static-path[@localFolder='resources']/url/text()" comment="Here is some text"/>
@@ -221,9 +221,10 @@
                 <replace path="plugin/content-generator/id/text()" withText="${langpack.name}"/>
                 <replace path="plugin/content-generator/type/text()" withText="${langpack.name}"/>
                 <replace path="plugin/content-generator/title/text()" withText="${langpack.metadata.appTitle}"/>
-            </xmltask>
-            <!--replace file="${stage.dir}/${langpack.name}/plugin.xml" token="${plugin.name}" value="${langpack.name}"/-->
-        </sequential>
+            </xmltask> -->
+            <replace file="${stage.dir}/${langpack.name}/plugin.xml" token="${plugin.name}" value="${langpack.name}"/>
+            
+        
         <replace file="${stage.dir}/${langpack.name}/plugin.spring.xml" token="${plugin.name}.api" value="${langpack.name}.api"/>
         <replace file="${stage.dir}/${langpack.name}/settings.xml" token="${plugin.name}" value="${langpack.name}"/>
         <replace file="${stage.dir}/${langpack.name}/build.xml" token="value=&quot;${plugin.name}" value="value=&quot;${langpack.name}"/>
