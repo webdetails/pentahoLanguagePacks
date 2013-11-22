@@ -20,6 +20,11 @@
             <description/>
         </parameter>
         <parameter>
+            <name>cpk.webapp.dir</name>
+            <default_value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;biserver&#x2f;tomcat&#x2f;pentaho</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>language</name>
             <default_value>Klingon</default_value>
             <description/>
@@ -31,12 +36,12 @@
         </parameter>
         <parameter>
             <name>target</name>
-            <default_value>system</default_value>
+            <default_value>tomcat&#x2f;pentaho</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>target_folder</name>
-            <default_value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;</default_value>
+            <default_value>&#x24;&#x7b;cpk.webapp.dir&#x7d;</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -139,6 +144,27 @@
       <backgroundcolorred>255</backgroundcolorred>
       <backgroundcolorgreen>165</backgroundcolorgreen>
       <backgroundcolorblue>0</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>If the target folder does not exist, nothing will happen</note>
+      <xloc>701</xloc>
+      <yloc>105</yloc>
+      <width>257</width>
+      <heigth>21</heigth>
+      <fontname>Arial</fontname>
+      <fontsize>10</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
       <bordercolorred>100</bordercolorred>
       <bordercolorgreen>100</bordercolorgreen>
       <bordercolorblue>100</bordercolorblue>
@@ -983,7 +1009,7 @@
       <displayHeader>Y</displayHeader>
       <limitRows>N</limitRows>
       <limitRowsNumber>0</limitRowsNumber>
-      <logmessage>cpk.plugin.dir &#x3d;&#x24;&#x7b;cpk.plugin.dir&#x7d;&#xa;cpk.webapps.dir &#x3d;&#x24;&#x7b;cpk.webapps.dir&#x7d;&#xa;cpk.webapp.dir &#x3d;&#x24;&#x7b;cpk.webapp.dir&#x7d;</logmessage>
+      <logmessage>cpk.plugin.dir &#x3d;&#x24;&#x7b;cpk.plugin.dir&#x7d;&#xa;cpk.webapp.dir &#x3d;&#x24;&#x7b;cpk.webapp.dir&#x7d;</logmessage>
     <fields>
       </fields>
      <cluster_schema/>
@@ -999,5 +1025,11 @@
    <slave-step-copy-partition-distribution>
 </slave-step-copy-partition-distribution>
    <slave_transformation>N</slave_transformation>
+<attributes><group><name>DataService</name>
+<attribute><key>name</key>
+<value/>
+</attribute><attribute><key>stepname</key>
+<value/>
+</attribute></group></attributes>
 
 </transformation>

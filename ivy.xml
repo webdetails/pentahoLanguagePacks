@@ -16,9 +16,9 @@
 		<artifact name="${ivy.artifact.id}" m:classifier="sources" type="source" ext="jar" conf="source"/>
 	</publications>
 	<dependencies defaultconf="runtime->default">
- 		<dependency org="pt.webdetails" name="cpf-core"
+ 		<dependency org="pentaho" name="cpf-core"
 		  rev="${dependency.cpf.revision}" transitive="false" changing="true" conf='default->default'/>
-  		<dependency org="pt.webdetails" name="${cpf.pentaho.artifact}"
+  		<dependency org="pentaho" name="${cpf.pentaho.artifact}"
 		  rev="${dependency.cpf.revision}" transitive="false" changing="true" conf='default->default'/>
 		  <dependency org="pt.webdetails" name="cpk-core"
 		  rev="${dependency.cpk.revision}" transitive="false" changing="true" conf='default->default'/>

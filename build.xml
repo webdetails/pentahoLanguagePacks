@@ -180,22 +180,37 @@
             </loadresource>
 
             <echo>Importing metadata...</echo>
-            <script language="javascript"><![CDATA[
+        <script language="javascript"><![CDATA[
 
-            // Evaluate the serialized JSON
-            var struct = eval("(" + langpackMetadata + ")");
+        // Evaluate the serialized JSON
+        var struct = eval("(" + langpackMetadata + ")");
 
-            // Set each property in the project environment.
-            for (i in struct) {
-            echo = project.createTask("echo");
-            if (typeof struct[i] != "object"){
-            echo.setMessage(i + "=" + struct[i]);
-            echo.perform();
-            project.setProperty('langpack.metadata.' + i,struct[i]);
+        // Set each property in the project environment.
+        for (i in struct) {
+            //echo1 = project.createTask("echo");
+            //echo1.setMessage(i + " is of type " + typeof struct[i]);
+            //echo1.perform();
+
+            
+            if (typeof struct[i] == "object"){
+                if (! (struct[i] instanceof Array)){
+                    for (k in struct[i]){
+                        echo0 = project.createTask("echo");
+                        echo0.setMessage(i + "." + k + " = " + struct[i][k]);
+                        echo0.perform();
+                        project.setProperty('langpack.metadata.' + i + '.' + k, struct[i][k]);
+                    }
+
+                }
+            } else {
+                echo = project.createTask("echo");
+                echo.setMessage(i + " = " + struct[i]);
+                echo.perform();
+                project.setProperty('langpack.metadata.' + i,struct[i]);
             }
-            }
-            ]]></script>
-</sequential>
+        }
+        ]]></script>
+    </sequential>
             <!-- create the version file -->
             <tstamp/>
             <property name="sequential.build.id" value="manual-${DSTAMP}"/>
@@ -301,12 +316,27 @@
 
         // Set each property in the project environment.
         for (i in struct) {
-        echo = project.createTask("echo");
-        if (typeof struct[i] != "object"){
-        echo.setMessage(i + "=" + struct[i]);
-        echo.perform();
-        project.setProperty('langpack.metadata.' + i,struct[i]);
-        }
+            //echo1 = project.createTask("echo");
+            //echo1.setMessage(i + " is of type " + typeof struct[i]);
+            //echo1.perform();
+
+            
+            if (typeof struct[i] == "object"){
+                if (! (struct[i] instanceof Array)){
+                    for (k in struct[i]){
+                        echo0 = project.createTask("echo");
+                        echo0.setMessage(i + "." + k + " = " + struct[i][k]);
+                        echo0.perform();
+                        project.setProperty('langpack.metadata.' + i + '.' + k, struct[i][k]);
+                    }
+
+                }
+            } else {
+                echo = project.createTask("echo");
+                echo.setMessage(i + " = " + struct[i]);
+                echo.perform();
+                project.setProperty('langpack.metadata.' + i,struct[i]);
+            }
         }
         ]]></script>
     </target>
