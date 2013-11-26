@@ -1,4 +1,4 @@
-<project name="" basedir="." default="jar"
+<project name="buildProject" basedir="." default="jar"
          xmlns:ivy="antlib:org.apache.ivy.ant">
     <description>
         This build file is used to create the languagePackInstaller project
@@ -146,15 +146,13 @@
     </scriptdef>
 
     <target name="build-language-pack"
-            description="Builds a specific language pack: duplicate the plugin, delete unnecessary files. Invoke using -DlangCode=pt_PT">
+            description="Builds a specific language pack: duplicate the plugin, delete unnecessary files. Warning: no clean, no resolve. Invoke using -DlangCode=pt_PT">
         <property name="langpack.name">languagePack_${langCode}</property>
         <taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask">
             <classpath path="${basedir}/lib/xmltask-1.16.jar" />
         </taskdef>
         <echo>Generating ${langpack.name}</echo>
-        <sequential>
             <!-- delete and re-create the plugin dist folder tree -->
-            <!-- <mkdir dir="${stage.dir}"/> -->
             <mkdir dir="${stage.dir}/${langpack.name}"/>
             <mkdir dir="${dist.dir}"/>
             <!-- duplicate plugin into a staging folder  -->
@@ -163,9 +161,9 @@
             <copy todir="${stage.dir}/${langpack.name}/" overwrite="true">
                 <fileset dir="${basedir}">
                     <include name="**/*"/>
-                    <exclude name="${bin.dir.relative}/**"/> <!-- It doesn't seem to work with ${bin.dir} -->
+                    <exclude name="${bin.dir.relative}/**"/>
                     <exclude name="data/**"/>
-                    <exclude name="${dist.dir.relative}/**"/> <!-- It doesn't seem to work with ${dist.dir} -->
+                    <exclude name="${dist.dir.relative}/**"/>
                 </fileset>
                 <fileset dir="${basedir}">
                     <include name="data/${langCode}/**"/>
@@ -179,67 +177,107 @@
                 <file file="${metadata.json}"/>
             </loadresource>
 
-            <echo>Importing metadata...</echo>
-        <script language="javascript"><![CDATA[
+            <!-- <antcall target="read-metadata"> -->
+            <!--     <param name="metadata.json" value="${metadata.json}" /> -->
+            <!-- </antcall> -->
 
-        // Evaluate the serialized JSON
-        var struct = eval("(" + langpackMetadata + ")");
+            <script language="javascript"><![CDATA[
 
-        // Set each property in the project environment.
-        for (i in struct) {
-            //echo1 = project.createTask("echo");
-            //echo1.setMessage(i + " is of type " + typeof struct[i]);
-            //echo1.perform();
+            // Evaluate the serialized JSON
+            var struct = eval("(" + langpackMetadata + ")");
 
-            
-            if (typeof struct[i] == "object"){
-                if (! (struct[i] instanceof Array)){
-                    for (k in struct[i]){
-                        echo0 = project.createTask("echo");
-                        echo0.setMessage(i + "." + k + " = " + struct[i][k]);
-                        echo0.perform();
-                        project.setProperty('langpack.metadata.' + i + '.' + k, struct[i][k]);
+            // Set each property in the project environment.
+            for (i in struct) {
+                //echo1 = project.createTask("echo");
+                //echo1.setMessage(i + " is of type " + typeof struct[i]);
+                //echo1.perform();
+
+                if (typeof struct[i] == "object"){
+                    if (! (struct[i] instanceof Array)){
+                        for (k in struct[i]){
+                            echo0 = project.createTask("echo");
+                            echo0.setMessage(i + "." + k + " = " + struct[i][k]);
+                            echo0.perform();
+                            project.setProperty('langpack.metadata.' + i + '.' + k, struct[i][k]);
+                        }
                     }
-
+                } else {
+                    echo = project.createTask("echo");
+                    echo.setMessage(i + " = " + struct[i]);
+                    echo.perform();
+                    project.setProperty('langpack.metadata.' + i, struct[i]);
                 }
-            } else {
-                echo = project.createTask("echo");
-                echo.setMessage(i + " = " + struct[i]);
-                echo.perform();
-                project.setProperty('langpack.metadata.' + i,struct[i]);
             }
-        }
-        ]]></script>
-    </sequential>
+            ]]></script>
+
+
+            <echo>Read from ${metadata.json}: appTitle = ${langpack.metadata.appTitle}...</echo>
             <!-- create the version file -->
             <tstamp/>
             <property name="sequential.build.id" value="manual-${DSTAMP}"/>
-            <echo file="${stage.dir}/${langpack.name}/version.xml" message="&lt;version branch='TRUNK' buildId='${sequential.build.id}'>${distribution.version}&lt;/version>"/>
-
+            <!--  <echo file="${stage.dir}/${langpack.name}/version.xml" message="&lt;version branch='TRUNK' buildId='${sequential.build.id}'>${distribution.version}&lt;/version>"/> -->
+            <echoxml file="${stage.dir}/${langpack.name}/version.xml">
+                <version branch='TRUNK' buildId='${sequential.build.id}'>${distribution.version}</version>
+            </echoxml>
 
             <!-- Update plugin metadata -->
-            <echo>Updating metadata for ${langpack.name}...</echo>
-            <xmltask source="${stage.dir}/${langpack.name}/cpk.xml" dest="${stage.dir}/${langpack.name}/cpk.xml">
+            <echo>Updating metadata for ${langpack.name}</echo>
+
+            <echo>Updating ${stage.dir}/${langpack.name}/cpk.xml</echo>
+            <xmltask source="${stage.dir}/${langpack.name}/cpk.xml"
+                     dest="${stage.dir}/${langpack.name}/cpk.xml"
+                     report="false">
                 <replace path="cpk/info/name/text()" withText="${langpack.metadata.appTitle}"/>
                 <replace path="cpk/info/description/text()" withText="${langpack.metadata.appWelcomeMessage}"/>
             </xmltask>
             <!-- replace file="${stage.dir}/${langpack.name}/cpk.xml" token="Language Pack Installer" value="${langpack.name}"/ -->
 
-            <echo>Updating metadata for ${stage.dir}/${langpack.name}/plugin.xml...</echo>
-<!--             <xmltask source="${stage.dir}/${langpack.name}/plugin.xml" dest="${stage.dir}/${langpack.name}/plugin.xml">
-                <replace path="plugin/static-paths/static-path[@localFolder='static']/url/text()" withText="/${langpack.name}/static"/>
-                <replace path="plugin/static-paths/static-path[@localFolder='resources']/url/text()" withText="/${langpack.name}/resources"/>
-                <print path="plugin/static-paths/static-path[@localFolder='resources']/url/text()" comment="Here is some text"/>
-                <replace path="plugin/content-types/content-type/description/text()" withText="${langpack.metadata.appWelcomeMessage}"/>
-                <replace path="plugin/content-types/content-type/title/text()" withText="${langpack.metadata.appTitle}"/>
+            <echo>Updating ${stage.dir}/${langpack.name}/plugin.xml...</echo>
+            <xmltask source="${stage.dir}/${langpack.name}/plugin.xml" dest="${stage.dir}/${langpack.name}/plugin.xml">
+                <attr path="/plugin" attr='title' value="${langpack.name}"/>
 
-                <replace path="plugin/content-generator/id/text()" withText="${langpack.name}"/>
-                <replace path="plugin/content-generator/type/text()" withText="${langpack.name}"/>
-                <replace path="plugin/content-generator/title/text()" withText="${langpack.metadata.appTitle}"/>
-            </xmltask> -->
-            <replace file="${stage.dir}/${langpack.name}/plugin.xml" token="${plugin.name}" value="${langpack.name}"/>
-            
-        
+                <attr path="/plugin/static-paths/static-path[@localFolder='static']"  attr="url" value="/${langpack.name}/static"/>
+                <attr path="/plugin/static-paths/static-path[@localFolder='resources']"  attr="url" value="/${langpack.name}/resources"/>
+
+                <replace path="/plugin/content-types/content-type/title/text()" withText="${langpack.metadata.appTitle}" expandProperties="true"/>
+                <replace path="/plugin/content-types/content-type/description/text()" withText="${langpack.metadata.appWelcomeMessage}" expandProperties="true"/>
+                <replace path="/plugin/content-types/content-type/description/text()" withText="${langpack.metadata.appWelcomeMessage}" expandProperties="true"/>
+
+                <attr path="/plugin/content-generator" attr='id' value="${langpack.name}"/>
+                <attr path="/plugin/content-generator" attr="type" value="${langpack.name}"/>
+                <attr path="/plugin/content-generator" attr="title" value="${langpack.metadata.appTitle}"/>
+                <attr path="/plugin/menu-items/menu-item" attr="command" value="/plugin/${langpack.name}/api/main"/>
+                <attr path="/plugin/menu-items/menu-item" attr="id" value="${langpack.name}_main"/>
+                <attr path="/plugin/menu-items/menu-item" attr="label" value="${langpack.metadata.appTitle}"/>
+
+            </xmltask>
+
+            <echoxml file="${stage.dir}/${langpack.name}/plugin.xml">
+                <!-- <?xml version="1.0" encoding="UTF-8" standalone="no"?> -->
+                <plugin loader="DEFAULT" title="${langpack.name}">
+                    <lifecycle-listener class="pt.webdetails.cpk.CpkLifecycleListener"/>
+                    <static-paths>
+                        <static-path localFolder="static" url="/${langpack.name}/static"/>
+                        <static-path localFolder="resources" url="/${langpack.name}/resources"/>
+                    </static-paths>
+                    <content-types>
+                        <content-type>
+                            <title>${langpack.metadata.appTitle}</title>
+                            <description>${langpack.metadata.appWelcomeMessage}</description>
+                            <company logo="${langpack.metadata.maintainer.img}" name="${langpack.metadata.maintainer.name}" url="${langpack.metadata.maintainer.url}"/>
+                        </content-type>
+                    </content-types>
+                    <content-generator class="pt.webdetails.cpk.CpkContentGenerator" id="${langpack.name}" title="${langpack.metadata.appTitle}" type="${langpack.name}"/>
+                    <!-- Menu entry -->
+                    <menu-items>
+                        <menu-item anchor="tools-submenu" command="/plugin/${langpack.name}/api/main" how="LAST_CHILD" id="${langpack.name}_main" label="${langpack.metadata.appTitle}" type="MENU_ITEM"/>
+                    </menu-items>
+                </plugin>
+            </echoxml>
+
+            <!-- <replace file="${stage.dir}/${langpack.name}/plugin.xml" token="${plugin.name}" value="${langpack.name}"/> -->
+
+
         <replace file="${stage.dir}/${langpack.name}/plugin.spring.xml" token="${plugin.name}.api" value="${langpack.name}.api"/>
         <replace file="${stage.dir}/${langpack.name}/settings.xml" token="${plugin.name}" value="${langpack.name}"/>
         <replace file="${stage.dir}/${langpack.name}/build.xml" token="value=&quot;${plugin.name}" value="value=&quot;${langpack.name}"/>
@@ -254,31 +292,48 @@
         <replace dir="${stage.dir}/${langpack.name}/dashboards" includes="*.cdfde">
             <replacefilter token="&quot;${plugin.name}&quot;" value="&quot;${langpack.name}&quot;"/> <!--covers: meta_pluginID -->
             <replacefilter token="Components${plugin.name}_" value="Components${langpack.name}_"/> <!--covers: CPK datasources -->
-            <replacefilter token="/${plugin.name}/" value="/${langpack.name}/"/> <!--covers: resource paths -->
+            <replacefilter token="/${plugin.name}/" value="/${langpack.name}/"/> <!--covers: resource paths, filename -->
             <replacefilter token="${plugin.NAME}" value="${langpack.NAME}"/> <!--covers: CPK datasources -->
         </replace>
 
         <!-- Inherit the project.revision property -->
         <property name="langpack.artifact.id" value="${langpack.name}"/>
         <property name="langpack.zipfile" value="${langpack.artifact.id}-${distribution.version}.zip"/>
+        <property name="langpack.package.url" value="http://ci.analytical-labs.com/job/Webdetails-languagePackInstallers/lastSuccessfulBuild/artifact/dist/${langpack.zipfile}"/>
 
         <!-- create a zip file -->
         <zip zipfile="${dist.dir}/${langpack.zipfile}"
              basedir="${stage.dir}/${langpack.name}"
              excludes="**/Thumbs.db **/.DS_Store"/>
         <!-- includes="${langpack.name}/**/*" -->
+        <move tofile="${dist.dir}/${langpack.name}-${project.revision}.zip" file="${dist.dir}/${langpack.zipfile}"/>
 
+        <!-- create a marketplace.xml file -->
         <echoxml file="${dist.dir}/${langpack.name}.marketplace.xml">
             <version>
                 <branch>TRUNK</branch>
                 <version>${distribution.version}</version>
                 <name>Trunk</name>
-                <package_url>not defined</package_url>
+                <package_url>${langpack.package.url}</package_url>
                 <description>${langpack.metadata.appTitle}</description>
                 <build_id>${sequential.build.id}</build_id>
             </version>
         </echoxml>
-        <move tofile="${dist.dir}/${langpack.name}-${project.revision}.zip" file="${dist.dir}/${langpack.zipfile}"/>
+
+        <!-- create a market_entry.xml file -->
+        <copy file="${basedir}/market_entry.xml" tofile="${dist.dir}/${langpack.name}.market_entry.xml">
+            <filterset>
+                <filter token="langpack.name" value="${langpack.name}"/>
+                <filter token="langpack.metadata.appTitle" value="${langpack.metadata.appTitle}"/>
+                <filter token="langpack.metadata.appWelcomeMessage" value="${langpack.metadata.appWelcomeMessage}"/>
+                <filter token="langpack.metadata.pentahoVersion" value="${langpack.metadata.pentahoVersion}"/>
+                <filter token="langpack.metadata.maintainer.name" value="${langpack.metadata.maintainer.name}"/>
+                <filter token="langpack.metadata.maintainer.url" value="${langpack.metadata.maintainer.url}"/>
+                <filter token="langpack.metadata.maintainer.img" value="${langpack.metadata.maintainer.img}"/>
+                <filter token="langpack.package.url" value="${langpack.package.url}"/>
+            </filterset>
+        </copy>
+
     </target>
 
     <!--=======================================================================
@@ -320,7 +375,6 @@
             //echo1.setMessage(i + " is of type " + typeof struct[i]);
             //echo1.perform();
 
-            
             if (typeof struct[i] == "object"){
                 if (! (struct[i] instanceof Array)){
                     for (k in struct[i]){
@@ -335,10 +389,11 @@
                 echo = project.createTask("echo");
                 echo.setMessage(i + " = " + struct[i]);
                 echo.perform();
-                project.setProperty('langpack.metadata.' + i,struct[i]);
+                buildProject.setProperty('langpack_metadata_' + i, "'" + struct[i] + "'");
             }
         }
         ]]></script>
+        <echo>Read from ${metadata.json}: appTitle = ${langpack_metadata_appTitle}...</echo>
     </target>
 
 </project>
