@@ -45,14 +45,17 @@
              includes="${plugin.name}/**/*"
              excludes="**/Thumbs.db"/>
 
-	<echo file="${dist.dir}/marketplace.xml">&lt;version>
-	&lt;branch>TRUNK&lt;/branch>
-	&lt;version>${distribution.version}&lt;/version>
-	&lt;name>Trunk&lt;/name>
-	&lt;package_url>not defined&lt;/package_url>
-	&lt;description>@PLUGIN_PACKAGE_DESCRIPTION&lt;/description>
-	&lt;build_id>${sequential.build.id}&lt;/build_id>
-	&lt;/version>	</echo>
+        <!-- create a marketplace.xml file -->
+        <echoxml file="${dist.dir}/marketplace.xml">
+            <version>
+                <branch>TRUNK</branch>
+                <version>${distribution.version}</version>
+                <name>Trunk</name>
+                <package_url>not defined</package_url>
+                <description>@PLUGIN_PACKAGE_DESCRIPTION@</description>
+                <build_id>${sequential.build.id}</build_id>
+            </version>
+        </echoxml>
         <move tofile="${dist.dir}/${ivy.artifact.id}-${project.revision}.zip" file="${dist.dir}/${plugin.zipfile}"/>
 
 
@@ -177,10 +180,6 @@
                 <file file="${metadata.json}"/>
             </loadresource>
 
-            <!-- <antcall target="read-metadata"> -->
-            <!--     <param name="metadata.json" value="${metadata.json}" /> -->
-            <!-- </antcall> -->
-
             <script language="javascript"><![CDATA[
 
             // Evaluate the serialized JSON
@@ -232,26 +231,7 @@
             </xmltask>
             <!-- replace file="${stage.dir}/${langpack.name}/cpk.xml" token="Language Pack Installer" value="${langpack.name}"/ -->
 
-            <echo>Updating ${stage.dir}/${langpack.name}/plugin.xml...</echo>
-            <xmltask source="${stage.dir}/${langpack.name}/plugin.xml" dest="${stage.dir}/${langpack.name}/plugin.xml">
-                <attr path="/plugin" attr='title' value="${langpack.name}"/>
-
-                <attr path="/plugin/static-paths/static-path[@localFolder='static']"  attr="url" value="/${langpack.name}/static"/>
-                <attr path="/plugin/static-paths/static-path[@localFolder='resources']"  attr="url" value="/${langpack.name}/resources"/>
-
-                <replace path="/plugin/content-types/content-type/title/text()" withText="${langpack.metadata.appTitle}" expandProperties="true"/>
-                <replace path="/plugin/content-types/content-type/description/text()" withText="${langpack.metadata.appWelcomeMessage}" expandProperties="true"/>
-                <replace path="/plugin/content-types/content-type/description/text()" withText="${langpack.metadata.appWelcomeMessage}" expandProperties="true"/>
-
-                <attr path="/plugin/content-generator" attr='id' value="${langpack.name}"/>
-                <attr path="/plugin/content-generator" attr="type" value="${langpack.name}"/>
-                <attr path="/plugin/content-generator" attr="title" value="${langpack.metadata.appTitle}"/>
-                <attr path="/plugin/menu-items/menu-item" attr="command" value="/plugin/${langpack.name}/api/main"/>
-                <attr path="/plugin/menu-items/menu-item" attr="id" value="${langpack.name}_main"/>
-                <attr path="/plugin/menu-items/menu-item" attr="label" value="${langpack.metadata.appTitle}"/>
-
-            </xmltask>
-
+            <echo>Generating a new ${stage.dir}/${langpack.name}/plugin.xml...</echo>
             <echoxml file="${stage.dir}/${langpack.name}/plugin.xml">
                 <!-- <?xml version="1.0" encoding="UTF-8" standalone="no"?> -->
                 <plugin loader="DEFAULT" title="${langpack.name}">
@@ -275,12 +255,13 @@
                 </plugin>
             </echoxml>
 
-            <!-- <replace file="${stage.dir}/${langpack.name}/plugin.xml" token="${plugin.name}" value="${langpack.name}"/> -->
-
-
         <replace file="${stage.dir}/${langpack.name}/plugin.spring.xml" token="${plugin.name}.api" value="${langpack.name}.api"/>
         <replace file="${stage.dir}/${langpack.name}/settings.xml" token="${plugin.name}" value="${langpack.name}"/>
-        <replace file="${stage.dir}/${langpack.name}/build.xml" token="value=&quot;${plugin.name}" value="value=&quot;${langpack.name}"/>
+        <xmltask source="${stage.dir}/${langpack.name}/build.xml"
+                     dest="${stage.dir}/${langpack.name}/build.xml"
+                     report="false">
+            <attr path="project/property[@name='plugin.name']" attr="value" value="${langpack.name}"/>
+        </xmltask>
 
         <propertyfile file="${stage.dir}/${langpack.name}/build.properties">
             <entry key="ivy.artifact.id" value="${langpack.name}" />
