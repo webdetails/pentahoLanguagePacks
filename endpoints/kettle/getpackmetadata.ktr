@@ -182,13 +182,13 @@
       <field>
         <field_name>language</field_name>
         <variable_name>language</variable_name>
-        <variable_type>JVM</variable_type>
+        <variable_type>ROOT_JOB</variable_type>
         <default_value/>
         </field>
       <field>
         <field_name>languageCode</field_name>
         <variable_name>languageCode</variable_name>
-        <variable_type>JVM</variable_type>
+        <variable_type>ROOT_JOB</variable_type>
         <default_value/>
         </field>
       </fields>
@@ -197,6 +197,32 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>252</xloc>
       <yloc>378</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Write to log</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage>Transformation&#x3a; cpk.webapp.dir &#x3d; &#x24;&#x7b;cpk.webapp.dir&#x7d;</logmessage>
+    <fields>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>396</xloc>
+      <yloc>169</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -324,32 +350,6 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>253</xloc>
       <yloc>248</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Write to log</name>
-    <type>WriteToLog</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <loglevel>log_level_basic</loglevel>
-      <displayHeader>Y</displayHeader>
-      <limitRows>N</limitRows>
-      <limitRowsNumber>0</limitRowsNumber>
-      <logmessage>Transformation&#x3a; cpk.webapp.dir &#x3d; &#x24;&#x7b;cpk.webapp.dir&#x7d;</logmessage>
-    <fields>
-      </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>396</xloc>
-      <yloc>169</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
