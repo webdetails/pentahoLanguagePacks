@@ -18,8 +18,22 @@ The Language Pack Installer requires Pentaho 5+, and depends on the following CT
 * Community Dashboard Framework (CDF)
 * Community Dashboard Editor (CDE) 
 
-You can install these packages from the marketplace, or by manually downloading them from [Pentaho's Continuous Integration server](http://ci.pentaho.com).
+You can install these packages from the marketplace, or by manually downloading them from [Pentaho's Continuous Integration server](http://ci.pentaho.com) and unzipping the .zip file to your `pentaho-solutions/system` folder.
 
+## Installing the plugin 
+
+
+1. If you downloaded a zip file, simply unzip it to your `pentaho-solutions/system` 
+ 
+   If your are using the git repository, then,  in a command line:
+   1. Go to your `pentaho-solutions/system` folder
+   2. `git clone git@github.com:webdetails/pentahoLanguagePacks.git languagePackInstaller`
+   
+   
+
+2. Restart the biserver
+3. Assuming you are working in your local machine, visit:
+    [http://localhost:8080/pentaho/plugin/languagePackInstaller/api/main](http://localhost:8080/pentaho/plugin/languagePackInstaller/api/main)
 
 
 # Notes for translators
