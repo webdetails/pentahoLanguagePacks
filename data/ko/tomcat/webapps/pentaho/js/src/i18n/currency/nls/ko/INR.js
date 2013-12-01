@@ -8,4 +8,4 @@
 		http://dojotoolkit.org/community/licensing.shtml
 */
 
-({"displayName":"Indian Rupee"})
+({"displayName":"인도 루피"})
