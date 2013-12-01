@@ -8,4 +8,4 @@
 		http://dojotoolkit.org/community/licensing.shtml
 */
 
-({"displayName":"Euro", "symbol":"\u20ac"})
+({"displayName":"유로", "symbol":"\u20ac"})

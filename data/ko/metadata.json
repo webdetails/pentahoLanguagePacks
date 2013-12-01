@@ -1,6 +1,6 @@
 {
-    "appTitle": "{{language}} Language Pack Installer",
-    "appWelcomeMessage": "This plugin installs language definitions for the {{language}} language in Pentaho 5",
+    "appTitle": "{{language}} 지원 설치 도구",
+    "appWelcomeMessage": "이 플러그인은 펜타호 5의 {{language}}에 대한 정의를 설치합니다.",
     "language": "{{language}}",
     "languageCode": "{{languageCode}}",
     "version": "0.1",
