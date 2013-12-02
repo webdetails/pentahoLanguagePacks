@@ -1,15 +1,15 @@
 {
-    "appTitle": "{{language}} Language Pack Installer",
-    "appWelcomeMessage": "This plugin installs language definitions for the {{language}} language in Pentaho 5",
-    "language": "{{language}}",
-    "languageCode": "{{languageCode}}",
+    "appTitle": "French Language Pack Installer",
+    "appWelcomeMessage": "This plugin installs language definitions for the French language in Pentaho 5",
+    "language": "Français",
+    "languageCode": "fr",
     "version": "0.1",
     "pentahoVersion": "5.0.1",
     "maintainer": {
         "name": "Sylvain Decloix",
         "email": "s.decloix@atolcd.com",
         "img": "",
-        "url": "http:\/\/www.pentaho.com"
+        "url": "http:\/\/www.atolcd.com"
     },
     "credits": [
         {
