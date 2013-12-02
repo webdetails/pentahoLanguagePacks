@@ -236,10 +236,19 @@
                 <!-- <?xml version="1.0" encoding="UTF-8" standalone="no"?> -->
                 <plugin loader="DEFAULT" title="${langpack.name}" name="${langpack.name}">
                     <overlays>
+                        <!-- <overlay id="startup.menu_langPacks"> -->
+                        <!--     <menubar id="toolsmenu"> -->
+                        <!--         <menubar id="languagePacks" label="${Launcher.menuLanguagePacks}"> -->
+                        <!--             <menuitem id="ola" label="Ola"/> -->
+                        <!--         </menubar> -->
+                        <!--     </menubar> -->
+                        <!-- </overlay> -->
                         <overlay id="startup.${langpack.name}" resourcebundle="content/${langpack.name}/resources/lang/messages">
-                            <menubar id="toolsmenu">
-                                <menuitem id="${langpack.name}" label="${Launcher.appTitle}" command="mantleXulHandler.openUrl('${Launcher.appTitle}','${Launcher.appTitle_TOOLTIP}','plugin/${langpack.name}/api/main)"/>
-                            </menubar>
+                                <!-- <menubar id="languagePacks" label="${Launcher.menuLanguagePacks}"> -->
+                                <menubar id="toolsmenu">
+                                    <menuitem id="${langpack.name}" label="${langpack.metadata.appTitle}" command="mantleXulHandler.openUrl('${langpack.metadata.appTitle}','${Launcher.appTitle_TOOLTIP}','plugin/${langpack.name}/api/main)"/>
+                                </menubar>
+                                <!-- </menubar> -->
                         </overlay>
                     </overlays>
                     <lifecycle-listener class="pt.webdetails.cpk.CpkLifecycleListener"/>
@@ -346,6 +355,21 @@
         </foreach>
     </target>
 
+    <target name="install-packs" depends="build-language-packs">
+        <fail message="plugin.local.install.solutions.dir not set - cannot copy"
+              unless="plugin.local.install.solutions.dir"/>
+        <delete includeemptydirs="true">
+            <fileset dir="${basedir}/../">
+                <include name="languagePack_*/**/*"/>
+            </fileset>
+        </delete>
+        <move todir="${plugin.local.install.solutions.dir}/system/">
+            <fileset dir="${stage.dir}">
+                <include name="languagePack_*/**/*"/>
+            </fileset>
+        </move>
+
+    </target>
     <target name="read-metadata">
         <property name="metadata.json" value="./data/metadata.json"/>
         <loadresource property="langpackMetadata">
