@@ -1,15 +1,15 @@
 {
-    "appTitle": "{{language}} 지원 설치 도구",
-    "appWelcomeMessage": "이 플러그인은 펜타호 5의 {{language}}에 대한 정의를 설치합니다.",
-    "language": "{{language}}",
-    "languageCode": "{{languageCode}}",
+    "appTitle": "한국어 지원 설치 도구",
+    "appWelcomeMessage": "이 플러그인은 펜타호 5의 한국어 지원 리소스를 설치합니다.",
+    "language": "한국어",
+    "languageCode": "ko",
     "version": "0.1",
     "pentahoVersion": "5.0.1",
     "maintainer": {
-        "name": "",
-        "email": "",
+        "name": "Xavier Cho",
+        "email": "fender@eyeq.co.kr",
         "img": "",
-        "url": "http:\/\/www.pentaho.com"
+        "url": "http:\/\/github.com/mysticfall"
     },
     "credits": [
         {

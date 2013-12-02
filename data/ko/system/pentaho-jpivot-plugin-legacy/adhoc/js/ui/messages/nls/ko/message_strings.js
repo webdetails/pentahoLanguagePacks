@@ -184,7 +184,7 @@ MQL_PARSE_FAILED: "MQL 해석 오류입니다: 다음 구문을 해석할 수 �
 REPORT_FILE_FAILED_TO_LOAD: "오류: 레포트 정의 파일이 유효하지 않은 데이터를 포함하고 있습니다. 이유: %{0}",
 INVALID_COMPARATOR_NAME: "유효하지 않은 비교 함수 이름입니다: %{0}.",
 UNRECOGNIZED_PAGE_BREAK_VALUE: "그룹 헤더에 대한 페이지 넘김 값이 유효하지 않습니다: %{0}.",
-INVALID_REPOSITORY_BROWSER_STATE: "RepositoryBrowser가 유효하지 않은 상태입니다. 저장 작업을 완료할 수 없습니다.",
+INVALID_REPOSITORY_BROWSER_STATE: "저장소 탐색기가 유효하지 않은 상태입니다. 저장 작업을 완료할 수 없습니다.",
 PARTIAL_MQL_PARSE_FAILURE: "빌더는 자유서식 편집기의 MQL의 일부를 해석할 수 없어, 일부 또는 전체 MQL이 손실됩니다. 계속 진행할까요?",
 /* begin number format */
 NUMBER_FORMAT_NEG_MONEY_LABEL: "$ 1,234; -$ 1,234",
