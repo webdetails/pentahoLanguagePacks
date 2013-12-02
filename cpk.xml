@@ -15,9 +15,12 @@
         </elementType>
     </elementTypes> 
     <info>
-        <CPK_version>3</CPK_version>
+        <CPK_version>4</CPK_version>
         <description>Application for installing language packs</description>
         <name>Language Pack Installer</name>
+        <company_name>Webdetails</company_name>
+        <company_url>http://www.webdetails.pt</company_url>
         <creation_date>2013-11-05</creation_date>
+        <version>1.0</version>
     </info>
 </cpk> 

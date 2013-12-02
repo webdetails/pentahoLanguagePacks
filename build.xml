@@ -234,7 +234,14 @@
             <echo>Generating a new ${stage.dir}/${langpack.name}/plugin.xml...</echo>
             <echoxml file="${stage.dir}/${langpack.name}/plugin.xml">
                 <!-- <?xml version="1.0" encoding="UTF-8" standalone="no"?> -->
-                <plugin loader="DEFAULT" title="${langpack.name}">
+                <plugin loader="DEFAULT" title="${langpack.name}" name="${langpack.name}">
+                    <overlays>
+                        <overlay id="startup.${langpack.name}" resourcebundle="content/${langpack.name}/resources/lang/messages">
+                            <menubar id="toolsmenu">
+                                <menuitem id="${langpack.name}" label="${Launcher.appTitle}" command="mantleXulHandler.openUrl('${Launcher.appTitle}','${Launcher.appTitle_TOOLTIP}','plugin/${langpack.name}/api/main)"/>
+                            </menubar>
+                        </overlay>
+                    </overlays>
                     <lifecycle-listener class="pt.webdetails.cpk.CpkLifecycleListener"/>
                     <static-paths>
                         <static-path localFolder="static" url="/${langpack.name}/static"/>

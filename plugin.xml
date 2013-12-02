@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin title="languagePackInstaller" loader="DEFAULT">
-	<lifecycle-listener class="pt.webdetails.cpk.CpkLifecycleListener"/>
-	<static-paths>
-		<static-path url="/languagePackInstaller/static" localFolder="static"/>
-		<static-path url="/languagePackInstaller/resources" localFolder="resources"/>
-	</static-paths>
-	<content-types>
-		<content-type>
-			<title>LanguagepackInstaller</title>
-			<description></description>
-			<company name="" url="" logo="@PLUGIN_COMPANY_LOGO@"></company>
-		</content-type>
-	</content-types>
-	<content-generator
-		id="languagePackInstaller"
-		title="Languagepackinstaller"
-		type="languagePackInstaller"
-		class="pt.webdetails.cpk.CpkContentGenerator"/>
-	<!-- Menu entry -->
-	<menu-items>
-		<menu-item id="languagePackInstaller_main" anchor="tools-submenu" label="LanguagePackInstaller" command="content/languagePackInstaller/" type="MENU_ITEM" how="LAST_CHILD"/>
-	</menu-items>
+<plugin title="languagePackInstaller" loader="DEFAULT" name="languagePackInstaller">
+    <overlays>
+        <overlay id="startup.languagePackInstaller" resourcebundle="content/languagePackInstaller/resources/lang/messages">
+            <menubar id="toolsmenu">
+                <menuitem id="languagePackInstaller" label="${Launcher.appTitle}" command="mantleXulHandler.openUrl('${Launcher.appTitle}','${Launcher.appTitle_TOOLTIP}','plugin/languagePackInstaller/api/main)"/>
+            </menubar>
+        </overlay>
+    </overlays>
+    <lifecycle-listener class="pt.webdetails.cpk.CpkLifecycleListener"/>
+    <static-paths>
+	<static-path url="/languagePackInstaller/static" localFolder="static"/>
+	<static-path url="/languagePackInstaller/resources" localFolder="resources"/>
+    </static-paths>
+    <content-types>
+	<content-type>
+	    <title>LanguagepackInstaller</title>
+	    <description></description>
+	    <company name="" url="" logo="@PLUGIN_COMPANY_LOGO@"></company>
+	</content-type>
+    </content-types>
+    <content-generator
+	id="languagePackInstaller"
+	title="Languagepackinstaller"
+	type="languagePackInstaller"
+	class="pt.webdetails.cpk.CpkContentGenerator"/>
+    <!-- Menu entry -->
+    <menu-items>
+	<menu-item id="languagePackInstaller_main" anchor="tools-submenu" label="LanguagePackInstaller" command="content/languagePackInstaller/" type="MENU_ITEM" how="LAST_CHILD"/>
+    </menu-items>
 </plugin>

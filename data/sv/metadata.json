@@ -1,8 +1,8 @@
 {
-    "appTitle": "{{language}} Language Pack Installer",
-    "appWelcomeMessage": "This plugin installs language definitions for the {{language}} language in Pentaho 5",
-    "language": "{{language}}",
-    "languageCode": "{{languageCode}}",
+    "appTitle": "Swedish Language Pack Installer",
+    "appWelcomeMessage": "This plugin installs language definitions for the Swedish language in Pentaho 5",
+    "language": "Svenska",
+    "languageCode": "sv",
     "version": "0.1",
     "pentahoVersion": "5.0.1",
     "maintainer": {

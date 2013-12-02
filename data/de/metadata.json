@@ -1,15 +1,15 @@
 {
-    "appTitle": "{{language}} Language Pack Installer",
-    "appWelcomeMessage": "This plugin installs language definitions for the {{language}} language in Pentaho 5",
-    "language": "{{language}}",
-    "languageCode": "{{languageCode}}",
+    "appTitle": "German Language Pack Installer",
+    "appWelcomeMessage": "This plugin installs language definitions for the German language in Pentaho 5",
+    "language": "Deutsch",
+    "languageCode": "de",
     "version": "0.1",
     "pentahoVersion": "5.0.1",
     "maintainer": {
         "name": "",
         "email": "",
         "img": "",
-        "url": "http:\/\/www.pentaho.com"
+        "url": ""
     },
     "credits": [
         {
