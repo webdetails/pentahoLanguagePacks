@@ -238,17 +238,20 @@
                     <overlays>
                         <!-- <overlay id="startup.menu_langPacks"> -->
                         <!--     <menubar id="toolsmenu"> -->
-                        <!--         <menubar id="languagePacks" label="${Launcher.menuLanguagePacks}"> -->
+                        <!--         <menubar id="languagePacks" label="Language Packs"> -->
                         <!--             <menuitem id="ola" label="Ola"/> -->
                         <!--         </menubar> -->
                         <!--     </menubar> -->
                         <!-- </overlay> -->
                         <overlay id="startup.${langpack.name}" resourcebundle="content/${langpack.name}/resources/lang/messages">
-                                <!-- <menubar id="languagePacks" label="${Launcher.menuLanguagePacks}"> -->
-                                <menubar id="toolsmenu">
-                                    <menuitem id="${langpack.name}" label="${langpack.metadata.appTitle}" command="mantleXulHandler.openUrl('${langpack.metadata.appTitle}','${Launcher.appTitle_TOOLTIP}','plugin/${langpack.name}/api/main)"/>
-                                </menubar>
-                                <!-- </menubar> -->
+                            <menubar id="toolsmenu">
+                                <!-- <menupopup id="languagePacks" label="Language Packs"> -->
+                                    <menuitem id="${langpack.name}"
+                                              label="${langpack.metadata.appTitle_en}"
+                                              command="mantleXulHandler.openUrl('${langpack.metadata.appWelcomeMessage}','${langpack.metadata.appTitle}','/pentaho/plugin/${langpack.name}/api/main')"/>
+                                <!-- </menupopup> -->
+                            </menubar>
+
                         </overlay>
                     </overlays>
                     <lifecycle-listener class="pt.webdetails.cpk.CpkLifecycleListener"/>
@@ -321,8 +324,8 @@
         <copy file="${basedir}/market_entry.xml" tofile="${dist.dir}/${langpack.name}.market_entry.xml">
             <filterset>
                 <filter token="langpack.name" value="${langpack.name}"/>
-                <filter token="langpack.metadata.appTitle" value="${langpack.metadata.appTitle}"/>
-                <filter token="langpack.metadata.appWelcomeMessage" value="${langpack.metadata.appWelcomeMessage}"/>
+                <filter token="langpack.metadata.appTitle" value="${langpack.metadata.appTitle_en}"/>
+                <filter token="langpack.metadata.appWelcomeMessage" value="${langpack.metadata.appWelcomeMessage_en}"/>
                 <filter token="langpack.metadata.pentahoVersion" value="${langpack.metadata.pentahoVersion}"/>
                 <filter token="langpack.metadata.maintainer.name" value="${langpack.metadata.maintainer.name}"/>
                 <filter token="langpack.metadata.maintainer.url" value="${langpack.metadata.maintainer.url}"/>

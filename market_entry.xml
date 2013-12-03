@@ -34,14 +34,14 @@
        only the first is read,  -->
   <versions>
     <version>
-      <branch>Stable</branch> <!-- Tells the Marketplace what branch this plugin belongs to (BA Server only) -->
+      <branch>Trunk</branch> <!-- Tells the Marketplace what branch this plugin belongs to (BA Server only) -->
       <version>1.0</version> <!-- The version of the plugin (Both) -->
-      <name>>@langpack.metadata.appTitle@</name> <!-- A User friendly name for the plugin (BA Server only) -->
+      <name>TRUNK</name> <!-- A User friendly name for the plugin (BA Server only) -->
       <package_url>@langpack.package.url@</package_url> <!-- The download URL of the actual plugin (Both) -->
       <samples_url>http://me.com/plugin.zip</samples_url> <!-- The download URL of samples for this plugin (BA Server only) -->
       <description></description> <!-- the description of the specific version (BA Server only) -->
       <changelog>Changes</changelog> <!-- a list of changes since the last update (BA Server only) -->
-      <build_id>12<build_id> <!-- If two versions of a plugin have the same version, you can still distinguish them using the build id - useful for trunk-snapshot versions (BA Server only) -->
+      <build_id>0</build_id> <!-- If two versions of a plugin have the same version, you can still distinguish them using the build id - useful for trunk-snapshot versions (BA Server only) -->
 
       <!-- In the BA Server, if you specify min and max parent versions, the plugin will only appear in the
            marketplace if the BA Server is within range of those versions. -->

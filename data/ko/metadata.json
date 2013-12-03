@@ -1,4 +1,6 @@
 {
+    "appTitle_en": "Korean Language Pack Installer",
+    "appWelcomeMessage_en": "This plugin installs language definitions for the Korean language in Pentaho 5",
     "appTitle": "한국어 지원 설치 도구",
     "appWelcomeMessage": "이 플러그인은 펜타호 5의 한국어 지원 리소스를 설치합니다.",
     "language": "한국어",

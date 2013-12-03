@@ -1,4 +1,6 @@
 {
+    "appTitle_en": "Portuguese (Brazilian variant) Language Pack Installer",
+    "appWelcomeMessage_en": "This plugin installs language definitions for the brazilian variant of the Portuguese language in Pentaho 5",
     "appTitle": "Portuguese (Brazilian variant) Language Pack Installer",
     "appWelcomeMessage": "This plugin installs language definitions for the brazilian variant of the Portuguese language in Pentaho 5",
     "language": "Português do Brasil",
