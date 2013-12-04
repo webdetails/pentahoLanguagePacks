@@ -255,7 +255,7 @@
                                 <!-- <menupopup id="languagePacks" label="Language Packs"> -->
                                     <menuitem id="${langpack.name}"
                                               label="${languagePack.title}"
-                                              command="mantleXulHandler.openUrl('${languagePack.title}','${languagePack.itle}','plugin/${langpack.name}/api/main')"/>
+                                              command="mantleXulHandler.openUrl('${languagePack.title}','${languagePack.title}','plugin/${langpack.name}/api/main')"/>
                                 <!-- </menupopup> -->
                             </menubar>
 
