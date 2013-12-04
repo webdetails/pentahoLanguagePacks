@@ -175,10 +175,11 @@
                 </fileset>
             </copy>
             <property name="metadata.json" value="${stage.dir}/${langpack.name}/data/metadata.json"/>
-            <copy file="${stage.dir}/${langpack.name}/data/${langCode}/metadata.json"
+            <copy file="${basedir}/data/${langCode}/metadata.json"
                   tofile="${metadata.json}"/>
 
             <!-- localization of the plugin -->
+            <mkdir dir="${stage.dir}/${langpack.name}/resources/lang"/>
             <copy todir="${stage.dir}/${langpack.name}/resources/lang" overwrite="true">
                 <fileset dir="${basedir}/data/${langCode}/resources/lang">
                     <include name="**/*"/>
@@ -263,7 +264,7 @@
                             <menubar id="toolsmenu">
                                 <!-- <menupopup id="languagePacks" label="Language Packs"> -->
                                     <menuitem id="${langpack.name}"
-                                              label="${langpack.metadata.appTitle_en}"
+                                              label="${languagePack.title}"
                                               command="mantleXulHandler.openUrl('${languagePack.title}','${languagePack.title}','plugin/${langpack.name}/api/main')"/>
                                 <!-- </menupopup> -->
                             </menubar>
@@ -277,12 +278,12 @@
                     </static-paths>
                     <content-types>
                         <content-type>
-                            <title>${langpack.metadata.appTitle}</title>
-                            <description>${langpack.metadata.appWelcomeMessage}</description>
+                            <title>${languagePack.title}</title>
+                            <description>${languagePack.description}</description>
                             <company logo="${langpack.metadata.maintainer.img}" name="${langpack.metadata.maintainer.name}" url="${langpack.metadata.maintainer.url}"/>
                         </content-type>
                     </content-types>
-                    <content-generator class="pt.webdetails.cpk.CpkContentGenerator" id="${langpack.name}" title="${langpack.metadata.appTitle}" type="${langpack.name}"/>
+                    <content-generator class="pt.webdetails.cpk.CpkContentGenerator" id="${langpack.name}" title="${languagePack.title}" type="${langpack.name}"/>
                     <!-- Menu entry -->
                     <menu-items>
                         <menu-item anchor="tools-submenu" command="plugin/${langpack.name}/api/main" how="LAST_CHILD" id="${langpack.name}_main" label="${languagePack.title}" type="MENU_ITEM"/>
@@ -331,7 +332,7 @@
                 <version>${distribution.version}</version>
                 <name>Trunk</name>
                 <package_url>${langpack.package.url}</package_url>
-                <description>${langpack.metadata.appTitle}</description>
+                <description>${languagePack.title}</description>
                 <build_id>${sequential.build.id}</build_id>
             </version>
         </echoxml>
