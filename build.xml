@@ -255,7 +255,7 @@
                                 <!-- <menupopup id="languagePacks" label="Language Packs"> -->
                                     <menuitem id="${langpack.name}"
                                               label="${languagePack.title}"
-                                              command="mantleXulHandler.openUrl('${languagePack.title}','${languagePack.title}','plugin/${langpack.name}/api/main')"/>
+                                              command="mantleXulHandler.openUrl('${languagePack.title}','${languagePack.itle}','plugin/${langpack.name}/api/main')"/>
                                 <!-- </menupopup> -->
                             </menubar>
 
@@ -326,9 +326,9 @@
 
         <!-- create a zip file -->
         <zip zipfile="${dist.dir}/${langpack.zipfile}"
-             basedir="${stage.dir}/${langpack.name}"
-             excludes="**/Thumbs.db **/.DS_Store"/>
-        <!-- includes="${langpack.name}/**/*" -->
+             basedir="${stage.dir}"
+             excludes="**/Thumbs.db **/.DS_Store"
+             includes="${langpack.name}/**/*" />
         <move tofile="${dist.dir}/${langpack.name}-${project.revision}.zip" file="${dist.dir}/${langpack.zipfile}"/>
 
         <!-- create a marketplace.xml file -->
