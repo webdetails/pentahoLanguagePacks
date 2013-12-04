@@ -186,15 +186,17 @@
                 </fileset>
             </copy>
 
-            <loadproperties>
+
+            <loadproperties prefix='here'>
                 <file file="${basedir}/data/${langCode}/resources/lang/messages.properties"/>
-                <!-- Loads variables: languagePack.title, languagePack.description, among others-->
+                <!-- Loads variables: here.languagePack.title, here.languagePack.description, among others-->
             </loadproperties>
+            <echo>Read from ${basedir}/data/${langCode}/resources/lang/messages.properties: title = ${languagePack.title}...</echo>
+
 
             <loadresource property="langpackMetadata">
                 <file file="${metadata.json}"/>
             </loadresource>
-
             <script language="javascript"><![CDATA[
 
             // Evaluate the serialized JSON
@@ -223,10 +225,7 @@
                 }
             }
             ]]></script>
-
-
             <echo>Read from ${metadata.json}: appTitle = ${langpack.metadata.appTitle}...</echo>
-            <echo>Read from ${basedir}/data/${langCode}/resources/lang/messages.properties: title = ${languagePack.title}...</echo>
 
             <!-- create the version file -->
             <tstamp/>
@@ -238,15 +237,6 @@
 
             <!-- Update plugin metadata -->
             <echo>Updating metadata for ${langpack.name}</echo>
-
-            <echo>Updating ${stage.dir}/${langpack.name}/cpk.xml</echo>
-            <xmltask source="${stage.dir}/${langpack.name}/cpk.xml"
-                     dest="${stage.dir}/${langpack.name}/cpk.xml"
-                     report="false">
-                <replace path="cpk/info/name/text()" withText="${languagePack.title}"/>
-                <replace path="cpk/info/description/text()" withText="${languagePack.description}"/>
-            </xmltask>
-            <!-- replace file="${stage.dir}/${langpack.name}/cpk.xml" token="Language Pack Installer" value="${langpack.name}"/ -->
 
             <echo>Generating a new ${stage.dir}/${langpack.name}/plugin.xml...</echo>
             <echoxml file="${stage.dir}/${langpack.name}/plugin.xml">
@@ -278,18 +268,34 @@
                     </static-paths>
                     <content-types>
                         <content-type>
-                            <title>${languagePack.title}</title>
-                            <description>${languagePack.description}</description>
+                            <title>${here.languagePack.title}</title>
+                            <description>${here.languagePack.description}</description>
                             <company logo="${langpack.metadata.maintainer.img}" name="${langpack.metadata.maintainer.name}" url="${langpack.metadata.maintainer.url}"/>
                         </content-type>
                     </content-types>
-                    <content-generator class="pt.webdetails.cpk.CpkContentGenerator" id="${langpack.name}" title="${languagePack.title}" type="${langpack.name}"/>
+                    <content-generator class="pt.webdetails.cpk.CpkContentGenerator" id="${langpack.name}" title="${here.languagePack.title}" type="${langpack.name}"/>
                     <!-- Menu entry -->
                     <menu-items>
-                        <menu-item anchor="tools-submenu" command="plugin/${langpack.name}/api/main" how="LAST_CHILD" id="${langpack.name}_main" label="${languagePack.title}" type="MENU_ITEM"/>
+                        <menu-item anchor="tools-submenu" command="plugin/${langpack.name}/api/main" how="LAST_CHILD" id="${langpack.name}_main" label="${here.languagePack.title}" type="MENU_ITEM"/>
                     </menu-items>
                 </plugin>
             </echoxml>
+
+
+
+
+
+            <echo>Updating ${stage.dir}/${langpack.name}/cpk.xml</echo>
+            <xmltask source="${stage.dir}/${langpack.name}/cpk.xml"
+                     dest="${stage.dir}/${langpack.name}/cpk.xml"
+                     report="false">
+                <replace path="cpk/info/name/text()" withText="${here.languagePack.title}"/>
+                <replace path="cpk/info/description/text()" withText="${here.languagePack.description}"/>
+            </xmltask>
+            <!-- replace file="${stage.dir}/${langpack.name}/cpk.xml" token="Language Pack Installer" value="${langpack.name}"/ -->
+
+
+
 
         <replace file="${stage.dir}/${langpack.name}/plugin.spring.xml" token="${plugin.name}.api" value="${langpack.name}.api"/>
         <replace file="${stage.dir}/${langpack.name}/settings.xml" token="${plugin.name}" value="${langpack.name}"/>
@@ -301,7 +307,7 @@
 
         <propertyfile file="${stage.dir}/${langpack.name}/build.properties">
             <entry key="ivy.artifact.id" value="${langpack.name}" />
-            <entry key="impl.title" value="${languagePack.title}" />
+            <entry key="impl.title" value="${here.languagePack.title}" />
         </propertyfile>
         <!-- Update dashboards -->
         <upper string="${plugin.name}" to="plugin.NAME" />
@@ -332,7 +338,7 @@
                 <version>${distribution.version}</version>
                 <name>Trunk</name>
                 <package_url>${langpack.package.url}</package_url>
-                <description>${languagePack.title}</description>
+                <description>${here.languagePack.title}</description>
                 <build_id>${sequential.build.id}</build_id>
             </version>
         </echoxml>
@@ -341,8 +347,8 @@
         <copy file="${basedir}/market_entry.xml" tofile="${dist.dir}/${langpack.name}.market_entry.xml">
             <filterset>
                 <filter token="langpack.name" value="${langpack.name}"/>
-                <filter token="langpack.metadata.appTitle" value="${languagePack.title}"/>
-                <filter token="langpack.metadata.appWelcomeMessage" value="${languagePack.description}"/>
+                <filter token="langpack.metadata.appTitle" value="${here.languagePack.title}"/>
+                <filter token="langpack.metadata.appWelcomeMessage" value="${here.languagePack.description}"/>
                 <filter token="langpack.metadata.pentahoVersion" value="${langpack.metadata.pentahoVersion}"/>
                 <filter token="langpack.metadata.maintainer.name" value="${langpack.metadata.maintainer.name}"/>
                 <filter token="langpack.metadata.maintainer.url" value="${langpack.metadata.maintainer.url}"/>

@@ -1,8 +1,6 @@
 {
     "appTitle": "German Language Pack Installer",
     "appWelcomeMessage": "This plugin installs language definitions for the German language in Pentaho 5",
-    "appTitle_en": "German Language Pack Installer",
-    "appWelcomeMessage_en": "This plugin installs language definitions for the German language in Pentaho 5",
     "language": "Deutsch",
     "languageCode": "de",
     "version": "0.1",
