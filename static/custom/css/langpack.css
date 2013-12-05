@@ -146,9 +146,15 @@ div.container  {
 }
 .languageDialogContainer.welcome.notInstalled    .btnContainer .btn.install,
 .languageDialogContainer.welcome.notInstalled    .btnContainer .btn.cancel,
-.languageDialogContainer.error                   .btnContainer .btn.okError,
-.languageDialogContainer.success                 .btnContainer .btn.okSuccess{
+.languageDialogContainer.error                   .btnContainer .btn.okError
+{
   display:inline-block;
+}
+
+.languageDialogContainer.welcome.notInstalled    .btnContainer .btn.cancel,
+.languageDialogContainer.success                 .btnContainer .btn.okSuccess
+{
+  display:none;
 }
 
 
@@ -173,6 +179,10 @@ div.container  {
   opacity: 1;
 }
 
+.languageDialogContainer.error   .infoContainer .info.credits a
+{
+  display:none;
+}
 
 
 
@@ -214,13 +224,19 @@ div.container  {
 
 .languageDialogContainer .imageContainer
 {
-    background: #fff url('../img/welcome.png') 0px 0px no-repeat;
-    width: 60px;
-    height: 60px;
+    background: transparent url('../img/welcome.png') 0px 0px no-repeat;
+    width: 95px;
+    height: 130px;
     display: block;
     float: left;
     margin: 0;
 }
+.languageDialogContainer.installing .imageContainer
+{
+    background-image: url('../img/installing.gif');
+}
+
+
 .languageDialogContainer.error .imageContainer
 {
     background-image: url('../img/error.png');
@@ -339,6 +355,5 @@ div.container  {
     color: inherit;
     padding: 0;
 }
-
 
 
