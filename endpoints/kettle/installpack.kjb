@@ -107,8 +107,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>70</xloc>
-      <yloc>124</yloc>
+      <xloc>142</xloc>
+      <yloc>300</yloc>
       </entry>
     <entry>
       <name>Success</name>
@@ -117,8 +117,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>887</xloc>
-      <yloc>264</yloc>
+      <xloc>653</xloc>
+      <yloc>544</yloc>
       </entry>
     <entry>
       <name>install_language &#x28;biserver&#x2f;pentaho-solutions&#x2f;system&#x29;</name>
@@ -168,8 +168,8 @@
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>400</xloc>
-      <yloc>116</yloc>
+      <xloc>482</xloc>
+      <yloc>62</yloc>
       </entry>
     <entry>
       <name>create jars</name>
@@ -206,8 +206,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>570</xloc>
-      <yloc>275</yloc>
+      <xloc>779</xloc>
+      <yloc>337</yloc>
       </entry>
     <entry>
       <name>get pack metadata</name>
@@ -239,8 +239,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>226</xloc>
-      <yloc>120</yloc>
+      <xloc>261</xloc>
+      <yloc>73</yloc>
       </entry>
     <entry>
       <name>Delete filenames from result</name>
@@ -253,8 +253,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>703</xloc>
-      <yloc>274</yloc>
+      <xloc>784</xloc>
+      <yloc>463</yloc>
       </entry>
     <entry>
       <name>install_language &#x28;biserver&#x2f;tomcat&#x29;</name>
@@ -304,8 +304,8 @@
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>410</xloc>
-      <yloc>280</yloc>
+      <xloc>645</xloc>
+      <yloc>271</yloc>
       </entry>
     <entry>
       <name>create jars 2</name>
@@ -342,8 +342,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>564</xloc>
-      <yloc>117</yloc>
+      <xloc>605</xloc>
+      <yloc>61</yloc>
       </entry>
     <entry>
       <name>Delete filenames from result 2</name>
@@ -356,8 +356,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>696</xloc>
-      <yloc>116</yloc>
+      <xloc>726</xloc>
+      <yloc>141</yloc>
       </entry>
     <entry>
       <name>Write To Log</name>
@@ -369,20 +369,33 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>149</xloc>
-      <yloc>122</yloc>
+      <xloc>141</xloc>
+      <yloc>116</yloc>
+      </entry>
+    <entry>
+      <name>Abort job</name>
+      <description/>
+      <type>ABORT</type>
+      <message/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>369</xloc>
+      <yloc>305</yloc>
+      </entry>
+    <entry>
+      <name>File Exists</name>
+      <description/>
+      <type>FILE_EXISTS</type>
+      <filename>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;data&#x2f;&#x24;&#x7b;languageCode&#x7d;</filename>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>364</xloc>
+      <yloc>62</yloc>
       </entry>
   </entries>
   <hops>
-    <hop>
-      <from>get pack metadata</from>
-      <to>install_language &#x28;biserver&#x2f;pentaho-solutions&#x2f;system&#x29;</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
     <hop>
       <from>create jars</from>
       <to>Delete filenames from result</to>
@@ -425,8 +438,8 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>Y</unconditional>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>Delete filenames from result 2</from>
@@ -453,6 +466,51 @@
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>create jars 2</from>
+      <to>Abort job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>get pack metadata</from>
+      <to>File Exists</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>File Exists</from>
+      <to>install_language &#x28;biserver&#x2f;pentaho-solutions&#x2f;system&#x29;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>File Exists</from>
+      <to>Abort job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Write To Log</from>
+      <to>Abort job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
   </hops>
