@@ -9,6 +9,7 @@ import os
 import sys
 import shutil
 import zipfile
+import codecs
 
 languageCode = sys.argv[1] # language as it is typed by the user
 languageCode_underscore = languageCode.replace('-', '_').replace(' ', '_'); # this is bith the java and historic approach, we will use this
@@ -27,22 +28,25 @@ def rreplace(s, old, new, occurrence=1):
     li = s.rsplit(old, occurrence)
     return new.join(li)
 
-def copy(src, dst):
+def copy(src, dst, patch=False):
     dst_parent = os.path.dirname(dst);
     if not os.path.exists(dst_parent):
         os.makedirs(dst_parent)
 
     # Copy files
     print '\nCopying: ' +  os.path.realpath(os.path.join(origin_folder, src)) + '\nto ' + dst
-    #shutil.copy2(src, dst)
-    with open(src, 'r') as fin:
-        lines_src = fin.readlines()
-    add_missing_properties(lines_src, dst)
+    if patch:
+        with codecs.open(src, 'r', 'utf-8') as fin:
+            lines_src = fin.readlines()
+
+        add_missing_properties(lines_src, dst)
+    else:
+        shutil.copy2(src, dst)
 
 
 def add_missing_properties(lines_src, dst_localised):
     if os.path.exists(dst_localised):
-        with open(dst_localised, 'a+') as fout:
+        with codecs.open(dst_localised, 'a+', 'utf-8') as fout:
             fout.seek(0)
             lines_dst = fout.readlines()
             #print 'File ' + dst_localised + ' contains' , len(lines_dst), 'lines'
@@ -66,7 +70,7 @@ def add_missing_properties(lines_src, dst_localised):
         print 'Patching: ' +  os.path.realpath(dst_localised)
         if not os.path.exists(dst_parent):
             os.makedirs(dst_parent)
-        with open(dst_localised, 'w') as fout:
+        with codecs.open(dst_localised, 'w', 'utf-8') as fout:
             for line in lines_src:
                 keyval = line.split('=')
                 if len(keyval) > 1:
@@ -192,7 +196,7 @@ for root, dirs, filenames in os.walk('.'):
         # Patch messages_LANG.properties with missing tokens
         if g.endswith('messages.properties'):
             dst_localised =  os.path.realpath(os.path.join(destination_folder, root, f.replace('.properties', '_' + languageCode_underscore + '.properties') ))
-            with open(src, 'r') as fin:
+            with codecs.open(src, 'r', 'utf-8') as fin:
                 lines_src = fin.readlines()
             add_missing_properties(lines_src, dst_localised)
 
@@ -224,12 +228,16 @@ for root, dirs, filenames in os.walk('.'):
                     copy(src, dst_localised)
 
 
-# Third round: convert the encoding of all *.properties to utf8
+# Third round: convert the encoding of all *.properties to utf8, fix *supported_languages.properties
 for root, dirs, filenames in os.walk(destination_folder):
     for f in filenames:
         g = f.lower()
+        src = os.path.join(root, f)
         if g.endswith('messages_'+ languageCode_underscore.lower()  +'.properties'):
-            src = os.path.join(root, f)
             print 'Converting to utf8: ' + src
             #convert_to_utf8(src)
             os.system('native2ascii -reverse {0} {0}'.format(src))
+            #os.system('native2ascii -reverse -encoding utf-8 {0} {0}'.format(src))
+        elif g.endswith('supported_languages.properties'):
+            with codecs.open(src, 'w', 'utf-8') as fout:
+                fout.write('#Language Pack Installer: no need to edit this file\n')
