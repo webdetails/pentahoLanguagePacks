@@ -32,7 +32,7 @@ var ActionButtonComponent = ActionComponent.extend(new MixinButtonAPI()).extend(
          */
         return "Button Component that triggers a server action when clicked";
     },
-    draw: function() {
+    render: function() {
         var myself = this,
             ad = this.actionDefinition;
         var b = $("<button type='button'/>").text(this.label).unbind("click").bind("click", function(){
@@ -50,5 +50,7 @@ var ActionButtonComponent = ActionComponent.extend(new MixinButtonAPI()).extend(
             this.initButtonAPI(false);
         }
         b.appendTo($("#"+ this.htmlObject).empty());
+
+        //this._doAutofocus();
     }
 });
