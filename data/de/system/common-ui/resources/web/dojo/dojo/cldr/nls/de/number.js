@@ -10,12 +10,12 @@ define(
 	"infinity": "∞",
 	"patternDigit": "#",
 	"minusSign": "-",
-	"decimal": ".",
+	"decimal": ",",
 	"nan": "NaN",
 	"nativeZeroDigit": "0",
 	"perMille": "‰",
-	"decimalFormat": "#,##0.###",
-	"currencyFormat": "¤#,##0.00;(¤#,##0.00)",
+	"decimalFormat": "#.##0,###",
+	"currencyFormat": "¤#.##0,00;(¤#.##0,00)",
 	"plusSign": "+",
 	"decimalFormat-short": "000T"
 }
