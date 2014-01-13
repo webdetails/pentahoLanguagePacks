@@ -70,9 +70,9 @@ var HelpMixin = Base.extend({
 
 
 
-var ActionComponent = UnmanagedComponent.extend(new HelpMixin()).extend({
+var ActionComponent = ActionComponent || UnmanagedComponent.extend(new HelpMixin()).extend({
     _docstring: function (){
-        return "Abstract class for components calling a CPK endpoint";
+        return "Abstract class for components triggering a query on demand";
         /**
          Uses an UnmanagedComponent.synchronous() lifecycle.
          Methods/properties defined in CDE for all child classes:
@@ -82,8 +82,8 @@ var ActionComponent = UnmanagedComponent.extend(new HelpMixin()).extend({
          this.successCallback(data)
          this.failureCallback()
 
-         Each descendent is expected to override the following methods:
-         - draw()
+         Each descendant is expected to override the following methods:
+         - render()
 
          Quirks:
          - in this.actionParameters, static values should be quoted, in order to survive the "eval" in Dashboards.getParameterValue:
@@ -94,14 +94,15 @@ var ActionComponent = UnmanagedComponent.extend(new HelpMixin()).extend({
         /**
          Entry-point of the component, manages the actions
          */
-        var draw = _.bind(this.draw, this);
+        var render = _.bind(this.render, this);
         if(typeof this.manageCallee == "undefined" || this.manageCallee) {
-            this.synchronous(draw);
+            this.synchronous(render);
         } else {
-            draw();
+            render();
         }
 
     },
+    render: function() {},
     triggerAction: function () {
         /**
          Call the endpoint, passing any parameters

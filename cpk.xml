@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cpk>
     <elementTypes defaultElement="home">
-        <elementType name="Dashboard" class="pt.webdetails.cpk.elements.impl.DashboardElementType">
+        <elementType name="Dashboard" class="pt.webdetails.cpk.elements.impl.DashboardElement">
             <elementLocations>
                 <elementLocation path="dashboards/" isRecursive="true" pattern="^(?!admin).*\.wcdf" adminOnly="false"/>
                 <elementLocation path="dashboards/admin" isRecursive="true" pattern=".*\.wcdf" adminOnly="true"/>
             </elementLocations>
         </elementType>
-        <elementType name="Kettle" class="pt.webdetails.cpk.elements.impl.KettleElementType">
+        <elementType name="Kettle" class="pt.webdetails.cpk.elements.impl.KettleJobElement">
             <elementLocations>
-                <elementLocation path="endpoints/kettle/" isRecursive="true" pattern="^(?!admin).*\.(ktr|kjb)" adminOnly="false"/>
-                <elementLocation path="endpoints/kettle/admin" isRecursive="true" pattern=".*\.(ktr|kjb)" adminOnly="true"/>
+                <elementLocation path="endpoints/kettle/" isRecursive="true" pattern="^(?!admin).*\.kjb" adminOnly="false"/>
+                <elementLocation path="endpoints/kettle/admin" isRecursive="true" pattern=".*\.kjb" adminOnly="true"/>
             </elementLocations>
         </elementType>
-    </elementTypes> 
+        <elementType name="Kettle" class="pt.webdetails.cpk.elements.impl.KettleTransformationElement">
+            <elementLocations>
+                <elementLocation path="endpoints/kettle/" isRecursive="true" pattern="^(?!admin).*\.ktr" adminOnly="false"/>
+                <elementLocation path="endpoints/kettle/admin" isRecursive="true" pattern=".*\.ktr" adminOnly="true"/>
+            </elementLocations>
+        </elementType>
+    </elementTypes>
     <info>
         <CPK_version>4</CPK_version>
         <description>Application for installing language packs</description>
@@ -23,4 +29,4 @@
         <creation_date>2013-11-05</creation_date>
         <version>1.0</version>
     </info>
-</cpk> 
+</cpk>
