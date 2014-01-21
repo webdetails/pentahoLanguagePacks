@@ -3,11 +3,11 @@
     "appWelcomeMessage": "이 플러그인은 펜타호 5의 한국어 지원 리소스를 설치합니다.",
     "language": "한국어",
     "languageCode": "ko",
-    "version": "0.1",
+    "version": "1.0",
     "pentahoVersion": "5.0.1",
     "maintainer": {
         "name": "Xavier Cho",
-        "email": "fender@eyeq.co.kr",
+        "email": "mysticfallband@gmail.com",
         "img": "",
         "url": "http:\/\/github.com/mysticfall"
     },
