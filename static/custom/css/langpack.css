@@ -74,7 +74,7 @@ time, mark, audio, video {
 
 /* Window Background */
 body{
-    background-color: #E0EBEF;
+    background-color: #FFFFFF;
 }
 /* Dashboard Background / Blueprint Container */
 div.container  {
@@ -253,6 +253,17 @@ div.container  {
 {
     color: #1973BC;
     font-size: 18px;
+}
+.languageDialogContainer .titleContainer b
+{
+  width: 44px;
+  height: 28px;
+  background: transparent url('../img/flag.png') 0px 0px no-repeat;
+  display: inline-block;
+  background-size: 43.75px 23.5px;
+  margin-bottom: -10px;
+  margin-right: 2px;
+
 }
 
 .languageDialogContainer .msgContainer

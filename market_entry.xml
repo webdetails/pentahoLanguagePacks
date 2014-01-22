@@ -11,10 +11,11 @@
   <author>@langpack.metadata.maintainer.name@</author> <!-- The name of the author of the plugin (Both) -->
   <author_url>@langpack.metadata.maintainer.url@</author_url> <!-- The location of the author's website (BA Server only) -->
   <author_logo>@langpack.metadata.maintainer.img@</author_logo> <!-- The location of the author's logo (BA Server only) -->
+  <license>MPL 2.0</license>
   <dependencies>CDF, CDE</dependencies>
   <img>https://github.com/webdetails/pentahoLanguagePacks/raw/master/data/@langCode@/resources/img/flag.png</img> <!-- an image representing your plugin, displayed in the Marketplace (BA Server only) -->
   <small_img>https://github.com/webdetails/pentahoLanguagePacks/raw/master/data/@langCode@/resources/img/flag.png</small_img>  <!-- a small image representing your plugin, displayed in the Marketplace (BA Server only) -->
-  <installation_notes> Login as admin and run the language pack installer from the Tools menu.</installation_notes> <!-- an optional set of notes that displays during install for a plugin (BA Server only) -->
+  <installation_notes>Login as admin and run the language pack installer from the Tools menu.</installation_notes> <!-- an optional set of notes that displays during install for a plugin (BA Server only) -->
   <versions> <!-- The BA Server currently supports multiple versions of the same plugin with branches, Kettle currently does not, only the first is read,  -->
     <version>
       <branch>Trunk</branch> <!-- Tells the Marketplace what branch this plugin belongs to (BA Server only) -->

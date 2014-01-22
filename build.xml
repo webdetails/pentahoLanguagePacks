@@ -185,7 +185,13 @@
                     <include name="**/*"/>
                 </fileset>
             </copy>
-
+            <!-- Copy the flag -->
+            <!-- <available file="${basedir}/data/${langCode}/resources/img/flag.png" property="flag.img.present"/> -->
+            <copy todir="${stage.dir}/${langpack.name}/static/custom/img" overwrite="true" failonerror="false">
+                <fileset dir="${basedir}/data/${langCode}/resources/img">
+                    <include name="flag.png"/>
+                </fileset>
+            </copy>
 
             <loadproperties prefix='here'>
                 <file file="${basedir}/data/${langCode}/resources/lang/messages.properties"/>
@@ -323,6 +329,7 @@
         <property name="langpack.artifact.id" value="${langpack.name}"/>
         <property name="langpack.zipfile" value="${langpack.artifact.id}-${distribution.version}.zip"/>
         <property name="langpack.package.url" value="http://ci.analytical-labs.com/job/Webdetails-languagePackInstallers/lastSuccessfulBuild/artifact/dist/${langpack.zipfile}"/>
+
 
         <!-- create a zip file -->
         <zip zipfile="${dist.dir}/${langpack.zipfile}"
