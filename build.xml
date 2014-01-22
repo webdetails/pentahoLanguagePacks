@@ -354,6 +354,7 @@
                 <filter token="langpack.metadata.maintainer.url" value="${langpack.metadata.maintainer.url}"/>
                 <filter token="langpack.metadata.maintainer.img" value="${langpack.metadata.maintainer.img}"/>
                 <filter token="langpack.package.url" value="${langpack.package.url}"/>
+                <filter token="langCode" value="${langCode}"/>
             </filterset>
         </copy>
         <!-- remove the xml comments -->
@@ -361,6 +362,8 @@
                      dest="${dist.dir}/${langpack.name}.market_entry.xml"
                      report="false">
             <remove path="//child::comment()"/>
+            <insert path="/market_entry/screenshots" xml="&lt;screenshot&gt;https://raw.github.com/webdetails/pentahoLanguagePacks/master/data/${langCode}/resources/img/screenshot_1.png&lt;/screenshot&gt;" />
+            <insert path="/market_entry/screenshots" xml="&lt;screenshot&gt;https://raw.github.com/webdetails/pentahoLanguagePacks/master/data/${langCode}/resources/img/screenshot_1.png&lt;/screenshot&gt;" />
         </xmltask>
 
     </target>
