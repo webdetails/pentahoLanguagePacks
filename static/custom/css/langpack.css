@@ -196,7 +196,7 @@ div.container  {
   float:left;
   margin-left:-200px;
   padding-top:40px;
-  padding-left:75px;
+  padding-left:57px;
 }
 .languageDialogContainer .contentWrapper {
   width:100%;
@@ -260,7 +260,7 @@ div.container  {
   height: 28px;
   background: transparent url('../img/flag.png') 0px 0px no-repeat;
   display: inline-block;
-  background-size: 43.75px 23.5px;
+  background-size: 43.75px 27.5px;
   margin-bottom: -10px;
   margin-right: 2px;
 
