@@ -357,13 +357,21 @@
                 <filter token="langCode" value="${langCode}"/>
             </filterset>
         </copy>
-        <!-- remove the xml comments -->
+        <available file="${basedir}/data/${langCode}/resources/img/flag.png" property="market.entry.img.present"/>
+        <available file="${basedir}/data/${langCode}/resources/img/flag.png" property="market.entry.small_img.present"/>
+        <available file="${basedir}/data/${langCode}/resources/img/screenshot_1.png" property="market.entry.screenshot.1.present"/>
+        <available file="${basedir}/data/${langCode}/resources/img/screenshot_1.png" property="market.entry.screenshot.2.present"/>
+        <available file="${basedir}/data/${langCode}/resources/img/screenshot_1.png" property="market.entry.screenshot.3.present"/>
+        <!-- remove the xml comments and any references to non-existent images-->
         <xmltask source="${dist.dir}/${langpack.name}.market_entry.xml"
                      dest="${dist.dir}/${langpack.name}.market_entry.xml"
                      report="false">
             <remove path="//child::comment()"/>
-            <insert path="/market_entry/screenshots" xml="&lt;screenshot&gt;https://raw.github.com/webdetails/pentahoLanguagePacks/master/data/${langCode}/resources/img/screenshot_1.png&lt;/screenshot&gt;" />
-            <insert path="/market_entry/screenshots" xml="&lt;screenshot&gt;https://raw.github.com/webdetails/pentahoLanguagePacks/master/data/${langCode}/resources/img/screenshot_1.png&lt;/screenshot&gt;" />
+            <remove path="/market_entry/img" unless="market.entry.img.present"/>
+            <remove path="/market_entry/small_img" unless="market.entry.small_img.present"/>
+            <remove path="/market_entry/screenshots/screenshot[@id='1']" unless="market.entry.screenshot.1.present"/>
+            <remove path="/market_entry/screenshots/screenshot[@id='2']" unless="market.entry.screenshot.2.present"/>
+            <remove path="/market_entry/screenshots/screenshot[@id='3']" unless="market.entry.screenshot.3.present"/>
         </xmltask>
 
     </target>
