@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project name="buildProject" basedir="." default="jar"
+<project name="buildProject" basedir="." default="build-language-packs"
          xmlns:ivy="antlib:org.apache.ivy.ant">
     <description>
         This build file is used to create the languagePackInstaller project
