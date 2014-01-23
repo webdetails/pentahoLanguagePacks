@@ -142,6 +142,8 @@ div.container  {
   padding:0;
   margin:0;
   border:0;
+  border-style: none;
+  border-color: white;
   background:none;
 
 
@@ -195,7 +197,7 @@ div.container  {
   display:block;
   float:left;
   margin-left:-200px;
-  padding-top:40px;
+  padding-top:24px;
   padding-left:57px;
 }
 .languageDialogContainer .contentWrapper {
@@ -302,11 +304,18 @@ div.container  {
   top:0px;
   left:0px;
 }
-.languageDialogContainer .infoContainer .info a{
-  font-family: 'OpenSansSemibold', Arial, sans-serif;
+
+.languageDialogContainer .infoContainer .info a,
+.languageDialogContainer .msgContainer .error a
+{
+  /* font-family: 'OpenSansSemibold', Arial, sans-serif; */
   color: #1973BC;
-  font-size: 12px;
   text-decoration:none;
+}
+.languageDialogContainer .infoContainer .info a
+{
+  font-family: 'OpenSansSemibold', Arial, sans-serif; 
+  font-size: 12px;
 }
 
 .languageDialogContainer .btnContainer .btn button{
@@ -366,8 +375,7 @@ div.container  {
 {
     background: inherit;
     border: none;
-    color: inherit;
+    color: #008131;
     padding: 0;
 }
-
 
