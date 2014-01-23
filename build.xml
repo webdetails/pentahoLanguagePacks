@@ -172,6 +172,7 @@
                 <fileset dir="${basedir}">
                     <include name="data/${langCode}/system/**"/>
                     <include name="data/${langCode}/tomcat/**"/>
+                    <exclude name="data/${langCode}/**/*_jar/**/*" />
                 </fileset>
             </copy>
             <property name="metadata.json" value="${stage.dir}/${langpack.name}/data/metadata.json"/>
@@ -240,6 +241,11 @@
             <echoxml file="${stage.dir}/${langpack.name}/version.xml">
 				<version branch='${project.stage}' buildId='${sequential.build.id}'>${distribution.version}</version>
             </echoxml>
+
+            <!-- Hack to handle .properties inside jars -->
+            <native2ascii encoding="UTF-8" src="${basedir}/data/${langCode}"
+                          dest="${stage.dir}/${langpack.name}/data/${langCode}"
+                          includes="**/*_jar/**/*" />
 
             <!-- Update plugin metadata -->
             <echo>Updating metadata for ${langpack.name}</echo>
