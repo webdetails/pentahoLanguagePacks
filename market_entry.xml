@@ -45,7 +45,7 @@
       <samples_url></samples_url> <!-- The download URL of samples for this plugin (BA Server only) -->
       <description>Trunk snapshot</description> <!-- the description of the specific version (BA Server only) -->
       <changelog></changelog> <!-- a list of changes since the last update (BA Server only) -->
-      <build_id>0</build_id> <!-- If two versions of a plugin have the same version, you can still distinguish them using the build id - useful for trunk-snapshot versions (BA Server only) --> <!-- In the BA Server, if you specify min and max parent versions, the plugin will only appear in the marketplace if the BA Server is within range of those versions. -->
+      <build_id></build_id> <!-- If two versions of a plugin have the same version, you can still distinguish them using the build id - useful for trunk-snapshot versions (BA Server only) --> <!-- In the BA Server, if you specify min and max parent versions, the plugin will only appear in the marketplace if the BA Server is within range of those versions. -->
       <min_parent_version>5.0</min_parent_version> <!-- the minimum system version this plugin is compatible with (BA Server only) -->
       <max_parent_version>@langpack.metadata.pentahoVersion@</max_parent_version> <!-- the maximum system version this plugin is compatible with (BA Server only) -->
     </version>
