@@ -6,18 +6,25 @@
     "version": "0.1",
     "pentahoVersion": "5.0.1",
     "maintainer": {
-        "name": "",
-        "email": "",
+        "name": "Oncase, Open Consulting",
+        "email": "pentahobr@yahoogrupos.com.br",
         "img": "",
-        "url": "http:\/\/www.pentaho.com"
+        "url": "http://br.groups.yahoo.com/neo/groups/pentahobr/info"
     },
     "credits": [
         {
-            "name": "",
-            "email": "",
+            "name": "Oncase",
+            "email": "iande@oncase.com.br",
             "img": "",
-            "url": ""
-        }
+            "url": "http://www.oncase.com.br/"
+        },
+        {
+            "name": "Open Consulting",
+            "email": "rgouvea@openconsulting.com.br",
+            "img": "",
+            "url": "http://www.openconsulting.com.br/"
+        },
+
     ],
     "sponsors": [
         {

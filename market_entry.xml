@@ -6,7 +6,15 @@
                                - Step, JobEntry, Partitioner, SpoonPlugin, Database, Repository, ImportRule, Mixed - Appears in Kettle
                         -->
   <name>@langpack.metadata.appTitle@</name> <!-- The name of the plugin presented to the user (Both) -->
-  <description>@langpack.metadata.appWelcomeMessage@</description> <!-- The description of the plugin presented to the user (Both) -->
+  <description>
+	  <![CDATA[
+	  @langpack.metadata.appWelcomeMessage@ <br /><br />
+
+	  Report <a href="http://redmine.webdetails.org/projects/lpi">here</a>
+	  any translation issues or suggestions for improvement
+	  ]]>
+	  @langpack.metadata.appWelcomeMessage@
+  </description> <!-- The description of the plugin presented to the user (Both) -->
   <documentation_url>@langpack.metadata.appWelcomeMessage@</documentation_url> <!-- a url to documentation about the plugin (Both) -->
   <author>@langpack.metadata.maintainer.name@</author> <!-- The name of the author of the plugin (Both) -->
   <author_url>@langpack.metadata.maintainer.url@</author_url> <!-- The location of the author's website (BA Server only) -->
