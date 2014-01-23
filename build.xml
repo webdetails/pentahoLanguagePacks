@@ -39,7 +39,7 @@
         <!-- create the version file -->
 	<tstamp/>
 	<property name="sequential.build.id" value="manual-${DSTAMP}"/>
-	<echo file="${stage.dir}/${plugin.name}/version.xml" message="&lt;version branch='TRUNK' buildId='${sequential.build.id}'>${distribution.version}&lt;/version>"/>
+	<echo file="${stage.dir}/${plugin.name}/version.xml" message="&lt;version branch='${project.stage}' buildId='${sequential.build.id}'>${distribution.version}&lt;/version>"/>
         <!-- create a zip file -->
         <zip zipfile="${dist.dir}/${plugin.zipfile}"
              basedir="${stage.dir}"
@@ -49,7 +49,7 @@
         <!-- create a marketplace.xml file -->
         <echoxml file="${dist.dir}/marketplace.xml">
             <version>
-                <branch>TRUNK</branch>
+                <branch>${project.stage}</branch>
                 <version>${distribution.version}</version>
                 <name>Trunk</name>
                 <package_url>not defined</package_url>
@@ -239,7 +239,7 @@
             <property name="sequential.build.id" value="manual-${DSTAMP}"/>
             <!--  <echo file="${stage.dir}/${langpack.name}/version.xml" message="&lt;version branch='TRUNK' buildId='${sequential.build.id}'>${distribution.version}&lt;/version>"/> -->
             <echoxml file="${stage.dir}/${langpack.name}/version.xml">
-                <version branch='TRUNK' buildId='${sequential.build.id}'>${distribution.version}</version>
+				<version branch='${project.stage}' buildId='${sequential.build.id}'>${distribution.version}</version>
             </echoxml>
 
             <!-- Hack to handle .properties inside jars -->
@@ -347,7 +347,7 @@
         <!-- create a marketplace.xml file -->
         <echoxml file="${dist.dir}/${langpack.name}.marketplace.xml">
             <version>
-                <branch>TRUNK</branch>
+				<branch>${project.stage}</branch>
                 <version>${distribution.version}</version>
                 <name>Trunk</name>
                 <package_url>${langpack.package.url}</package_url>

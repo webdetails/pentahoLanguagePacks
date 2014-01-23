@@ -38,8 +38,8 @@
   </installation_notes> <!-- an optional set of notes that displays during install for a plugin (BA Server only) -->
   <versions> <!-- The BA Server currently supports multiple versions of the same plugin with branches, Kettle currently does not, only the first is read,  -->
     <version>
-      <branch>TRUNK</branch> <!-- Tells the Marketplace what branch this plugin belongs to (BA Server only) -->
-      <version>TRUNK-SNAPSHOT</version> <!-- The version of the plugin (Both) -->
+      <branch>PREVIEW</branch> <!-- Tells the Marketplace what branch this plugin belongs to (BA Server only) -->
+      <version>PREVIEW-0.5</version> <!-- The version of the plugin (Both) -->
       <name>Latest build</name> <!-- A User friendly name for the plugin (BA Server only) -->
       <package_url>@langpack.package.url@</package_url> <!-- The download URL of the actual plugin (Both) -->
       <samples_url></samples_url> <!-- The download URL of samples for this plugin (BA Server only) -->
