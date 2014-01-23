@@ -318,6 +318,11 @@ div.container  {
   font-size: 12px;
 }
 
+.languageDialogContainer .msgContainer .error div
+{
+  color: #f41b20;
+}
+
 .languageDialogContainer .btnContainer .btn button{
   font-family: 'OpenSansLight' , Arial, sans-serif;
 
