@@ -11,6 +11,21 @@
   <modified_user>-</modified_user>
   <modified_date>2013&#x2f;07&#x2f;04 18&#x3a;48&#x3a;22.641</modified_date>
     <parameters>
+        <parameter>
+            <name>cpk.plugin.dir</name>
+            <default_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>cpk.solution.system.dir</name>
+            <default_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;..&#x2f;</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>cpk.webapp.dir</name>
+            <default_value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;..&#x2f;..&#x2f;tomcat&#x2f;webapps&#x2f;pentaho</default_value>
+            <description/>
+        </parameter>
     </parameters>
   <connection>
     <name>AgileBI</name>
@@ -363,7 +378,7 @@
       <name>Write To Log</name>
       <description/>
       <type>WRITE_TO_LOG</type>
-      <logmessage>Installpack&#x3a; &#xa;cpk.webapp.dir &#x3d; &#x24;&#x7b;cpk.webapp.dir&#x7d;&#xa;cpk.solution.system.dir &#x3d; &#x24;&#x7b;cpk.solution.system.dir&#x7d;&#xa;cpk.solution.dir &#x3d; &#x24;&#x7b;cpk.solution.dir&#x7d;&#xa;cpk.webapps.dir &#x3d; &#x24;&#x7b;cpk.webapps.dir&#x7d;&#xa;cpk.plugin.dir &#x3d; &#x24;&#x7b;cpk.plugin.dir&#x7d;</logmessage>
+      <logmessage>Installpack&#x3a; &#xa;cpk.webapp.dir &#x3d; &#x24;&#x7b;cpk.webapp.dir&#x7d;&#xa;cpk.solution.system.dir &#x3d; &#x24;&#x7b;cpk.solution.system.dir&#x7d;&#xa;cpk.solution.dir &#x3d; &#x24;&#x7b;cpk.solution.dir&#x7d;&#xa;cpk.webapp.dir &#x3d; &#x24;&#x7b;cpk.webapp.dir&#x7d;&#xa;cpk.plugin.dir &#x3d; &#x24;&#x7b;cpk.plugin.dir&#x7d;</logmessage>
       <loglevel>Minimal</loglevel>
       <logsubject/>
       <parallel>N</parallel>
