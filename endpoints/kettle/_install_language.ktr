@@ -617,7 +617,7 @@
     <limit>0</limit>
     <file>
       <name>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;data&#x2f;&#x24;&#x7b;languageCode&#x7d;&#x2f;&#x24;&#x7b;target&#x7d;</name>
-      <filemask>.&#x2a;&#x24;&#x7b;languageCode&#x7d;&#x5c;.properties&#x7c;.&#x2a;&#x5c;.js</filemask>
+      <filemask>.&#x2a;_&#x24;&#x7b;languageCode&#x7d;&#x5c;.properties&#x7c;.&#x2a;&#x5c;.js</filemask>
       <exclude_filemask/>
       <file_required>N</file_required>
       <include_subfolders>Y</include_subfolders>
