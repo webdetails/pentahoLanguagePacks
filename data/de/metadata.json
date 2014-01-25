@@ -6,15 +6,15 @@
     "version": "0.1",
     "pentahoVersion": "5.0.1",
     "maintainer": {
-        "name": "",
-        "email": "",
+        "name": "Thomas Starl",
+        "email": "pentaho-localization@tink.de",
         "img": "",
         "url": ""
     },
     "credits": [
         {
-            "name": "",
-            "email": "",
+            "name": "Thomas Starl",
+            "email": "pentaho-localization@tink.de",
             "img": "",
             "url": ""
         }
