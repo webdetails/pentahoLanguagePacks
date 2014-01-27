@@ -15,6 +15,7 @@ languageCode = sys.argv[1] # language as it is typed by the user
 languageCode_underscore = languageCode.replace('-', '_').replace(' ', '_'); # this is bith the java and historic approach, we will use this
 languageCode_hyphen = languageCode.replace('_', '-').replace(' ', '-');  # this seems to be the IETF standard
 jar_whitelist = ['pivot4j-analytics', 'pivot4j-core']
+#file_backlist = ['system/common-ui/resources/messages']
 
 origin_folder = os.path.abspath(sys.argv[2].replace('file://', ''))
 destination_folder = os.path.abspath(sys.argv[3].replace('file://', ''))
@@ -130,8 +131,21 @@ def convert_to_utf8(filename, backup=False):
     finally:
         f.close()
 
+def copy_and_edit_js(src_filename, dst_filename):
+    # Copy template js and attempt to fix the languageCode, e.g. "en" -> "pt_PT"
+    # copy(src_filename, dst_filename)
+    dst_parent = os.path.dirname(dst_filename);
+    if not os.path.exists(dst_parent):
+        os.makedirs(dst_parent)
 
-
+    replacements = {'.en': '.' + languageCode.lower(), '_en': '_'+languageCode.lower()}
+    with open(dst_filename, 'w') as outfile:
+        with open(src_filename) as infile:
+            for line in infile:
+                for src, target in replacements.iteritems():
+                    line = line.replace(src, target)
+                outfile.write(line)
+#end def
 
 os.chdir(origin_folder)
 
@@ -175,12 +189,13 @@ for root, dirs, filenames in os.walk('.'):
 
         # Copy all *nls/*LANG*.js
         gg = src.lower() # Notice that g means the full path
-        if gg.endswith('.js') and ('nls' in g):
-            if (languageCode_hyphen.lower() in gg) or (languageCode_underscore.lower() in gg):
+        if ('nls' in g):
+            if gg.endswith(languageCode_hyphen.lower() + '.js') or gg.endswith(languageCode_underscore.lower()+ '.js'):
                 src = os.path.join(root, f)
                 dst =  os.path.realpath(os.path.join(destination_folder, root, f ))
                 if not os.path.exists(dst):
                     copy(src, dst)
+
 
 
 # Second round: fill in the gaps, generate missing files
@@ -225,8 +240,8 @@ for root, dirs, filenames in os.walk('.'):
             if len(ff) > 0:
                 dst_localised =  os.path.realpath(os.path.join(destination_folder, ff ))
                 if not os.path.exists(dst_localised):
-                    copy(src, dst_localised)
-
+                    #copy(src, dst_localised)
+                    copy_and_edit_js(src, dst_localised)
 
 # Third round: convert the encoding of all *.properties to utf8, fix *supported_languages.properties
 for root, dirs, filenames in os.walk(destination_folder):
@@ -241,3 +256,15 @@ for root, dirs, filenames in os.walk(destination_folder):
         elif g.endswith('supported_languages.properties'):
             with codecs.open(src, 'w', 'utf-8') as fout:
                 fout.write('#Language Pack Installer: no need to edit this file\n')
+
+# Fourth round: eliminate tmp and cache files
+tmp_files = ['/tmp/', '/plugin-cache/']
+for root, dirs, filenames in os.walk(destination_folder):
+    for f in filenames:
+        g = f.lower()
+        for tmp in tmp_files:
+            if tmp in f:
+                try:
+                    shutil.rmtree( os.path.join(root,f) )
+                except e:
+                    pass
