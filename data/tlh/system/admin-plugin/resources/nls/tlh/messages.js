@@ -118,7 +118,7 @@
     LICENSE_VALID_LICENSE_FOUND_LOG : 'Valid biserver-ee license found',
     LICENSE_NO_VALID_LICENSE_FOUND_LOG : 'No valid biserver-ee license found',
     LICENSE_NO_VALID_LICENSE_MESSAGE_HEADER : "Missing or expired license.",
-LICENSE_NO_VALID_LICENSE_MESSAGE_BODY : 'To continue you must update your Pentaho BI Platform license. If you are not ready now you may <a href="%CONTEXT_PATH%\Logout" target="_top">log out</a> and come back later.',<TRANSLATE ME>
+    LICENSE_NO_VALID_LICENSE_MESSAGE_BODY : 'To continue you must update your Pentaho BI Platform license. If you are not ready now you may <a href="%CONTEXT_PATH%\Logout" target="_top">log out</a> and come back later.',
     LICENSE_CANCEL_BUTTON : 'Log Out',
     LICENSE_OK_BUTTON : 'Ok'
 
