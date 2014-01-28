@@ -14,6 +14,7 @@ import codecs
 languageCode = sys.argv[1] # language as it is typed by the user
 languageCode_underscore = languageCode.replace('-', '_').replace(' ', '_'); # this is bith the java and historic approach, we will use this
 languageCode_hyphen = languageCode.replace('_', '-').replace(' ', '-');  # this seems to be the IETF standard
+languageCode_slash = '/' + languageCode + '/';
 jar_whitelist = ['pivot4j-analytics', 'pivot4j-core']
 #file_backlist = ['system/common-ui/resources/messages']
 
@@ -43,11 +44,12 @@ def copy(src, dst, patch=False):
         add_missing_properties(lines_src, dst)
     else:
         shutil.copy2(src, dst)
+        convert_to_utf8(dst)
 
 
-def add_missing_properties(lines_src, dst_localised):
+def add_missing_properties(lines_src, dst_localised, encoding='utf-8'):
     if os.path.exists(dst_localised):
-        with codecs.open(dst_localised, 'a+', 'utf-8') as fout:
+        with codecs.open(dst_localised, 'a+', encoding, errors='ignore') as fout:
             fout.seek(0)
             lines_dst = fout.readlines()
             #print 'File ' + dst_localised + ' contains' , len(lines_dst), 'lines'
@@ -84,7 +86,7 @@ def add_missing_properties(lines_src, dst_localised):
 def convert_to_utf8(filename, backup=False):
     # gather the encodings you think that the file may be
     # encoded inside a tuple
-    encodings = ('iso-8859-1', 'ascii')
+    encodings = ('utf-8','iso-8859-1', 'ascii')
 
     # try to open the file and exit if some IOError occurs
     try:
@@ -160,10 +162,21 @@ for root, dirs, filenames in os.walk('.'):
             #print "Skipping file", src, ", (belongs to the plugin folder: ", plugin_folder, ')'
             continue
 
-        # Grab *messages_LANG.properties and  *supported_languages.properties
         dst =  os.path.realpath(os.path.join(destination_folder, root, f ))
+        # Prevent existing files from being overwritten
+        if os.path.exists(dst) and not dst.endswith('.js'):
+            print "Skipped copying file", dst, "in the first round because it already exists"
+            continue
+
+
+        # Grab *messages_LANG.properties and  *supported_languages.properties
         if g.endswith('supported_languages.properties'):
-            copy(src, dst)
+            dst_parent = os.path.dirname(dst);
+            if not os.path.exists(dst_parent):
+                os.makedirs(dst_parent)
+            with codecs.open(dst, 'w', 'utf-8') as fout:
+                fout.write('#Language Pack Installer: no need to edit this file\n')
+            #copy(src, dst)
         elif g.endswith('messages_'+ languageCode_underscore.lower()  +'.properties') and not force:
             copy(src, dst)
         elif g.endswith('messages_'+ languageCode_hyphen.lower()  +'.properties') and not force:
@@ -189,12 +202,14 @@ for root, dirs, filenames in os.walk('.'):
 
         # Copy all *nls/*LANG*.js
         gg = src.lower() # Notice that g means the full path
-        if ('nls' in g):
-            if gg.endswith(languageCode_hyphen.lower() + '.js') or gg.endswith(languageCode_underscore.lower()+ '.js'):
-                src = os.path.join(root, f)
-                dst =  os.path.realpath(os.path.join(destination_folder, root, f ))
-                if not os.path.exists(dst):
-                    copy(src, dst)
+        if ('nls' in gg) and gg.endswith('.js'):
+            js_patterns = [ '/'+languageCode_hyphen+'/', '_'+languageCode_hyphen];
+            for p in js_patterns:
+                if p in gg:
+                    src = os.path.join(root, f)
+                    dst =  os.path.realpath(os.path.join(destination_folder, root, f ))
+                    if not os.path.exists(dst):
+                        copy(src, dst)
 
 
 
@@ -213,8 +228,16 @@ for root, dirs, filenames in os.walk('.'):
             dst_localised =  os.path.realpath(os.path.join(destination_folder, root, f.replace('.properties', '_' + languageCode_underscore + '.properties') ))
             with codecs.open(src, 'r', 'utf-8') as fin:
                 lines_src = fin.readlines()
-            add_missing_properties(lines_src, dst_localised)
-
+            try:
+                add_missing_properties(lines_src, dst_localised)
+                # break
+                #except UnicodeDecodeError as e:
+                #print "Error adding key  to " + dst_localised + ", attempting latin1 encoding"
+                #add_missing_properties(lines_src, dst_localised, 'latin1')
+            except Exception as e:
+                print "==== \n   Error adding key to ".upper() + dst_localised
+                print e
+                print "===="
         # Patch messages_LANG.properties missing in jars
         if g.endswith('.jar'):
             for whitelist_item in jar_whitelist:
@@ -258,13 +281,15 @@ for root, dirs, filenames in os.walk(destination_folder):
                 fout.write('#Language Pack Installer: no need to edit this file\n')
 
 # Fourth round: eliminate tmp and cache files
-tmp_files = ['/tmp/', '/plugin-cache/']
+tmp_files = ['/tmp', '/plugin-cache']
 for root, dirs, filenames in os.walk(destination_folder):
     for f in filenames:
-        g = f.lower()
+        dst = os.path.join(root,f)
+        g = dst.lower()
         for tmp in tmp_files:
-            if tmp in f:
+            if g.endswith(tmp):
                 try:
-                    shutil.rmtree( os.path.join(root,f) )
+                    print "Removing folder: " + dst
+                    shutil.rmtree( dst )
                 except e:
                     pass

@@ -159,10 +159,23 @@
             <!-- delete and re-create the plugin dist folder tree -->
             <mkdir dir="${stage.dir}/${langpack.name}"/>
             <mkdir dir="${dist.dir}"/>
-            <!-- duplicate plugin into a staging folder  -->
+            <delete><fileset dir="${dist.dir}"/></delete>
+
+            <!-- Copy files requiring NATIVE2ASCII conversion into the staging folder -->
+            <!-- handle .properties inside jars -->
+            <native2ascii encoding="UTF-8" src="${basedir}/data/${langCode}"
+                          dest="${stage.dir}/${langpack.name}/data/${langCode}">
+                <include name="**/*_jar/**/*" />
+                <include name="**/system/analyzer/**/*_${langCode}.properties"/>
+                <include name="**/system/dashboards/**/*_${langCode}.properties"/>
+                <include name="**/system/data-access/**/*_${langCode}.properties"/>
+                <include name="**/system/pentaho-geo/**/*_${langCode}.properties"/>
+            </native2ascii>
+
+            <!--copy remaining files into the staging folder  -->
             <basename property="bin.dir.relative" file="${bin.dir}"/>
             <basename property="dist.dir.relative" file="${dist.dir}"/>
-            <copy todir="${stage.dir}/${langpack.name}/" overwrite="true">
+            <copy todir="${stage.dir}/${langpack.name}/" overwrite="false">
                 <fileset dir="${basedir}">
                     <include name="**/*"/>
                     <exclude name="${bin.dir.relative}/**"/>
@@ -172,7 +185,6 @@
                 <fileset dir="${basedir}">
                     <include name="data/${langCode}/system/**"/>
                     <include name="data/${langCode}/tomcat/**"/>
-                    <exclude name="data/${langCode}/**/*_jar/**/*" />
                 </fileset>
             </copy>
             <property name="metadata.json" value="${stage.dir}/${langpack.name}/data/metadata.json"/>
@@ -242,10 +254,7 @@
 				<version branch='${project.stage}' buildId='${sequential.build.id}'>${distribution.version}</version>
             </echoxml>
 
-            <!-- Hack to handle .properties inside jars -->
-            <native2ascii encoding="UTF-8" src="${basedir}/data/${langCode}"
-                          dest="${stage.dir}/${langpack.name}/data/${langCode}"
-                          includes="**/*_jar/**/*" />
+
 
             <!-- Update plugin metadata -->
             <echo>Updating metadata for ${langpack.name}</echo>

@@ -22,6 +22,10 @@ do
         rsync -uva $DEST/tlh/resources $DEST/"$locale"/
         find $DEST/"$locale"/resources -iname "*.properties" |  xargs -I {} sed -i '' 's/Klingon/@$locale@/g' {}
     fi
+
+    find $DEST/"$locale" -iname "*.js" | xargs js-beautify -r
+    rm -rf $DEST/"$locale"/system/plugin-cache
+
     #cd $DEST/
     #zip -r zips/"$locale" "$locale"
     #cd $HERE
