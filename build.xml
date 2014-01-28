@@ -159,7 +159,7 @@
             <!-- delete and re-create the plugin dist folder tree -->
             <mkdir dir="${stage.dir}/${langpack.name}"/>
             <mkdir dir="${dist.dir}"/>
-            <delete><fileset dir="${dist.dir}"/></delete>
+            <delete><fileset dir="${stage.dir}/${langpack.name}"/></delete>
 
             <!-- Copy files requiring NATIVE2ASCII conversion into the staging folder -->
             <!-- handle .properties inside jars -->
