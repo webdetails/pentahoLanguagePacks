@@ -1,1 +1,164 @@
-dojo.provide("dojo.nls.dojo-reportviewer_en");dojo.provide("dijit.nls.loading");dijit.nls.loading._built=true;dojo.provide("dijit.nls.loading.en");dijit.nls.loading.en={"loadingState":"Loading...","errorState":"Sorry, an error occurred"};dojo.provide("dijit.nls.common");dijit.nls.common._built=true;dojo.provide("dijit.nls.common.en");dijit.nls.common.en={"buttonOk":"OK","buttonCancel":"Cancel","buttonSave":"Save","itemClose":"Close"};dojo.provide("dojo.cldr.nls.gregorian");dojo.cldr.nls.gregorian._built=true;dojo.provide("dojo.cldr.nls.gregorian.en");dojo.cldr.nls.gregorian.en={"dateFormatItem-yM":"M/y","field-dayperiod":"AM/PM","dateFormatItem-yQ":"Q y","dayPeriods-format-wide-pm":"PM","field-minute":"Minute","eraNames":["Before Christ","Anno Domini"],"dateFormatItem-MMMEd":"E, MMM d","dateTimeFormat-full":"{1} {0}","field-day-relative+-1":"Yesterday","field-weekday":"Day of the Week","dateFormatItem-hms":"h:mm:ss a","dateFormatItem-yQQQ":"QQQ y","days-standAlone-wide":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dateFormatItem-MMM":"LLL","months-standAlone-narrow":["J","F","M","A","M","J","J","A","S","O","N","D"],"dateTimeFormat-short":"{1} {0}","field-era":"Era","field-hour":"Hour","dayPeriods-format-wide-am":"AM","dateTimeFormat-medium":"{1} {0}","dateFormatItem-y":"y","timeFormat-full":"h:mm:ss a zzzz","months-standAlone-abbr":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"dateFormatItem-yMMM":"MMM y","field-day-relative+0":"Today","field-day-relative+1":"Tomorrow","days-standAlone-narrow":["S","M","T","W","T","F","S"],"eraAbbr":["BC","AD"],"dateFormat-long":"MMMM d, y","timeFormat-medium":"h:mm:ss a","dateFormatItem-EEEd":"d EEE","field-zone":"Zone","dateFormatItem-Hm":"HH:mm","dateFormat-medium":"MMM d, y","dateFormatItem-Hms":"HH:mm:ss","quarters-standAlone-wide":["1st quarter","2nd quarter","3rd quarter","4th quarter"],"dateFormatItem-ms":"mm:ss","field-year":"Year","quarters-standAlone-narrow":["1","2","3","4"],"dateTimeFormat-long":"{1} {0}","field-week":"Week","months-standAlone-wide":["January","February","March","April","May","June","July","August","September","October","November","December"],"dateFormatItem-MMMd":"MMM d","timeFormat-long":"h:mm:ss a z","months-format-abbr":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"dayPeriods-format-wide-noon":"noon","timeFormat-short":"h:mm a","field-month":"Month","quarters-format-abbr":["Q1","Q2","Q3","Q4"],"days-format-abbr":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dateFormatItem-M":"L","days-format-narrow":["S","M","T","W","T","F","S"],"field-second":"Second","field-day":"Day","dateFormatItem-MEd":"E, M/d","months-format-narrow":["J","F","M","A","M","J","J","A","S","O","N","D"],"dateFormatItem-hm":"h:mm a","days-standAlone-abbr":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dateFormat-short":"M/d/yy","dateFormatItem-yMMMEd":"EEE, MMM d, y","dateFormat-full":"EEEE, MMMM d, y","dateFormatItem-Md":"M/d","dateFormatItem-yMEd":"EEE, M/d/y","months-format-wide":["January","February","March","April","May","June","July","August","September","October","November","December"],"dateFormatItem-d":"d","quarters-format-wide":["1st quarter","2nd quarter","3rd quarter","4th quarter"],"days-format-wide":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"eraNarrow":["B","A"],"dateTimeFormats-appendItem-Day-Of-Week":"{0} {1}","dayPeriods-format-abbr-am":"AM","dateTimeFormats-appendItem-Second":"{0} ({2}: {1})","dateTimeFormats-appendItem-Era":"{0} {1}","dateTimeFormats-appendItem-Week":"{0} ({2}: {1})","dateFormatItem-H":"HH","quarters-standAlone-abbr":["Q1","Q2","Q3","Q4"],"quarters-format-narrow":["1","2","3","4"],"dateFormatItem-h":"h a","dayPeriods-format-narrow-am":"AM","dateTimeFormats-appendItem-Day":"{0} ({2}: {1})","dateTimeFormats-appendItem-Year":"{0} {1}","dateTimeFormats-appendItem-Hour":"{0} ({2}: {1})","dayPeriods-format-abbr-pm":"PM","dateTimeFormats-appendItem-Quarter":"{0} ({2}: {1})","dateTimeFormats-appendItem-Month":"{0} ({2}: {1})","dateTimeFormats-appendItem-Minute":"{0} ({2}: {1})","dateTimeFormats-appendItem-Timezone":"{0} {1}","dayPeriods-format-narrow-pm":"PM"};dojo.provide("dijit.form.nls.validate");dijit.form.nls.validate._built=true;dojo.provide("dijit.form.nls.validate.en");dijit.form.nls.validate.en={"rangeMessage":"This value is out of range.","invalidMessage":"The value entered is not valid.","missingMessage":"This value is required."};dojo.provide("dojo.cldr.nls.number");dojo.cldr.nls.number._built=true;dojo.provide("dojo.cldr.nls.number.en");dojo.cldr.nls.number.en={"group":",","percentSign":"%","exponential":"E","percentFormat":"#,##0%","scientificFormat":"#E0","list":";","infinity":"∞","patternDigit":"#","minusSign":"-","decimal":".","nan":"NaN","nativeZeroDigit":"0","perMille":"‰","decimalFormat":"#,##0.###","currencyFormat":"¤#,##0.00;(¤#,##0.00)","plusSign":"+","decimalFormat-short":"000T","currencySpacing-afterCurrency-currencyMatch":"[:letter:]","currencySpacing-beforeCurrency-surroundingMatch":"[:digit:]","currencySpacing-afterCurrency-insertBetween":" ","currencySpacing-afterCurrency-surroundingMatch":"[:digit:]","currencySpacing-beforeCurrency-currencyMatch":"[:letter:]","currencySpacing-beforeCurrency-insertBetween":" "};
+dojo.provide("dojo.nls.dojo-reportviewer_fr");
+dojo.provide("dijit.nls.loading");
+dijit.nls.loading._built = true;
+dojo.provide("dijit.nls.loading.fr");
+dijit.nls.loading.fr = {
+    "loadingState": "Chargement...",
+    "errorState": "Une erreur est survenue"
+};
+dojo.provide("dijit.nls.common");
+dijit.nls.common._built = true;
+dojo.provide("dijit.nls.common.fr");
+dijit.nls.common.fr = {
+    "buttonOk": "OK",
+    "buttonCancel": "Annuler",
+    "buttonSave": "Sauvegarder",
+    "itemClose": "Fermer"
+};
+dojo.provide("dojo.cldr.nls.gregorian");
+dojo.cldr.nls.gregorian._built = true;
+dojo.provide("dojo.cldr.nls.gregorian.fr");
+dojo.cldr.nls.gregorian.fr = {
+    "months-format-narrow": ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
+    "field-weekday": "jour de la semaine",
+    "dateFormatItem-yyQQQQ": "QQQQ yy",
+    "dateFormatItem-yQQQ": "QQQ y",
+    "dateFormatItem-yMEd": "EEE d/M/yyyy",
+    "dateFormatItem-MMMEd": "E d MMM",
+    "eraNarrow": ["av. J.-C.", "ap. J.-C."],
+    "dayPeriods-format-wide-morning": "matin",
+    "dateFormatItem-MMMdd": "dd MMM",
+    "dateFormat-long": "d MMMM y",
+    "months-format-wide": ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
+    "dayPeriods-format-wide-pm": "PM",
+    "dateFormat-full": "EEEE d MMMM y",
+    "dateFormatItem-Md": "d/M",
+    "dayPeriods-format-wide-noon": "midi",
+    "field-era": "ère",
+    "dateFormatItem-yM": "M/yyyy",
+    "months-standAlone-wide": ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
+    "timeFormat-short": "HH:mm",
+    "quarters-format-wide": ["1er trimestre", "2e trimestre", "3e trimestre", "4e trimestre"],
+    "timeFormat-long": "HH:mm:ss z",
+    "field-year": "année",
+    "dateFormatItem-yMMM": "MMM y",
+    "dateFormatItem-yQ": "'T'Q y",
+    "dateFormatItem-yyyyMMMM": "MMMM y",
+    "field-hour": "heure",
+    "dateFormatItem-MMdd": "dd/MM",
+    "months-format-abbr": ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."],
+    "dateFormatItem-yyQ": "'T'Q yy",
+    "timeFormat-full": "HH:mm:ss zzzz",
+    "field-day-relative+0": "aujourd’hui",
+    "field-day-relative+1": "demain",
+    "field-day-relative+2": "après-demain",
+    "field-day-relative+3": "après-après-demain",
+    "months-standAlone-abbr": ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."],
+    "quarters-format-abbr": ["T1", "T2", "T3", "T4"],
+    "quarters-standAlone-wide": ["1er trimestre", "2e trimestre", "3e trimestre", "4e trimestre"],
+    "dateFormatItem-M": "L",
+    "days-standAlone-wide": ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"],
+    "dateFormatItem-yyMMMEEEd": "EEE d MMM yy",
+    "dateFormatItem-yyMMM": "MMM yy",
+    "timeFormat-medium": "HH:mm:ss",
+    "dateFormatItem-Hm": "HH:mm",
+    "quarters-standAlone-abbr": ["T1", "T2", "T3", "T4"],
+    "eraAbbr": ["av. J.-C.", "ap. J.-C."],
+    "field-minute": "minute",
+    "field-dayperiod": "cadran",
+    "days-standAlone-abbr": ["dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."],
+    "dayPeriods-format-wide-night": "soir",
+    "dateFormatItem-yyMMMd": "d MMM yy",
+    "dateFormatItem-d": "d",
+    "dateFormatItem-ms": "mm:ss",
+    "quarters-format-narrow": ["T1", "T2", "T3", "T4"],
+    "field-day-relative+-1": "hier",
+    "field-day-relative+-2": "avant-hier",
+    "field-day-relative+-3": "avant-avant-hier",
+    "dateFormatItem-MMMd": "d MMM",
+    "dateFormatItem-MEd": "EEE d/M",
+    "field-day": "jour",
+    "days-format-wide": ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"],
+    "field-zone": "fuseau horaire",
+    "dateFormatItem-y": "y",
+    "months-standAlone-narrow": ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
+    "dateFormatItem-yyMM": "MM/yy",
+    "days-format-abbr": ["dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."],
+    "eraNames": ["avant Jésus-Christ", "après Jésus-Christ"],
+    "days-format-narrow": ["D", "L", "M", "M", "J", "V", "S"],
+    "field-month": "mois",
+    "days-standAlone-narrow": ["D", "L", "M", "M", "J", "V", "S"],
+    "dateFormatItem-MMM": "LLL",
+    "dayPeriods-format-wide-am": "AM",
+    "dateFormatItem-MMMMEd": "EEE d MMMM",
+    "dateFormat-short": "dd/MM/yy",
+    "dateFormatItem-MMd": "d/MM",
+    "dayPeriods-format-wide-afternoon": "après-midi",
+    "field-second": "seconde",
+    "dateFormatItem-yMMMEd": "EEE d MMM y",
+    "dateFormatItem-Ed": "E d",
+    "field-week": "semaine",
+    "dateFormat-medium": "d MMM y",
+    "dateFormatItem-Hms": "HH:mm:ss",
+    "quarters-standAlone-narrow": ["1", "2", "3", "4"],
+    "dateTimeFormats-appendItem-Day-Of-Week": "{0} {1}",
+    "dateTimeFormat-medium": "{1} {0}",
+    "dateFormatItem-EEEd": "d EEE",
+    "dayPeriods-format-abbr-am": "AM",
+    "dateTimeFormats-appendItem-Second": "{0} ({2}: {1})",
+    "dateTimeFormats-appendItem-Era": "{0} {1}",
+    "dateTimeFormats-appendItem-Week": "{0} ({2}: {1})",
+    "dateFormatItem-H": "HH",
+    "dateFormatItem-h": "h a",
+    "dateTimeFormat-long": "{1} {0}",
+    "dayPeriods-format-narrow-am": "AM",
+    "dateTimeFormat-full": "{1} {0}",
+    "dateTimeFormats-appendItem-Day": "{0} ({2}: {1})",
+    "dateFormatItem-hm": "h:mm a",
+    "dateTimeFormats-appendItem-Year": "{0} {1}",
+    "dateTimeFormats-appendItem-Hour": "{0} ({2}: {1})",
+    "dayPeriods-format-abbr-pm": "PM",
+    "dateTimeFormats-appendItem-Quarter": "{0} ({2}: {1})",
+    "dateTimeFormats-appendItem-Month": "{0} ({2}: {1})",
+    "dateTimeFormats-appendItem-Minute": "{0} ({2}: {1})",
+    "dateTimeFormats-appendItem-Timezone": "{0} {1}",
+    "dayPeriods-format-narrow-pm": "PM",
+    "dateTimeFormat-short": "{1} {0}",
+    "dateFormatItem-hms": "h:mm:ss a"
+};
+dojo.provide("dijit.form.nls.validate");
+dijit.form.nls.validate._built = true;
+dojo.provide("dijit.form.nls.validate.fr");
+dijit.form.nls.validate.fr = {
+    "rangeMessage": "Cette valeur n'est pas comprise dans la plage autorisée.",
+    "invalidMessage": "La valeur indiquée n'est pas correcte.",
+    "missingMessage": "Cette valeur est requise."
+};
+dojo.provide("dojo.cldr.nls.number");
+dojo.cldr.nls.number._built = true;
+dojo.provide("dojo.cldr.nls.number.fr");
+dojo.cldr.nls.number.fr = {
+    "group": " ",
+    "percentSign": "%",
+    "exponential": "E",
+    "percentFormat": "#,##0 %",
+    "scientificFormat": "#E0",
+    "list": ";",
+    "infinity": "∞",
+    "patternDigit": "#",
+    "minusSign": "-",
+    "decimal": ",",
+    "nan": "NaN",
+    "nativeZeroDigit": "0",
+    "perMille": "‰",
+    "decimalFormat": "#,##0.###",
+    "currencyFormat": "#,##0.00 ¤",
+    "plusSign": "+",
+    "currencySpacing-afterCurrency-currencyMatch": "[:letter:]",
+    "currencySpacing-beforeCurrency-surroundingMatch": "[:digit:]",
+    "decimalFormat-short": "000T",
+    "currencySpacing-afterCurrency-insertBetween": " ",
+    "currencySpacing-afterCurrency-surroundingMatch": "[:digit:]",
+    "currencySpacing-beforeCurrency-currencyMatch": "[:letter:]",
+    "currencySpacing-beforeCurrency-insertBetween": " "
+};
