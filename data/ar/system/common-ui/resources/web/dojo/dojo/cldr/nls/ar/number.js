@@ -1,23 +1,18 @@
 define(
     //begin v1.x content
     {
-        "group": ",",
-        "percentSign": "%",
-        "exponential": "E",
-        "scientificFormat": "#E0",
-        "percentFormat": "#,##0%",
-        "list": ";",
+        "group": "٬",
+        "percentSign": "٪",
+        "exponential": "اس",
+        "list": "؛",
         "infinity": "∞",
-        "patternDigit": "#",
         "minusSign": "-",
-        "decimal": ".",
-        "nan": "NaN",
-        "nativeZeroDigit": "0",
-        "perMille": "‰",
-        "decimalFormat": "#,##0.###",
-        "currencyFormat": "¤#,##0.00;(¤#,##0.00)",
-        "plusSign": "+",
-        "decimalFormat-short": "000T"
+        "decimal": "٫",
+        "nan": "ليس رقم",
+        "perMille": "؉",
+        "decimalFormat": "#,##0.###;#,##0.###-",
+        "currencyFormat": "¤ #,##0.00;¤ #,##0.00-",
+        "plusSign": "+"
     }
     //end v1.x content
 );

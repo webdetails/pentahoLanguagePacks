@@ -1,0 +1,4 @@
+({
+    "setButtonText": "تحديد",
+    "cancelButtonText": "الغاء"
+})
