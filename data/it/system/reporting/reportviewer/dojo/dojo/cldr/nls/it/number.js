@@ -1,1 +1,25 @@
-({"group":",","percentSign":"%","exponential":"E","percentFormat":"#,##0%","scientificFormat":"#E0","list":";","infinity":"∞","patternDigit":"#","minusSign":"-","decimal":".","nan":"NaN","nativeZeroDigit":"0","perMille":"‰","decimalFormat":"#,##0.###","currencyFormat":"¤#,##0.00;(¤#,##0.00)","plusSign":"+","decimalFormat-short":"000T","currencySpacing-afterCurrency-currencyMatch":"[:letter:]","currencySpacing-beforeCurrency-surroundingMatch":"[:digit:]","currencySpacing-afterCurrency-insertBetween":" ","currencySpacing-afterCurrency-surroundingMatch":"[:digit:]","currencySpacing-beforeCurrency-currencyMatch":"[:letter:]","currencySpacing-beforeCurrency-insertBetween":" "})
+({
+    "decimalFormat": "#,##0.###",
+    "group": ".",
+    "scientificFormat": "#E0",
+    "percentFormat": "#,##0%",
+    "currencyFormat": "¤ #,##0.00",
+    "decimal": ",",
+    "currencySpacing-afterCurrency-currencyMatch": "[:letter:]",
+    "infinity": "∞",
+    "list": ";",
+    "percentSign": "%",
+    "minusSign": "-",
+    "currencySpacing-beforeCurrency-surroundingMatch": "[:digit:]",
+    "decimalFormat-short": "000T",
+    "currencySpacing-afterCurrency-insertBetween": " ",
+    "nan": "NaN",
+    "nativeZeroDigit": "0",
+    "plusSign": "+",
+    "currencySpacing-afterCurrency-surroundingMatch": "[:digit:]",
+    "currencySpacing-beforeCurrency-currencyMatch": "[:letter:]",
+    "perMille": "‰",
+    "patternDigit": "#",
+    "currencySpacing-beforeCurrency-insertBetween": " ",
+    "exponential": "E"
+})

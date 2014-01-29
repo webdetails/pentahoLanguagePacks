@@ -14,7 +14,7 @@
     LDAP_SERVER_URL_LABEL: 'Server URL:',
     LDAP_USER_LABEL: 'Nome Utente:',
     LDAP_PASSWORD_LABEL: 'Password:',
-    LDAP_TEST_CONNECTION_LABEL : 'Prova la connessione per procedere al setup di LDAP',
+    LDAP_TEST_CONNECTION_LABEL: 'Prova la connessione per procedere al setup di LDAP',
     LDAP_SERVER_URL_DESCRIPTION: 'L\'URL di connessione da utilizzare quando ci si connette al directory server',
     LDAP_USER_DESCRIPTION: 'Nome distinto (DN) di un utente con diritti di lettura alla directory',
     LDAP_PASSWORD_DESCRIPTION: 'La password dell\'utente specificato sopra',
@@ -46,9 +46,9 @@
 
     //ldap custom user search configuration
     LDAP_USER_SEARCH_TITLE: 'Ricerca Utente',
-    
+
     //ldap custom roles configuration 
-    LDAP_ROLES_TITLE: 'Ruoli',    
+    LDAP_ROLES_TITLE: 'Ruoli',
     LDAP_ROLE_BASE_LABEL: 'Attributto di Ruolo:',
     LDAP_ROLE_SEARCH_FILTER_LABEL: 'Filtro di Ricerca per Ruolo:',
     LDAP_ROLE_SEARCH_BASE_LABEL: 'Ruolo Search Base:',
@@ -70,7 +70,7 @@
     LDAP_POPULATOR_UPPERCASE_DESCRIPTION: 'Indica se i nomi degli ruoli sono convertiti in maiuscolo.',
     LDAP_POPULATOR_SUBTREE_LABEL: 'Ramo:',
     LDAP_POPULATOR_SUBTREE_DESCRIPTION: 'Indica se la ricerca deve o meno includere l\'oggetto corrente e tutti i suoi figli. Se è impostato a false, la ricerca deve includere solo l\'oggetto corrente.',
-    
+
     //dialogs
     LDAP_BROWSER_TITLE: 'LDAP Browser',
     LDAP_WARNING: 'Attenzione',
@@ -90,11 +90,11 @@
     LDAP_POPULATOR_TEST: 'Prova LDAP Populator',
     LDAP_USER_TEST: 'Prova Utente LDAP',
     LDAP_ROLES_TEST: 'Prova Ruoli LDAP',
-    LDAP_CONNECTOR_TEST_PASSED: 'La connessione al server LDAP ha avuto successo.' ,
+    LDAP_CONNECTOR_TEST_PASSED: 'La connessione al server LDAP ha avuto successo.',
     LDAP_CONNECTOR_TEST_FAILED: 'Impossibile connettersi al server LDAP. Verifica le impostazioni e riprova.',
-   
+
     SAVE: 'Salva',
-    TEST: 'Prova',        
+    TEST: 'Prova',
     CANCEL: 'Annulla',
     YES: 'Sì',
     YES_CHANGE: 'Sì, Continua',
@@ -105,21 +105,21 @@
     TEST_FAILED: 'Test Fallito',
 
     CONFIGURATION_SAVED: 'Le modifiche ai metodi di autenticazione sono state salvate. I cambiamenti non avranno effetto finchè il server non verrà riavviato.',
-  
+
     //licenseManager
     PRODUCT: 'Prodotto',
-    START_DATE : 'Data di Inizio',
-    END_DATE : 'Data di Fine',
-    VERSION : 'Versione',
-    LICENSES : 'Licenze',
-    DELETE_TITLE : 'Cancella la Licenza Selezionata?',
+    START_DATE: 'Data di Inizio',
+    END_DATE: 'Data di Fine',
+    VERSION: 'Versione',
+    LICENSES: 'Licenze',
+    DELETE_TITLE: 'Cancella la Licenza Selezionata?',
     DELETE_WARNING: 'Stai per cancellare la licenza selezionata. Sei sicuro di volere continuare?',
 
-    LICENSE_VALID_LICENSE_FOUND_LOG : 'Trovata una licenza biserver-ee valida',
-    LICENSE_NO_VALID_LICENSE_FOUND_LOG : 'Nessuna licenza biserver-ee valida è stata trovata',
-    LICENSE_NO_VALID_LICENSE_MESSAGE_HEADER : "Licenza mancante o scaduta.",
-LICENSE_NO_VALID_LICENSE_MESSAGE_BODY : 'Per continuare devi aggiornare la licenza della tua Piattaforma Pentaho BI. Se non sei pronto puoi <a href="%CONTEXT_PATH%\Logout" target="_top">disconnetterti</a> e tornare più tardi.',
-    LICENSE_CANCEL_BUTTON : 'Disconnetti',
-    LICENSE_OK_BUTTON : 'Ok'
+    LICENSE_VALID_LICENSE_FOUND_LOG: 'Trovata una licenza biserver-ee valida',
+    LICENSE_NO_VALID_LICENSE_FOUND_LOG: 'Nessuna licenza biserver-ee valida è stata trovata',
+    LICENSE_NO_VALID_LICENSE_MESSAGE_HEADER: "Licenza mancante o scaduta.",
+    LICENSE_NO_VALID_LICENSE_MESSAGE_BODY: 'Per continuare devi aggiornare la licenza della tua Piattaforma Pentaho BI. Se non sei pronto puoi <a href="%CONTEXT_PATH%\Logout" target="_top">disconnetterti</a> e tornare più tardi.',
+    LICENSE_CANCEL_BUTTON: 'Disconnetti',
+    LICENSE_OK_BUTTON: 'Ok'
 
 }

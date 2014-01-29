@@ -8,4 +8,33 @@
 		http://dojotoolkit.org/community/licensing.shtml
 */
 
-({"months-standAlone-narrow":["G", "F", "M", "A", "M", "G", "L", "A", "S", "O", "N", "D"], "dateFormat-long":"d MMMM, yyyy", "timeFormat-full":"h:mm:ss a v", "eras":["BC", "AD"], "timeFormat-medium":"h:mm:ss a", "dateFormat-medium":"d MMM yyyy", "months-format-abbr":["Gen", "Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic"], "dateFormat-full":"d MMMM yyyy, EEEE", "days-format-abbr":["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab"], "timeFormat-long":"h:mm:ss a z", "timeFormat-short":"h:mm a", "dateFormat-short":"d/M/yy", "months-format-wide":["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"], "days-standAlone-narrow":["D", "L", "M", "M", "G", "V", "S"], "days-format-wide":["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"], "field-weekday":"Giorno della Settimana", "field-second":"Secondi", "field-week":"Week", "pm":"PM", "am":"AM", "field-year":"Anno", "field-minute":"Minuti", "field-hour":"Ora", "field-day":"Giorno", "field-dayperiod":"Giorno Periodo", "field-month":"Mese", "field-era":"Era", "field-zone":"Zona"})
+({
+    "field-weekday": "giorno della settimana",
+    "dateFormat-medium": "dd/MMM/yy",
+    "field-second": "secondo",
+    "field-week": "settimana",
+    "pm": "p.",
+    "months-standAlone-narrow": ["G", "F", "M", "A", "M", "G", "L", "A", "S", "O", "N", "D"],
+    "am": "m.",
+    "days-standAlone-narrow": ["D", "L", "M", "M", "G", "V", "S"],
+    "field-year": "anno",
+    "eras": ["aC", "dC"],
+    "field-minute": "minuto",
+    "field-hour": "ora",
+    "dateFormat-long": "dd MMMM yyyy",
+    "field-day": "giorno",
+    "field-dayperiod": "periodo del giorno",
+    "field-month": "mese",
+    "dateFormat-short": "dd/MM/yy",
+    "months-format-wide": ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"],
+    "field-era": "era",
+    "months-format-abbr": ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"],
+    "days-format-wide": ["domenica", "luned\xec", "marted\xec", "mercoled\xec", "gioved\xec", "venerd\xec", "sabato"],
+    "dateFormat-full": "EEEE d MMMM yyyy",
+    "field-zone": "zona",
+    "days-format-abbr": ["dom", "lun", "mar", "mer", "gio", "ven", "sab"],
+    "timeFormat-full": "HH:mm:ss z",
+    "timeFormat-medium": "HH:mm:ss",
+    "timeFormat-short": "HH:mm",
+    "timeFormat-long": "HH:mm:ss z"
+})
