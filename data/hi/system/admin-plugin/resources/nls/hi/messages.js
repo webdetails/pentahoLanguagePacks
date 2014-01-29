@@ -1,4 +1,5 @@
-﻿{
+﻿
+{
     TITLE_LABEL: 'प्रमाणीकरण',
     AUTHENTICATION_METHOD_LABEL: 'प्रमाणीकरण पद्धति',
     AUTHENTICATION_METHOD_DESCRIPTION_LABEL: 'उस स्थान का चयन करें जहाँ उपयोगकर्ता और उनके लॉगिन क्रेडेंशियल को प्रबंधित किया जाएगा:',
@@ -14,7 +15,7 @@
     LDAP_SERVER_URL_LABEL: 'सर्वर यूआरएल:',
     LDAP_USER_LABEL: 'उपयोगकर्ता नाम:',
     LDAP_PASSWORD_LABEL: 'कूटशब्द:',
-    LDAP_TEST_CONNECTION_LABEL : 'LDAP सेटअप को आगे बढाने के लिए कनेक्शन परीक्षण करे',
+    LDAP_TEST_CONNECTION_LABEL: 'LDAP सेटअप को आगे बढाने के लिए कनेक्शन परीक्षण करे',
     LDAP_SERVER_URL_DESCRIPTION: 'डायरेक्टरी सर्वर से कनेक्ट करते समय उपयोग के लिए कनेक्शन यूआरएल',
     LDAP_USER_DESCRIPTION: 'उपयोगकर्ता का एक अधिमान्य नाम जिसे डायरेक्ट्री पढ़ने की अनुमति है',
     LDAP_PASSWORD_DESCRIPTION: 'ऊपर निर्दिष्ट उपयोगकर्ता का कूटशब्द',
@@ -46,9 +47,9 @@
 
     //ldap custom user search configuration
     LDAP_USER_SEARCH_TITLE: 'उपयोगकर्ता खोज',
-    
+
     //ldap custom roles configuration 
-    LDAP_ROLES_TITLE: 'भूमिकाएं',    
+    LDAP_ROLES_TITLE: 'भूमिकाएं',
     LDAP_ROLE_BASE_LABEL: 'भूमिका विशेषता (एट्रिब्यूट):',
     LDAP_ROLE_SEARCH_FILTER_LABEL: 'भूमिका खोज फिल्टर:',
     LDAP_ROLE_SEARCH_BASE_LABEL: 'भूमिका खोज आधार:',
@@ -70,7 +71,7 @@
     LDAP_POPULATOR_UPPERCASE_DESCRIPTION: 'संकेत करता है कि पुनः प्राप्त भूमिका नामों को अपरकेस में परिवर्तित कर रहा है या नहीं.',
     LDAP_POPULATOR_SUBTREE_LABEL: 'सबट्री:',
     LDAP_POPULATOR_SUBTREE_DESCRIPTION: 'संकेत करत है की खोज वर्तमान ऑब्जेक्ट व् चिल्ड्रेन को बिलकुल शामिल करे. अगर यह फाल्स सेट है तो खोज केवल वर्तमान ऑब्जेक्ट को ही शामिल करेगी',
-    
+
     //dialogs
     LDAP_BROWSER_TITLE: 'LDAP ब्राउज़र',
     LDAP_WARNING: 'चेतावनी',
@@ -92,9 +93,9 @@
     LDAP_ROLES_TEST: 'LDAP भूमिका परीक्षण',
     LDAP_CONNECTOR_TEST_PASSED: 'LDAP सर्वर से कनेक्ट करना सफल रहा था',
     LDAP_CONNECTOR_TEST_FAILED: 'LDAP सर्वर से कनेक्ट करने में असमर्थ. सेटिंग्स को सत्यापित करें और पुनः प्रयास करें.',
-   
+
     SAVE: 'सुरक्षित करें',
-    TEST: 'परीक्षण',        
+    TEST: 'परीक्षण',
     CANCEL: 'रद्द करें',
     YES: 'हाँ',
     YES_CHANGE: 'हाँ, जारी रखें',
@@ -105,21 +106,21 @@
     TEST_FAILED: 'परीक्षण असफल',
 
     CONFIGURATION_SAVED: 'प्रमाणीकरण पद्धति के परिवर्तन सुरक्षित कर लिए गए हैं, फिर भी, आपके परिवर्तन प्रभावकारी नहीं होंगे जबतक कि आप सर्वर को रीस्टार्ट नहीं करते. ',
-  
+
     //licenseManager
     PRODUCT: 'प्रोडक्ट',
-    START_DATE : 'दिनांक प्रारम्भ',
-    END_DATE : 'दिनांक समाप्त',
-    VERSION : 'संस्करण',
-    LICENSES : 'लाइसेंस',
-    DELETE_TITLE : 'चयनित लाइसेंस को हटायें?',
+    START_DATE: 'दिनांक प्रारम्भ',
+    END_DATE: 'दिनांक समाप्त',
+    VERSION: 'संस्करण',
+    LICENSES: 'लाइसेंस',
+    DELETE_TITLE: 'चयनित लाइसेंस को हटायें?',
     DELETE_WARNING: 'आप चयनित लाइसेंस को हटाने ही वाले हैं. क्या आप जारी रखना चाहते हैं?',
 
-    LICENSE_VALID_LICENSE_FOUND_LOG : 'वैध बीआई- ईई लाइसेंस मिला',
-    LICENSE_NO_VALID_LICENSE_FOUND_LOG : 'कोई वैध बीआई सर्वर- ईई लाइसेंस नहीं मिला',
-    LICENSE_NO_VALID_LICENSE_MESSAGE_HEADER : "लाइसेंस अनुपस्थित या समयसीमा समाप्त",
-LICENSE_NO_VALID_LICENSE_MESSAGE_BODY : 'जारी रखने के लिए आपको अपना पेंटाहो बीआई प्लेटफार्म अद्यतन करना होगा. यदि आप तैयार नहीं है तो आप <a href="%CONTEXT_PATH%\Logout" target="_top">log out</a> कर सकते हैं और बाद में दुबारा वापस आ सकते हैं.' 
-    LICENSE_CANCEL_BUTTON : 'लॉग आउट',
-    LICENSE_OK_BUTTON : 'ठीक है'
+    LICENSE_VALID_LICENSE_FOUND_LOG: 'वैध बीआई- ईई लाइसेंस मिला',
+    LICENSE_NO_VALID_LICENSE_FOUND_LOG: 'कोई वैध बीआई सर्वर- ईई लाइसेंस नहीं मिला',
+    LICENSE_NO_VALID_LICENSE_MESSAGE_HEADER: "लाइसेंस अनुपस्थित या समयसीमा समाप्त",
+    LICENSE_NO_VALID_LICENSE_MESSAGE_BODY: 'जारी रखने के लिए आपको अपना पेंटाहो बीआई प्लेटफार्म अद्यतन करना होगा. यदि आप तैयार नहीं है तो आप <a href="%CONTEXT_PATH%\Logout" target="_top">log out</a> कर सकते हैं और बाद में दुबारा वापस आ सकते हैं.'
+    LICENSE_CANCEL_BUTTON: 'लॉग आउट',
+    LICENSE_OK_BUTTON: 'ठीक है'
 
 }
