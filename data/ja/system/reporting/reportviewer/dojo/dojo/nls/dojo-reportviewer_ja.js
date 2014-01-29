@@ -1,1 +1,157 @@
-dojo.provide("dojo.nls.dojo-reportviewer_ja");dojo.provide("dijit.nls.loading");dijit.nls.loading._built=true;dojo.provide("dijit.nls.loading.ja");dijit.nls.loading.ja={"loadingState":"Loading...","errorState":"Sorry, an error occurred"};dojo.provide("dijit.nls.common");dijit.nls.common._built=true;dojo.provide("dijit.nls.common.ja");dijit.nls.common.ja={"buttonOk":"OK","buttonCancel":"Cancel","buttonSave":"Save","itemClose":"Close"};dojo.provide("dojo.cldr.nls.gregorian");dojo.cldr.nls.gregorian._built=true;dojo.provide("dojo.cldr.nls.gregorian.ja");dojo.cldr.nls.gregorian.ja={"dateFormatItem-yM":"M/y","field-dayperiod":"AM/PM","dateFormatItem-yQ":"Q y","dayPeriods-format-wide-pm":"PM","field-minute":"Minute","eraNames":["Before Christ","Anno Domini"],"dateFormatItem-MMMEd":"E, MMM d","dateTimeFormat-full":"{1} {0}","field-day-relative+-1":"Yesterday","field-weekday":"Day of the Week","dateFormatItem-hms":"h:mm:ss a","dateFormatItem-yQQQ":"QQQ y","days-standAlone-wide":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dateFormatItem-MMM":"LLL","months-standAlone-narrow":["J","F","M","A","M","J","J","A","S","O","N","D"],"dateTimeFormat-short":"{1} {0}","field-era":"Era","field-hour":"Hour","dayPeriods-format-wide-am":"AM","dateTimeFormat-medium":"{1} {0}","dateFormatItem-y":"y","timeFormat-full":"h:mm:ss a zzzz","months-standAlone-abbr":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"dateFormatItem-yMMM":"MMM y","field-day-relative+0":"Today","field-day-relative+1":"Tomorrow","days-standAlone-narrow":["S","M","T","W","T","F","S"],"eraAbbr":["BC","AD"],"dateFormat-long":"MMMM d, y","timeFormat-medium":"h:mm:ss a","dateFormatItem-EEEd":"d EEE","field-zone":"Zone","dateFormatItem-Hm":"HH:mm","dateFormat-medium":"MMM d, y","dateFormatItem-Hms":"HH:mm:ss","quarters-standAlone-wide":["1st quarter","2nd quarter","3rd quarter","4th quarter"],"dateFormatItem-ms":"mm:ss","field-year":"Year","quarters-standAlone-narrow":["1","2","3","4"],"dateTimeFormat-long":"{1} {0}","field-week":"Week","months-standAlone-wide":["January","February","March","April","May","June","July","August","September","October","November","December"],"dateFormatItem-MMMd":"MMM d","timeFormat-long":"h:mm:ss a z","months-format-abbr":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"dayPeriods-format-wide-noon":"noon","timeFormat-short":"h:mm a","field-month":"Month","quarters-format-abbr":["Q1","Q2","Q3","Q4"],"days-format-abbr":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dateFormatItem-M":"L","days-format-narrow":["S","M","T","W","T","F","S"],"field-second":"Second","field-day":"Day","dateFormatItem-MEd":"E, M/d","months-format-narrow":["J","F","M","A","M","J","J","A","S","O","N","D"],"dateFormatItem-hm":"h:mm a","days-standAlone-abbr":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dateFormat-short":"M/d/yy","dateFormatItem-yMMMEd":"EEE, MMM d, y","dateFormat-full":"EEEE, MMMM d, y","dateFormatItem-Md":"M/d","dateFormatItem-yMEd":"EEE, M/d/y","months-format-wide":["January","February","March","April","May","June","July","August","September","October","November","December"],"dateFormatItem-d":"d","quarters-format-wide":["1st quarter","2nd quarter","3rd quarter","4th quarter"],"days-format-wide":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"eraNarrow":["B","A"],"dateTimeFormats-appendItem-Day-Of-Week":"{0} {1}","dayPeriods-format-abbr-am":"AM","dateTimeFormats-appendItem-Second":"{0} ({2}: {1})","dateTimeFormats-appendItem-Era":"{0} {1}","dateTimeFormats-appendItem-Week":"{0} ({2}: {1})","dateFormatItem-H":"HH","quarters-standAlone-abbr":["Q1","Q2","Q3","Q4"],"quarters-format-narrow":["1","2","3","4"],"dateFormatItem-h":"h a","dayPeriods-format-narrow-am":"AM","dateTimeFormats-appendItem-Day":"{0} ({2}: {1})","dateTimeFormats-appendItem-Year":"{0} {1}","dateTimeFormats-appendItem-Hour":"{0} ({2}: {1})","dayPeriods-format-abbr-pm":"PM","dateTimeFormats-appendItem-Quarter":"{0} ({2}: {1})","dateTimeFormats-appendItem-Month":"{0} ({2}: {1})","dateTimeFormats-appendItem-Minute":"{0} ({2}: {1})","dateTimeFormats-appendItem-Timezone":"{0} {1}","dayPeriods-format-narrow-pm":"PM"};dojo.provide("dijit.form.nls.validate");dijit.form.nls.validate._built=true;dojo.provide("dijit.form.nls.validate.ja");dijit.form.nls.validate.ja={"rangeMessage":"This value is out of range.","invalidMessage":"The value entered is not valid.","missingMessage":"This value is required."};dojo.provide("dojo.cldr.nls.number");dojo.cldr.nls.number._built=true;dojo.provide("dojo.cldr.nls.number.ja");dojo.cldr.nls.number.ja={"group":",","percentSign":"%","exponential":"E","percentFormat":"#,##0%","scientificFormat":"#E0","list":";","infinity":"∞","patternDigit":"#","minusSign":"-","decimal":".","nan":"NaN","nativeZeroDigit":"0","perMille":"‰","decimalFormat":"#,##0.###","currencyFormat":"¤#,##0.00;(¤#,##0.00)","plusSign":"+","decimalFormat-short":"000T","currencySpacing-afterCurrency-currencyMatch":"[:letter:]","currencySpacing-beforeCurrency-surroundingMatch":"[:digit:]","currencySpacing-afterCurrency-insertBetween":" ","currencySpacing-afterCurrency-surroundingMatch":"[:digit:]","currencySpacing-beforeCurrency-currencyMatch":"[:letter:]","currencySpacing-beforeCurrency-insertBetween":" "};
+dojo.provide("dojo.nls.dojo-reportviewer_ja");
+dojo.provide("dijit.nls.loading");
+dijit.nls.loading._built = true;
+dojo.provide("dijit.nls.loading.ja");
+dijit.nls.loading.ja = {
+    "loadingState": "ロード中...",
+    "errorState": "エラーが発生しました。"
+};
+dojo.provide("dijit.nls.common");
+dijit.nls.common._built = true;
+dojo.provide("dijit.nls.common.ja");
+dijit.nls.common.ja = {
+    "buttonOk": "OK",
+    "buttonCancel": "キャンセル",
+    "buttonSave": "保存",
+    "itemClose": "閉じる"
+};
+dojo.provide("dojo.cldr.nls.gregorian");
+dojo.cldr.nls.gregorian._built = true;
+dojo.provide("dojo.cldr.nls.gregorian.ja");
+dojo.cldr.nls.gregorian.ja = {
+    "field-weekday": "曜日",
+    "dateFormatItem-yQQQ": "yQQQ",
+    "dateFormatItem-yMEd": "y/M/d(EEE)",
+    "dateFormatItem-MMMEd": "M月d日(E)",
+    "eraNarrow": ["BC", "AD"],
+    "dateFormat-long": "y年M月d日",
+    "months-format-wide": ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+    "dateTimeFormat-medium": "{1} {0}",
+    "dayPeriods-format-wide-pm": "午後",
+    "dateFormat-full": "y年M月d日EEEE",
+    "dateFormatItem-Md": "M/d",
+    "dateFormatItem-yMd": "y/M/d",
+    "field-era": "時代",
+    "dateFormatItem-yM": "y/M",
+    "months-standAlone-wide": ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+    "timeFormat-short": "H:mm",
+    "quarters-format-wide": ["第1四半期", "第2四半期", "第3四半期", "第4四半期"],
+    "timeFormat-long": "H:mm:ss z",
+    "field-year": "年",
+    "dateFormatItem-yMMM": "y年M月",
+    "dateFormatItem-yQ": "y/Q",
+    "field-hour": "時",
+    "dateFormatItem-MMdd": "MM/dd",
+    "months-format-abbr": ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+    "dateFormatItem-yyQ": "yy/Q",
+    "timeFormat-full": "H時mm分ss秒 zzzz",
+    "field-day-relative+0": "今日",
+    "field-day-relative+1": "明日",
+    "field-day-relative+2": "明後日",
+    "dateFormatItem-H": "H時",
+    "field-day-relative+3": "3日後",
+    "months-standAlone-abbr": ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+    "quarters-format-abbr": ["Q1", "Q2", "Q3", "Q4"],
+    "quarters-standAlone-wide": ["第1四半期", "第2四半期", "第3四半期", "第4四半期"],
+    "dateFormatItem-M": "M月",
+    "days-standAlone-wide": ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"],
+    "dateFormatItem-yyMMM": "y年M月",
+    "timeFormat-medium": "H:mm:ss",
+    "dateFormatItem-Hm": "H:mm",
+    "eraAbbr": ["BC", "AD"],
+    "field-minute": "分",
+    "field-dayperiod": "午前/午後",
+    "days-standAlone-abbr": ["日", "月", "火", "水", "木", "金", "土"],
+    "dateFormatItem-d": "d日",
+    "dateFormatItem-ms": "mm:ss",
+    "field-day-relative+-1": "昨日",
+    "dateFormatItem-h": "ah時",
+    "dateTimeFormat-long": "{1}{0}",
+    "field-day-relative+-2": "一昨日",
+    "field-day-relative+-3": "3日前",
+    "dateFormatItem-MMMd": "M月d日",
+    "dateFormatItem-MEd": "M/d(E)",
+    "dateTimeFormat-full": "{1}{0}",
+    "field-day": "日",
+    "days-format-wide": ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"],
+    "field-zone": "タイムゾーン",
+    "dateFormatItem-yyyyMM": "yyyy/MM",
+    "dateFormatItem-y": "y年",
+    "months-standAlone-narrow": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+    "dateFormatItem-hm": "ah:mm",
+    "dateFormatItem-GGGGyMd": "GGGGy年M月d日",
+    "days-format-abbr": ["日", "月", "火", "水", "木", "金", "土"],
+    "dateFormatItem-yMMMd": "y年M月d日",
+    "eraNames": ["紀元前", "西暦"],
+    "days-format-narrow": ["日", "月", "火", "水", "木", "金", "土"],
+    "field-month": "月",
+    "days-standAlone-narrow": ["日", "月", "火", "水", "木", "金", "土"],
+    "dateFormatItem-MMM": "LLL",
+    "dayPeriods-format-wide-am": "午前",
+    "dateFormat-short": "yy/MM/dd",
+    "field-second": "秒",
+    "dateFormatItem-yMMMEd": "y年M月d日(EEE)",
+    "dateFormatItem-Ed": "d日(EEE)",
+    "field-week": "週",
+    "dateFormat-medium": "yyyy/MM/dd",
+    "dateTimeFormat-short": "{1} {0}",
+    "dateFormatItem-Hms": "H:mm:ss",
+    "dateFormatItem-hms": "ah:mm:ss",
+    "dateFormatItem-yyyy": "y年",
+    "months-format-narrow": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+    "quarters-standAlone-narrow": ["1", "2", "3", "4"],
+    "dateTimeFormats-appendItem-Day-Of-Week": "{0} {1}",
+    "dateFormatItem-EEEd": "d EEE",
+    "dayPeriods-format-abbr-am": "AM",
+    "dateTimeFormats-appendItem-Second": "{0} ({2}: {1})",
+    "dateTimeFormats-appendItem-Era": "{0} {1}",
+    "dateTimeFormats-appendItem-Week": "{0} ({2}: {1})",
+    "quarters-standAlone-abbr": ["Q1", "Q2", "Q3", "Q4"],
+    "quarters-format-narrow": ["1", "2", "3", "4"],
+    "dayPeriods-format-narrow-am": "AM",
+    "dateTimeFormats-appendItem-Day": "{0} ({2}: {1})",
+    "dateTimeFormats-appendItem-Year": "{0} {1}",
+    "dateTimeFormats-appendItem-Hour": "{0} ({2}: {1})",
+    "dayPeriods-format-abbr-pm": "PM",
+    "dateTimeFormats-appendItem-Quarter": "{0} ({2}: {1})",
+    "dateTimeFormats-appendItem-Month": "{0} ({2}: {1})",
+    "dateTimeFormats-appendItem-Minute": "{0} ({2}: {1})",
+    "dateTimeFormats-appendItem-Timezone": "{0} {1}",
+    "dayPeriods-format-narrow-pm": "PM"
+};
+dojo.provide("dijit.form.nls.validate");
+dijit.form.nls.validate._built = true;
+dojo.provide("dijit.form.nls.validate.ja");
+dijit.form.nls.validate.ja = {
+    "rangeMessage": "この値は範囲外です。",
+    "invalidMessage": "入力した値は無効です。",
+    "missingMessage": "この値は必須です。"
+};
+dojo.provide("dojo.cldr.nls.number");
+dojo.cldr.nls.number._built = true;
+dojo.provide("dojo.cldr.nls.number.ja");
+dojo.cldr.nls.number.ja = {
+    "decimalFormat": "#,##0.###",
+    "group": ",",
+    "scientificFormat": "#E0",
+    "percentFormat": "#,##0%",
+    "currencyFormat": "¤#,##0.00",
+    "decimal": ".",
+    "currencySpacing-afterCurrency-currencyMatch": "[:letter:]",
+    "infinity": "∞",
+    "list": ";",
+    "percentSign": "%",
+    "minusSign": "-",
+    "currencySpacing-beforeCurrency-surroundingMatch": "[:digit:]",
+    "decimalFormat-short": "000T",
+    "currencySpacing-afterCurrency-insertBetween": " ",
+    "nan": "NaN",
+    "nativeZeroDigit": "0",
+    "plusSign": "+",
+    "currencySpacing-afterCurrency-surroundingMatch": "[:digit:]",
+    "currencySpacing-beforeCurrency-currencyMatch": "[:letter:]",
+    "perMille": "‰",
+    "patternDigit": "#",
+    "currencySpacing-beforeCurrency-insertBetween": " ",
+    "exponential": "E"
+};

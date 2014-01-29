@@ -8,4 +8,7 @@
 		http://dojotoolkit.org/community/licensing.shtml
 */
 
-({"displayName":"US Dollar", "symbol":"US$"})
+({
+    "displayName": "\u7c73\u30c9\u30eb",
+    "symbol": "$"
+})
