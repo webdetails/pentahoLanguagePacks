@@ -1,1 +1,19 @@
-({"HKD_displayName":"Hong Kong Dollar","CHF_displayName":"Swiss Franc","JPY_symbol":"¥","CAD_displayName":"Canadian Dollar","CNY_displayName":"Chinese Yuan","USD_symbol":"$","AUD_displayName":"Australian Dollar","JPY_displayName":"Japanese Yen","USD_displayName":"US Dollar","GBP_displayName":"British Pound Sterling","EUR_displayName":"Euro","CAD_symbol":"CA$","GBP_symbol":"£","HKD_symbol":"HK$","AUD_symbol":"AU$","CNY_symbol":"CN¥","EUR_symbol":"€"})
+({
+    "HKD_displayName": "dolar hongkoński",
+    "CHF_displayName": "frank szwajcarski",
+    "CAD_displayName": "dolar kanadyjski",
+    "CNY_displayName": "juan renminbi",
+    "AUD_displayName": "dolar australijski",
+    "JPY_displayName": "jen japoński",
+    "USD_displayName": "dolar amerykański ",
+    "GBP_displayName": "funt szterling",
+    "EUR_displayName": "euro",
+    "USD_symbol": "US$",
+    "CAD_symbol": "CA$",
+    "GBP_symbol": "£",
+    "HKD_symbol": "HK$",
+    "JPY_symbol": "JP¥",
+    "AUD_symbol": "AU$",
+    "CNY_symbol": "CN¥",
+    "EUR_symbol": "€"
+})
