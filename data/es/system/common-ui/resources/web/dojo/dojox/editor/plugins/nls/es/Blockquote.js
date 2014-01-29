@@ -1,0 +1,3 @@
+({
+    "blockquote": "Cita en bloque"
+})
