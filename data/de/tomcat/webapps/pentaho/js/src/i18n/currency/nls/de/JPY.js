@@ -8,4 +8,7 @@
 		http://dojotoolkit.org/community/licensing.shtml
 */
 
-({"displayName":"Japanese Yen", "symbol":"\xa5"})
+({
+    "displayName": "Japanese Yen",
+    "symbol": "\xa5"
+})

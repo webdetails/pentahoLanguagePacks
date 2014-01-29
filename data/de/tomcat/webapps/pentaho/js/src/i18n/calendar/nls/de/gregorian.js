@@ -8,4 +8,33 @@
 		http://dojotoolkit.org/community/licensing.shtml
 */
 
-({"months-standAlone-narrow":["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"], "dateFormat-long":"MMMM d, yyyy", "timeFormat-full":"h:mm:ss a v", "eras":["BC", "AD"], "timeFormat-medium":"h:mm:ss a", "dateFormat-medium":"MMM d, yyyy", "months-format-abbr":["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], "dateFormat-full":"EEEE, MMMM d, yyyy", "days-format-abbr":["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], "timeFormat-long":"h:mm:ss a z", "timeFormat-short":"h:mm a", "dateFormat-short":"M/d/yy", "months-format-wide":["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], "days-standAlone-narrow":["S", "M", "T", "W", "T", "F", "S"], "days-format-wide":["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "field-weekday":"Day of the Week", "field-second":"Second", "field-week":"Week", "pm":"PM", "am":"AM", "field-year":"Year", "field-minute":"Minute", "field-hour":"Hour", "field-day":"Day", "field-dayperiod":"Dayperiod", "field-month":"Month", "field-era":"Era", "field-zone":"Zone"})
+({
+    "field-weekday": "Wochentag",
+    "dateFormat-medium": "dd.MM.yyyy",
+    "field-second": "Sekunde",
+    "field-week": "Woche",
+    "pm": "nachm.",
+    "timeFormat-full": "H:mm' Uhr 'z",
+    "months-standAlone-narrow": ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
+    "am": "vorm.",
+    "days-standAlone-narrow": ["S", "M", "D", "M", "D", "F", "S"],
+    "field-year": "Jahr",
+    "eras": ["v. Chr.", "n. Chr."],
+    "field-hour": "Stunde",
+    "dateFormat-long": "d. MMMM yyyy",
+    "field-day": "Tag",
+    "field-dayperiod": "Tagesh\xe4lfte",
+    "field-month": "Monat",
+    "dateFormat-short": "dd.MM.yy",
+    "months-format-wide": ["Januar", "Februar", "M\xe4rz", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
+    "field-era": "Epoche",
+    "months-format-abbr": ["Jan", "Feb", "Mrz", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"],
+    "days-format-wide": ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"],
+    "dateFormat-full": "EEEE, d. MMMM yyyy",
+    "field-zone": "Zone",
+    "days-format-abbr": ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"],
+    "field-minute": "Minute",
+    "timeFormat-medium": "HH:mm:ss",
+    "timeFormat-short": "HH:mm",
+    "timeFormat-long": "HH:mm:ss z"
+})
