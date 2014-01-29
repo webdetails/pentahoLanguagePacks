@@ -1,229 +1,80 @@
 define(
     //begin v1.x content
     {
-        "dateFormatItem-yM": "M/y",
-        "field-dayperiod": "AM/PM",
-        "dateFormatItem-yQ": "Q y",
-        "dayPeriods-format-wide-pm": "PM",
-        "field-minute": "Minute",
-        "eraNames": [
-            "Before Christ",
-            "Anno Domini"
-        ],
-        "dateFormatItem-MMMEd": "E, MMM d",
-        "dateTimeFormat-full": "{1} {0}",
-        "field-day-relative+-1": "Yesterday",
-        "field-weekday": "Day of the Week",
-        "dateFormatItem-hms": "h:mm:ss a",
-        "dateFormatItem-yQQQ": "QQQ y",
-        "days-standAlone-wide": [
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday"
-        ],
-        "dateFormatItem-MMM": "LLL",
-        "months-standAlone-narrow": [
-            "J",
-            "F",
-            "M",
-            "A",
-            "M",
-            "J",
-            "J",
-            "A",
-            "S",
-            "O",
-            "N",
-            "D"
-        ],
-        "dateTimeFormat-short": "{1} {0}",
-        "field-era": "Era",
-        "field-hour": "Hour",
-        "dayPeriods-format-wide-am": "AM",
-        "dateTimeFormat-medium": "{1} {0}",
-        "dateFormatItem-y": "y",
-        "timeFormat-full": "h:mm:ss a zzzz",
-        "months-standAlone-abbr": [
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep",
-            "Oct",
-            "Nov",
-            "Dec"
-        ],
-        "dateFormatItem-yMMM": "MMM y",
-        "field-day-relative+0": "Today",
-        "field-day-relative+1": "Tomorrow",
-        "days-standAlone-narrow": [
-            "S",
-            "M",
-            "T",
-            "W",
-            "T",
-            "F",
-            "S"
-        ],
-        "eraAbbr": [
-            "BC",
-            "AD"
-        ],
-        "dateFormat-long": "MMMM d, y",
-        "timeFormat-medium": "h:mm:ss a",
-        "dateFormatItem-EEEd": "d EEE",
-        "field-zone": "Zone",
-        "dateFormatItem-Hm": "HH:mm",
-        "dateFormat-medium": "MMM d, y",
-        "dateFormatItem-Hms": "HH:mm:ss",
         "quarters-standAlone-wide": [
-            "1st quarter",
-            "2nd quarter",
-            "3rd quarter",
-            "4th quarter"
+            "第1季",
+            "第2季",
+            "第3季",
+            "第4季"
         ],
-        "dateFormatItem-ms": "mm:ss",
-        "field-year": "Year",
-        "quarters-standAlone-narrow": [
+        "quarters-format-abbr": [
+            "第1季",
+            "第2季",
+            "第3季",
+            "第4季"
+        ],
+        "dateFormat-medium": "yyyy/M/d",
+        "field-second": "秒",
+        "quarters-standAlone-abbr": [
+            "第1季",
+            "第2季",
+            "第3季",
+            "第4季"
+        ],
+        "dateFormatItem-MMdd": "MM/dd",
+        "dateFormatItem-MEd": "M/d（E）",
+        "dateFormatItem-yMEd": "yyyy/M/d（EEE）",
+        "field-week": "週",
+        "dateFormatItem-H": "H時",
+        "eraNarrow": [
+            "西元前",
+            "西元"
+        ],
+        "field-day-relative+-3": "大前天",
+        "timeFormat-full": "zzzzah時mm分ss秒",
+        "dateFormatItem-Md": "M/d",
+        "months-standAlone-narrow": [
             "1",
             "2",
             "3",
-            "4"
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"
         ],
-        "dateTimeFormat-long": "{1} {0}",
-        "field-week": "Week",
-        "months-standAlone-wide": [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"
+        "eraNames": [
+            "西元前",
+            "西元"
         ],
-        "dateFormatItem-MMMd": "MMM d",
-        "timeFormat-long": "h:mm:ss a z",
-        "months-format-abbr": [
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep",
-            "Oct",
-            "Nov",
-            "Dec"
+        "field-minute": "分鐘",
+        "field-hour": "小時",
+        "field-day-relative+2": "後天",
+        "field-day-relative+3": "大後天",
+        "dateFormat-short": "yy/M/d",
+        "dateFormatItem-yMMMEd": "y年M月d日EEE",
+        "field-era": "年代",
+        "dateFormatItem-yM": "yyyy/M",
+        "timeFormat-long": "zah時mm分ss秒",
+        "eraAbbr": [
+            "西元前",
+            "西元"
         ],
-        "dayPeriods-format-wide-noon": "noon",
-        "timeFormat-short": "h:mm a",
-        "field-month": "Month",
-        "quarters-format-abbr": [
-            "Q1",
-            "Q2",
-            "Q3",
-            "Q4"
-        ],
-        "days-format-abbr": [
-            "Sun",
-            "Mon",
-            "Tue",
-            "Wed",
-            "Thu",
-            "Fri",
-            "Sat"
-        ],
-        "dateFormatItem-M": "L",
-        "days-format-narrow": [
-            "S",
-            "M",
-            "T",
-            "W",
-            "T",
-            "F",
-            "S"
-        ],
-        "field-second": "Second",
-        "field-day": "Day",
-        "dateFormatItem-MEd": "E, M/d",
-        "months-format-narrow": [
-            "J",
-            "F",
-            "M",
-            "A",
-            "M",
-            "J",
-            "J",
-            "A",
-            "S",
-            "O",
-            "N",
-            "D"
-        ],
-        "dateFormatItem-hm": "h:mm a",
-        "days-standAlone-abbr": [
-            "Sun",
-            "Mon",
-            "Tue",
-            "Wed",
-            "Thu",
-            "Fri",
-            "Sat"
-        ],
-        "dateFormat-short": "M/d/yy",
-        "dateFormatItem-yMMMEd": "EEE, MMM d, y",
-        "dateFormat-full": "EEEE, MMMM d, y",
-        "dateFormatItem-Md": "M/d",
-        "dateFormatItem-yMEd": "EEE, M/d/y",
-        "months-format-wide": [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"
-        ],
-        "dateFormatItem-d": "d",
+        "dateFormatItem-h": "ah時",
+        "dateFormatItem-yMMM": "y年M月",
         "quarters-format-wide": [
-            "1st quarter",
-            "2nd quarter",
-            "3rd quarter",
-            "4th quarter"
+            "第1季",
+            "第2季",
+            "第3季",
+            "第4季"
         ],
-        "days-format-wide": [
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday"
-        ],
-        "eraNarrow": [
-            "B",
-            "A"
-        ]
+        "field-weekday": "週天",
+        "field-zone": "區域",
+        "dateFormatItem-Ed": "d日(E)"
     }
     //end v1.x content
 );
