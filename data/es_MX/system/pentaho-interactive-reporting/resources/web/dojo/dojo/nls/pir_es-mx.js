@@ -1,102 +1,113 @@
-dojo.provide("dojo.nls.pir_en");
+dojo.provide("dojo.nls.pir_es-mx");
 dojo.provide("dijit.nls.loading");
 dijit.nls.loading._built = true;
-dojo.provide("dijit.nls.loading.en");
-dijit.nls.loading.en = {
+dojo.provide("dijit.nls.loading.es_mx");
+dijit.nls.loading.es_mx = {
     "loadingState": "Cargando...",
-    "errorState": "Lo sentimos, ocurrio un error"
+    "errorState": "Lo siento, se ha producido un error"
 };
 dojo.provide("dijit.nls.common");
 dijit.nls.common._built = true;
-dojo.provide("dijit.nls.common.en");
-dijit.nls.common.en = {
-    "buttonOK": "Aprobar",
+dojo.provide("dijit.nls.common.es_mx");
+dijit.nls.common.es_mx = {
+    "buttonOk": "Aceptar",
     "buttonCancel": "Cancelar",
     "buttonSave": "Guardar",
     "itemClose": "Cerrar"
 };
 dojo.provide("dojo.cldr.nls.gregorian");
 dojo.cldr.nls.gregorian._built = true;
-dojo.provide("dojo.cldr.nls.gregorian.en");
-dojo.cldr.nls.gregorian.en = {
-    "dateFormatItem-yM": "M/a",
-    "field-dayperiod": "AM/PM",
-    "dateFormatItem-yQ": "Q y",
-    "dayPeriods-format-wide-pm": "PM",
-    "field-minute": "Minuto",
-    "eraNames": ["Antes de Cristo", "Despues de Cristo"],
-    "dateFormatItem-MMMEd": "E, MMM d",
-    "dateTimeFormat-full": "{1} {0}",
-    "field-day-relative+-1": "Ayer",
-    "field-weekday": "Dia de la semana",
-    "dateFormatItem-hms": "hh:mm:ss a",
-    "dateFormatItem-yQQQ": "QQQ y",
-    "days-standAlone-wide": ["Domingo", "Lunes", "Martes", "Mercoles", "Jueves", "Viernes", "Sabado"],
-    "dateFormatItem-MMM": "LLL",
-    "months-standAlone-narrow": ["E", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
-    "dateTimeFormat-short": "{1} {0}",
-    "field-era": "Era",
-    "field-hour": "Hora",
-    "dayPeriods-format-wide-am": "AM",
-    "dateTimeFormat-medium": "{1} {0}",
-    "dateFormatItem-y": "y",
-    "timeFormat-full": "h:mm:ss a zzzz",
-    "months-standAlone-abbr": ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
-    "dateFormatItem-yMMM": "MMM y",
-    "field-day-relative+0": "Hoy",
-    "field-day-relative+1": "Mañana",
-    "days-standAlone-narrow": ["D", "L", "M", "M", "J", "V", "S"],
-    "eraAbbr": ["BC", "AD"],
-    "dateFormat-long": "MMMM d, y",
-    "timeFormat-medium": "h:mm:ss a",
-    "dateFormatItem-EEEd": "d EEE",
-    "field-zone": "Zona",
-    "dateFormatItem-Hm": "HH:mm",
-    "dateFormat-medium": "MMM d, y",
-    "dateFormatItem-Hms": "HH:mm:ss",
-    "quarters-standAlone-wide": ["1er trimestre", "2do trimestre", "3er trimestre", "4to trimestre"],
-    "dateFormatItem-ms": "mm:ss",
-    "field-year": "Año",
-    "quarters-standAlone-narrow": ["1", "2", "3", "4"],
-    "dateTimeFormat-long": "{1} {0}",
-    "field-week": "Semana",
-    "months-standAlone-wide": ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
-    "dateFormatItem-MMMd": "MMM d",
-    "timeFormat-long": "h:mm:ss a z",
-    "months-format-abbr": ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
-    "dayPeriods-format-wide-noon": "Medio dia",
-    "timeFormat-short": "h:mm a",
-    "field-month": "Mes",
-    "quarters-format-abbr": ["T1", "T2", "T3", "T4"],
-    "days-format-abbr": ["Dom", "Lun", "Mar", "Mier", "Jue", "Vie", "Sab"],
-    "dateFormatItem-M": "L",
-    "days-format-narrow": ["D", "L", "M", "M", "J", "V", "S"],
-    "field-second": "Segundo",
-    "field-day": "Dia",
-    "dateFormatItem-MEd": "E, M/d",
+dojo.provide("dojo.cldr.nls.gregorian.es_mx");
+dojo.cldr.nls.gregorian.es_mx = {
     "months-format-narrow": ["E", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
-    "dateFormatItem-hm": "h:mm a",
-    "days-standAlone-abbr": ["Dom", "Lun", "Mar", "Mier", "Jue", "Vie", "Sab"],
-    "dateFormat-short": "M/d/yy",
-    "dateFormatItem-yMMMEd": "EEE, MMM d, y",
-    "dateFormat-full": "EEEE, MMMM d, y",
-    "dateFormatItem-Md": "M/d",
-    "dateFormatItem-yMEd": "EEE, M/d/y",
-    "months-format-wide": ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+    "field-weekday": "día de la semana",
+    "dateFormatItem-yyQQQQ": "QQQQ 'de' yy",
+    "dateFormatItem-yQQQ": "QQQ y",
+    "dateFormatItem-yMEd": "EEE d/M/y",
+    "dateFormatItem-MMMEd": "E d MMM",
+    "eraNarrow": ["a.C.", "d.C."],
+    "dateFormatItem-MMMdd": "dd-MMM",
+    "dateFormat-long": "d 'de' MMMM 'de' y",
+    "months-format-wide": ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],
+    "dateFormatItem-EEEd": "EEE d",
+    "dayPeriods-format-wide-pm": "p.m.",
+    "dateFormat-full": "EEEE d 'de' MMMM 'de' y",
+    "dateFormatItem-Md": "d/M",
+    "field-era": "era",
+    "dateFormatItem-yM": "M/y",
+    "months-standAlone-wide": ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],
+    "timeFormat-short": "HH:mm",
+    "quarters-format-wide": ["1er trimestre", "2º trimestre", "3er trimestre", "4º trimestre"],
+    "timeFormat-long": "HH:mm:ss z",
+    "field-year": "año",
+    "dateFormatItem-yMMM": "MMM y",
+    "dateFormatItem-yQ": "Q y",
+    "field-hour": "hora",
+    "months-format-abbr": ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"],
+    "dateFormatItem-yyQ": "Q yy",
+    "timeFormat-full": "HH:mm:ss zzzz",
+    "field-day-relative+0": "hoy",
+    "field-day-relative+1": "mañana",
+    "field-day-relative+2": "pasado mañana",
+    "field-day-relative+3": "Dentro de tres días",
+    "months-standAlone-abbr": ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"],
+    "quarters-format-abbr": ["T1", "T2", "T3", "T4"],
+    "quarters-standAlone-wide": ["1er trimestre", "2º trimestre", "3er trimestre", "4º trimestre"],
+    "dateFormatItem-M": "L",
+    "days-standAlone-wide": ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"],
+    "dateFormatItem-MMMMd": "d 'de' MMMM",
+    "dateFormatItem-yyMMM": "MMM-yy",
+    "timeFormat-medium": "HH:mm:ss",
+    "dateFormatItem-Hm": "HH:mm",
+    "quarters-standAlone-abbr": ["T1", "T2", "T3", "T4"],
+    "eraAbbr": ["a.C.", "d.C."],
+    "field-minute": "minuto",
+    "field-dayperiod": "periodo del día",
+    "days-standAlone-abbr": ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"],
     "dateFormatItem-d": "d",
-    "quarters-format-wide": ["1er trimestre", "2do trimestre", "3er trimestre", "4to trimestre"],
-    "days-format-wide": ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"],
-    "eraNarrow": ["B", "A"],
+    "dateFormatItem-ms": "mm:ss",
+    "field-day-relative+-1": "ayer",
+    "dateFormatItem-h": "hh a",
+    "field-day-relative+-2": "antes de ayer",
+    "field-day-relative+-3": "Hace tres días",
+    "dateFormatItem-MMMd": "d MMM",
+    "dateFormatItem-MEd": "E, d/M",
+    "dateFormatItem-yMMMM": "MMMM 'de' y",
+    "field-day": "día",
+    "days-format-wide": ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"],
+    "field-zone": "zona",
+    "dateFormatItem-yyyyMM": "MM/yyyy",
+    "dateFormatItem-y": "y",
+    "months-standAlone-narrow": ["E", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"],
+    "dateFormatItem-yyMM": "MM/yy",
+    "dateFormatItem-hm": "hh:mm a",
+    "days-format-abbr": ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"],
+    "eraNames": ["antes de Cristo", "anno Dómini"],
+    "days-format-narrow": ["D", "L", "M", "M", "J", "V", "S"],
+    "field-month": "mes",
+    "days-standAlone-narrow": ["D", "L", "M", "M", "J", "V", "S"],
+    "dateFormatItem-MMM": "LLL",
+    "dayPeriods-format-wide-am": "a.m.",
+    "dateFormat-short": "dd/MM/yy",
+    "dateFormatItem-MMd": "d/MM",
+    "field-second": "segundo",
+    "dateFormatItem-yMMMEd": "EEE, d MMM y",
+    "field-week": "semana",
+    "dateFormat-medium": "dd/MM/yyyy",
+    "dateFormatItem-Hms": "HH:mm:ss",
+    "dateFormatItem-hms": "hh:mm:ss a",
+    "quarters-standAlone-narrow": ["1", "2", "3", "4"],
     "dateTimeFormats-appendItem-Day-Of-Week": "{0} {1}",
+    "dateTimeFormat-medium": "{1} {0}",
     "dayPeriods-format-abbr-am": "AM",
     "dateTimeFormats-appendItem-Second": "{0} ({2}: {1})",
     "dateTimeFormats-appendItem-Era": "{0} {1}",
     "dateTimeFormats-appendItem-Week": "{0} ({2}: {1})",
     "dateFormatItem-H": "HH",
-    "quarters-standAlone-abbr": ["T1", "T2", "T3", "T4"],
     "quarters-format-narrow": ["1", "2", "3", "4"],
-    "dateFormatItem-h": "h a",
+    "dateTimeFormat-long": "{1} {0}",
     "dayPeriods-format-narrow-am": "AM",
+    "dateTimeFormat-full": "{1} {0}",
     "dateTimeFormats-appendItem-Day": "{0} ({2}: {1})",
     "dateTimeFormats-appendItem-Year": "{0} {1}",
     "dateTimeFormats-appendItem-Hour": "{0} ({2}: {1})",
@@ -105,314 +116,260 @@ dojo.cldr.nls.gregorian.en = {
     "dateTimeFormats-appendItem-Month": "{0} ({2}: {1})",
     "dateTimeFormats-appendItem-Minute": "{0} ({2}: {1})",
     "dateTimeFormats-appendItem-Timezone": "{0} {1}",
-    "dayPeriods-format-narrow-pm": "PM"
+    "dayPeriods-format-narrow-pm": "PM",
+    "dateTimeFormat-short": "{1} {0}"
 };
 dojo.provide("dijit.form.nls.validate");
 dijit.form.nls.validate._built = true;
-dojo.provide("dijit.form.nls.validate.en");
-dijit.form.nls.validate.en = {
-    "rangeMessage": "Este valor esta fuera de rango.",
-    "invalidMessage": "El valor ingresado no es valido.",
-    "missingMessage": "Este valor es requerido."
+dojo.provide("dijit.form.nls.validate.es_mx");
+dijit.form.nls.validate.es_mx = {
+    "rangeMessage": "Este valor está fuera del intervalo.",
+    "invalidMessage": "El valor especificado no es válido.",
+    "missingMessage": "Este valor es necesario."
 };
 dojo.provide("dojo.cldr.nls.number");
 dojo.cldr.nls.number._built = true;
-dojo.provide("dojo.cldr.nls.number.en");
-dojo.cldr.nls.number.en = {
-    "group": ",",
+dojo.provide("dojo.cldr.nls.number.es_mx");
+dojo.cldr.nls.number.es_mx = {
+    "group": ".",
     "percentSign": "%",
     "exponential": "E",
     "percentFormat": "#,##0%",
     "scientificFormat": "#E0",
     "list": ";",
     "infinity": "∞",
-    "patternDigit": "#",
     "minusSign": "-",
-    "decimal": ".",
+    "decimal": ",",
     "nan": "NaN",
     "nativeZeroDigit": "0",
     "perMille": "‰",
     "decimalFormat": "#,##0.###",
-    "currencyFormat": "¤#,##0.00;(¤#,##0.00)",
+    "currencyFormat": "¤ #,##0.00",
     "plusSign": "+",
-    "decimalFormat-short": "000T",
     "currencySpacing-afterCurrency-currencyMatch": "[:letter:]",
     "currencySpacing-beforeCurrency-surroundingMatch": "[:digit:]",
+    "decimalFormat-short": "000T",
     "currencySpacing-afterCurrency-insertBetween": " ",
     "currencySpacing-afterCurrency-surroundingMatch": "[:digit:]",
     "currencySpacing-beforeCurrency-currencyMatch": "[:letter:]",
+    "patternDigit": "#",
     "currencySpacing-beforeCurrency-insertBetween": " "
 };
 dojo.provide("dijit._editor.nls.commands");
 dijit._editor.nls.commands._built = true;
-dojo.provide("dijit._editor.nls.commands.en");
-dijit._editor.nls.commands.en = {
-    "removeFormat": "Remover formato",
+dojo.provide("dijit._editor.nls.commands.es_mx");
+dijit._editor.nls.commands.es_mx = {
+    "removeFormat": "Eliminar formato",
     "copy": "Copiar",
     "paste": "Pegar",
     "selectAll": "Seleccionar todo",
     "insertOrderedList": "Lista numerada",
-    "insertTable": "Insertar/Editar Tabla",
+    "insertTable": "Insertar/Editar tabla",
     "print": "Imprimir",
-    "underline": "Subrayar",
+    "underline": "Subrayado",
     "foreColor": "Color de primer plano",
     "htmlToggle": "Fuente HTML",
-    "formatBlock": "Estilo de parrafo ",
-    "newPage": "Nueva pagina",
+    "formatBlock": "Estilo de párrafo",
+    "newPage": "Nueva página",
     "insertHorizontalRule": "Regla horizontal",
-    "delete": "Eliminar",
-    "appleKey": "⌘${0}",
+    "delete": "Suprimir",
     "insertUnorderedList": "Lista con viñetas",
     "tableProp": "Propiedad de tabla",
     "insertImage": "Insertar imagen",
-    "superscript": "superindice",
-    "subscript": "subindice",
+    "superscript": "Superíndice",
+    "subscript": "Subíndice",
     "createLink": "Crear enlace",
     "undo": "Deshacer",
-    "fullScreen": "Toggle pantalla completa",
-    "italic": "Italic",
-    "fontName": "Nombre de la fuente",
-    "justifyLeft": "Alinear a la izquierda",
-    "unlink": "Remover enlace",
-    "toggleTableBorder": "Toggle borde de tablas",
+    "fullScreen": "Conmutar pantalla completa",
+    "italic": "Cursiva",
+    "fontName": "Nombre de font",
+    "justifyLeft": "Alinear izquierda",
+    "unlink": "Eliminar enlace",
+    "toggleTableBorder": "Conmutar borde de tabla",
     "viewSource": "Ver fuente HTML",
-    "ctrlKey": "ctrl+${0}",
-    "fontSize": "Tamaño de fuente",
-    "systemShortcut": "La \"${0}\" accion esta unicamente disponible en el navegador usando los atajos del teclado. Use ${1}.",
-    "indent": "Identado",
+    "ctrlKey": "control+${0}",
+    "fontSize": "Tamaño de font",
+    "systemShortcut": "La acción \"${0}\" sólo está disponible en su navegador mediante un atajo de teclado. Utilice ${1}.",
+    "indent": "Sangría",
     "redo": "Rehacer",
     "strikethrough": "Tachado",
-    "justifyFull": "Justificado",
-    "justifyCenter": "Alinear al centro",
-    "hiliteColor": "Color de fondo",
-    "deleteTable": "Eliminar tabla",
-    "outdent": "Desindentar",
+    "justifyFull": "Justificar",
+    "justifyCenter": "Alinear centro",
+    "hiliteColor": "Color de segundo plano",
+    "deleteTable": "Suprimir tabla",
+    "outdent": "Anular sangría",
     "cut": "Cortar",
-    "plainFormatBlock": "Estilo de parrafo",
-    "toggleDir": "Toggle Direccion",
-    "bold": "Negritas",
-    "tabIndent": "Identar pestaña",
-    "justifyRight": "Alinear a la derecha"
+    "plainFormatBlock": "Estilo de párrafo",
+    "toggleDir": "Conmutar dirección",
+    "bold": "Negrita",
+    "tabIndent": "Sangría de tabulador",
+    "justifyRight": "Alinear derecha",
+    "appleKey": "⌘${0}"
 };
 dojo.provide("dojo.nls.colors");
 dojo.nls.colors._built = true;
-dojo.provide("dojo.nls.colors.en");
-dojo.nls.colors.en = {
+dojo.provide("dojo.nls.colors.es_mx");
+dojo.nls.colors.es_mx = {
     "lightsteelblue": "azul acero claro",
-    "orangered": "naranja rojizo",
+    "orangered": "rojo anaranjado",
     "midnightblue": "azul medianoche",
     "cadetblue": "azul cadete",
-    "seashell": "caracol",
+    "seashell": "blanco marfil",
     "slategrey": "gris pizarra",
     "coral": "coral",
     "darkturquoise": "turquesa oscuro",
     "antiquewhite": "blanco antiguo",
     "mediumspringgreen": "verde primavera medio",
-    "salmon": "salmon",
+    "salmon": "salmón",
     "darkgrey": "gris oscuro",
     "ivory": "marfil",
-    "greenyellow": "verde-amarillo",
-    "mistyrose": "rosa nebuloso",
-    "lightsalmon": "salmon claro",
-    "silver": "plata",
-    "dimgrey": "gris oscuro",
-    "orange": "anaranjado",
-    "white": "blanco,"
-    navajowhite ":"
-    blanco navajo ","
-    royalblue ":"
-    azul rey ","
-    deeppink ":"
-    rosa oscuro ","
-    lime ":"
-    lima ","
-    oldlace ":"
-    ancaje antiguo ","
-    chartreuse ":"
-    chartreuse ","
-    darkcyan ":"
-    cian oscuro ","
-    yellow ":"
-    amarillo ","
-    linen ":"
-    lino ","
-    olive ":"
-    olivo ","
-    gold ":"
-    oro ","
-    lawngreen ":"
-    verde cesped ","
-    lightyellow ":"
-    amarillo claro ","
-    tan ":"
-    bronceado ","
-    darkviolet ":"
-    violeta oscuro ","
-    lightslategrey ":"
-    gris pizarra claro ","
-    grey ":"
-    gris ","
-    darkkhaki ":"
-    caqui oscuro ","
-    green ":"
-    verde ","
-    deepskyblue ":"
-    azul cielo oscuro ","
-    aqua ":"
-    agua ","
-    sienna ":"
-    siena ","
-    mintcream ":"
-    crema de menta ","
-    rosybrown ":"
-    marron rosado ","
-    mediumslateblue ":"
-    pizarra azul medio ","
-    magenta ":"
-    magenta ","
-    lightseagreen ":"
-    verde agua claro ","
-    cyan ":"
-    cian ","
-    olivedrab ":"
-    verde olivo ","
-    darkgoldenrod ":"
-    oro oscuro ","
-    slateblue ":"
-    azul pizarra ","
-    mediumaquamarine ":"
-    aguamarina medio ","
-    lavender ":"
-    lavanda ","
-    mediumseagreen ":"
-    verde agua medio ","
-    maroon ":"
-    marron carmesi ","
-    darkslategray ":"
-    gris pizarra oscuro ","
-    mediumturquoise ":"
-    turquesa medio ","
-    ghostwhite ":"
-    blanco fantasma ","
-    darkblue ":"
-    azul oscuro ","
-    mediumvioletred ":"
-    violeta - rojo medio ","
-    brown ":"
-    cafe ","
-    lightgray ":"
-    gris claro ","
-    sandybrown ":"
-    castañ o claro ","
-    pink ":"
-    rosa ","
-    firebrick ":"
-    ladrillo ","
-    indigo ":"
-    indigo ","
-    snow ":"
-    nieve ","
-    darkorchid ":"
-    orquidea oscura ","
-    turquoise ":"
-    turquesa ","
-    chocolate ":"
-    chocolate ","
-    springgreen ":"
-    verde primavera ","
-    moccasin ":"
-    mocasin ","
-    navy ":"
-    azul marino ","
-    lemonchiffon ":"
-    limon opaco ","
-    teal ":"
-    cerceta,
-    "floralwhite": "blanco floral",
+    "greenyellow": "amarillo verdoso",
+    "mistyrose": "rosa difuminado",
+    "lightsalmon": "salmón claro",
+    "silver": "plateado",
+    "dimgrey": "gris marengo",
+    "orange": "naranja",
+    "white": "blanco",
+    "navajowhite": "blanco navajo",
+    "royalblue": "azul real",
+    "deeppink": "rosa fuerte",
+    "lime": "lima",
+    "oldlace": "encaje antiguo",
+    "chartreuse": "verde pálido 2",
+    "darkcyan": "cian oscuro",
+    "yellow": "amarillo",
+    "linen": "blanco arena",
+    "olive": "verde oliva",
+    "gold": "oro",
+    "lawngreen": "verde césped",
+    "lightyellow": "amarillo claro",
+    "tan": "canela",
+    "darkviolet": "violeta oscuro",
+    "lightslategrey": "gris pizarra claro",
+    "grey": "gris",
+    "darkkhaki": "caqui oscuro",
+    "green": "verde",
+    "deepskyblue": "azul cielo fuerte",
+    "aqua": "aguamarina",
+    "sienna": "siena",
+    "mintcream": "crema menta",
+    "rosybrown": "marrón rosáceo",
+    "mediumslateblue": "azul pizarra medio",
+    "magenta": "magenta",
+    "lightseagreen": "verde mar claro",
+    "cyan": "cian",
+    "olivedrab": "verde oliva pardusco",
+    "darkgoldenrod": "ocre oscuro",
+    "slateblue": "azul pizarra",
+    "mediumaquamarine": "aguamarina medio",
+    "lavender": "lavanda",
+    "mediumseagreen": "verde mar medio",
+    "maroon": "granate",
+    "darkslategray": "gris pizarra oscuro",
+    "mediumturquoise": "turquesa medio",
+    "ghostwhite": "blanco ligero",
+    "darkblue": "azul oscuro",
+    "mediumvioletred": "rojo violáceo medio",
+    "brown": "marrón",
+    "lightgray": "gris claro",
+    "sandybrown": "marrón arcilla",
+    "pink": "rosa",
+    "firebrick": "teja",
+    "indigo": "añil",
+    "snow": "nieve",
+    "darkorchid": "orquídea oscuro",
+    "turquoise": "turquesa",
+    "chocolate": "chocolate",
+    "springgreen": "verde fuerte",
+    "moccasin": "arena",
+    "navy": "azul marino",
+    "lemonchiffon": "amarillo pastel",
+    "teal": "verde azulado",
+    "floralwhite": "blanco manteca",
     "cornflowerblue": "azul aciano",
-    "paleturquoise": "turquesa palido",
-    "purple": "purpura",
-    "gainsboro": "gainsboro",
+    "paleturquoise": "turquesa pálido",
+    "purple": "púrpura",
+    "gainsboro": "azul gainsboro",
     "plum": "ciruela",
     "red": "rojo",
     "blue": "azul",
-    "forestgreen": "verde bosque",
+    "forestgreen": "verde pino",
     "darkgreen": "verde oscuro",
-    "honeydew": "mielada",
-    "darkseagreen": "verde agua oscuro",
+    "honeydew": "flor de rocío",
+    "darkseagreen": "verde mar oscuro",
     "lightcoral": "coral claro",
-    "palevioletred": "violeta-rojo palido",
-    "mediumpurple": "purpura medio",
-    "saddlebrown": "cafe silla",
+    "palevioletred": "rojo violáceo pálido",
+    "mediumpurple": "púrpura medio",
+    "saddlebrown": "cuero",
     "darkmagenta": "magenta oscuro",
     "thistle": "cardo",
-    "whitesmoke": "humo blanco",
+    "whitesmoke": "blanco ahumado",
     "wheat": "trigo",
     "violet": "violeta",
     "lightskyblue": "azul cielo claro",
-    "goldenrod": "vara de oro",
+    "goldenrod": "ocre",
     "mediumblue": "azul medio",
     "skyblue": "azul cielo",
-    "crimson": "carmesi",
-    "darksalmon": "salmon oscuro",
+    "crimson": "carmesí",
+    "darksalmon": "salmón oscuro",
     "darkred": "rojo oscuro",
     "darkslategrey": "gris pizarra oscuro",
-    "peru": "",
+    "peru": "perú",
     "lightgrey": "gris claro",
-    "lightgoldenrodyellow": "vara de oro amarillo claro",
-    "blanchedalmond": "almedra blanqueada",
-    "aliceblue": "azul alice",
-    "bisque": "avellana",
+    "lightgoldenrodyellow": "ocre claro",
+    "blanchedalmond": "almendra pálido",
+    "aliceblue": "blanco azulado",
+    "bisque": "miel",
     "slategray": "gris pizarra",
-    "palegoldenrod": "vara de oro palido",
-    "darkorange": "anaranjado oscuro",
-    "aquamarine": "aguamaina",
+    "palegoldenrod": "ocre pálido",
+    "darkorange": "naranja oscuro",
+    "aquamarine": "aguamarina 2",
     "lightgreen": "verde claro",
-    "burlywood": "madera fuerte",
-    "dodgerblue": "azul dodger",
+    "burlywood": "madera",
+    "dodgerblue": "azul fuerte",
     "darkgray": "gris oscuro",
     "lightcyan": "cian claro",
-    "powderblue": "azul palido",
-    "blueviolet": "azul-violeta",
-    "orchid": "orquidea",
-    "dimgray": "gris oscuro",
+    "powderblue": "azul suave",
+    "blueviolet": "azul violáceo",
+    "orchid": "orquídea",
+    "dimgray": "gris marengo",
     "beige": "beige",
-    "fucsia": "",
-    "lavenderblush": "lavanda rojizo",
-    "hotpink": "rosa caliente",
+    "fuchsia": "fucsia",
+    "lavenderblush": "lavanda rosácea",
+    "hotpink": "rosa oscuro",
     "steelblue": "azul acero",
     "tomato": "tomate",
     "lightpink": "rosa claro",
-    "limegreen": "lima verde",
-    "indianred": "piel roja",
-    "papayawhip": "papaya batida",
+    "limegreen": "lima limón",
+    "indianred": "rojo teja",
+    "papayawhip": "papaya claro",
     "lightslategray": "gris pizarra claro",
     "gray": "gris",
-    "mediumorchid": "orquedea medio",
-    "cornsilk": "",
+    "mediumorchid": "orquídea medio",
+    "cornsilk": "crudo",
     "black": "negro",
     "seagreen": "verde mar",
     "darkslateblue": "azul pizarra oscuro",
     "khaki": "caqui",
     "lightblue": "azul claro",
-    "palegreen": "verde palido",
-    "azure": "azul celeste",
-    "peachpuff": "hojaldre de melocoton",
-    "darkolivegreen": "verde olivo oscuro",
-    "yellowgreen": "verde amarillo"
+    "palegreen": "verde pálido",
+    "azure": "blanco cielo",
+    "peachpuff": "melocotón",
+    "darkolivegreen": "verde oliva oscuro",
+    "yellowgreen": "verde amarillento"
 };
 dojo.provide("dojox.widget.nls.ColorPicker");
 dojox.widget.nls.ColorPicker._built = true;
-dojo.provide("dojox.widget.nls.ColorPicker.en");
-dojox.widget.nls.ColorPicker.en = {
-    "saturationPickerTitle": "Selector de saturacion",
+dojo.provide("dojox.widget.nls.ColorPicker.es_mx");
+dojox.widget.nls.ColorPicker.es_mx = {
+    "hueLabel": "m",
+    "saturationPickerTitle": "Selector de saturación",
+    "huePickerTitle": "Selector de tono",
+    "greenLabel": "v",
+    "blueLabel": "a",
     "valueLabel": "v",
-    "blueLabel": "b",
     "saturationLabel": "s",
-    "greenLabel": "g",
     "redLabel": "r",
-    "hueLabel": "h",
     "hexLabel": "hex",
-    "huePickerTitle": "Selector de Hue",
     "degLabel": "°"
 };
