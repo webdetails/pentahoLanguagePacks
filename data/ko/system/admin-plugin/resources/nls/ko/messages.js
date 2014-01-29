@@ -14,7 +14,7 @@
     LDAP_SERVER_URL_LABEL: '서버 URL:',
     LDAP_USER_LABEL: '사용자명:',
     LDAP_PASSWORD_LABEL: '비밀번호:',
-    LDAP_TEST_CONNECTION_LABEL : 'LDAP 설정을 위한 테스트 연결',
+    LDAP_TEST_CONNECTION_LABEL: 'LDAP 설정을 위한 테스트 연결',
     LDAP_SERVER_URL_DESCRIPTION: '디렉터리 서버에 접속하기 위한 연결 URL',
     LDAP_USER_DESCRIPTION: '디렉터리에 읽기 권한이 있는 지정된 사용자',
     LDAP_PASSWORD_DESCRIPTION: '지정한 사용자의 비밀번호',
@@ -46,9 +46,9 @@
 
     //ldap custom user search configuration
     LDAP_USER_SEARCH_TITLE: '사용자 검색',
-    
+
     //ldap custom roles configuration 
-    LDAP_ROLES_TITLE: '역할',    
+    LDAP_ROLES_TITLE: '역할',
     LDAP_ROLE_BASE_LABEL: '역할 속성:',
     LDAP_ROLE_SEARCH_FILTER_LABEL: '역할 속성 필터:',
     LDAP_ROLE_SEARCH_BASE_LABEL: '역할 속성 기준 위치:',
@@ -70,7 +70,7 @@
     LDAP_POPULATOR_UPPERCASE_DESCRIPTION: '가져온 역할 이름을 대문자로 변환할 지를 결정합니다.',
     LDAP_POPULATOR_SUBTREE_LABEL: '하위 계층:',
     LDAP_POPULATOR_SUBTREE_DESCRIPTION: '현재의 객체의 모든 자식 객체로 검색을 확장할 지 결정합니다. 설정하지 않을 경우 검색은 오직 현재 객체만을 포함해야 합니다.',
-    
+
     //dialogs
     LDAP_BROWSER_TITLE: 'LDAP 탐색기',
     LDAP_WARNING: '주의',
@@ -90,11 +90,11 @@
     LDAP_POPULATOR_TEST: 'LDAP 가져오기 테스트',
     LDAP_USER_TEST: 'LDAP 사용자 테스트',
     LDAP_ROLES_TEST: 'LDAP 역할 테스트',
-    LDAP_CONNECTOR_TEST_PASSED: 'LDAP 서버에 성공적으로 접속했습니다.' ,
+    LDAP_CONNECTOR_TEST_PASSED: 'LDAP 서버에 성공적으로 접속했습니다.',
     LDAP_CONNECTOR_TEST_FAILED: 'LDAP 서버에 연결할 수 없습니다. 설정을 확인 후 다시 시도해 주시기 바랍니다.',
-   
+
     SAVE: '저장',
-    TEST: '테스트',        
+    TEST: '테스트',
     CANCEL: '취소',
     YES: '예',
     YES_CHANGE: '예, 계속',
@@ -105,21 +105,21 @@
     TEST_FAILED: '테스트 실패',
 
     CONFIGURATION_SAVED: '인증 방식에 대한 변경 내용이 저장되었습니다. 변경된 내용은 서버를 재시작하면 반영됩니다.',
-  
+
     //licenseManager
     PRODUCT: '제품',
-    START_DATE : '시작일',
-    END_DATE : '종료일',
-    VERSION : '버전',
-    LICENSES : '라이센스',
-    DELETE_TITLE : '선택된 라이센스를 삭제하시겠습니까?',
+    START_DATE: '시작일',
+    END_DATE: '종료일',
+    VERSION: '버전',
+    LICENSES: '라이센스',
+    DELETE_TITLE: '선택된 라이센스를 삭제하시겠습니까?',
     DELETE_WARNING: '선택된 라이센스를 삭제하려고 합니다. 계속 진행하시겠습니까?',
 
-    LICENSE_VALID_LICENSE_FOUND_LOG : '유효한 biserver-ee 라이센스를 찾았습니다',
-    LICENSE_NO_VALID_LICENSE_FOUND_LOG : '유효한 biserver-ee 라이센스가 없습니다',
-    LICENSE_NO_VALID_LICENSE_MESSAGE_HEADER : "라이센스가 존재하지 않거나 만료되었습니다.",
-LICENSE_NO_VALID_LICENSE_MESSAGE_BODY : '계속 진행하기 위해 펜타호 BI 플랫폼 라이센스를 갱신해야 합니다. 아직 준비가 되지 않았다면 <a href="%CONTEXT_PATH%\Logout" target="_top">로그아웃</a> 후 나중에 다시 진행할 수 있습니다.',
-    LICENSE_CANCEL_BUTTON : '로그아웃',
-    LICENSE_OK_BUTTON : '확인'
+    LICENSE_VALID_LICENSE_FOUND_LOG: '유효한 biserver-ee 라이센스를 찾았습니다',
+    LICENSE_NO_VALID_LICENSE_FOUND_LOG: '유효한 biserver-ee 라이센스가 없습니다',
+    LICENSE_NO_VALID_LICENSE_MESSAGE_HEADER: "라이센스가 존재하지 않거나 만료되었습니다.",
+    LICENSE_NO_VALID_LICENSE_MESSAGE_BODY: '계속 진행하기 위해 펜타호 BI 플랫폼 라이센스를 갱신해야 합니다. 아직 준비가 되지 않았다면 <a href="%CONTEXT_PATH%\Logout" target="_top">로그아웃</a> 후 나중에 다시 진행할 수 있습니다.',
+    LICENSE_CANCEL_BUTTON: '로그아웃',
+    LICENSE_OK_BUTTON: '확인'
 
 }

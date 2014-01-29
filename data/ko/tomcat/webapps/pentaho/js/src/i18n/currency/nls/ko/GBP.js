@@ -8,4 +8,7 @@
 		http://dojotoolkit.org/community/licensing.shtml
 */
 
-({"displayName":"영국 파운드 스털링", "symbol":"\xa3"})
+({
+    "displayName": "영국 파운드 스털링",
+    "symbol": "\xa3"
+})

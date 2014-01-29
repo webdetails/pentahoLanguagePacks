@@ -8,4 +8,6 @@
 		http://dojotoolkit.org/community/licensing.shtml
 */
 
-({"displayName":"인도 루피"})
+({
+    "displayName": "인도 루피"
+})
