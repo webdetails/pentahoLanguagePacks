@@ -249,7 +249,6 @@
             <!-- create the version file -->
             <tstamp/>
             <property name="sequential.build.id" value="manual-${DSTAMP}"/>
-            <!--  <echo file="${stage.dir}/${langpack.name}/version.xml" message="&lt;version branch='TRUNK' buildId='${sequential.build.id}'>${distribution.version}&lt;/version>"/> -->
             <echoxml file="${stage.dir}/${langpack.name}/version.xml">
 				<version branch='${project.stage}' buildId='${sequential.build.id}'>${distribution.version}</version>
             </echoxml>
