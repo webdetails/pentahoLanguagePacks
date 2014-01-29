@@ -1,7 +1,7 @@
 define(
     //begin v1.x content
     {
-        "group": ",",
+        "group": ".",
         "percentSign": "%",
         "exponential": "E",
         "scientificFormat": "#E0",
@@ -10,14 +10,13 @@ define(
         "infinity": "∞",
         "patternDigit": "#",
         "minusSign": "-",
-        "decimal": ".",
+        "decimal": ",",
         "nan": "NaN",
         "nativeZeroDigit": "0",
         "perMille": "‰",
         "decimalFormat": "#,##0.###",
-        "currencyFormat": "¤#,##0.00;(¤#,##0.00)",
-        "plusSign": "+",
-        "decimalFormat-short": "000T"
+        "currencyFormat": "#,##0.00 ¤",
+        "plusSign": "+"
     }
     //end v1.x content
 );
