@@ -141,8 +141,14 @@ def copy_and_edit_js(src_filename, dst_filename):
     # copy(src_filename, dst_filename)
     ensure_parent_folder_exists(dst_filename)
 
-    replacements = { '.en': '.' + languageCode_underscore.lower(),
-                     '_en': '_' + languageCode_underscore.lower()
+    replacements = { 'dojo.provide(\"dojo.nls.dojo-analyzer_en\"': 'dojo.provide(\"dojo.nls.dojo-analyzer_' + languageCode_hyphen.lower() + '\"',
+                     'dojo.provide(\"dojo.nls.dojo-ext_en\"': 'dojo.provide(\"dojo.nls.dojo-ext_' + languageCode_hyphen.lower() + '\"',
+                     'dojo.provide(\"dojo.nls.dojo-reportviewer_en\"': 'dojo.provide(\"dojo.nls.dojo-reportviewer_' + languageCode_hyphen.lower() + '\"',
+                     'dojo.provide(\"dojo.nls.dojo-pirs_en\"': 'dojo.provide(\"dojo.nls.dojo-pirs_' + languageCode_hyphen.lower() + '\"',
+                     '.en\"': '.' + languageCode_underscore.lower() + '\"',
+                     '.en=': '.' + languageCode_underscore.lower() + '=',
+                     '_en=': '_' + languageCode_underscore.lower() + '=',
+                     '_en\"': '_' + languageCode_underscore.lower() + '\"'
     }
     with open(dst_filename, 'w') as outfile:
         with open(src_filename) as infile:
