@@ -2,23 +2,29 @@
 pentahoLanguagePacks
 ====================
 
-Pentaho Language Pack Installer: plugin/application for installing language packs
+Pentaho Language Pack Installer: plugin/application for installing language packs in Pentaho 5+. Now you can have Pentaho in your favourite language!
+
+The "pentahoLanguagePacks" project is a Pentaho plugin that allows a system administrator to install any localised version of the user interface of the Pentaho Business Intelligence server. 
+
+Whenever a given localisation reaches a state in which it becomes usable, trimmed versions of the installer are released to the Pentaho Marketplace, containing only the files relevant to that locale.
 
 # Disclaimer
-The installer works by massively copying files to your Pentaho installation, eventually overwriting existing files.
-It also patches files in your installation.
+
+The installers work by massively copying files to your Pentaho installation, eventually overwriting and patching existing files in your installation.
 
 We heavily recommend that you test the installer in a dedicated BI server before using this installer in a production setting. Please backup both your server and your solution!
 
 
 # Installing the application
 
+**If you are only interested in installing an existing language pack, then you should simply download it from the marketplace.**
+
 The Language Pack Installer requires Pentaho 5+, and depends on the following CTools:
 
 * Community Dashboard Framework (CDF)
 * Community Dashboard Editor (CDE)
 
-You can install these packages from the marketplace, or manually download them from [Pentaho's Continuous Integration server](http://ci.pentaho.com) and unzip the .zip file to your `pentaho-solutions/system` folder.
+You can install these packages from the Pentaho Marketplace, or manually download them from [Pentaho's Continuous Integration server](http://ci.pentaho.com) and unzip the .zip file to your `pentaho-solutions/system` folder.
 
 
 There are basically two ways to get the plugin/application:
