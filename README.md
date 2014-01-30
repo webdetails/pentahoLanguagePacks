@@ -4,7 +4,7 @@ pentahoLanguagePacks
 
 Pentaho Language Pack Installer: plugin/application for installing language packs in Pentaho 5+. Now you can have Pentaho in your favourite language!
 
-The "pentahoLanguagePacks" project is a Pentaho plugin that allows a system administrator to install any localised version of the user interface of the Pentaho Business Intelligence server. 
+The "pentahoLanguagePacks" project is a Pentaho plugin that allows a system administrator to install any localised version of the user interface of the Pentaho Business Intelligence server.
 
 Whenever a given localisation reaches a state in which it becomes usable, trimmed versions of the installer are released to the Pentaho Marketplace, containing only the files relevant to that locale.
 
@@ -29,9 +29,9 @@ You can install these packages from the Pentaho Marketplace, or manually downloa
 
 There are basically two ways to get the plugin/application:
 
-1. You can **download a zip file** (e.g. from [github](https://github.com/webdetails/pentahoLanguagePacks)), and unzip it to your `pentaho-solutions/system`. 
+1. You can **download a zip file** (e.g. from [github](https://github.com/webdetails/pentahoLanguagePacks)), and unzip it to your `pentaho-solutions/system`.
 
-2. Alternatively, you can **clone the git repository** hosted on github 
+2. Alternatively, you can **clone the git repository** hosted on github
    1. Open a terminal/
    2. Go to your `pentaho-solutions/system` folder
    3. `git clone git@github.com:webdetails/pentahoLanguagePacks.git languagePackInstaller`
@@ -52,7 +52,7 @@ Please observe the following notes:
 
 1. Merging your changes is much easier for us if you create a github account and fork the Webdetails repository `https://github.com/webdetails/pentahoLanguagePacks.git`. Whenever you want, issue a pull request and we'll merge your changes. If you don't understand any of this, just zip the whole plugin and send it [back to us](mailto:community@pentaho.com).
 
-2. You just need to edit the files under `data/`. 
+2. You just need to edit the files under `data/`.
 
 3. Please save all files using UTF8 encoding.
 
