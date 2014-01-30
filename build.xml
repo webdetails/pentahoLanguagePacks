@@ -250,7 +250,7 @@
             <tstamp/>
             <property name="sequential.build.id" value="manual-${DSTAMP}"/>
             <echoxml file="${stage.dir}/${langpack.name}/version.xml">
-				<version branch='${project.stage}' buildId='${sequential.build.id}'>${distribution.version}</version>
+		<version branch='${project.stage}' buildId='${sequential.build.id}'>${distribution.version}</version>
             </echoxml>
 
 
@@ -355,7 +355,7 @@
         <!-- create a marketplace.xml file -->
         <echoxml file="${dist.dir}/${langpack.name}.marketplace.xml">
             <version>
-				<branch>${project.stage}</branch>
+		<branch>${project.stage}</branch>
                 <version>${distribution.version}</version>
                 <name>Trunk</name>
                 <package_url>${langpack.package.url}</package_url>
@@ -376,6 +376,8 @@
                 <filter token="langpack.metadata.maintainer.img" value="${langpack.metadata.maintainer.img}"/>
                 <filter token="langpack.package.url" value="${langpack.package.url}"/>
                 <filter token="langCode" value="${langCode}"/>
+                <filter token="project.revision" value="${project.revision}"/>
+                <filter token="project.version" value="${project.version}"/>
             </filterset>
         </copy>
         <available file="${basedir}/data/${langCode}/resources/img/flag.png" property="market.entry.img.present"/>
