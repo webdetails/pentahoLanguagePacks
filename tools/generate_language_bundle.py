@@ -15,7 +15,11 @@ languageCode = sys.argv[1] # language as it is typed by the user
 languageCode_underscore = languageCode.replace('-', '_').replace(' ', '_'); # this is the java way, valid for the .properties files
 languageCode_hyphen = languageCode.replace('_', '-').replace(' ', '-');  # this seems to be the IETF standard, and what dojo and all .js are using
 languageCode_slash = '/' + languageCode + '/';
-jar_whitelist = ['pivot4j-analytics', 'pivot4j-core', 'pentaho-platform-'] # list of jars that will be scanned for messages.
+jar_whitelist = [ # list of jars that will be scanned for messages.
+    'pentaho-platform-',
+    'pivot4j-analytics',
+    'pivot4j-core'
+]
 #file_blacklist = ['system/common-ui/resources/messages']
 
 origin_folder = os.path.abspath(sys.argv[2].replace('file://', ''))
