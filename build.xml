@@ -187,6 +187,11 @@
                     <include name="data/${langCode}/tomcat/**"/>
                 </fileset>
             </copy>
+
+            <!-- Remove any remaining <TRANSLATE ME> tags to avoid breaking the UI -->
+            <replace dir="${stage.dir}/${langpack.name}/data" token="&lt;TRANSLATE ME&gt;" value=""/>
+
+            <!-- Add metadata.json -->
             <property name="metadata.json" value="${stage.dir}/${langpack.name}/data/metadata.json"/>
             <copy file="${basedir}/data/${langCode}/metadata.json"
                   tofile="${metadata.json}"/>
