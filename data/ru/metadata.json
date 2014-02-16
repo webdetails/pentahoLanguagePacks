@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the Russian language in Pentaho 5",
     "language": "Русский язык",
     "languageCode": "ru",
-    "version": "0.1",
+    "version": "0.0",
     "pentahoVersion": "5.0.1",
     "maintainer": {
         "name": "",
