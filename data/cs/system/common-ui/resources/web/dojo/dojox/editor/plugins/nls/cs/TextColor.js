@@ -1,0 +1,4 @@
+({
+    "setButtonText": "Nastavit",
+    "cancelButtonText": "Storno"
+})
