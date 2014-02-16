@@ -3,10 +3,10 @@
     "appWelcomeMessage": "This plugin installs language definitions for the brazilian variant of the Portuguese language in Pentaho 5",
     "language": "Português do Brasil",
     "languageCode": "pt_BR",
-    "version": "0.7",
+    "version": "0.7.1",
     "pentahoVersion": "5.0.1",
     "maintainer": {
-        "name": "Oncase, Open Consulting",
+        "name": "Oncase, Open Consulting, IT4biz",
         "email": "pentahobr@yahoogrupos.com.br",
         "img": "",
         "url": "http://br.groups.yahoo.com/neo/groups/pentahobr/info"
@@ -24,7 +24,12 @@
             "img": "",
             "url": "http://www.openconsulting.com.br/"
         },
-
+        {
+            "name": "IT4biz",
+            "email": "caio@it4biz.com.br",
+            "img": "http://www.it4biz.com.br/extras/logo-it4biz-wordpress.png",
+            "url": "http://www.it4biz.com.br/"
+        }
     ],
     "sponsors": [
         {
