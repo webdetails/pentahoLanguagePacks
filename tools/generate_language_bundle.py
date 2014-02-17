@@ -101,11 +101,13 @@ def add_missing_properties(lines_src, dst_localised, encoding='utf_8', marker=tr
                     fout.write(line)
 
 def unescape_octal(filename, backup=False):
+    # not yet working!
     try:
         f = open(filename, 'r').read()
     except Exception:
         pass
 
+    # the following is a nice try that unescapes all \n :(
     data = unicode(f.decode('string_escape'), 'utf-8')
     if backup:
         # now get the absolute path of our filename and append .bak
@@ -281,11 +283,14 @@ for root, dirs, filenames in os.walk('.'):
         # Ignore files that do not require further processing
         if g.endswith('_supported_languages.properties'):
             continue
+        #    if os.path.exists(src.replace('_supported_languages.properties', '.properties')):
+        #        continue
 
         # Patch messages_LANG.properties with missing tokens
         is_regular = g.endswith('messages.properties')
-        is_xul = g.endswith('.properties') and os.path.exists(src.replace('.properties', '.xul')) and not g.endswith('_supported_languages.properties')
-        if is_regular or is_xul:
+        is_xul = g.endswith('.properties') and os.path.exists(src.replace('.properties', '.xul'))
+        is_other = g.endswith('.properties') and os.path.exists(src.replace('.properties', '_supported_languages.properties'))
+        if is_regular or is_xul or is_other:
             dst_localised =  os.path.realpath(os.path.join(destination_folder, root, f.replace('.properties', suffix) ))
             with codecs.open(src, 'r', 'utf_8') as fin:
                 lines_src = fin.readlines()
@@ -338,7 +343,11 @@ for root, dirs, filenames in os.walk(destination_folder):
         src = os.path.join(destination_folder, root, f)
         if g.endswith(suffix.lower()):
             #TODO: Consider unescaping \XXX octal encoded chars
-            unescape_octal(src)
+            #unescape_octal(src)
+
+            #unescape XML: Beware of &lt; and &gt;
+            #os.system('recode XML..UTF8 {0}'.format(src))
+
             print 'Unescaping \uXXXX into utf8 using native2ascii: ' + src
             #convert_to_utf8(src)
             os.system('native2ascii -reverse {0} {0}'.format(src))
@@ -347,13 +356,13 @@ for root, dirs, filenames in os.walk(destination_folder):
         #    os.system('native2ascii -reverse -encoding utf-8 {0} {0}'.format(src))
 
 # Fourth round: eliminate tmp and cache files
-tmp_files = ['/tmp', '/plugin-cache']
+tmp_dirs = ['/tmp', '/plugin-cache']
 for root, dirs, filenames in os.walk(destination_folder):
-    for f in filenames:
-        dst = os.path.join(destination_folder, root,f)
+    for d in dirs:
+        dst = os.path.join(destination_folder, root, d)
         #print "remove ?: " + dst
         g = dst.lower()
-        for tmp in tmp_files:
+        for tmp in tmp_dirs:
             if g.endswith(tmp):
                 try:
                     print "Removing folder: " + dst
