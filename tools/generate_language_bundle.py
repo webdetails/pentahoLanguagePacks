@@ -15,8 +15,19 @@ languageCode = sys.argv[1] # language as it is typed by the user
 languageCode_underscore = languageCode.replace('-', '_').replace(' ', '_'); # this is the java way, valid for the .properties files
 languageCode_hyphen = languageCode.replace('_', '-').replace(' ', '-');  # this seems to be the IETF standard, and what dojo and all .js are using
 languageCode_slash = '/' + languageCode + '/';
+suffix = '_' + languageCode_underscore + '.properties';
+
 jar_whitelist = [ # list of jars that will be scanned for messages.
+    # tomcat
+    'pentaho-actionsequence-dom',
+    'pentaho-bi-platform-ee',
+    'pentaho-chartbeans',
+    'pentaho-connections',
+    'pentaho-metadata',
     'pentaho-platform-',
+    'pentaho-reporting-engine',
+    #system
+    'common-ui',
     'pivot4j-analytics',
     'pivot4j-core'
 ]
@@ -28,7 +39,7 @@ plugin_folder =  os.path.realpath(os.path.join(os.getcwd(), '..', '..')) # There
 
 force = False
 translation_marker = '<TRANSLATE ME>'# not used anymore
-
+suffix = '_' + languageCode_underscore + '.properties';
 def rreplace(s, old, new, occurrence=1):
     # like str.replace, but starts from the end
     # by default, only the last occurrence is replaced
@@ -56,7 +67,7 @@ def copy(src, dst, patch=False, marker=translation_marker):
         convert_to_utf8(dst)
 
 
-def add_missing_properties(lines_src, dst_localised, encoding='utf-8', marker=translation_marker):
+def add_missing_properties(lines_src, dst_localised, encoding='utf_8', marker=translation_marker):
     if os.path.exists(dst_localised):
         with codecs.open(dst_localised, 'a+', encoding, errors='ignore') as fout:
             fout.seek(0)
@@ -88,6 +99,29 @@ def add_missing_properties(lines_src, dst_localised, encoding='utf-8', marker=tr
                     fout.write(line.strip() + translation_marker + '\n')
                 else:
                     fout.write(line)
+
+def unescape_octal(filename, backup=False):
+    try:
+        f = open(filename, 'r').read()
+    except Exception:
+        pass
+
+    data = unicode(f.decode('string_escape'), 'utf-8')
+    if backup:
+        # now get the absolute path of our filename and append .bak
+        # to the end of it (for our backup file)
+        fpath = os.path.abspath(filename)
+        newfilename = fpath + '.bak'
+        # and make our backup file with shutil
+        shutil.copy(filename, newfilename)
+    # and at last convert it to utf-8
+    f = open(filename, 'w')
+    try:
+        f.write(data.encode('utf-8'))
+    except Exception, e:
+        print e
+    finally:
+        f.close()
 
 
 def convert_to_utf8(filename, backup=False):
@@ -186,14 +220,22 @@ for root, dirs, filenames in os.walk('.'):
             print "Skipped copying file", dst, "in the first round because it already exists"
             continue
 
+
+
         # Grab *messages_LANG.properties and  *supported_languages.properties
-        if g.endswith('supported_languages.properties'):
+        if g.endswith('_supported_languages.properties'):
             create_index_supported_languages(dst)
-        elif g.endswith('messages_'+ languageCode_underscore.lower()  +'.properties'):
+        elif g.endswith('messages_'+ suffix.lower()):
             copy(src, dst)
         elif g.endswith('messages_'+ languageCode_hyphen.lower()  +'.properties'):
             dst_fixed =  os.path.realpath(os.path.join(destination_folder, root, f.replace(languageCode_hyphen, languageCode_underscore) ))
             copy(src, dst_fixed)
+        elif g.endswith(suffix.lower()):
+            if os.path.exists(src.replace(suffix, '_supported_languages.properties')):
+                copy(src, dst)
+            if os.path.exists(src.replace(suffix, '.xul')):
+                copy(src, dst)
+
 
        # Handle existing translations in jars
         if g.endswith('.jar'):
@@ -203,7 +245,7 @@ for root, dirs, filenames in os.walk('.'):
                     for el in z.namelist():
                         e = el.lower()
                         dst = os.path.realpath(os.path.join(destination_folder, root, f.replace('.jar', '_jar'), el.replace(languageCode_hyphen, languageCode_underscore) ))
-                        if e.endswith('messages_'+ languageCode_underscore.lower()  +'.properties') or e.endswith('messages_'+ languageCode_hyphen.lower()  +'.properties'):
+                        if e.endswith('messages_'+ suffix.lower()) or e.endswith('messages_'+ languageCode_hyphen.lower()  +'.properties'):
                             print 'Copying/patching:\n  ' +  os.path.realpath(os.path.join(origin_folder, src, el)) + '\nto\n  ' + dst + '\n'
                             tmpfolder = os.tmpnam()
                             z.extract(el, tmpfolder)
@@ -211,7 +253,7 @@ for root, dirs, filenames in os.walk('.'):
                             os.system('native2ascii -reverse -encoding utf-8 {0} {0}'.format(tmpfile))
                             copy(tmpfile, dst, patch=os.path.exists(dst), marker='')
                             os.remove(tmpfile)
-                        elif e.endswith('supported_languages.properties'):
+                        elif e.endswith('_supported_languages.properties'):
                             # this seems to never happen
                             create_index_supported_languages(dst)
 
@@ -236,10 +278,16 @@ for root, dirs, filenames in os.walk('.'):
         if plugin_folder in os.path.realpath(os.path.join(origin_folder, src)):
             continue
 
+        # Ignore files that do not require further processing
+        if g.endswith('_supported_languages.properties'):
+            continue
+
         # Patch messages_LANG.properties with missing tokens
-        if g.endswith('messages.properties'):
-            dst_localised =  os.path.realpath(os.path.join(destination_folder, root, f.replace('.properties', '_' + languageCode_underscore + '.properties') ))
-            with codecs.open(src, 'r', 'utf-8') as fin:
+        is_regular = g.endswith('messages.properties')
+        is_xul = g.endswith('.properties') and os.path.exists(src.replace('.properties', '.xul')) and not g.endswith('_supported_languages.properties')
+        if is_regular or is_xul:
+            dst_localised =  os.path.realpath(os.path.join(destination_folder, root, f.replace('.properties', suffix) ))
+            with codecs.open(src, 'r', 'utf_8') as fin:
                 lines_src = fin.readlines()
             try:
                 add_missing_properties(lines_src, dst_localised)
@@ -260,7 +308,7 @@ for root, dirs, filenames in os.walk('.'):
                     for el in z.namelist():
                         e = el.lower()
                         if e.endswith('messages.properties'):
-                            dst = os.path.realpath(os.path.join(destination_folder, root, f.replace('.jar', '_jar'), el.replace('.properties', '_' + languageCode_underscore + '.properties') ))
+                            dst = os.path.realpath(os.path.join(destination_folder, root, f.replace('.jar', '_jar'), el.replace('.properties', suffix) ))
                             fin = z.open(el, 'r') # Zipfiles don't support "with" statement
                             lines_src = fin.readlines()
                             fin.close()
@@ -288,8 +336,10 @@ for root, dirs, filenames in os.walk(destination_folder):
     for f in filenames:
         g = f.lower()
         src = os.path.join(destination_folder, root, f)
-        if g.endswith('messages_'+ languageCode_underscore.lower()  +'.properties'):
-            print 'Converting to utf8: ' + src
+        if g.endswith(suffix.lower()):
+            #TODO: Consider unescaping \XXX octal encoded chars
+            unescape_octal(src)
+            print 'Unescaping \uXXXX into utf8 using native2ascii: ' + src
             #convert_to_utf8(src)
             os.system('native2ascii -reverse {0} {0}'.format(src))
             #os.system('native2ascii -reverse -encoding utf-8 {0} {0}'.format(src)) # don't specify the encoding
@@ -301,7 +351,7 @@ tmp_files = ['/tmp', '/plugin-cache']
 for root, dirs, filenames in os.walk(destination_folder):
     for f in filenames:
         dst = os.path.join(destination_folder, root,f)
-        print "remove ?: " + dst
+        #print "remove ?: " + dst
         g = dst.lower()
         for tmp in tmp_files:
             if g.endswith(tmp):

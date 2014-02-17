@@ -7,6 +7,7 @@ DEST=~/webdetails/bi/biserver-ce/pentaho-solutions/system/languagePackInstaller/
 HERE=$(pwd)
 for locale in "$@"
 do
+(
     ./generate_language_bundle.py "$locale" $ORIGIN/tomcat $DEST/"$locale"/tomcat
     ./generate_language_bundle.py "$locale" $ORIGIN/pentaho-solutions/system $DEST/"$locale"/system
     # fix
@@ -29,4 +30,5 @@ do
     #cd $DEST/
     #zip -r zips/"$locale" "$locale"
     #cd $HERE
+)
 done
