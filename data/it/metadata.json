@@ -6,10 +6,10 @@
     "version": "0.1",
     "pentahoVersion": "5.0.1",
     "maintainer": {
-        "name": "Sergio Ramazzina",
-        "email": "sergio.ramazzina@serasoft.it",
+        "name": "Serasoft S.r.l.",
+        "email": "sergio.ramazzina@serasoft.it, paolo.barbaglia@serasoft.it, manuel.castellin@serasoft.it",
         "img": "",
-        "url": "http:\/\/www.pentaho.com"
+        "url": "http:\/\/www.serasoft.it"
     },
     "credits": [
         {
