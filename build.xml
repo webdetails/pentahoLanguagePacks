@@ -346,7 +346,7 @@
 
         <!-- Inherit the project.revision property -->
         <property name="langpack.artifact.id" value="${langpack.name}"/>
-        <property name="langpack.zipfile" value="${langpack.artifact.id}-${distribution.version}.zip"/>
+        <property name="langpack.zipfile" value="${langpack.artifact.id}-${langpack.distribution.version}.zip"/>
         <property name="langpack.package.url" value="http://ci.analytical-labs.com/job/Webdetails-languagePackInstallers/lastSuccessfulBuild/artifact/dist/${langpack.zipfile}"/>
 
 

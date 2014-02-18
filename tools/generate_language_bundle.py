@@ -237,9 +237,12 @@ for root, dirs, filenames in os.walk('.'):
                 copy(src, dst)
             if os.path.exists(src.replace(suffix, '.xul')):
                 copy(src, dst)
+        elif g.endswith('.xul'):
+            # Generate missing entries in .xul
+            if os.path.exists(src.replace('.xul', '.properties')) and not os.path.exists(src.replace('.xul', '_supported_languages.properties')):
+                create_index_supported_languages(dst.replace('.xul', '_supported_languages.properties'))
 
-
-       # Handle existing translations in jars
+        # Handle existing translations in jars
         if g.endswith('.jar'):
             for whitelist_item in jar_whitelist:
                 if whitelist_item.lower() in g:
@@ -285,6 +288,7 @@ for root, dirs, filenames in os.walk('.'):
             continue
         #    if os.path.exists(src.replace('_supported_languages.properties', '.properties')):
         #        continue
+
 
         # Patch messages_LANG.properties with missing tokens
         is_regular = g.endswith('messages.properties')

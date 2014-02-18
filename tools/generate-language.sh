@@ -30,5 +30,5 @@ do
     #cd $DEST/
     #zip -r zips/"$locale" "$locale"
     #cd $HERE
-)
+) &
 done
