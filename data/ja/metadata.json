@@ -3,28 +3,28 @@
     "appWelcomeMessage": "This plugin installs language definitions for the Japanese language in Pentaho 5",
     "language": "Japanese",
     "languageCode": "ja",
-    "version": "0.0",
-    "pentahoVersion": "5.0.1",
+    "version": "0.1",
+    "pentahoVersion": "5.0.3",
     "maintainer": {
-        "name": "",
-        "email": "",
+        "name": "Akito Tanaka",
+        "email": "akito.tanaka@ksk-anl.com",
         "img": "",
-        "url": ""
+        "url": "http://ksk-anl.com/"
     },
     "credits": [
         {
-            "name": "",
-            "email": "",
+            "name": "Akito Tanaka",
+            "email": "akito.tanaka@ksk-anl.com",
             "img": "",
-            "url": ""
+            "url": "http://ksk-anl.com/"
         }
     ],
     "sponsors": [
         {
-            "name": "",
-            "email": "",
+            "name": "Akito Tanaka",
+            "email": "akito.tanaka@ksk-anl.com",
             "img": "",
-            "url": ""
+            "url": "http://ksk-anl.com/"
         }
     ],
 
