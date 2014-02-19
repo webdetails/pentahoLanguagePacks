@@ -14,7 +14,7 @@
     LDAP_SERVER_URL_LABEL: 'サーバーURL:',
     LDAP_USER_LABEL: 'ユーザー名:',
     LDAP_PASSWORD_LABEL: 'パスワード:',
-    LDAP_TEST_CONNECTION_LABEL : '接続をテストし、LDAP設定に進んでください。',
+    LDAP_TEST_CONNECTION_LABEL: '接続をテストし、LDAP設定に進んでください。',
     LDAP_SERVER_URL_DESCRIPTION: 'ディレクトリサーバーへ接続する際のURLです。',
     LDAP_USER_DESCRIPTION: 'ディレクトリの読み込み権限を持っているユーザー名です。',
     LDAP_PASSWORD_DESCRIPTION: '指定したユーザーのパスワードです。',
@@ -46,9 +46,9 @@
 
     //ldap custom user search configuration
     LDAP_USER_SEARCH_TITLE: 'ユーザーサーチ',
-    
+
     //ldap custom roles configuration 
-    LDAP_ROLES_TITLE: 'ロール',    
+    LDAP_ROLES_TITLE: 'ロール',
     LDAP_ROLE_BASE_LABEL: 'ロール属性:',
     LDAP_ROLE_SEARCH_FILTER_LABEL: 'ロールサーチフィルター:',
     LDAP_ROLE_SEARCH_BASE_LABEL: 'ロールサーチベース:',
@@ -70,7 +70,7 @@
     LDAP_POPULATOR_UPPERCASE_DESCRIPTION: '取得したロール名を大文字へ変換するか指定します。',
     LDAP_POPULATOR_SUBTREE_LABEL: 'サブツリー:',
     LDAP_POPULATOR_SUBTREE_DESCRIPTION: '検索に子オブジェクトを含めるかどうかを指定します。falseに設定すると現在のオブジェクトのみが検索対象となります。',
-    
+
     //dialogs
     LDAP_BROWSER_TITLE: 'LDAPブラウザ',
     LDAP_WARNING: '警告',
@@ -90,11 +90,11 @@
     LDAP_POPULATOR_TEST: 'LDAPポピュレータテスト',
     LDAP_USER_TEST: 'LDAPユーザーテスト',
     LDAP_ROLES_TEST: 'LDAPロールテスト',
-    LDAP_CONNECTOR_TEST_PASSED: 'LDAPサーバーへの接続に成功しました。' ,
+    LDAP_CONNECTOR_TEST_PASSED: 'LDAPサーバーへの接続に成功しました。',
     LDAP_CONNECTOR_TEST_FAILED: 'LDAPサーバーに接続できません。設定を確認して再度お試しください。',
-   
+
     SAVE: '保存',
-    TEST: 'テスト',        
+    TEST: 'テスト',
     CANCEL: 'キャンセル',
     YES: 'はい',
     YES_CHANGE: 'はい',
@@ -105,21 +105,21 @@
     TEST_FAILED: 'テスト失敗',
 
     CONFIGURATION_SAVED: '認証メソッドの変更は保存されましたが、サーバーの再起動を行うまで変更は反映されません。',
-  
+
     //licenseManager
     PRODUCT: '製品',
-    START_DATE : '開始日',
-    END_DATE : '終了日',
-    VERSION : 'バージョン',
-    LICENSES : 'ライセンス',
-    DELETE_TITLE : '選択したライセンスを削除しますか?',
+    START_DATE: '開始日',
+    END_DATE: '終了日',
+    VERSION: 'バージョン',
+    LICENSES: 'ライセンス',
+    DELETE_TITLE: '選択したライセンスを削除しますか?',
     DELETE_WARNING: '選択したライセンスを削除しようとしています。ライセンスを削除しますか?',
 
-    LICENSE_VALID_LICENSE_FOUND_LOG : 'biserver-eeの有効なライセンスが見つかりました',
-    LICENSE_NO_VALID_LICENSE_FOUND_LOG : 'biserver-eeの有効なライセンスが見つかりません',
-    LICENSE_NO_VALID_LICENSE_MESSAGE_HEADER : "ライセンスの有効期限が切れています",
-    LICENSE_NO_VALID_LICENSE_MESSAGE_BODY : '続けるにはPentaho BIプラットフォームのライセンスをアップデートしてください。ライセンスの準備が出来ていない場合は<a href="%CONTEXT_PATH%\Logout" target="_top">ログアウト</a>し、後でライセンスのアップデートを行ってください。',
-    LICENSE_CANCEL_BUTTON : 'ログアウト',
-    LICENSE_OK_BUTTON : 'Ok'
+    LICENSE_VALID_LICENSE_FOUND_LOG: 'biserver-eeの有効なライセンスが見つかりました',
+    LICENSE_NO_VALID_LICENSE_FOUND_LOG: 'biserver-eeの有効なライセンスが見つかりません',
+    LICENSE_NO_VALID_LICENSE_MESSAGE_HEADER: "ライセンスの有効期限が切れています",
+    LICENSE_NO_VALID_LICENSE_MESSAGE_BODY: '続けるにはPentaho BIプラットフォームのライセンスをアップデートしてください。ライセンスの準備が出来ていない場合は<a href="%CONTEXT_PATH%\Logout" target="_top">ログアウト</a>し、後でライセンスのアップデートを行ってください。',
+    LICENSE_CANCEL_BUTTON: 'ログアウト',
+    LICENSE_OK_BUTTON: 'Ok'
 
 }
