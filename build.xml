@@ -165,11 +165,12 @@
             <!-- handle .properties inside jars -->
             <native2ascii encoding="UTF-8" src="${basedir}/data/${langCode}"
                           dest="${stage.dir}/${langpack.name}/data/${langCode}">
-                <include name="**/*_jar/**/*" />
-                <include name="**/system/analyzer/**/*_${langCode}.properties"/>
-                <include name="**/system/dashboards/**/*_${langCode}.properties"/>
-                <include name="**/system/data-access/**/*_${langCode}.properties"/>
-                <include name="**/system/pentaho-geo/**/*_${langCode}.properties"/>
+              <include name="**/*_${langCode}.properties" />
+                <!-- <include name="**/*_jar/**/*" /> -->
+                <!-- <include name="**/system/analyzer/**/*_${langCode}.properties"/> -->
+                <!-- <include name="**/system/dashboards/**/*_${langCode}.properties"/> -->
+                <!-- <include name="**/system/data-access/**/*_${langCode}.properties"/> -->
+                <!-- <include name="**/system/pentaho-geo/**/*_${langCode}.properties"/> -->
             </native2ascii>
 
             <!--copy remaining files into the staging folder  -->
