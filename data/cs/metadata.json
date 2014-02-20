@@ -1,0 +1,31 @@
+{
+    "appTitle": "Czech Language Pack Installer",
+    "appWelcomeMessage": "This plugin installs language definitions for the Czech language in Pentaho 5",
+    "language": "čeština",
+    "languageCode": "cs",
+    "version": "0.1",
+    "pentahoVersion": "5.0.1",
+    "maintainer": {
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    },
+    "credits": [
+        {
+            "name": "",
+            "email": "",
+            "img": "",
+            "url": ""
+        }
+    ],
+    "sponsors": [
+        {
+            "name": "",
+            "email": "",
+            "img": "",
+            "url": ""
+        }
+    ],
+
+}

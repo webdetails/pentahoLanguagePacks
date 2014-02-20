@@ -165,11 +165,12 @@
             <!-- handle .properties inside jars -->
             <native2ascii encoding="UTF-8" src="${basedir}/data/${langCode}"
                           dest="${stage.dir}/${langpack.name}/data/${langCode}">
-                <include name="**/*_jar/**/*" />
-                <include name="**/system/analyzer/**/*_${langCode}.properties"/>
-                <include name="**/system/dashboards/**/*_${langCode}.properties"/>
-                <include name="**/system/data-access/**/*_${langCode}.properties"/>
-                <include name="**/system/pentaho-geo/**/*_${langCode}.properties"/>
+              <include name="**/*_${langCode}.properties" />
+                <!-- <include name="**/*_jar/**/*" /> -->
+                <!-- <include name="**/system/analyzer/**/*_${langCode}.properties"/> -->
+                <!-- <include name="**/system/dashboards/**/*_${langCode}.properties"/> -->
+                <!-- <include name="**/system/data-access/**/*_${langCode}.properties"/> -->
+                <!-- <include name="**/system/pentaho-geo/**/*_${langCode}.properties"/> -->
             </native2ascii>
 
             <!--copy remaining files into the staging folder  -->
@@ -346,7 +347,7 @@
 
         <!-- Inherit the project.revision property -->
         <property name="langpack.artifact.id" value="${langpack.name}"/>
-        <property name="langpack.zipfile" value="${langpack.artifact.id}-${distribution.version}.zip"/>
+        <property name="langpack.zipfile" value="${langpack.artifact.id}-${langpack.distribution.version}.zip"/>
         <property name="langpack.package.url" value="http://ci.analytical-labs.com/job/Webdetails-languagePackInstallers/lastSuccessfulBuild/artifact/dist/${langpack.zipfile}"/>
 
 

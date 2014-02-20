@@ -1,0 +1,3 @@
+({
+    "blockquote": "Citace v bloku"
+})
