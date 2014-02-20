@@ -38,3 +38,4 @@ do
         #cd $HERE
     ) &
 done
+wait

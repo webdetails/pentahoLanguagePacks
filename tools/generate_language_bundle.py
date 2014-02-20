@@ -26,8 +26,19 @@ jar_whitelist = [ # list of jars that will be scanned for messages.
     'pentaho-metadata',
     'pentaho-platform-',
     'pentaho-reporting-engine',
+    #
     #system
+    #
     'common-ui',
+    # data-access
+    'pentaho-bi-platform-data-access',
+    'pentaho-database-gwt',
+    'pentaho-modeler',
+    # dashboards
+    'pentaho-dashboard',
+    'pentaho-dashboard-chart-editor',
+    'pentaho-mql-editor',
+    # pivot4j
     'pivot4j-analytics',
     'pivot4j-core'
 ]
@@ -341,7 +352,7 @@ for root, dirs, filenames in os.walk('.'):
                     else:
                         copy_and_edit_js(src, dst_localised)
             # We also need to consider the case where the folder nls/en/ does not exist and the *.js files need to be created from nls/*.js
-            if (os.path.dirname(gg) == 'nls'):
+            if (os.path.dirname(gg) == 'nls' and not gg.endswith(languageCode_hyphen.lower() + '.js')):
                 nls_folder = os.path.join(root, languageCode_hyphen.lower())
                 nls_file = os.path.join(nls_folder, f)
                 if ( not os.path.exists(nls_file ) ):
@@ -365,6 +376,7 @@ for root, dirs, filenames in os.walk(destination_folder):
 
             #unescape XML: Beware of &lt; and &gt;
             #os.system('recode XML..UTF8 {0}'.format(src))
+
 
             print 'Unescaping \uXXXX into utf8 using native2ascii: ' + src
             #convert_to_utf8(src)
