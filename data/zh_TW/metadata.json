@@ -2,7 +2,7 @@
     "appTitle": "Traditional Chinese Language Pack Installer",
     "appWelcomeMessage": "This plugin installs language definitions for the Traditional Chinese language in Pentaho 5",
     "language": "Traditional Chinese",
-    "languageCode": "zh_tw",
+    "languageCode": "zh_TW",
     "version": "0.0",
     "pentahoVersion": "5.0.1",
     "maintainer": {
