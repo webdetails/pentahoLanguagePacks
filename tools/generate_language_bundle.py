@@ -323,11 +323,12 @@ for root, dirs, filenames in os.walk('.'):
                             fin.close()
                             add_missing_properties(lines_src, dst)
 
-        # Generate missing *nls/*LANG.js
+        # Generate missing *nls/*LANG*/*.js
         gg = src.lower() # Notice that g means the full path
         if gg.endswith('.js') and ('nls' in gg):
             src_lang_code = ''
             dst = ''
+            # The first scenario is when the folder nls/LANG/ exists
             for s in ['/en-gb/', '/en-us/', '/en/', '_en.', '-en.']: # let's use english as template
                 if (s in gg):
                     src_lang_code = s
@@ -339,6 +340,19 @@ for root, dirs, filenames in os.walk('.'):
                         copy(src, dst_localised)
                     else:
                         copy_and_edit_js(src, dst_localised)
+            # We also need to consider the case where the folder nls/en/ does not exist and the *.js files need to be created from nls/*.js
+            if (os.path.dirname(gg) == 'nls'):
+                nls_folder = os.path.join(root, languageCode_hyphen.lower())
+                nls_file = os.path.join(nls_folder, f)
+                if ( not os.path.exists(nls_file ) ):
+                    try:
+                        os.makedirs(path)
+                    except OSError as exc: # Python >2.5
+                        if exc.errno == errno.EEXIST and os.path.isdir(path):
+                            pass
+                        else: raise
+                    copy(src, nls_file)
+
 
 # Third round: convert the encoding of all *.properties to utf8
 for root, dirs, filenames in os.walk(destination_folder):
