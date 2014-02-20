@@ -303,9 +303,9 @@ for root, dirs, filenames in os.walk('.'):
 
         # Patch messages_LANG.properties with missing tokens
         is_regular = g.endswith('messages.properties')
-        is_xul = g.endswith('.properties') and os.path.exists(src.replace('.properties', '.xul'))
+        has_xul = g.endswith('.properties') and os.path.exists(src.replace('.properties', '.xul'))
         is_other = g.endswith('.properties') and os.path.exists(src.replace('.properties', '_supported_languages.properties'))
-        if is_regular or is_xul or is_other:
+        if is_regular or has_xul or is_other:
             dst_localised =  os.path.realpath(os.path.join(destination_folder, root, f.replace('.properties', suffix) ))
             with codecs.open(src, 'r', 'utf_8') as fin:
                 lines_src = fin.readlines()
@@ -325,9 +325,13 @@ for root, dirs, filenames in os.walk('.'):
             for whitelist_item in jar_whitelist:
                 if whitelist_item.lower() in g:
                     z = zipfile.ZipFile(src)
-                    for el in z.namelist():
+                    z_list = z.namelist()
+                    for el in z_list:
                         e = el.lower()
-                        if e.endswith('messages.properties'):
+                        is_regular = e.endswith('messages.properties')
+                        has_xul = e.endswith('.properties') and e.replace('.properties', '.xul') in z_list
+                        is_other = e.endswith('.properties') and e.replace('.properties', '_supported_languages.properties') in z_list
+                        if is_regular or has_xul or is_other:
                             dst = os.path.realpath(os.path.join(destination_folder, root, f.replace('.jar', '_jar'), el.replace('.properties', suffix) ))
                             fin = z.open(el, 'r') # Zipfiles don't support "with" statement
                             lines_src = fin.readlines()
