@@ -43,13 +43,13 @@ define(
         ],
         "dateFormatItem-yMMM": "MMM y",
         "days-standAlone-narrow": [
-            "S",
-            "M",
-            "T",
-            "W",
-            "T",
-            "F",
-            "S"
+            "Dg",
+            "Dll",
+            "Dt",
+            "Dc",
+            "Dj",
+            "Dv",
+            "Ds"
         ],
         "eraAbbr": [
             "AH"
@@ -94,13 +94,13 @@ define(
         ],
         "timeFormat-short": "h:mm a",
         "days-format-abbr": [
-            "Sun",
-            "Mon",
-            "Tue",
-            "Wed",
-            "Thu",
-            "Fri",
-            "Sat"
+            "Dg",
+            "Dll",
+            "Dt",
+            "Dc",
+            "Dj",
+            "Dv",
+            "Ds"
         ],
         "dateFormatItem-M": "L",
         "dateFormatItem-yyyyQQQ": "QQQ y G",
@@ -144,22 +144,22 @@ define(
         "dateFormatItem-yyyyMMM": "MMM y G",
         "dateFormatItem-d": "d",
         "quarters-format-wide": [
-            "1st quarter",
-            "2nd quarter",
-            "3rd quarter",
-            "4th quarter"
+            "1er trimestre",
+            "2on trimestre",
+            "3er trimestre",
+            "4rt trimestre"
         ],
         "eraNarrow": [
             "AH"
         ],
         "days-format-wide": [
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday"
+            "Diumenge",
+            "Dilluns",
+            "Dimarts",
+            "Dimecres",
+            "Dijous",
+            "Divendres",
+            "Dissabte"
         ]
     }
     //end v1.x content

@@ -9,6 +9,6 @@
 */
 
 ({
-    "displayName": "Italian Lira",
+    "displayName": "Lira italiana",
     "symbol": "\u20a4"
 })

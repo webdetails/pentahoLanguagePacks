@@ -1,6 +1,6 @@
 dojo.provide("dojo.nls.dojo-analyzer_ca");
 dojo.provide("dojo.nls.colors");
-dojo.nls.colors._built = true;
+dojo.nls.colors._built = verdader;
 dojo.provide("dojo.nls.colors.ca");
 dojo.nls.colors.ca = {
     "lightsteelblue": "blau acer clar",
@@ -9,7 +9,7 @@ dojo.nls.colors.ca = {
     "cadetblue": "blau marí",
     "seashell": "petxina marina",
     "slategrey": "gris pissarra",
-    "coral": "corall",
+    "coral": "coral",
     "darkturquoise": "turquesa fosc",
     "antiquewhite": "blanc antic",
     "mediumspringgreen": "verd primavera mitjà",
@@ -19,11 +19,11 @@ dojo.nls.colors.ca = {
     "greenyellow": "verd grogós",
     "mistyrose": "rosa dens",
     "lightsalmon": "salmó clar",
-    "silver": "argent",
+    "silver": "plata",
     "dimgrey": "gris fosc",
     "orange": "taronja",
     "white": "blanc",
-    "navajowhite": "blanc Navajo",
+    "navajowhite": "blanc navajo",
     "royalblue": "blau marí intens",
     "deeppink": "rosa profund",
     "lime": "verd llimona",
@@ -54,26 +54,26 @@ dojo.nls.colors.ca = {
     "olivedrab": "gris oliva",
     "darkgoldenrod": "ocre fosc",
     "slateblue": "blau pissarra",
-    "mediumaquamarine": "aiguamarina mitjana",
+    "mediumaquamarine": "aiguamarina mig",
     "lavender": "lavanda",
     "mediumseagreen": "verd marí mitjà",
-    "maroon": "marró vermellós",
+    "maroon": "granat",
     "darkslategray": "gris pissarra fosc",
-    "mediumturquoise": "turquesa mitjana",
+    "mediumturquoise": "turquesa mig",
     "ghostwhite": "blanc fantasma",
     "darkblue": "blau fosc",
-    "mediumvioletred": "vermell violeta mitjà",
+    "mediumvioletred": "violeta-vermell mig",
     "brown": "marró",
     "lightgray": "gris clar",
-    "sandybrown": "marró arenós",
+    "sandybrown": "castany clar",
     "pink": "rosa",
     "firebrick": "maó refractari",
-    "indigo": "índigo",
+    "indigo": "anyil",
     "snow": "neu",
     "darkorchid": "orquídia fosc",
     "turquoise": "turquesa",
     "chocolate": "xocolata",
-    "springgreen": "verd de primavera",
+    "springgreen": "verd primavera",
     "moccasin": "mocassí",
     "navy": "blau marí",
     "lemonchiffon": "groc brisa",
@@ -81,7 +81,7 @@ dojo.nls.colors.ca = {
     "floralwhite": "blanc floral",
     "cornflowerblue": "blau blauet",
     "paleturquoise": "turquesa pàl·lid",
-    "purple": "porpra",
+    "purple": "lila",
     "gainsboro": "gainsboro",
     "plum": "pruna",
     "red": "vermell",
@@ -90,9 +90,9 @@ dojo.nls.colors.ca = {
     "darkgreen": "verd fosc",
     "honeydew": "rosada de mel",
     "darkseagreen": "verd marí fosc",
-    "lightcoral": "corall clar",
-    "palevioletred": "vermell porpra pàl·lid",
-    "mediumpurple": "porpra mitjana",
+    "lightcoral": "coral clar",
+    "palevioletred": "violeta-vermell pàl·lid",
+    "mediumpurple": "lila mig",
     "saddlebrown": "marró mitjà",
     "darkmagenta": "magenta fosc",
     "thistle": "card",
@@ -101,13 +101,13 @@ dojo.nls.colors.ca = {
     "violet": "violeta",
     "lightskyblue": "blau cel clar",
     "goldenrod": "ocre",
-    "mediumblue": "blau mitjà",
+    "mediumblue": "blau mig",
     "skyblue": "blau cel",
     "crimson": "carmesí",
     "darksalmon": "salmó fosc",
     "darkred": "vermell fosc",
     "darkslategrey": "gris pissarra fosc",
-    "peru": "Perú",
+    "peru": "perú",
     "lightgrey": "gris clar",
     "lightgoldenrodyellow": "groc ocre clar",
     "blanchedalmond": "ametlla pàl·lid",
@@ -123,22 +123,22 @@ dojo.nls.colors.ca = {
     "darkgray": "gris fosc",
     "lightcyan": "cian clar",
     "powderblue": "blau grisós",
-    "blueviolet": "blau violeta",
+    "blueviolet": "blau-violeta",
     "orchid": "orquídia",
     "dimgray": "gris fosc",
     "beige": "beix",
     "fuchsia": "fúcsia",
-    "lavenderblush": "lavanda vermellosa",
+    "lavenderblush": "lavanda vermellós",
     "hotpink": "rosa fúcsia",
     "steelblue": "blau acer",
-    "tomato": "tomàquet",
+    "tomato": "vermell tomàquet",
     "lightpink": "rosa clar",
-    "limegreen": "verd llimona verda",
+    "limegreen": "verd llimoma verda",
     "indianred": "vermell indi",
     "papayawhip": "préssec pastel",
     "lightslategray": "gris pissarra clar",
     "gray": "gris",
-    "mediumorchid": "orquídia mitjana",
+    "mediumorchid": "orquídia mig",
     "cornsilk": "cru",
     "black": "negre",
     "seagreen": "verd marí",
@@ -149,44 +149,44 @@ dojo.nls.colors.ca = {
     "azure": "atzur",
     "peachpuff": "préssec",
     "darkolivegreen": "verd oliva fosc",
-    "yellowgreen": "verd grogós"
+    "yellowgreen": "verd groc"
 };
 dojo.provide("dijit.nls.loading");
 dijit.nls.loading._built = true;
 dojo.provide("dijit.nls.loading.ca");
 dijit.nls.loading.ca = {
-    "loadingState": "S'està carregant...",
-    "errorState": "Ens sap greu. S'ha produït un error."
+    "loadingState": "Carregant...",
+    "errorState": "Ho sentim, s'ha produït un error"
 };
 dojo.provide("dijit.nls.common");
 dijit.nls.common._built = true;
 dojo.provide("dijit.nls.common.ca");
 dijit.nls.common.ca = {
     "buttonOk": "D'acord",
-    "buttonCancel": "Cancel·la",
-    "buttonSave": "Desa",
-    "itemClose": "Tanca"
+    "buttonCancel": "Cancel·lar",
+    "buttonSave": "Guardar",
+    "itemClose": "Tancar"
 };
 dojo.provide("dijit.form.nls.validate");
-dijit.form.nls.validate._built = true;
+dijit.form.nls.validate._built = verdader;
 dojo.provide("dijit.form.nls.validate.ca");
 dijit.form.nls.validate.ca = {
-    "rangeMessage": "Aquest valor és fora de l'interval",
-    "invalidMessage": "El valor introduït no és vàlid",
-    "missingMessage": "Aquest valor és necessari"
+    "rangeMessage": "Aquest valor està fora de rang.",
+    "invalidMessage": "El valor entrat no es vàlid.",
+    "missingMessage": "Aquest valor és necessari."
 };
 dojo.provide("dijit.form.nls.ComboBox");
-dijit.form.nls.ComboBox._built = true;
+dijit.form.nls.ComboBox._built = verdader;
 dojo.provide("dijit.form.nls.ComboBox.ca");
 dijit.form.nls.ComboBox.ca = {
     "previousMessage": "Opcions anteriors",
     "nextMessage": "Més opcions"
 };
 dojo.provide("dojo.cldr.nls.number");
-dojo.cldr.nls.number._built = true;
+dojo.cldr.nls.number._built = verdader;
 dojo.provide("dojo.cldr.nls.number.ca");
 dojo.cldr.nls.number.ca = {
-    "group": ".",
+    "group": ",",
     "percentSign": "%",
     "exponential": "E",
     "percentFormat": "#,##0%",
@@ -195,18 +195,18 @@ dojo.cldr.nls.number.ca = {
     "infinity": "∞",
     "patternDigit": "#",
     "minusSign": "-",
-    "decimal": ",",
+    "decimal": ".",
     "nan": "NaN",
     "nativeZeroDigit": "0",
     "perMille": "‰",
     "decimalFormat": "#,##0.###",
-    "currencyFormat": "#,##0.00 ¤",
+    "currencyFormat": "¤#,##0.00;(¤#,##0.00)",
     "plusSign": "+",
-    "currencySpacing-afterCurrency-currencyMatch": "[:letter:]",
-    "currencySpacing-beforeCurrency-surroundingMatch": "[:digit:]",
     "decimalFormat-short": "000T",
+    "currencySpacing-afterCurrency-currencyMatch": "[:lletra:]",
+    "currencySpacing-beforeCurrency-surroundingMatch": "[:dígit:]",
     "currencySpacing-afterCurrency-insertBetween": " ",
-    "currencySpacing-afterCurrency-surroundingMatch": "[:digit:]",
-    "currencySpacing-beforeCurrency-currencyMatch": "[:letter:]",
+    "currencySpacing-afterCurrency-surroundingMatch": "[:dígit:]",
+    "currencySpacing-beforeCurrency-currencyMatch": "[:lletra:]",
     "currencySpacing-beforeCurrency-insertBetween": " "
 };

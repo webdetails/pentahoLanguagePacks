@@ -9,6 +9,6 @@
 */
 
 ({
-    "displayName": "US Dollar",
+    "displayName": "Dòlar EUA",
     "symbol": "US$"
 })

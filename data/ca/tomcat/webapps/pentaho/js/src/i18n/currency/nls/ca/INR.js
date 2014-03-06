@@ -9,5 +9,5 @@
 */
 
 ({
-    "displayName": "Indian Rupee"
+    "displayName": "Rupia índia"
 })

@@ -1,9 +1,9 @@
 {
-    "appTitle": "Catalan Language Pack Installer",
-    "appWelcomeMessage": "This plugin installs language definitions for the Catalan language in Pentaho 5",
-    "language": "Catalan",
+    "appTitle": "Paquet d'instal·lació de l'idioma català",
+    "appWelcomeMessage": "Aquest plugin instal·la les definicions d'idioma per l'idioma català en Pentaho 5",
+    "language": "Català",
     "languageCode": "ca",
-    "version": "0.0",
+    "version": "0.1",
     "pentahoVersion": "5.0.1",
     "maintainer": {
         "name": "",

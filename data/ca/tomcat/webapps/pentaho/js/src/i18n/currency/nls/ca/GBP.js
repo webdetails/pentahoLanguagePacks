@@ -9,6 +9,6 @@
 */
 
 ({
-    "displayName": "British Pound Sterling",
+    "displayName": "Lliura esterlina britànica",
     "symbol": "\xa3"
 })

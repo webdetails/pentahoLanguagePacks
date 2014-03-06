@@ -9,6 +9,6 @@
 */
 
 ({
-    "displayName": "Japanese Yen",
+    "displayName": "Ien japonès",
     "symbol": "\xa5"
 })
