@@ -1,9 +1,9 @@
 {
-    "appTitle": "Polish Language Pack Installer",
-    "appWelcomeMessage": "This plugin installs language definitions for the Polish language in Pentaho 5",
-    "language": "Polish",
+    "appTitle": "Instalator Pakietu Języka Polskiego",
+    "appWelcomeMessage": "Ten plugin instaluje definicje językowe dla języka polskiego w Pentaho 5",
+    "language": "Polski",
     "languageCode": "pl",
-    "version": "0.0",
+    "version": "0.1",
     "pentahoVersion": "5.0.1",
     "maintainer": {
         "name": "",
