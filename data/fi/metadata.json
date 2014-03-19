@@ -1,0 +1,31 @@
+{
+    "appTitle": "Finnish Language Pack Installer",
+    "appWelcomeMessage": "This plugin installs language definitions for the Finnish language in Pentaho 5",
+    "language": "Suomi",
+    "languageCode": "fi",
+    "version": "0.1",
+    "pentahoVersion": "5.0.3",
+    "maintainer": {
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    },
+    "credits": [
+        {
+            "name": "",
+            "email": "",
+            "img": "",
+            "url": ""
+        }
+    ],
+    "sponsors": [
+        {
+            "name": "",
+            "email": "",
+            "img": "",
+            "url": ""
+        }
+    ],
+
+}
