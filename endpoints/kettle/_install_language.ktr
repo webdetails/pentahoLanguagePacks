@@ -221,7 +221,6 @@
   <hop> <from>Get &#x2a;.supported_languages.properties</from><to>Select values 3</to><enabled>Y</enabled> </hop>
   <hop> <from>Get Variables</from><to>Join Rows &#x28;cartesian product&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>Join Rows &#x28;cartesian product&#x29; 2</from><to>get target&#x2f; messages&#x2a;.properties</to><enabled>Y</enabled> </hop>
-  <hop> <from>get target&#x2f; messages&#x2a;.properties</from><to>copy all messages_&#x24;&#x7b;languageCode&#x7d;.properties, all&#x2a;.js</to><enabled>Y</enabled> </hop>
   <hop> <from>Join Rows &#x28;cartesian product&#x29;</from><to>Join Rows &#x28;cartesian product&#x29; 3</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values 3</from><to>Join Rows &#x28;cartesian product&#x29; 3</to><enabled>Y</enabled> </hop>
   <hop> <from>Join Rows &#x28;cartesian product&#x29; 3</from><to>get target&#x2f; &#x2a;supported_messages.properties</to><enabled>Y</enabled> </hop>
@@ -267,6 +266,9 @@
   <hop> <from>Sort rows 3</from><to>Unique rows 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Unique rows 2</from><to>Sort rows 2 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows 2 2</from><to>User Defined Java Expression</to><enabled>Y</enabled> </hop>
+  <hop> <from>get target&#x2f; messages&#x2a;.properties</from><to>is .properties &#x3f;</to><enabled>Y</enabled> </hop>
+  <hop> <from>is .properties &#x3f;</from><to>copy and encode files</to><enabled>Y</enabled> </hop>
+  <hop> <from>is .properties &#x3f;</from><to>copy all messages_&#x24;&#x7b;languageCode&#x7d;.properties, all&#x2a;.js</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Cleanup file contents</name>
@@ -1395,8 +1397,8 @@
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>929</xloc>
-      <yloc>278</yloc>
+      <xloc>800</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1479,8 +1481,8 @@
     <simulate>N</simulate>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>930</xloc>
-      <yloc>344</yloc>
+      <xloc>928</xloc>
+      <yloc>384</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1873,6 +1875,81 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>2094</xloc>
       <yloc>542</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>copy and encode files</name>
+    <type>SimpleMapping</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>filename</specification_method>
+    <trans_object_id/>
+    <trans_name/>
+    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;_copy_and_encode.ktr</filename>
+    <directory_path/>
+    <mappings>
+      <input>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>Y</rename_on_output>
+    <description/>
+       <connector><parent>src_filename</parent><child>src_filename</child></connector>
+       <connector><parent>dst_filename</parent><child>dst_filename</child></connector>
+    </mapping>      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+       <connector><parent>src_filename</parent><child/></connector>
+       <connector><parent>dst_filename</parent><child/></connector>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>928</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>is .properties &#x3f;</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>copy and encode files</send_true_to>
+<send_false_to>copy all messages_&#x24;&#x7b;languageCode&#x7d;.properties, all&#x2a;.js</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>src_filename</leftvalue>
+ <function>ENDS WITH</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text>.properties</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>800</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
