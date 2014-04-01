@@ -44,7 +44,7 @@ The Language Pack Installer requires Pentaho 5+, and depends on the following CT
 
 You can install these packages from the Pentaho Marketplace, or manually download them from [Pentaho's Continuous Integration server](http://ci.pentaho.com) and unzip the .zip file to your `pentaho-solutions/system` folder.
 
-If you are using the Enterprise Edition, we recommend you to install the Pentaho Marketplace. Follow the instructions at [Pedro Alves's blog](http://).
+If you are using the Enterprise Edition, we recommend you to install the Pentaho Marketplace. Follow the instructions at [Pedro Alves's blog](http://pedroalves-bi.blogspot.pt/2013/11/ctools-for-pentaho-50-is-available-cdf.html).
 
 ### Download the plugin
 
