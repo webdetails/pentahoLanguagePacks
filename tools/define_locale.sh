@@ -2,4 +2,5 @@
 
 LC_CTYPE=C
 LANG=C
-find $1 -type f | xargs -I {} sed -i '' "s/@\$locale@/$2/g" {}
+find ../data/$1/resources/lang -type f | xargs -I {} sed -i '' "s/@\$locale@/$2/g" {}
+sed -i '' "s/@\$locale@/$2/g" ../data/$1/metadata.json
