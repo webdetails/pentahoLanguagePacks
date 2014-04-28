@@ -5,26 +5,26 @@
     "languageCode": "fi",
     "version": "0.1",
     "pentahoVersion": "5.0.3",
-    "maintainer": {
-        "name": "",
-        "email": "",
+	"maintainer": {
+        "name": "Antti Loukiala",
+        "email": "antti.loukiala@gmail.com",
         "img": "",
         "url": ""
     },
     "credits": [
         {
-            "name": "",
-            "email": "",
+            "name": "Antti Loukiala",
+            "email": "antti.loukiala@gmail.com",
             "img": "",
             "url": ""
         }
     ],
     "sponsors": [
         {
-            "name": "",
-            "email": "",
+            "name": "Antti Loukiala",
+            "email": "antti.loukiala@mylab.fi",
             "img": "",
-            "url": ""
+            "url": "http://www.mylab.fi"
         }
     ],
 
