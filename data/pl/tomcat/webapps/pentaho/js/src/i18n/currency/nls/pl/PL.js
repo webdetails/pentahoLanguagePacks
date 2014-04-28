@@ -1,4 +1,5 @@
-﻿/*
+﻿
+/*
 	Copyright (c) 2004-2006, The Dojo Foundation
 	All Rights Reserved.
 
@@ -8,4 +9,7 @@
 		http://dojotoolkit.org/community/licensing.shtml
 */
 
-({"displayName":"Polski Złoty", "symbol":"zł"})
+({
+    "displayName": "Polski Złoty",
+    "symbol": "zł"
+})
