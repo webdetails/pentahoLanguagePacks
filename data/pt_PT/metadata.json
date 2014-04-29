@@ -6,17 +6,17 @@
     "version": "0.1",
     "pentahoVersion": "5.0.1",
     "maintainer": {
-        "name": "Webdetails",
-        "email": "",
-        "img": "",
-        "url": "http:\/\/www.webdetails.pt"
+        "name": "Xpand-IT",
+        "email": "mail@xpand-it.com",
+        "img": "http:\/\/www.xpand-it.com\/templates\/xpandit-experience\/images\/logo.png",
+        "url": "http:\/\/www.xpand-it.com"
     },
     "credits": [
         {
-            "name": "",
-            "email": "",
-            "img": "",
-            "url": ""
+			"name": "Xpand-IT",
+			"email": "mail@xpand-it.com",
+			"img": "http:\/\/www.xpand-it.com\/templates\/xpandit-experience\/images\/logo.png",
+			"url": "http:\/\/www.xpand-it.com"
         }
     ],
     "sponsors": [

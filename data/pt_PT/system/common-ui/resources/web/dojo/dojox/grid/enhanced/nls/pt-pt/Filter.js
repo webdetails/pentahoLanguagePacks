@@ -30,8 +30,8 @@
     "waiRelAny": "Corresponder a qualquer uma das seguintes regras:",
     "relationMsgFront": "Corresponder",
     "relationMsgTail": "",
-    "and": "and",
-    "or": "or",
+    "and": "e",
+    "or": "ou",
 
     "addRuleButton": "Adicionar regra",
     "waiAddRuleButton": "Adicionar uma nova regra",
