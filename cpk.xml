@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cpk>
-    <elementTypes defaultElement="home">
+    <elementTypes defaultElement="main">
         <elementType name="Dashboard" class="pt.webdetails.cpk.elements.impl.DashboardElement">
             <elementLocations>
-                <elementLocation path="dashboards/" isRecursive="true" pattern="^(?!admin).*\.wcdf" adminOnly="false"/>
                 <elementLocation path="dashboards/admin" isRecursive="true" pattern=".*\.wcdf" adminOnly="true"/>
+                <elementLocation path="dashboards/" isRecursive="true" pattern=".*\.wcdf" adminOnly="false"/>
             </elementLocations>
         </elementType>
         <elementType name="Kettle" class="pt.webdetails.cpk.elements.impl.KettleJobElement">
             <elementLocations>
-                <elementLocation path="endpoints/kettle/" isRecursive="true" pattern="^(?!admin).*\.kjb" adminOnly="false"/>
                 <elementLocation path="endpoints/kettle/admin" isRecursive="true" pattern=".*\.kjb" adminOnly="true"/>
+                <elementLocation path="endpoints/kettle/" isRecursive="true" pattern=".*\.kjb" adminOnly="false"/>
             </elementLocations>
         </elementType>
         <elementType name="Kettle" class="pt.webdetails.cpk.elements.impl.KettleTransformationElement">
             <elementLocations>
-                <elementLocation path="endpoints/kettle/" isRecursive="true" pattern="^(?!admin).*\.ktr" adminOnly="false"/>
                 <elementLocation path="endpoints/kettle/admin" isRecursive="true" pattern=".*\.ktr" adminOnly="true"/>
+                <elementLocation path="endpoints/kettle/" isRecursive="true" pattern=".*\.ktr" adminOnly="false"/>
             </elementLocations>
         </elementType>
-    </elementTypes>
+    </elementTypes> 
     <info>
-        <CPK_version>4</CPK_version>
+        <CPK_version>5</CPK_version>
         <description>Application for installing language packs</description>
         <name>Language Pack Installer</name>
+        <author_email>community@pentaho.com</author_email>
         <company_name>Webdetails</company_name>
-        <company_url>http://www.webdetails.pt</company_url>
+        <company_url>http://redmine.webdetails.org/projects/lpi/</company_url>
         <creation_date>2013-11-05</creation_date>
         <version>1.0</version>
     </info>
-</cpk>
+</cpk> 
