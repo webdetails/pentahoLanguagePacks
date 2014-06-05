@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the brazilian variant of the Portuguese language in Pentaho 5",
     "language": "Português do Brasil",
     "languageCode": "pt_BR",
-    "version": "0.7.1",
+    "version": "0.7.2",
     "pentahoVersion": "5.0.1",
     "maintainer": {
         "name": "Oncase, Open Consulting, IT4biz",

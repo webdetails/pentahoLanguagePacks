@@ -29,8 +29,5 @@
 
 		<dependency org="oopsconsultancy" name="xmltask" rev="1.16" conf="default->default"/>
 		<dependency org="org.codehaus.jackson" name="jackson-mapper-asl" rev="1.9.12" conf='default->default' />
-		<dependency org="com.fasterxml.jackson.core" name="jackson-core" rev="2.2.2" conf='default->default' />
-		<dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.2.2" conf='default->default' />
-		<dependency org="com.fasterxml.jackson.core" name="jackson-annotations" rev="2.2.2" conf='default->default'/>
   </dependencies>
 </ivy-module>

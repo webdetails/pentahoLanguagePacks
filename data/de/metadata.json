@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the German language in Pentaho 5",
     "language": "Deutsch",
     "languageCode": "de",
-    "version": "0.7",
+    "version": "0.7.1",
     "pentahoVersion": "5.0.1",
     "maintainer": {
         "name": "Thomas Starl",

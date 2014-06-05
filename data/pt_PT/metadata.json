@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the European variant of the Portuguese language in Pentaho 5",
     "language": "Português Europeu",
     "languageCode": "pt_PT",
-    "version": "0.5",
+    "version": "0.5.1",
     "pentahoVersion": "5.0.6",
     "maintainer": {
         "name": "Xpand-IT",
