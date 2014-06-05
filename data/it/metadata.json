@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the Italian language in Pentaho 5",
     "language": "Italiano",
     "languageCode": "it",
-    "version": "0.5.1",
+    "version": "0.5.2",
     "pentahoVersion": "5.0.1",
     "maintainer": {
         "name": "Serasoft S.r.l.",
