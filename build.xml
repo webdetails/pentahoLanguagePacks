@@ -95,29 +95,6 @@
         Builds a language pack: duplicate the plugin, delete
         unnecessary files
         ====================================================================-->
-    <target name="build-language-pack-lazy4" description="Builds a specific language pack in a lazy way: duplicate the plugin using sparkl, delete unnecessary files">
-        <property name="langpack.name">languagePack-${langCode}</property>
-        <!-- lazyiest approach using 4.8 -->
-        <get src="http://127.0.0.1:8080/pentaho/content/sparkl/duplicatePlugin?source_pluginId=${plugin.name}&amp;dest_pluginId=${langpack.name}&amp;userid=${plugin.local.install.user}&amp;password=${plugin.local.install.pass}"
-             dest="${stage.dir}/blah.html"/>
-    </target>
-    <target name="build-language-pack-lazy" description="Builds a specific language pack in a lazy way: duplicate the plugin using sparkl, delete unnecessary files">
-        <fail message="plugin.local.install.solutions.dir not set - cannot copy"
-              unless="plugin.local.install.solutions.dir"/>
-        <property name="langpack.name">languagePack-${langCode}</property>
-        <!-- lazyiest approach using 5.0+ -->
-        <get src="http://127.0.0.1:8080/pentaho/plugin/sparkl/api/duplicatePlugin?paramsource_pluginId=${plugin.name}&amp;paramdest_pluginId=${langpack.name}"
-             username="${plugin.local.install.user}"
-             password="${plugin.local.install.pass}"
-             dest="${stage.dir}/blah.html"/>
-        <delete includeemptydirs="true">
-            <fileset dir="${plugin.local.install.solutions.dir}/system/${langpack.name}/data"
-                     excludes="${langCode}/**/*" />
-        </delete>
-        <move file="${plugin.local.install.solutions.dir}/system/${langpack.name}/data/${langCode}/metadata.json"
-              tofile="${plugin.local.install.solutions.dir}/system/${langpack.name}/data/metadata.json"/>
-    </target>
-
     <scriptdef language="javascript" name="upper">
         <attribute name="string" />
         <attribute name="to" />
