@@ -1,4 +1,4 @@
-define(
+﻿define(
     //begin v1.x content
     {
         hi: "हिन्दी",
