@@ -120,7 +120,7 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>64</xloc>
-      <yloc>64</yloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -177,8 +177,8 @@
     <extensionFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>192</xloc>
-      <yloc>64</yloc>
+      <xloc>224</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -211,8 +211,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>64</xloc>
-      <yloc>128</yloc>
+      <xloc>224</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -231,7 +231,7 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>608</xloc>
-      <yloc>64</yloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -254,8 +254,8 @@
         <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;&#x2f;&#x2f; Write to the file&#xa;var file &#x3d; new Packages.java.io.File&#x28;dst_filename&#x29;&#x3b;&#xa;	file.getParentFile&#x28;&#x29;.mkdirs&#x28;&#x29;&#x3b;&#xa;var dos &#x3d; new Packages.java.io.BufferedWriter&#x28;&#xa;   		new Packages.java.io.FileWriter&#x28;dst_filename&#x29;&#xa;	&#x29;&#x3b;&#xa;&#xa;file_content &#x3d;  org.apache.commons.lang.StringEscapeUtils.escapeJava&#x28;file_content&#x29;&#x3b;&#xa;file_content &#x3d; file_content.replace&#x28;&#x27;&#x5c;&#x5c;n&#x27;, &#x27;&#x5c;n&#x27;&#x29;.replace&#x28;&#x27;&#x5c;&#x5c;u&#x27;, &#x27;&#x5c;u&#x27;&#x29;&#x3b;&#xa;dos.write&#x28;file_content&#x29;&#x3b;&#xa;dos.close&#x28;&#x29;&#x3b;&#xa;&#xa;trans_Status &#x3d; SKIP_TRANSFORMATION&#x3b;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>448</xloc>
-      <yloc>64</yloc>
+      <xloc>416</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -286,8 +286,8 @@
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>224</xloc>
-      <yloc>128</yloc>
+      <xloc>384</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
