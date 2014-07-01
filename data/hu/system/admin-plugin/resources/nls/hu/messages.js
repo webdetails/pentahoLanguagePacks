@@ -1,5 +1,4 @@
-define(
-{
+define({
     TITLE_LABEL: 'Azonosítás',
     AUTHENTICATION_METHOD_LABEL: 'Azonosítás módja',
     AUTHENTICATION_METHOD_DESCRIPTION_LABEL: ' Válaszza ki az azonosítók és a jogosultságok tárolási helyét:',
@@ -123,5 +122,4 @@ define(
     LICENSE_CANCEL_BUTTON: 'Kijelentkezés',
     LICENSE_OK_BUTTON: 'Ok'
 
-}
-); 
+});

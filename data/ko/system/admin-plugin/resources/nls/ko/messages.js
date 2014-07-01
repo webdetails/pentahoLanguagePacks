@@ -1,5 +1,4 @@
-define(
-{
+define({
     TITLE_LABEL: '인증',
     AUTHENTICATION_METHOD_LABEL: '인증 방식',
     AUTHENTICATION_METHOD_DESCRIPTION_LABEL: '사용자 및 인증 정보를 저장할 위치 선택:',
@@ -123,5 +122,4 @@ define(
     LICENSE_CANCEL_BUTTON: '로그아웃',
     LICENSE_OK_BUTTON: '확인'
 
-}
-); 
+});

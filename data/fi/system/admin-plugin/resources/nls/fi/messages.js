@@ -1,5 +1,4 @@
-define(
-{
+define({
     TITLE_LABEL: 'Autentikointi',
     AUTHENTICATION_METHOD_LABEL: 'Autentikointi metodi',
     AUTHENTICATION_METHOD_DESCRIPTION_LABEL: 'Valitse käyttäjätunnusten hallinnointi tapa:',
@@ -123,5 +122,4 @@ define(
     LICENSE_CANCEL_BUTTON: 'Kirjaudu ulos',
     LICENSE_OK_BUTTON: 'Ok'
 
-}
-); 
+});

@@ -1,5 +1,4 @@
-define(
-{
+define({
     TITLE_LABEL: '驗證',
     AUTHENTICATION_METHOD_LABEL: '驗證方法',
     AUTHENTICATION_METHOD_DESCRIPTION_LABEL: '從用戶及其登錄證書管理中選擇',
@@ -123,5 +122,4 @@ define(
     LICENSE_CANCEL_BUTTON: '退出',
     LICENSE_OK_BUTTON: '確認'
 
-}
-); 
+});

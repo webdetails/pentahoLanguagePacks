@@ -1,5 +1,4 @@
-define(
-{
+define({
     TITLE_LABEL: 'Autenticacion',
     AUTHENTICATION_METHOD_LABEL: 'Metodo de autenticacion',
     AUTHENTICATION_METHOD_DESCRIPTION_LABEL: 'Seleccione donde se gestionaran el usuario y su registro en las credenciales:',
@@ -15,7 +14,7 @@ define(
     LDAP_SERVER_URL_LABEL: 'URL del servidor:',
     LDAP_USER_LABEL: 'Nombre de usuario:',
     LDAP_PASSWORD_LABEL: 'Contraseña:',
-    LDAP_TEST_CONNECTION_LABEL : 'Conexion de prueba para continuar la configuracion LDAP',
+    LDAP_TEST_CONNECTION_LABEL: 'Conexion de prueba para continuar la configuracion LDAP',
     LDAP_SERVER_URL_DESCRIPTION: 'La direccion URL de conexión se utiliza para conectarse al servidor de directorio',
     LDAP_USER_DESCRIPTION: 'Nombre distintivo de un usuario con acceso de lectura al directorio',
     LDAP_PASSWORD_DESCRIPTION: 'La contraseña para el usuario indicado anteriormente',
@@ -91,7 +90,7 @@ define(
     LDAP_POPULATOR_TEST: 'Prueba Poblador LDAP',
     LDAP_USER_TEST: 'Prueba de usuario LDAP',
     LDAP_ROLES_TEST: 'Prueba de roles LDAP',
-    LDAP_CONNECTOR_TEST_PASSED: 'La conexión con el servidor LDAP se ha realizado correctamente.' ,
+    LDAP_CONNECTOR_TEST_PASSED: 'La conexión con el servidor LDAP se ha realizado correctamente.',
     LDAP_CONNECTOR_TEST_FAILED: 'No se puede conectar con el servidor LDAP. Compruebe la configuración y vuelva a intentarlo.',
 
     SAVE: 'Guadar',
@@ -109,19 +108,18 @@ define(
 
     //licenseManager
     PRODUCT: 'Producto',
-    START_DATE : 'Fecha de inicio',
-    END_DATE : 'Fecha de fin',
-    VERSION : 'Version',
-    LICENSES : 'Licencias',
-    DELETE_TITLE : '¿Eliminar licencia seleccionada?',
+    START_DATE: 'Fecha de inicio',
+    END_DATE: 'Fecha de fin',
+    VERSION: 'Version',
+    LICENSES: 'Licencias',
+    DELETE_TITLE: '¿Eliminar licencia seleccionada?',
     DELETE_WARNING: 'Esta a punto de eliminar la licencia seleccionada. ¿Desea continuar?',
 
-    LICENSE_VALID_LICENSE_FOUND_LOG : 'Licencia valida para biserver-ee encontrado',
-    LICENSE_NO_VALID_LICENSE_FOUND_LOG : 'Licencia no valida para biserver-ee encontrado',
-    LICENSE_NO_VALID_LICENSE_MESSAGE_HEADER : "Falta licencia o ha caducado.",
-    LICENSE_NO_VALID_LICENSE_MESSAGE_BODY : 'Para continuar debe actualizar su licencia de Pentaho BI Platform. Si usted no esta listo ahora puede <a href="%CONTEXT_PATH%\Logout" target="_top"> cerrar sesion </ a> y volver mas tarde.',
-    LICENSE_CANCEL_BUTTON : 'Cerrar sesion',
-    LICENSE_OK_BUTTON : 'Aprobar'
+    LICENSE_VALID_LICENSE_FOUND_LOG: 'Licencia valida para biserver-ee encontrado',
+    LICENSE_NO_VALID_LICENSE_FOUND_LOG: 'Licencia no valida para biserver-ee encontrado',
+    LICENSE_NO_VALID_LICENSE_MESSAGE_HEADER: "Falta licencia o ha caducado.",
+    LICENSE_NO_VALID_LICENSE_MESSAGE_BODY: 'Para continuar debe actualizar su licencia de Pentaho BI Platform. Si usted no esta listo ahora puede <a href="%CONTEXT_PATH%\Logout" target="_top"> cerrar sesion </ a> y volver mas tarde.',
+    LICENSE_CANCEL_BUTTON: 'Cerrar sesion',
+    LICENSE_OK_BUTTON: 'Aprobar'
 
-}
-); 
+});

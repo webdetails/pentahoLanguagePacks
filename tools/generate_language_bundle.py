@@ -279,7 +279,7 @@ for root, dirs, filenames in os.walk('.'):
         gg = src.lower() # Notice that gg means the full path in lowercase
         dst =  os.path.realpath(os.path.join(destination_folder, root, f ))
         js_patterns = [ '/'+languageCode_hyphen+'/', '_'+languageCode_hyphen+'.' ];
-        if ('nls' in gg) and gg.endswith('.js'):
+        if (not ('dojo' in gg) ) and ('nls' in gg) and gg.endswith('.js'):
             for p in js_patterns:
                 if p.lower() in gg:
                     copy(src, dst)
@@ -343,7 +343,7 @@ for root, dirs, filenames in os.walk('.'):
 
         # Generate missing *nls/*LANG*/*.js
         gg = src.lower() # Notice that g means the full path
-        if gg.endswith('.js') and ('nls' in gg):
+        if gg.endswith('.js') and ('nls' in gg) and (not 'dojo' in gg):
             src_lang_code = ''
             dst = ''
             # The first scenario is when the folder nls/LANG/ exists

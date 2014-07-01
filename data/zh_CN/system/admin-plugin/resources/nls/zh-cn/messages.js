@@ -1,5 +1,4 @@
-define(
-{
+define({
     TITLE_LABEL: 'Authentication',
     AUTHENTICATION_METHOD_LABEL: 'Authentication Method',
     AUTHENTICATION_METHOD_DESCRIPTION_LABEL: 'Select where user and their log in credentials will be managed:',
@@ -123,5 +122,4 @@ define(
     LICENSE_CANCEL_BUTTON: 'Log Out',
     LICENSE_OK_BUTTON: 'Ok'
 
-}
-); 
+});

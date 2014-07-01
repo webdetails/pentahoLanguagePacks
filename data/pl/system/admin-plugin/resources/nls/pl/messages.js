@@ -1,5 +1,4 @@
-define(
-{
+define({
     TITLE_LABEL: 'Uwierzytelnienie',
     AUTHENTICATION_METHOD_LABEL: 'Metoda uwierzytelnienia',
     AUTHENTICATION_METHOD_DESCRIPTION_LABEL: 'Wybierz gdzie uwierzytelnienia użytkownika i jego logi będą obsługiwane:',
@@ -15,7 +14,7 @@ define(
     LDAP_SERVER_URL_LABEL: 'Serwer URL:',
     LDAP_USER_LABEL: 'Nazwa Użytkownika:',
     LDAP_PASSWORD_LABEL: 'Hasło:',
-    LDAP_TEST_CONNECTION_LABEL : 'Testuj połączenie aby kontynuować ustawienie LDAP',
+    LDAP_TEST_CONNECTION_LABEL: 'Testuj połączenie aby kontynuować ustawienie LDAP',
     LDAP_SERVER_URL_DESCRIPTION: 'The connection URL to use when connecting to the directory server',
     LDAP_USER_DESCRIPTION: 'Nazwa użytkownika, który posiada uprawnienie Read do katalogu',
     LDAP_PASSWORD_DESCRIPTION: 'Hasło użytkownika określonego powyżej',
@@ -47,9 +46,9 @@ define(
 
     //ldap custom user search configuration
     LDAP_USER_SEARCH_TITLE: 'User Search',
-    
+
     //ldap custom roles configuration 
-    LDAP_ROLES_TITLE: 'Role',    
+    LDAP_ROLES_TITLE: 'Role',
     LDAP_ROLE_BASE_LABEL: 'Atrybut Roli:',
     LDAP_ROLE_SEARCH_FILTER_LABEL: 'Filtr Szukania Roli:',
     LDAP_ROLE_SEARCH_BASE_LABEL: 'Baza Szukania Roli:',
@@ -71,7 +70,7 @@ define(
     LDAP_POPULATOR_UPPERCASE_DESCRIPTION: 'Indicates whether or not retrieved role names are converted to uppercase.',
     LDAP_POPULATOR_SUBTREE_LABEL: 'Subtree:',
     LDAP_POPULATOR_SUBTREE_DESCRIPTION: 'Indicates whether or not the search must include the current object and all children. If set to false, the search must include the current object only.',
-    
+
     //dialogs
     LDAP_BROWSER_TITLE: 'LDAP Browser',
     LDAP_WARNING: 'Warning',
@@ -91,11 +90,11 @@ define(
     LDAP_POPULATOR_TEST: 'LDAP Populator Test',
     LDAP_USER_TEST: 'LDAP User Test',
     LDAP_ROLES_TEST: 'LDAP Roles Test',
-    LDAP_CONNECTOR_TEST_PASSED: 'Pomyślne połączenie z serwerem LDAP.' ,
+    LDAP_CONNECTOR_TEST_PASSED: 'Pomyślne połączenie z serwerem LDAP.',
     LDAP_CONNECTOR_TEST_FAILED: 'Brak możliwości połączenia z serwerem LDAP. Sprawdź ustawienia i spróbuj ponownie.',
-   
+
     SAVE: 'Zapisz',
-    TEST: 'Testuj',        
+    TEST: 'Testuj',
     CANCEL: 'Anuluj',
     YES: 'Tak',
     YES_CHANGE: 'Tak, Kontynuuj',
@@ -106,22 +105,21 @@ define(
     TEST_FAILED: 'Test Failed',
 
     CONFIGURATION_SAVED: 'Zmiany w metodzie autenktykacji zostały zapisane, jednak zmiany te zostaną uaktywnione po ponownym starcie serwera.',
-  
+
     //licenseManager
     PRODUCT: 'Product',
-    START_DATE : 'Data Rozpoczęcia',
-    END_DATE : 'Data Zakończenia',
-    VERSION : 'Wersja',
-    LICENSES : 'Licencje',
-    DELETE_TITLE : 'Usunąć Wybrane Licencje?',
+    START_DATE: 'Data Rozpoczęcia',
+    END_DATE: 'Data Zakończenia',
+    VERSION: 'Wersja',
+    LICENSES: 'Licencje',
+    DELETE_TITLE: 'Usunąć Wybrane Licencje?',
     DELETE_WARNING: 'Jesteś w trakcie usuwania wybranych licencji. Czy chcesz kontynuować?',
 
-    LICENSE_VALID_LICENSE_FOUND_LOG : 'Znaleziono aktywną licencję biserver-ee',
-    LICENSE_NO_VALID_LICENSE_FOUND_LOG : 'Nie znaleziono aktywnej licencji biserver-ee',
-    LICENSE_NO_VALID_LICENSE_MESSAGE_HEADER : 'Brak licencji lub jej ważność wygasła.',
-    LICENSE_NO_VALID_LICENSE_MESSAGE_BODY : 'Aby kontynuować musisz uaktualnić licencję Pentaho BI Platform. Jeśli nie jesteś teraz gotowy możesz <a href="%CONTEXT_PATH%\Logout" target="_top">log out</a> i wrócić później.',
-    LICENSE_CANCEL_BUTTON : 'Wyloguj',
-    LICENSE_OK_BUTTON : 'Ok'
+    LICENSE_VALID_LICENSE_FOUND_LOG: 'Znaleziono aktywną licencję biserver-ee',
+    LICENSE_NO_VALID_LICENSE_FOUND_LOG: 'Nie znaleziono aktywnej licencji biserver-ee',
+    LICENSE_NO_VALID_LICENSE_MESSAGE_HEADER: 'Brak licencji lub jej ważność wygasła.',
+    LICENSE_NO_VALID_LICENSE_MESSAGE_BODY: 'Aby kontynuować musisz uaktualnić licencję Pentaho BI Platform. Jeśli nie jesteś teraz gotowy możesz <a href="%CONTEXT_PATH%\Logout" target="_top">log out</a> i wrócić później.',
+    LICENSE_CANCEL_BUTTON: 'Wyloguj',
+    LICENSE_OK_BUTTON: 'Ok'
 
-}
-); 
+});
