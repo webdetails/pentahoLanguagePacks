@@ -27,51 +27,6 @@
             <description/>
         </parameter>
     </parameters>
-  <connection>
-    <name>AgileBI</name>
-    <server>localhost</server>
-    <type>MONETDB</type>
-    <access>Native</access>
-    <database>pentaho-instaview</database>
-    <port>50006</port>
-    <username>monetdb</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb14a17edb86abd8</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <read_only>true</read_only>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_INFOBRIGHT.characterEncoding</code><attribute>UTF-8</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>50006</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>baseline_demo</name>
-    <server>&#x24;&#x7b;BIGWIRELESS_MYSQL_HOST&#x7d;</server>
-    <type>MYSQL</type>
-    <access>Native</access>
-    <database>BaselineDemo</database>
-    <port>&#x24;&#x7b;BIGWIRELESS_MYSQL_PORT&#x7d;</port>
-    <username/>
-    <password>Encrypted </password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>&#x24;&#x7b;BIGWIRELESS_MYSQL_PORT&#x7d;</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
     <slaveservers>
     </slaveservers>
 <job-log-table><connection/>
@@ -122,8 +77,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>142</xloc>
-      <yloc>300</yloc>
+      <xloc>128</xloc>
+      <yloc>96</yloc>
       </entry>
     <entry>
       <name>Success</name>
@@ -132,8 +87,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>653</xloc>
-      <yloc>544</yloc>
+      <xloc>736</xloc>
+      <yloc>672</yloc>
       </entry>
     <entry>
       <name>install_language &#x28;biserver&#x2f;pentaho-solutions&#x2f;system&#x29;</name>
@@ -183,8 +138,8 @@
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>482</xloc>
-      <yloc>62</yloc>
+      <xloc>704</xloc>
+      <yloc>96</yloc>
       </entry>
     <entry>
       <name>create jars</name>
@@ -221,8 +176,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>779</xloc>
-      <yloc>337</yloc>
+      <xloc>736</xloc>
+      <yloc>480</yloc>
       </entry>
     <entry>
       <name>get pack metadata</name>
@@ -254,8 +209,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>261</xloc>
-      <yloc>73</yloc>
+      <xloc>352</xloc>
+      <yloc>96</yloc>
       </entry>
     <entry>
       <name>Delete filenames from result</name>
@@ -268,8 +223,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>784</xloc>
-      <yloc>463</yloc>
+      <xloc>736</xloc>
+      <yloc>576</yloc>
       </entry>
     <entry>
       <name>install_language &#x28;biserver&#x2f;tomcat&#x29;</name>
@@ -319,8 +274,8 @@
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>645</xloc>
-      <yloc>271</yloc>
+      <xloc>736</xloc>
+      <yloc>384</yloc>
       </entry>
     <entry>
       <name>create jars 2</name>
@@ -357,8 +312,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>605</xloc>
-      <yloc>61</yloc>
+      <xloc>704</xloc>
+      <yloc>192</yloc>
       </entry>
     <entry>
       <name>Delete filenames from result 2</name>
@@ -371,8 +326,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>726</xloc>
-      <yloc>141</yloc>
+      <xloc>864</xloc>
+      <yloc>192</yloc>
       </entry>
     <entry>
       <name>Write To Log</name>
@@ -384,8 +339,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>141</xloc>
-      <yloc>116</yloc>
+      <xloc>224</xloc>
+      <yloc>96</yloc>
       </entry>
     <entry>
       <name>Abort job</name>
@@ -395,8 +350,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>369</xloc>
-      <yloc>305</yloc>
+      <xloc>448</xloc>
+      <yloc>416</yloc>
       </entry>
     <entry>
       <name>File Exists</name>
@@ -406,8 +361,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>364</xloc>
-      <yloc>62</yloc>
+      <xloc>480</xloc>
+      <yloc>96</yloc>
       </entry>
   </entries>
   <hops>
@@ -521,6 +476,15 @@
     </hop>
     <hop>
       <from>Write To Log</from>
+      <to>Abort job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>create jars</from>
       <to>Abort job</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
