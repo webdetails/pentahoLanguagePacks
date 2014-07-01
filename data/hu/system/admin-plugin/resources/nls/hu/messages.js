@@ -1,3 +1,4 @@
+define(
 {
     TITLE_LABEL: 'Azonosítás',
     AUTHENTICATION_METHOD_LABEL: 'Azonosítás módja',
@@ -123,3 +124,4 @@
     LICENSE_OK_BUTTON: 'Ok'
 
 }
+); 

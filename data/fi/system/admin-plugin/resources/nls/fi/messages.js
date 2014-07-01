@@ -1,3 +1,4 @@
+define(
 {
     TITLE_LABEL: 'Autentikointi',
     AUTHENTICATION_METHOD_LABEL: 'Autentikointi metodi',
@@ -123,3 +124,4 @@
     LICENSE_OK_BUTTON: 'Ok'
 
 }
+); 

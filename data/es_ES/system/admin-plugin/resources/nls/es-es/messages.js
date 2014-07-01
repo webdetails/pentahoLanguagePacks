@@ -1,3 +1,4 @@
+define(
 {
     TITLE_LABEL: 'Autenticacion',
     AUTHENTICATION_METHOD_LABEL: 'Metodo de autenticacion',
@@ -123,3 +124,4 @@ LICENSE_NO_VALID_LICENSE_MESSAGE_BODY : 'Para continuar debe actualizar su licen
     LICENSE_OK_BUTTON : 'Aprobar'
 
 }
+); 

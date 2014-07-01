@@ -1,3 +1,4 @@
+define(
 {
     TITLE_LABEL: '인증',
     AUTHENTICATION_METHOD_LABEL: '인증 방식',
@@ -123,3 +124,4 @@
     LICENSE_OK_BUTTON: '확인'
 
 }
+); 

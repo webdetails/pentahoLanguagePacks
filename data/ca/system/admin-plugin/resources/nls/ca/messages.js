@@ -1,3 +1,4 @@
+define(
 {
     TITLE_LABEL: 'Autenticació',
     AUTHENTICATION_METHOD_LABEL: 'Mètode d\'autenticació',
@@ -123,3 +124,4 @@
     LICENSE_OK_BUTTON: 'Aprovar'
 
 }
+); 

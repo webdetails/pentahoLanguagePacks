@@ -1,3 +1,4 @@
+define(
 ﻿
 {
     TITLE_LABEL: 'प्रमाणीकरण',
@@ -124,3 +125,4 @@
     LICENSE_OK_BUTTON: 'ठीक है'
 
 }
+); 

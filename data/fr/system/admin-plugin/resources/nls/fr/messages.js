@@ -1,3 +1,4 @@
+define(
 {
     TITLE_LABEL: 'Authentification',
     AUTHENTICATION_METHOD_LABEL: 'Méthode d\'authentification',
@@ -123,3 +124,4 @@ LICENSE_NO_VALID_LICENSE_MESSAGE_BODY : 'Pour continuer, vous devez mettre à jo
     LICENSE_OK_BUTTON : 'Ok'
 
 }
+); 

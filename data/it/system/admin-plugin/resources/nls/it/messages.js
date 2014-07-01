@@ -1,3 +1,4 @@
+define(
 {
     TITLE_LABEL: 'Autenticazione',
     AUTHENTICATION_METHOD_LABEL: 'Modalità di Autenticazione',
@@ -123,3 +124,4 @@
     LICENSE_OK_BUTTON: 'Ok'
 
 }
+); 

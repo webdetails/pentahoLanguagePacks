@@ -1,3 +1,4 @@
+define(
 {
     TITLE_LABEL: '認証',
     AUTHENTICATION_METHOD_LABEL: '認証メソッド',
@@ -123,3 +124,4 @@
     LICENSE_OK_BUTTON: 'Ok'
 
 }
+); 

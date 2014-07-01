@@ -1,3 +1,4 @@
+define(
 {
     TITLE_LABEL: 'Authentifizierung',
     AUTHENTICATION_METHOD_LABEL: 'Authentifizierungsmethode',
@@ -123,3 +124,4 @@ LICENSE_NO_VALID_LICENSE_MESSAGE_BODY : 'Um fortzufahren müssen Sie ihre Pentah
     LICENSE_OK_BUTTON : 'Ok'
 
 }
+); 

@@ -1,3 +1,4 @@
+define(
 {
     TITLE_LABEL: 'Uwierzytelnienie',
     AUTHENTICATION_METHOD_LABEL: 'Metoda uwierzytelnienia',
@@ -123,3 +124,4 @@
     LICENSE_OK_BUTTON : 'Ok'
 
 }
+); 
