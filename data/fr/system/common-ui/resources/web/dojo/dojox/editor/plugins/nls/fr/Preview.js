@@ -1,3 +1,0 @@
-({
-    "preview": "Aperçu"
-})

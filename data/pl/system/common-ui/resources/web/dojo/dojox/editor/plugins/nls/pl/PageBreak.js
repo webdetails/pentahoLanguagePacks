@@ -1,3 +1,0 @@
-({
-    "pageBreak": "Podział strony"
-})
