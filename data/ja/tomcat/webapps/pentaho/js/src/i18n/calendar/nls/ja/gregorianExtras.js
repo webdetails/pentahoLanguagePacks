@@ -9,5 +9,5 @@
 */
 
 ({
-    "dateFormat-yearOnly": "yyyy\u5e74"
+    "dateFormat-yearOnly": "yyyy年"
 })

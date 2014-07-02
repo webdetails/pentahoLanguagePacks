@@ -9,6 +9,6 @@
 */
 
 ({
-    "displayName": "\u82f1\u56fd\u30dd\u30f3\u30c9",
+    "displayName": "英国ポンド",
     "symbol": "\xa3"
 })
