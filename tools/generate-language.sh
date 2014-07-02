@@ -1,8 +1,7 @@
 #!/bin/bash
 
-#ORIGIN=~/webdetails/bi/biserver-ee-502/biserver-ee
-ORIGIN=~/webdetails/bi/pentaho503/server/biserver-ee
-DEST=~/webdetails/bi/biserver-ce/pentaho-solutions/system/languagePackInstaller/data
+ORIGIN=~/webdetails/servers/biserver-ee-51/biserver-ee
+DEST=~/webdetails/plugins/languagePackInstaller/data
 
 HERE=$(pwd)
 for locale in "$@"
@@ -18,6 +17,7 @@ do
         # fix
         find  $DEST/"$locale"/system/common-ui/ -iname "*.properties" | xargs -I {} sed -i '' 's/messagebundleid=\(.*\)<TRANSLATE ME>/messagebundleid=\1/g' {}
 
+        rm -rf $DEST/"$locale"/tomcat/webapps/pentaho/js
 
         # handle metadata
         if [ ! -f $DEST/"$locale"/metadata.json ]; then
