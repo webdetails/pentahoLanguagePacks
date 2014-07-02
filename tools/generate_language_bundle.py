@@ -234,6 +234,8 @@ for root, dirs, filenames in os.walk('.'):
             print "Skipped copying file", dst, "in the first round because it already exists"
             continue
 
+        if g.find('webapps/pentaho/js'):
+            continue
 
 
         # Grab *messages_LANG.properties and  *supported_languages.properties
@@ -264,6 +266,7 @@ for root, dirs, filenames in os.walk('.'):
                         dst = os.path.realpath(os.path.join(destination_folder, root, f.replace('.jar', '_jar'), el.replace(languageCode_hyphen, languageCode_underscore) ))
                         dst = re.sub('5.\d.\d.\d-\d+', '5.x', dst)
                         dst = re.sub('5.\d.\d', '5.x', dst)
+                        dst = re.sub('-\d.\d-', '-', dst) # remove version numbers
                         if e.endswith('messages_'+ suffix.lower()) or e.endswith('messages_'+ languageCode_hyphen.lower()  +'.properties'):
                             print 'Copying/patching:\n  ' +  os.path.realpath(os.path.join(origin_folder, src, el)) + '\nto\n  ' + dst + '\n'
                             tmpfolder = os.tmpnam()
@@ -303,6 +306,8 @@ for root, dirs, filenames in os.walk('.'):
         #    if os.path.exists(src.replace('_supported_languages.properties', '.properties')):
         #        continue
 
+        if g.find('webapps/pentaho/js'):
+            continue
 
         # Patch messages_LANG.properties with missing tokens
         is_regular = g.endswith('messages.properties')
@@ -338,6 +343,7 @@ for root, dirs, filenames in os.walk('.'):
                             dst = os.path.realpath(os.path.join(destination_folder, root, f.replace('.jar', '_jar'), el.replace('.properties', suffix) ))
                             dst = re.sub('5.\d.\d.\d-\d+', '5.x', dst)
                             dst = re.sub('5.\d.\d', '5.x', dst)
+                            dst = re.sub('-\d.\d-', '-', dst)
                             fin = z.open(el, 'r') # Zipfiles don't support "with" statement
                             lines_src = fin.readlines()
                             fin.close()
