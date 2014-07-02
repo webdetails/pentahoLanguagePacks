@@ -4,7 +4,7 @@
     "language": "Deutsch",
     "languageCode": "de",
     "version": "0.7.2",
-    "pentahoVersion": "5.0.1",
+    "pentahoVersion": "5.1.0",
     "maintainer": {
         "name": "Thomas Starl",
         "email": "pentaho-localization@tink.de",
