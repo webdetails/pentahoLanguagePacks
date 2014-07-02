@@ -17,6 +17,7 @@ do
         # fix
         find  $DEST/"$locale"/system/common-ui/ -iname "*.properties" | xargs -I {} sed -i '' 's/messagebundleid=\(.*\)<TRANSLATE ME>/messagebundleid=\1/g' {}
 
+        rm -rf $DEST/"$locale"/tomcat/webapps/pentaho/js
 
         # handle metadata
         if [ ! -f $DEST/"$locale"/metadata.json ]; then

@@ -262,8 +262,8 @@ for root, dirs, filenames in os.walk('.'):
                     for el in z.namelist():
                         e = el.lower()
                         dst = os.path.realpath(os.path.join(destination_folder, root, f.replace('.jar', '_jar'), el.replace(languageCode_hyphen, languageCode_underscore) ))
-                        dst = re.sub('5.\d.\d', '5.x', dst)
                         dst = re.sub('5.\d.\d.\d-\d+', '5.x', dst)
+                        dst = re.sub('5.\d.\d', '5.x', dst)
                         if e.endswith('messages_'+ suffix.lower()) or e.endswith('messages_'+ languageCode_hyphen.lower()  +'.properties'):
                             print 'Copying/patching:\n  ' +  os.path.realpath(os.path.join(origin_folder, src, el)) + '\nto\n  ' + dst + '\n'
                             tmpfolder = os.tmpnam()
@@ -336,6 +336,7 @@ for root, dirs, filenames in os.walk('.'):
                         is_other = e.endswith('.properties') and e.replace('.properties', '_supported_languages.properties') in z_list
                         if is_regular or has_xul or is_other:
                             dst = os.path.realpath(os.path.join(destination_folder, root, f.replace('.jar', '_jar'), el.replace('.properties', suffix) ))
+                            dst = re.sub('5.\d.\d.\d-\d+', '5.x', dst)
                             dst = re.sub('5.\d.\d', '5.x', dst)
                             fin = z.open(el, 'r') # Zipfiles don't support "with" statement
                             lines_src = fin.readlines()
