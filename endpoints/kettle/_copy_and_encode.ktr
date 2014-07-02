@@ -76,9 +76,9 @@
   <hop> <from>Data Grid</from><to>Load utf8 file content in memory</to><enabled>N</enabled> </hop>
   <hop> <from>Mapping input specification</from><to>Load utf8 file content in memory</to><enabled>Y</enabled> </hop>
   <hop> <from>Load utf8 file content in memory</from><to>User Defined Java Expression</to><enabled>Y</enabled> </hop>
-  <hop> <from>User Defined Java Expression</from><to>write UTF8 properties </to><enabled>Y</enabled> </hop>
+  <hop> <from>User Defined Java Expression</from><to>write encoded properties </to><enabled>Y</enabled> </hop>
   <hop> <from>User Defined Java Expression</from><to>Write to log</to><enabled>Y</enabled> </hop>
-  <hop> <from>write UTF8 properties </from><to>Mapping output specification</to><enabled>Y</enabled> </hop>
+  <hop> <from>write encoded properties </from><to>Mapping output specification</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Data Grid</name>
@@ -238,6 +238,32 @@
     </step>
 
   <step>
+    <name>User Defined Java Expression</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>processed_file_content</field_name>
+<formula_string>org.apache.commons.lang.StringEscapeUtils.escapeJava&#x28;file_content.replaceAll&#x28;&#x22;&#x3c;TRANSLATE ME&#x3e;&#x22;, &#x22;&#x22;&#x29;&#x29;.replaceAll&#x28;&#x22;&#x5c;&#x5c;&#x5c;&#x5c;n&#x22;, &#x22;&#x5c;n&#x22;&#x29;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>480</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>Write to log</name>
     <type>WriteToLog</type>
     <description/>
@@ -273,33 +299,7 @@
     </step>
 
   <step>
-    <name>User Defined Java Expression</name>
-    <type>Janino</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-       <formula><field_name>processed_file_content</field_name>
-<formula_string>org.apache.commons.lang.StringEscapeUtils.escapeJava&#x28;file_content.replaceAll&#x28;&#x22;&#x3c;TRANSLATE ME&#x3e;&#x22;, &#x22;&#x22;&#x29;&#x29;.replaceAll&#x28;&#x22;&#x5c;&#x5c;&#x5c;&#x5c;n&#x22;, &#x22;&#x5c;n&#x22;&#x29;</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field/>
-</formula>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>480</xloc>
-      <yloc>256</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>write UTF8 properties </name>
+    <name>write encoded properties </name>
     <type>TextFileOutput</type>
     <description/>
     <distribute>Y</distribute>
