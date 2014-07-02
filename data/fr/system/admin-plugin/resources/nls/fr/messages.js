@@ -1,4 +1,4 @@
-{
+define({
     TITLE_LABEL: 'Authentification',
     AUTHENTICATION_METHOD_LABEL: 'Méthode d\'authentification',
     AUTHENTICATION_METHOD_DESCRIPTION_LABEL: 'Sélectionner le type de gestion des utilisateurs et de leurs droits:',
@@ -14,7 +14,7 @@
     LDAP_SERVER_URL_LABEL: 'URL du Serveur:',
     LDAP_USER_LABEL: 'Nom d\'utilisateur:',
     LDAP_PASSWORD_LABEL: 'Mot de passe:',
-    LDAP_TEST_CONNECTION_LABEL : 'Tester la connexion LDAP',
+    LDAP_TEST_CONNECTION_LABEL: 'Tester la connexion LDAP',
     LDAP_SERVER_URL_DESCRIPTION: 'L\'URL de connexion à utiliser pour l\'accès à l\'annuaire',
     LDAP_USER_DESCRIPTION: 'Nom d\'utilisateur pour l\'accès en lecture à l\'annuaire',
     LDAP_PASSWORD_DESCRIPTION: 'Le mot de passe de l\'utilisateur spécifié ci-dessus',
@@ -46,9 +46,9 @@
 
     //ldap custom user search configuration
     LDAP_USER_SEARCH_TITLE: 'Recherche Utilisateur',
-    
+
     //ldap custom roles configuration 
-    LDAP_ROLES_TITLE: 'Rôles',    
+    LDAP_ROLES_TITLE: 'Rôles',
     LDAP_ROLE_BASE_LABEL: 'Attribut Rôle:',
     LDAP_ROLE_SEARCH_FILTER_LABEL: 'Filtre Recherche Rôle:',
     LDAP_ROLE_SEARCH_BASE_LABEL: 'Base Recherche Rôle:',
@@ -70,7 +70,7 @@
     LDAP_POPULATOR_UPPERCASE_DESCRIPTION: 'Indique si les noms de rôles récupérés sont convertis ou non en majuscules.',
     LDAP_POPULATOR_SUBTREE_LABEL: 'Sous-arbre:',
     LDAP_POPULATOR_SUBTREE_DESCRIPTION: 'Indique si la recherche doit comprendre ou non l\'objet courant et tous les enfants. Si défini à faux, la recherche doit inclure uniquement l\'objet courant.',
-    
+
     //dialogs
     LDAP_BROWSER_TITLE: 'Navigateur LDAP',
     LDAP_WARNING: 'Attention',
@@ -90,11 +90,11 @@
     LDAP_POPULATOR_TEST: 'Test LDAP Populator',
     LDAP_USER_TEST: 'Utilisateur LDAP Test',
     LDAP_ROLES_TEST: 'Rôle LDAP Test',
-    LDAP_CONNECTOR_TEST_PASSED: 'La connexion au serveur LDAP est réussie.' ,
+    LDAP_CONNECTOR_TEST_PASSED: 'La connexion au serveur LDAP est réussie.',
     LDAP_CONNECTOR_TEST_FAILED: 'Impossible de se connecter au serveur LDAP. Veuillez vérifier les paramètres indiqués.',
-   
+
     SAVE: 'Energistrer',
-    TEST: 'Test',        
+    TEST: 'Test',
     CANCEL: 'Annule',
     YES: 'Oui',
     YES_CHANGE: 'Oui, continuer',
@@ -105,21 +105,21 @@
     TEST_FAILED: 'Test échoué',
 
     CONFIGURATION_SAVED: 'Les modifications de la méthode d\'authentification ont été sauvegardées. Celles-ci seront effectives après le redémarrage du serveur.',
-  
+
     //licenseManager
     PRODUCT: 'Produit',
-    START_DATE : 'Date de début',
-    END_DATE : 'Date de fin',
-    VERSION : 'Version',
-    LICENSES : 'Licences',
-    DELETE_TITLE : 'Supprimer la licence sélectionnée ?',
+    START_DATE: 'Date de début',
+    END_DATE: 'Date de fin',
+    VERSION: 'Version',
+    LICENSES: 'Licences',
+    DELETE_TITLE: 'Supprimer la licence sélectionnée ?',
     DELETE_WARNING: 'Vous allez supprimer la licence sélectionnée. Voulez-vous vraiment continuer ?',
 
-    LICENSE_VALID_LICENSE_FOUND_LOG : 'Une licence valide pour le biserver-ee a été trouvée',
-    LICENSE_NO_VALID_LICENSE_FOUND_LOG : 'Aucune licence valide trouvée pour le biserver-ee',
-    LICENSE_NO_VALID_LICENSE_MESSAGE_HEADER : "La licence est manquante ou n\'est plus valide.",
-LICENSE_NO_VALID_LICENSE_MESSAGE_BODY : 'Pour continuer, vous devez mettre à jour votre licence Pentaho. Si vous n\'êtes pas prêt, vous pouvez vous <a href="%CONTEXT_PATH%\Logout" target="_top">déconnecter</a> et revenir ultérieurement.',
-    LICENSE_CANCEL_BUTTON : 'Déconnexion',
-    LICENSE_OK_BUTTON : 'Ok'
+    LICENSE_VALID_LICENSE_FOUND_LOG: 'Une licence valide pour le biserver-ee a été trouvée',
+    LICENSE_NO_VALID_LICENSE_FOUND_LOG: 'Aucune licence valide trouvée pour le biserver-ee',
+    LICENSE_NO_VALID_LICENSE_MESSAGE_HEADER: "La licence est manquante ou n\'est plus valide.",
+    LICENSE_NO_VALID_LICENSE_MESSAGE_BODY: 'Pour continuer, vous devez mettre à jour votre licence Pentaho. Si vous n\'êtes pas prêt, vous pouvez vous <a href="%CONTEXT_PATH%\Logout" target="_top">déconnecter</a> et revenir ultérieurement.',
+    LICENSE_CANCEL_BUTTON: 'Déconnexion',
+    LICENSE_OK_BUTTON: 'Ok'
 
-}
+});

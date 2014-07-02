@@ -1,4 +1,4 @@
-{
+define({
     TITLE_LABEL: 'Autenticació',
     AUTHENTICATION_METHOD_LABEL: 'Mètode d\'autenticació',
     AUTHENTICATION_METHOD_DESCRIPTION_LABEL: 'Selecciona on es gestionaran l\'usuari i el seu registre en les credencials:',
@@ -122,4 +122,4 @@
     LICENSE_CANCEL_BUTTON: 'Tancar sessió',
     LICENSE_OK_BUTTON: 'Aprovar'
 
-}
+});

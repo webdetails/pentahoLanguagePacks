@@ -1,5 +1,4 @@
-﻿
-{
+define(﻿{
     TITLE_LABEL: 'प्रमाणीकरण',
     AUTHENTICATION_METHOD_LABEL: 'प्रमाणीकरण पद्धति',
     AUTHENTICATION_METHOD_DESCRIPTION_LABEL: 'उस स्थान का चयन करें जहाँ उपयोगकर्ता और उनके लॉगिन क्रेडेंशियल को प्रबंधित किया जाएगा:',
@@ -123,4 +122,4 @@
     LICENSE_CANCEL_BUTTON: 'लॉग आउट',
     LICENSE_OK_BUTTON: 'ठीक है'
 
-}
+});

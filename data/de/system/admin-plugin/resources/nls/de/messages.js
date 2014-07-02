@@ -1,4 +1,4 @@
-{
+define({
     TITLE_LABEL: 'Authentifizierung',
     AUTHENTICATION_METHOD_LABEL: 'Authentifizierungsmethode',
     AUTHENTICATION_METHOD_DESCRIPTION_LABEL: 'Wählen Sie aus, wie die Benutzer und ihre Logindaten verwaltet werden sollen:',
@@ -14,7 +14,7 @@
     LDAP_SERVER_URL_LABEL: 'Server URL:',
     LDAP_USER_LABEL: 'Benutzername:',
     LDAP_PASSWORD_LABEL: 'Passwort:',
-    LDAP_TEST_CONNECTION_LABEL : 'Verbindung testen um mit der LDAP-Einrichtung fortzufahren',
+    LDAP_TEST_CONNECTION_LABEL: 'Verbindung testen um mit der LDAP-Einrichtung fortzufahren',
     LDAP_SERVER_URL_DESCRIPTION: 'Die URL des Verzeichnis-Servers',
     LDAP_USER_DESCRIPTION: 'DN des Benutzers, der Lesezugriff auf den Verzeichnisdienst hat',
     LDAP_PASSWORD_DESCRIPTION: 'Das Passwort des angegebene Benutzers',
@@ -46,9 +46,9 @@
 
     //ldap custom user search configuration
     LDAP_USER_SEARCH_TITLE: 'Benutzersuche',
-    
+
     //ldap custom roles configuration 
-    LDAP_ROLES_TITLE: 'Rollen',    
+    LDAP_ROLES_TITLE: 'Rollen',
     LDAP_ROLE_BASE_LABEL: 'Rollen-Attribut:',
     LDAP_ROLE_SEARCH_FILTER_LABEL: 'Suchfilter für Rollen:',
     LDAP_ROLE_SEARCH_BASE_LABEL: 'Basis-DN der Rollensuche:',
@@ -70,7 +70,7 @@
     LDAP_POPULATOR_UPPERCASE_DESCRIPTION: 'Zeigt an, ob die geladenen Rollennamen in Großbuchstaben umgewandelt werden oder nicht.',
     LDAP_POPULATOR_SUBTREE_LABEL: 'Unterverzeichnisse:',
     LDAP_POPULATOR_SUBTREE_DESCRIPTION: 'Zeigt an, ob die Suche nur das aktuelle Verzeichnis oder auch alle Unterverzeichnisse (rekursiv) durchsuchen soll. Wenn der Wert auf "Falsch" steht, wird nur im aktuellen Verzeichnis (Basis) gesucht.',
-    
+
     //dialogs
     LDAP_BROWSER_TITLE: 'LDAP Browser',
     LDAP_WARNING: 'Warnung',
@@ -90,11 +90,11 @@
     LDAP_POPULATOR_TEST: 'Test der LDAP-Befüllung',
     LDAP_USER_TEST: 'LDAP Benutzer-Test',
     LDAP_ROLES_TEST: 'LDAP Rollen-Test',
-    LDAP_CONNECTOR_TEST_PASSED: 'Verbindung zum LDAP-Server war erfolgreich.' ,
+    LDAP_CONNECTOR_TEST_PASSED: 'Verbindung zum LDAP-Server war erfolgreich.',
     LDAP_CONNECTOR_TEST_FAILED: 'Verbindung zum LDAP-Server konnt nicht hergestellt werden. Prüfen Sie Ihre Konfiguration und versuchen Sie es erneut.',
-   
+
     SAVE: 'Speichern',
-    TEST: 'Testen',        
+    TEST: 'Testen',
     CANCEL: 'Abbrechen',
     YES: 'Yes',
     YES_CHANGE: 'Ja, fortfahren',
@@ -105,21 +105,21 @@
     TEST_FAILED: 'Test fehlgeschlaten',
 
     CONFIGURATION_SAVED: 'Die Änderungen an der Authentifizierungsmethode wurden gespeichert, werden jedoch erst nach einem Neustart der Platform wirksam.',
-  
+
     //licenseManager
     PRODUCT: 'Produkt',
-    START_DATE : 'Startdatum',
-    END_DATE : 'Ablaufdatum',
-    VERSION : 'Version',
-    LICENSES : 'Lizenzen',
-    DELETE_TITLE : 'Ausgewählte Lizenz löschen?',
+    START_DATE: 'Startdatum',
+    END_DATE: 'Ablaufdatum',
+    VERSION: 'Version',
+    LICENSES: 'Lizenzen',
+    DELETE_TITLE: 'Ausgewählte Lizenz löschen?',
     DELETE_WARNING: 'Die gewählte Lizenz soll gelöscht werden. Möchten Sie fortfahren?',
 
-    LICENSE_VALID_LICENSE_FOUND_LOG : 'Gültige Biserver-EE Lizenz gefunden',
-    LICENSE_NO_VALID_LICENSE_FOUND_LOG : 'Keine gültige Biserver-EE Lizenz found',
-    LICENSE_NO_VALID_LICENSE_MESSAGE_HEADER : "Fehlende oder abgelaufene Lizenz.",
-LICENSE_NO_VALID_LICENSE_MESSAGE_BODY : 'Um fortzufahren müssen Sie ihre Pentaho BI Platform-Lizenz aktualisieren. Wenn Sie noch nicht bereits sind, können Sie sich <a href="%CONTEXT_PATH%\Logout" target="_top">ausloggen</a> und später fortfahren.',
-    LICENSE_CANCEL_BUTTON : 'Ausloggen',
-    LICENSE_OK_BUTTON : 'Ok'
+    LICENSE_VALID_LICENSE_FOUND_LOG: 'Gültige Biserver-EE Lizenz gefunden',
+    LICENSE_NO_VALID_LICENSE_FOUND_LOG: 'Keine gültige Biserver-EE Lizenz found',
+    LICENSE_NO_VALID_LICENSE_MESSAGE_HEADER: "Fehlende oder abgelaufene Lizenz.",
+    LICENSE_NO_VALID_LICENSE_MESSAGE_BODY: 'Um fortzufahren müssen Sie ihre Pentaho BI Platform-Lizenz aktualisieren. Wenn Sie noch nicht bereits sind, können Sie sich <a href="%CONTEXT_PATH%\Logout" target="_top">ausloggen</a> und später fortfahren.',
+    LICENSE_CANCEL_BUTTON: 'Ausloggen',
+    LICENSE_OK_BUTTON: 'Ok'
 
-}
+});

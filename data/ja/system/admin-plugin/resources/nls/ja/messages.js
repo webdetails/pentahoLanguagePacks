@@ -1,4 +1,4 @@
-{
+define({
     TITLE_LABEL: '認証',
     AUTHENTICATION_METHOD_LABEL: '認証メソッド',
     AUTHENTICATION_METHOD_DESCRIPTION_LABEL: 'ユーザー認証を管理する場所を選択してください:',
@@ -122,4 +122,4 @@
     LICENSE_CANCEL_BUTTON: 'ログアウト',
     LICENSE_OK_BUTTON: 'Ok'
 
-}
+});

@@ -1,4 +1,0 @@
-({
-    huePickerTitle: "Farbtonauswahl",
-    saturationPickerTitle: "Sättigungsauswahl"
-})

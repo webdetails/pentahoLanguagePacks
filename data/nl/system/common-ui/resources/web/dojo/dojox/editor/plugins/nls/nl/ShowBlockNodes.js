@@ -1,3 +1,0 @@
-({
-    "showBlockNodes": "HTML-blokelementen afbeelden"
-})

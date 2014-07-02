@@ -1,11 +1,11 @@
-{
+define({
     TITLE_LABEL: 'Autenticação',
-    Autenticação_METHOD_LABEL: 'Método de Autenticação',
-    Autenticação_METHOD_DESCRIPTION_LABEL: 'Selecione onde gerir os usuários e as suas credenciais de início de sessão:',
-    Autenticação_METHOD_CHANGE_FROM_JCR_TO_JCR: 'Não concluiu a configuração do seu método de autenticação externa. Todas as suas alterações serão perdidas. Deseja continuar?',
-    Autenticação_METHOD_CHANGE_FROM_JCR_TO_LDAP: 'Alterar o método de autenticação iniciará uma nova configuração e pode alterar os usuários, funções e senhas de início de sessão. Tem certeza que deseja fazer esta alteração?',
-    Autenticação_METHOD_CHANGE_FROM_LDAP_TO_JCR: 'Definir o método de Autenticação para Local removerá as configurações de segurança LDAP atuais. Deseja continuar?',
-    Autenticação_METHOD_TITLE: 'Alterar o Método de Autenticação',
+    Autenticaçã o_METHOD_LABEL: 'Método de Autenticação',
+    Autenticaçã o_METHOD_DESCRIPTION_LABEL: 'Selecione onde gerir os usuários e as suas credenciais de início de sessão:',
+    Autenticaçã o_METHOD_CHANGE_FROM_JCR_TO_JCR: 'Não concluiu a configuração do seu método de autenticação externa. Todas as suas alterações serão perdidas. Deseja continuar?',
+    Autenticaçã o_METHOD_CHANGE_FROM_JCR_TO_LDAP: 'Alterar o método de autenticação iniciará uma nova configuração e pode alterar os usuários, funções e senhas de início de sessão. Tem certeza que deseja fazer esta alteração?',
+    Autenticaçã o_METHOD_CHANGE_FROM_LDAP_TO_JCR: 'Definir o método de Autenticação para Local removerá as configurações de segurança LDAP atuais. Deseja continuar?',
+    Autenticaçã o_METHOD_TITLE: 'Alterar o Método de Autenticação',
     PENTAHO: 'Local - Usar a Autenticação do Pentaho',
     LDAP: 'Externa - Usar servidor LDAP / Active Directory',
 
@@ -123,4 +123,4 @@
         LICENSE_CANCEL_BUTTON: 'Terminar a Sessão',
     LICENSE_OK_BUTTON: 'Ok'
 
-}
+});

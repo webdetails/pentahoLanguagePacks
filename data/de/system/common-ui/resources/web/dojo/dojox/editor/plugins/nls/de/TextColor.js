@@ -1,4 +1,0 @@
-({
-    "setButtonText": "Festlegen",
-    "cancelButtonText": "Abbrechen"
-})
