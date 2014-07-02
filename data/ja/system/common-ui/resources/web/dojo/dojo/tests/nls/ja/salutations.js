@@ -1,8 +1,8 @@
 define(
     //begin v1.x content
     {
-        ja: "\u65E5\u672C\u8A9E",
-        hello: "こにちは"
+        ja: "日本語",
+        hello: "こんにちは"
     }
     //end v1.x content
 );
