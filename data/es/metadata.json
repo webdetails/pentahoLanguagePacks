@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the Spanish language in Pentaho 5",
     "language": "Spanish",
     "languageCode": "es",
-    "version": "0.7.2",
+    "version": "14.07.03",
     "pentahoVersion": "5.1.0",
     "maintainer": {
         "name": "Domingo Lavin",
@@ -26,6 +26,6 @@
             "img": "",
             "url": ""
         }
-    ],
+    ]
 
 }

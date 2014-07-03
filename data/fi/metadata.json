@@ -5,7 +5,7 @@
     "languageCode": "fi",
     "version": "0.1",
     "pentahoVersion": "5.1.0",
-	"maintainer": {
+    "maintainer": {
         "name": "Antti Loukiala",
         "email": "antti.loukiala@gmail.com",
         "img": "",
@@ -26,6 +26,6 @@
             "img": "",
             "url": "http://www.mylab.fi"
         }
-    ],
+    ]
 
 }

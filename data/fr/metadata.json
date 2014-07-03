@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the French language in Pentaho 5",
     "language": "Français",
     "languageCode": "fr",
-    "version": "0.6.2",
+    "version": "14.07.03",
     "pentahoVersion": "5.1.0",
     "maintainer": {
         "name": "Sylvain Decloix",
@@ -26,6 +26,6 @@
             "img": "",
             "url": ""
         }
-    ],
+    ]
 
 }

@@ -3,7 +3,7 @@
     "appWelcomeMessage": "Aquest plugin instal·la les definicions d'idioma per l'idioma català en Pentaho 5",
     "language": "Català",
     "languageCode": "ca",
-    "version": "0.5.2",
+    "version": "14.07.03",
     "pentahoVersion": "5.1.0",
     "maintainer": {
         "name": "Blau Advisors Strategic Partners,S.L.",
@@ -26,6 +26,6 @@
             "img": "",
             "url": "http:\/\/www.blauadvisors.com"
         }
-    ],
+    ]
 
 }
