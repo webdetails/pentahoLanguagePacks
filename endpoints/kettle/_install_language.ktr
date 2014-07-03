@@ -172,8 +172,8 @@
     </notepad>
     <notepad>
       <note>Hack to get around the fact that supported_languages.properties encoded with UTF8&#xa;aren&#x27;t correctly interpreted  AND would otherwise be saved with &#x5c;uXXXX unicode string&#xa;which aren&#x27;t interpreted by mantle</note>
-      <xloc>1120</xloc>
-      <yloc>672</yloc>
+      <xloc>224</xloc>
+      <yloc>896</yloc>
       <width>409</width>
       <heigth>43</heigth>
       <fontname>Arial</fontname>
@@ -208,7 +208,6 @@
   <hop> <from>j 3</from><to>get _languageCode.jar filename</to><enabled>Y</enabled> </hop>
   <hop> <from>j</from><to>j 3</to><enabled>Y</enabled> </hop>
   <hop> <from>select jar folders</from><to>j 3</to><enabled>Y</enabled> </hop>
-  <hop> <from>get _languageCode.jar filename</from><to>Copy rows to result</to><enabled>Y</enabled> </hop>
   <hop> <from>Copy rows to result</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
   <hop> <from>select src_filename</from><to>j 4</to><enabled>Y</enabled> </hop>
   <hop> <from>Filter rows</from><to>select src_filename</to><enabled>Y</enabled> </hop>
@@ -249,6 +248,10 @@
   <hop> <from>Select values 4</from><to>write UTF8 properties </to><enabled>Y</enabled> </hop>
   <hop> <from>Group by 2</from><to>Get Variables 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Get Variables 2</from><to>add key&#x3d;value</to><enabled>Y</enabled> </hop>
+  <hop> <from>File exists 3</from><to>dst_exists&#x3f; 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>get _languageCode.jar filename</from><to>File exists 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>dst_exists&#x3f; 2</from><to>Copy rows to result</to><enabled>Y</enabled> </hop>
+  <hop> <from>dst_exists&#x3f; 2</from><to>junk 2 2</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>.js to be patched</name>
@@ -282,7 +285,7 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>800</xloc>
+      <xloc>1056</xloc>
       <yloc>640</yloc>
       <draw>Y</draw>
       </GUI>
@@ -734,7 +737,7 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>896</xloc>
+      <xloc>1152</xloc>
       <yloc>640</yloc>
       <draw>Y</draw>
       </GUI>
@@ -1345,7 +1348,7 @@
     <name>get _languageCode.jar filename</name>
     <type>Janino</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -1354,6 +1357,13 @@
            </partitioning>
        <formula><field_name>dst_filename</field_name>
 <formula_string>src_folders.replace&#x28;source_folder, target_folder&#x29;.replace&#x28;&#x22;_jar&#x22;, &#x22;_&#x22; &#x2b; languageCode &#x2b; &#x22;.jar&#x22;&#x29;.replace&#x28;&#x22;file&#x3a;&#x2f;&#x2f;&#x22;, &#x22;&#x22;&#x29;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+       <formula><field_name>dst_parent</field_name>
+<formula_string>dst_filename.substring&#x28;0, dst_filename.lastIndexOf&#x28;&#x22;&#x2f;&#x22;&#x29;&#x29;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -2016,6 +2026,78 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>1856</xloc>
       <yloc>768</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>File exists 3</name>
+    <type>FileExists</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <filenamefield>dst_parent</filenamefield>
+    <resultfieldname>dst_exists</resultfieldname>
+    <includefiletype>N</includefiletype>
+    <filetypefieldname/>
+    <addresultfilenames>N</addresultfilenames>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>800</xloc>
+      <yloc>640</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>dst_exists&#x3f; 2</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Copy rows to result</send_true_to>
+<send_false_to>junk 2 2</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>dst_exists</leftvalue>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>Boolean</type><text>Y</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>896</xloc>
+      <yloc>640</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>junk 2 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>896</xloc>
+      <yloc>544</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
