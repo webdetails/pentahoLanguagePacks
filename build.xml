@@ -51,7 +51,7 @@
             <version>
                 <branch>${project.stage}</branch>
                 <version>${distribution.version}</version>
-                <name>Trunk</name>
+                <name>${project.stage}</name>
                 <package_url>not defined</package_url>
                 <description>@PLUGIN_PACKAGE_DESCRIPTION@</description>
                 <build_id>${sequential.build.id}</build_id>
@@ -230,7 +230,7 @@
             <echo>Read from ${metadata.json}: appTitle = ${langpack.metadata.appTitle}...</echo>
 
             <!-- create the version file -->
-            <property name="langpack.distribution.version" value="${project.stage}-${langpack.metadata.version}"/>
+            <property name="langpack.distribution.version" value="${langpack.metadata.version}"/>
             <tstamp/>
             <property name="sequential.build.id" value="manual-${DSTAMP}"/>
             <echoxml file="${stage.dir}/${langpack.name}/version.xml">
@@ -340,7 +340,7 @@
             <version>
                 <branch>${project.stage}</branch>
                 <version>${langpack.distribution.version}</version>
-                <name>Trunk</name>
+                <name>${project.stage}</name>
                 <package_url>${langpack.package.url}</package_url>
                 <description>${here.languagePack.title}</description>
                 <build_id>${sequential.build.id}</build_id>
@@ -359,8 +359,8 @@
                 <filter token="langpack.metadata.maintainer.img" value="${langpack.metadata.maintainer.img}"/>
                 <filter token="langpack.package.url" value="${langpack.package.url}"/>
                 <filter token="langCode" value="${langCode}"/>
+                <filter token="project.stage" value="${project.stage}"/>
                 <filter token="project.revision" value="${langpack.distribution.version}"/>
-                <filter token="project.version" value="${langpack.metadata.version}"/>
             </filterset>
         </copy>
         <available file="${basedir}/data/${langCode}/resources/img/flag.png" property="market.entry.img.present"/>
