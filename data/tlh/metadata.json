@@ -1,0 +1,31 @@
+{
+    "appTitle": "Klingon Language Pack Installer",
+    "appWelcomeMessage": "This plugin installs language definitions for the Klingon language in Pentaho 5",
+    "language": "Klingon",
+    "languageCode": "tlh",
+    "version": "0.0",
+    "pentahoVersion": "5.1.0",
+    "maintainer": {
+        "name": "Marc Okrand",
+        "email": "Marc.Okrand@gmail.com",
+        "img": "",
+        "url": "http:\/\/www.google.com"
+    },
+    "credits": [
+        {
+            "name": "",
+            "email": "",
+            "img": "",
+            "url": ""
+        }
+    ],
+    "sponsors": [
+        {
+            "name": "",
+            "email": "",
+            "img": "",
+            "url": ""
+        }
+    ]
+
+}

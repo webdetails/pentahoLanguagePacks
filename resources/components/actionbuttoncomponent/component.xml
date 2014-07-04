@@ -17,6 +17,7 @@
                 <Property name="buttonStyle">tableStyle</Property>
                 <!-- <Property>expression</Property> -->
                 <Property>executeAtStart</Property>
+                <Property>listeners</Property>
                 <Property>preExecution</Property>
                 <Property>postExecution</Property>
                 <Property>refreshPeriod</Property>
@@ -26,6 +27,7 @@
                     <Property type="query">DataSource</Property>
                 </Definition>
                 <Property name="actionParameters">valuesArray</Property>
+                <Property>expression</Property>
                 <Property>successCallback</Property>
                 <Property>failureCallback</Property>
             </Model>

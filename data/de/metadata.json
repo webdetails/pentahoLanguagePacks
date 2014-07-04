@@ -1,0 +1,31 @@
+{
+    "appTitle": "German Language Pack Installer",
+    "appWelcomeMessage": "This plugin installs language definitions for the German language in Pentaho 5",
+    "language": "Deutsch",
+    "languageCode": "de",
+    "version": "14.07.03",
+    "pentahoVersion": "5.1.0",
+    "maintainer": {
+        "name": "Thomas Starl",
+        "email": "pentaho-localization@tink.de",
+        "img": "",
+        "url": ""
+    },
+    "credits": [
+        {
+            "name": "Thomas Starl",
+            "email": "pentaho-localization@tink.de",
+            "img": "",
+            "url": ""
+        }
+    ],
+    "sponsors": [
+        {
+            "name": "",
+            "email": "",
+            "img": "",
+            "url": ""
+        }
+    ]
+
+}
