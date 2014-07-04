@@ -1,0 +1,3 @@
+({
+    insertEntity: "Symbool invoegen"
+})

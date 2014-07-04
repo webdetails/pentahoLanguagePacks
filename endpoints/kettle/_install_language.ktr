@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>_patch_supported_languages</name>
+    <name>_install_language</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -20,13 +20,28 @@
             <description/>
         </parameter>
         <parameter>
+            <name>cpk.webapp.dir</name>
+            <default_value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;&#x2f;..&#x2f;..&#x2f;tomcat&#x2f;webapps&#x2f;pentaho</default_value>
+            <description/>
+        </parameter>
+        <parameter>
             <name>language</name>
-            <default_value>Klingon</default_value>
+            <default_value>Espan&#xf5;l</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>languageCode</name>
-            <default_value>tlh</default_value>
+            <default_value>es</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>target</name>
+            <default_value>system</default_value>
+            <description/>
+        </parameter>
+        <parameter>
+            <name>target_folder</name>
+            <default_value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -37,7 +52,7 @@
 <size_limit_lines/>
 <interval/>
 <timeout_days/>
-<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field></trans-log-table>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
 <perf-log-table><connection/>
 <schema/>
 <table/>
@@ -54,6 +69,11 @@
 <table/>
 <timeout_days/>
 <field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
     </log>
     <maxdate>
       <connection/>
@@ -87,98 +107,379 @@
   <modified_date>2013&#x2f;11&#x2f;12 15&#x3a;10&#x3a;14.395</modified_date>
   </info>
   <notepads>
+    <notepad>
+      <note>Special cases</note>
+      <xloc>32</xloc>
+      <yloc>576</yloc>
+      <width>74</width>
+      <heigth>21</heigth>
+      <fontname>Arial</fontname>
+      <fontsize>10</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>165</backgroundcolorgreen>
+      <backgroundcolorblue>0</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>General case</note>
+      <xloc>96</xloc>
+      <yloc>96</yloc>
+      <width>72</width>
+      <heigth>21</heigth>
+      <fontname>Arial</fontname>
+      <fontsize>10</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>165</backgroundcolorgreen>
+      <backgroundcolorblue>0</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>If the target folder does not exist, nothing will happen</note>
+      <xloc>672</xloc>
+      <yloc>192</yloc>
+      <width>257</width>
+      <heigth>21</heigth>
+      <fontname>Arial</fontname>
+      <fontsize>10</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>Hack to get around the fact that supported_languages.properties encoded with UTF8&#xa;aren&#x27;t correctly interpreted  AND would otherwise be saved with &#x5c;uXXXX unicode string&#xa;which aren&#x27;t interpreted by mantle</note>
+      <xloc>1600</xloc>
+      <yloc>672</yloc>
+      <width>409</width>
+      <heigth>43</heigth>
+      <fontname>Arial</fontname>
+      <fontsize>10</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
-  <connection>
-    <name>AgileBI</name>
-    <server>localhost</server>
-    <type>MONETDB</type>
-    <access>Native</access>
-    <database>pentaho-instaview</database>
-    <port>50006</port>
-    <username>monetdb</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb14a17edb86abd8</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_INFOBRIGHT.characterEncoding</code><attribute>UTF-8</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>50006</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>baseline_demo</name>
-    <server>&#x24;&#x7b;BIGWIRELESS_MYSQL_HOST&#x7d;</server>
-    <type>MYSQL</type>
-    <access>Native</access>
-    <database>BaselineDemo</database>
-    <port>&#x24;&#x7b;BIGWIRELESS_MYSQL_PORT&#x7d;</port>
-    <username/>
-    <password>Encrypted </password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>&#x24;&#x7b;BIGWIRELESS_MYSQL_PORT&#x7d;</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
   <order>
-  <hop> <from>Get cpk.solution.system.dir</from><to>Select values</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get &#x24;&#x7b;target_folder&#x7d;</from><to>Select values</to><enabled>Y</enabled> </hop>
   <hop> <from>Get folder name of data&#x2f;&#x24;&#x7b;languageCode&#x7d;</from><to>Select values 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select values</from><to>Join Rows &#x28;cartesian product&#x29;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select values 2</from><to>Join Rows &#x28;cartesian product&#x29;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get File Names</from><to>Select values 3</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select values 3</from><to>Join Rows &#x28;cartesian product&#x29;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Join Rows &#x28;cartesian product&#x29;</from><to>get system&#x2f; &#x2a;supported_messages.properties</to><enabled>Y</enabled> </hop>
-  <hop> <from>get system&#x2f; &#x2a;supported_messages.properties</from><to>Copy files if necessary</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get Variables</from><to>Join Rows &#x28;cartesian product&#x29;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Copy files if necessary</from><to>Properties Output</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select values 2</from><to>Join Rows &#x28;cartesian product&#x29; 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select values</from><to>Join Rows &#x28;cartesian product&#x29; 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get Variables</from><to>Join Rows &#x28;cartesian product&#x29; 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Join Rows &#x28;cartesian product&#x29; 2</from><to>get system&#x2f; messages&#x2a;.properties 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get all message.properties</from><to>Select values 3 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select values 3 2</from><to>Join Rows &#x28;cartesian product&#x29; 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>get system&#x2f; messages&#x2a;.properties 2</from><to>Overwrite files if necessary</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>j</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values 2</from><to>j</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get &#x2a;.supported_languages.properties</from><to>Select values 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get Variables</from><to>j</to><enabled>Y</enabled> </hop>
+  <hop> <from>j 4</from><to>get target&#x2f; messages&#x2a;.properties</to><enabled>Y</enabled> </hop>
+  <hop> <from>j</from><to>j 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values 3</from><to>j 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>j 2</from><to>get target&#x2f; &#x2a;supported_messages.properties</to><enabled>Y</enabled> </hop>
+  <hop> <from>j</from><to>j 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get all _jar</from><to>select jar folders</to><enabled>Y</enabled> </hop>
+  <hop> <from>j 3</from><to>get _languageCode.jar filename</to><enabled>Y</enabled> </hop>
+  <hop> <from>j</from><to>j 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>select jar folders</from><to>j 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>get _languageCode.jar filename</from><to>Copy rows to result</to><enabled>Y</enabled> </hop>
+  <hop> <from>Copy rows to result</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
+  <hop> <from>select src_filename</from><to>j 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get all &#x2a;_&#x24;&#x7b;languageCode&#x7d;.properties, &#x2a;.js</from><to>Filter rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows</from><to>select src_filename</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>get target&#x2f; messages&#x2a;.properties</from><to>Write to log</to><enabled>Y</enabled> </hop>
+  <hop> <from>j</from><to>Write to log 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>strip comments</from><to>junk</to><enabled>Y</enabled> </hop>
+  <hop> <from>strip this languageCode</from><to>junk 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>add header</from><to>Select values 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values 4</from><to>Sort rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows</from><to>Unique rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Unique rows</from><to>write UTF8 properties </to><enabled>Y</enabled> </hop>
+  <hop> <from>get target&#x2f; &#x2a;supported_messages.properties</from><to>File exists</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows 2</from><to>junk 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>key&#x3d;value</from><to>strip comments</to><enabled>Y</enabled> </hop>
+  <hop> <from>strip comments</from><to>Group by 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>add header</from><to>Write to log 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>read UTF8 properties</from><to>strip this languageCode</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows 2</from><to>destination filenames</to><enabled>Y</enabled> </hop>
+  <hop> <from>destination filenames</from><to>read UTF8 properties</to><enabled>Y</enabled> </hop>
+  <hop> <from>Group by 2</from><to>Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join</from><to>add key&#x3d;value</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get Variables 2</from><to>Select values 5</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values 5</from><to>Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>add key&#x3d;value</from><to>add header</to><enabled>Y</enabled> </hop>
+  <hop> <from>destination filenames</from><to>Get Variables 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>strip this languageCode</from><to>Sort rows 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows 3</from><to>Unique rows 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Unique rows 2</from><to>sort&#x3a; dst_filename</to><enabled>Y</enabled> </hop>
+  <hop> <from>sort&#x3a; dst_filename</from><to>key&#x3d;value</to><enabled>Y</enabled> </hop>
+  <hop> <from>get target&#x2f; messages&#x2a;.properties</from><to>is .properties &#x3f;</to><enabled>Y</enabled> </hop>
+  <hop> <from>is .properties &#x3f;</from><to>copy and encode files</to><enabled>Y</enabled> </hop>
+  <hop> <from>is .properties &#x3f;</from><to>copy all messages_&#x24;&#x7b;languageCode&#x7d;.properties, all&#x2a;.js</to><enabled>Y</enabled> </hop>
+  <hop> <from>File exists</from><to>Filter rows 2</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>Copy files if necessary</name>
-    <type>ProcessFiles</type>
+    <name>Copy rows to result</name>
+    <type>RowsToResult</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <sourcefilenamefield>src_filename</sourcefilenamefield>
-    <targetfilenamefield>dst_filename</targetfilenamefield>
-    <operation_type>copy</operation_type>
-    <addresultfilenames>N</addresultfilenames>
-    <overwritetargetfile>N</overwritetargetfile>
-    <createparentfolder>Y</createparentfolder>
-    <simulate>N</simulate>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1016</xloc>
-      <yloc>144</yloc>
+      <xloc>800</xloc>
+      <yloc>640</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Get File Names</name>
-    <type>GetFileNames</type>
+    <name>add header</name>
+    <type>Janino</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>file_contents</field_name>
+<formula_string>&#x22;&#x23;Patched by languagePackInstaller&#x5c;n&#x22; &#x2b; file_contents</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field>file_contents</replace_field>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1664</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>add key&#x3d;value</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>file_contents</field_name>
+<formula_string>&#x28;file_contents &#x3d;&#x3d; null &#x3f;  &#x22;&#x22; &#x3a; file_contents&#x29; &#x2b; new_keyvalue &#x2b; &#x22;&#x5c;n&#x22;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field>file_contents</replace_field>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1504</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29;</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>384</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>junk</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1248</xloc>
+      <yloc>992</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>junk 3</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1088</xloc>
+      <yloc>992</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>junk 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>832</xloc>
+      <yloc>896</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>File exists</name>
+    <type>FileExists</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <filenamefield>dst_filename</filenamefield>
+    <resultfieldname>dst_exists</resultfieldname>
+    <includefiletype>N</includefiletype>
+    <filetypefieldname/>
+    <addresultfilenames>N</addresultfilenames>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>736</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>select src_filename</send_true_to>
+<send_false_to>Dummy &#x28;do nothing&#x29;</send_false_to>
+    <compare>
+<condition>
+ <negated>Y</negated>
+ <leftvalue>path</leftvalue>
+ <function>CONTAINS</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text>_jar&#x2f;</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>256</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows 2</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>destination filenames</send_true_to>
+<send_false_to>junk 2</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>dst_exists</leftvalue>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>Boolean</type><text>Y</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>832</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get &#x24;&#x7b;target_folder&#x7d;</name>
+    <type>GetFileNames</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -198,7 +499,46 @@
     <dynamic_include_subfolders>N</dynamic_include_subfolders>
     <limit>0</limit>
     <file>
-      <name>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;data&#x2f;&#x24;&#x7b;languageCode&#x7d;&#x2f;system</name>
+      <name>&#x24;&#x7b;target_folder&#x7d;</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>128</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get &#x2a;.supported_languages.properties</name>
+    <type>GetFileNames</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <filter>
+      <filterfiletype>all_files</filterfiletype>
+    </filter>
+    <doNotFailIfNoFile>N</doNotFailIfNoFile>
+    <rownum>N</rownum>
+    <isaddresult>N</isaddresult>
+    <filefield>N</filefield>
+    <rownum_field/>
+    <filename_Field/>
+    <wildcard_Field/>
+    <exclude_wildcard_Field/>
+    <dynamic_include_subfolders>N</dynamic_include_subfolders>
+    <limit>0</limit>
+    <file>
+      <name>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;data&#x2f;&#x24;&#x7b;languageCode&#x7d;&#x2f;&#x24;&#x7b;target&#x7d;</name>
       <filemask>.&#x2a;supported_languages&#x5c;.properties</filemask>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -206,8 +546,8 @@
     </file>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>212</xloc>
-      <yloc>40</yloc>
+      <xloc>128</xloc>
+      <yloc>768</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -217,6 +557,7 @@
     <type>GetVariable</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -247,258 +588,66 @@
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
+      <field>
+        <name>target</name>
+        <variable>&#x24;&#x7b;target&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>575</xloc>
-      <yloc>246</yloc>
+      <xloc>320</xloc>
+      <yloc>384</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Get cpk.solution.system.dir</name>
+    <name>Get Variables 2</name>
+    <type>GetVariable</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>new_keyvalue</name>
+        <variable>&#x24;&#x7b;languageCode&#x7d;&#x3d;&#x24;&#x7b;language&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1120</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get all &#x2a;_&#x24;&#x7b;languageCode&#x7d;.properties, &#x2a;.js</name>
     <type>GetFileNames</type>
     <description/>
     <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <filter>
-      <filterfiletype>all_files</filterfiletype>
-    </filter>
-    <doNotFailIfNoFile>N</doNotFailIfNoFile>
-    <rownum>N</rownum>
-    <isaddresult>N</isaddresult>
-    <filefield>N</filefield>
-    <rownum_field/>
-    <filename_Field/>
-    <wildcard_Field/>
-    <exclude_wildcard_Field/>
-    <dynamic_include_subfolders>N</dynamic_include_subfolders>
-    <limit>0</limit>
-    <file>
-      <name>&#x24;&#x7b;cpk.solution.system.dir&#x7d;</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>202</xloc>
-      <yloc>232</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Get folder name of data&#x2f;&#x24;&#x7b;languageCode&#x7d;</name>
-    <type>GetFileNames</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <filter>
-      <filterfiletype>all_files</filterfiletype>
-    </filter>
-    <doNotFailIfNoFile>N</doNotFailIfNoFile>
-    <rownum>N</rownum>
-    <isaddresult>N</isaddresult>
-    <filefield>N</filefield>
-    <rownum_field/>
-    <filename_Field/>
-    <wildcard_Field/>
-    <exclude_wildcard_Field/>
-    <dynamic_include_subfolders>N</dynamic_include_subfolders>
-    <limit>0</limit>
-    <file>
-      <name>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;data&#x2f;&#x24;&#x7b;languageCode&#x7d;</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>202</xloc>
-      <yloc>134</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Join Rows &#x28;cartesian product&#x29;</name>
-    <type>JoinRows</type>
-    <description/>
-    <distribute>N</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <cache_size>500</cache_size>
-      <main/>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue/>
- <function>&#x3d;</function>
- <rightvalue/>
- </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>589</xloc>
-      <yloc>133</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Properties Output</name>
-    <type>PropertyOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <keyfield>languageCode</keyfield>
-    <valuefield>language</valuefield>
-    <comment/>
-    <fileNameInField>Y</fileNameInField>
-    <fileNameField>dst_filename</fileNameField>
-    <file>
-      <name/>
-      <extention>properties</extention>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <create_parent_folder>Y</create_parent_folder>
-    <addtoresult>N</addtoresult>
-    <append>Y</append>
-      </file>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1180</xloc>
-      <yloc>148</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Select values</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>N</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>filename</name>
-        <rename>solution_system</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>410</xloc>
-      <yloc>232</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Select values 2</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>N</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>filename</name>
-        <rename>language_dir</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>410</xloc>
-      <yloc>138</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Select values 3</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>N</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>filename</name>
-        <rename>src_filename</rename>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>path</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>399</xloc>
-      <yloc>42</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>get system&#x2f; &#x2a;supported_messages.properties</name>
-    <type>Janino</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-       <formula><field_name>dst_filename</field_name>
-<formula_string>src_filename.replace&#x28;language_dir &#x2b; &#x22;&#x2f;system&#x22;, solution_system&#x29;</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field/>
-</formula>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>822</xloc>
-      <yloc>146</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Get all message.properties</name>
-    <type>GetFileNames</type>
-    <description/>
-    <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -518,25 +667,156 @@
     <dynamic_include_subfolders>N</dynamic_include_subfolders>
     <limit>0</limit>
     <file>
-      <name>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;data&#x2f;&#x24;&#x7b;languageCode&#x7d;&#x2f;system</name>
-      <filemask>.&#x2a;&#x24;&#x7b;languageCode&#x7d;&#x5c;.properties</filemask>
+      <name>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;data&#x2f;&#x24;&#x7b;languageCode&#x7d;&#x2f;&#x24;&#x7b;target&#x7d;</name>
+      <filemask>.&#x2a;_&#x24;&#x7b;languageCode&#x7d;&#x5c;.properties&#x7c;.&#x2a;&#x5c;.js</filemask>
       <exclude_filemask/>
       <file_required>N</file_required>
       <include_subfolders>Y</include_subfolders>
     </file>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>207</xloc>
-      <yloc>383</yloc>
+      <xloc>96</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Join Rows &#x28;cartesian product&#x29; 2</name>
+    <name>Get all _jar</name>
+    <type>GetFileNames</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <filter>
+      <filterfiletype>all_files</filterfiletype>
+    </filter>
+    <doNotFailIfNoFile>N</doNotFailIfNoFile>
+    <rownum>N</rownum>
+    <isaddresult>Y</isaddresult>
+    <filefield>N</filefield>
+    <rownum_field/>
+    <filename_Field/>
+    <wildcard_Field/>
+    <exclude_wildcard_Field/>
+    <dynamic_include_subfolders>N</dynamic_include_subfolders>
+    <limit>0</limit>
+    <file>
+      <name>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;data&#x2f;&#x24;&#x7b;languageCode&#x7d;&#x2f;&#x24;&#x7b;target&#x7d;</name>
+      <filemask>.&#x2a;_jar</filemask>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>Y</include_subfolders>
+    </file>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>128</xloc>
+      <yloc>640</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get folder name of data&#x2f;&#x24;&#x7b;languageCode&#x7d;</name>
+    <type>GetFileNames</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <filter>
+      <filterfiletype>all_files</filterfiletype>
+    </filter>
+    <doNotFailIfNoFile>N</doNotFailIfNoFile>
+    <rownum>N</rownum>
+    <isaddresult>N</isaddresult>
+    <filefield>N</filefield>
+    <rownum_field/>
+    <filename_Field/>
+    <wildcard_Field/>
+    <exclude_wildcard_Field/>
+    <dynamic_include_subfolders>N</dynamic_include_subfolders>
+    <limit>0</limit>
+    <file>
+      <name>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;data&#x2f;&#x24;&#x7b;languageCode&#x7d;&#x2f;&#x24;&#x7b;target&#x7d;</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>128</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Group by 2</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <all_rows>Y</all_rows>
+      <ignore_aggregate>N</ignore_aggregate>
+      <field_ignore/>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>grp</prefix>
+      <add_linenr>N</add_linenr>
+      <linenr_fieldname/>
+      <give_back_row>N</give_back_row>
+      <group>
+        <field>
+          <name>dst_filename</name>
+        </field>
+      </group>
+      <fields>
+        <field>
+          <aggregate>file_contents</aggregate>
+          <subject>keyvalue</subject>
+          <type>CONCAT_STRING</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>languageCode</aggregate>
+          <subject>languageCode</subject>
+          <type>LAST</type>
+          <valuefield/>
+        </field>
+        <field>
+          <aggregate>language</aggregate>
+          <subject>language</subject>
+          <type>LAST</type>
+          <valuefield/>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1376</xloc>
+      <yloc>864</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>j</name>
     <type>JoinRows</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -556,24 +836,449 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>581</xloc>
-      <yloc>396</yloc>
+      <xloc>544</xloc>
+      <yloc>384</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>get system&#x2f; messages&#x2a;.properties 2</name>
-    <type>Janino</type>
+    <name>j 4</name>
+    <type>JoinRows</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-       <formula><field_name>dst_filename</field_name>
-<formula_string>src_filename.replace&#x28;language_dir &#x2b; &#x22;&#x2f;system&#x22;, solution_system&#x29;</formula_string>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <cache_size>500</cache_size>
+      <main/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue/>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>512</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>j 3</name>
+    <type>JoinRows</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <cache_size>500</cache_size>
+      <main/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue/>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>384</xloc>
+      <yloc>640</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>j 2</name>
+    <type>JoinRows</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <cache_size>500</cache_size>
+      <main/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue/>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>416</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Merge Join</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>FULL OUTER</join_type>
+<step1>Select values 5</step1>
+<step2>Group by 2</step2>
+    <keys_1>
+      <key>dst_filename</key>
+    </keys_1>
+    <keys_2>
+      <key>dst_filename</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1376</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>OUTPUT</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>896</xloc>
+      <yloc>640</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>filename</name>
+        <rename>target_folder</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>320</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>filename</name>
+        <rename>source_folder</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>320</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values 3</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>filename</name>
+        <rename>src_filename</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>path</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>288</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values 4</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>dst_filename</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>file_contents</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1760</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values 5</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>dst_filename</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>new_keyvalue</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1248</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1856</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>sort&#x3a; dst_filename</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>dst_filename</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1248</xloc>
+      <yloc>1120</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows 3</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>dst_filename</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>key</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>960</xloc>
+      <yloc>1120</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Unique rows</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <count_rows>N</count_rows>
+      <count_field/>
+      <reject_duplicate_row>N</reject_duplicate_row>
+      <error_description/>
+    <fields>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1952</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Unique rows 2</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <count_rows>N</count_rows>
+      <count_field/>
+      <reject_duplicate_row>N</reject_duplicate_row>
+      <error_description/>
+    <fields>      <field>        <name>dst_filename</name>
+        <case_insensitive>N</case_insensitive>
+        </field>      <field>        <name>key</name>
+        <case_insensitive>N</case_insensitive>
+        </field>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1120</xloc>
+      <yloc>1120</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>key&#x3d;value</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>keyvalue</field_name>
+<formula_string>key &#x2b; &#x22;&#x3d;&#x22; &#x2b;value &#x2b; &#x22;&#x5c;n&#x22;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -581,17 +1286,437 @@
 </formula>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>818</xloc>
-      <yloc>399</yloc>
+      <xloc>1376</xloc>
+      <yloc>1120</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Select values 3 2</name>
+    <name>Write to log</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage/>
+    <fields>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>800</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Write to log 2</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_minimal</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage>cpk.plugin.dir &#x3d;&#x24;&#x7b;cpk.plugin.dir&#x7d;&#xa;cpk.webapp.dir &#x3d;&#x24;&#x7b;cpk.webapp.dir&#x7d;</logmessage>
+    <fields>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>704</xloc>
+      <yloc>384</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Write to log 3</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage/>
+    <fields>
+      <field>
+        <name>dst_filename</name>
+        </field>
+      <field>
+        <name>file_contents</name>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1664</xloc>
+      <yloc>896</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>copy all messages_&#x24;&#x7b;languageCode&#x7d;.properties, all&#x2a;.js</name>
+    <type>ProcessFiles</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <sourcefilenamefield>src_filename</sourcefilenamefield>
+    <targetfilenamefield>dst_filename</targetfilenamefield>
+    <operation_type>copy</operation_type>
+    <addresultfilenames>N</addresultfilenames>
+    <overwritetargetfile>Y</overwritetargetfile>
+    <createparentfolder>Y</createparentfolder>
+    <simulate>N</simulate>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1120</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>copy and encode files</name>
+    <type>SimpleMapping</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>filename</specification_method>
+    <trans_object_id/>
+    <trans_name/>
+    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;_copy_and_encode.ktr</filename>
+    <directory_path/>
+    <mappings>
+      <input>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>Y</rename_on_output>
+    <description/>
+       <connector><parent>src_filename</parent><child>src_filename</child></connector>
+       <connector><parent>dst_filename</parent><child>dst_filename</child></connector>
+    </mapping>      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+       <connector><parent>src_filename</parent><child/></connector>
+       <connector><parent>dst_filename</parent><child/></connector>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1120</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>destination filenames</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>960</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>get _languageCode.jar filename</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>dst_filename</field_name>
+<formula_string>src_folders.replace&#x28;source_folder, target_folder&#x29;.replace&#x28;&#x22;_jar&#x22;, &#x22;_&#x22; &#x2b; languageCode &#x2b; &#x22;.jar&#x22;&#x29;.replace&#x28;&#x22;file&#x3a;&#x2f;&#x2f;&#x22;, &#x22;&#x22;&#x29;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>640</xloc>
+      <yloc>640</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>get target&#x2f; &#x2a;supported_messages.properties</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>dst_filename</field_name>
+<formula_string>src_filename.replace&#x28;source_folder, target_folder&#x29;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>576</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>get target&#x2f; messages&#x2a;.properties</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>dst_filename</field_name>
+<formula_string>src_filename.replace&#x28;source_folder, target_folder&#x29;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>704</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>is .properties &#x3f;</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>copy and encode files</send_true_to>
+<send_false_to>copy all messages_&#x24;&#x7b;languageCode&#x7d;.properties, all&#x2a;.js</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>src_filename</leftvalue>
+ <function>ENDS WITH</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text>.properties</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>928</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>read UTF8 properties</name>
+    <type>TextFileInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <accept_filenames>Y</accept_filenames>
+    <passing_through_fields>Y</passing_through_fields>
+    <accept_field>dst_filename</accept_field>
+    <accept_stepname>destination filenames</accept_stepname>
+    <separator>&#x3d;</separator>
+    <enclosure/>
+    <enclosure_breaks>N</enclosure_breaks>
+    <escapechar/>
+    <header>N</header>
+    <nr_headerlines>1</nr_headerlines>
+    <footer>N</footer>
+    <nr_footerlines>1</nr_footerlines>
+    <line_wrapped>N</line_wrapped>
+    <nr_wraps>1</nr_wraps>
+    <layout_paged>N</layout_paged>
+    <nr_lines_per_page>80</nr_lines_per_page>
+    <nr_lines_doc_header>0</nr_lines_doc_header>
+    <noempty>N</noempty>
+    <include>N</include>
+    <include_field/>
+    <rownum>N</rownum>
+    <rownumByFile>N</rownumByFile>
+    <rownum_field/>
+    <format>mixed</format>
+    <encoding>UTF-8</encoding>
+    <add_to_result_filenames>N</add_to_result_filenames>
+    <file>
+      <name/>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <type>CSV</type>
+      <compression>None</compression>
+    </file>
+    <filters>
+    </filters>
+    <fields>
+      <field>
+        <name>key</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>value</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+    </fields>
+    <limit>0</limit>
+    <error_ignored>N</error_ignored>
+    <skip_bad_files>N</skip_bad_files>
+    <file_error_field/>
+    <file_error_message_field/>
+    <error_line_skipped>N</error_line_skipped>
+    <error_count_field/>
+    <error_fields_field/>
+    <error_text_field/>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension>line</line_number_files_extension>
+    <date_format_lenient>Y</date_format_lenient>
+    <date_format_locale>en_US</date_format_locale>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>960</xloc>
+      <yloc>896</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>select jar folders</name>
     <type>SelectValues</type>
     <description/>
     <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>uri</name>
+        <rename>src_folders</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>224</xloc>
+      <yloc>640</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>select src_filename</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -604,33 +1729,142 @@
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>359</xloc>
-      <yloc>383</yloc>
+      <xloc>384</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Overwrite files if necessary</name>
-    <type>ProcessFiles</type>
+    <name>strip comments</name>
+    <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
+    <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <sourcefilenamefield>src_filename</sourcefilenamefield>
-    <targetfilenamefield>dst_filename</targetfilenamefield>
-    <operation_type>copy</operation_type>
-    <addresultfilenames>N</addresultfilenames>
-    <overwritetargetfile>Y</overwritetargetfile>
-    <createparentfolder>Y</createparentfolder>
-    <simulate>Y</simulate>
+<send_true_to>Group by 2</send_true_to>
+<send_false_to>junk</send_false_to>
+    <compare>
+<condition>
+ <negated>Y</negated>
+ <leftvalue>keyvalue</leftvalue>
+ <function>STARTS WITH</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text>&#x23;</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1043</xloc>
-      <yloc>405</yloc>
+      <xloc>1376</xloc>
+      <yloc>992</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>strip this languageCode</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Sort rows 3</send_true_to>
+<send_false_to>junk 3</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>Y</negated>
+   <leftvalue>key</leftvalue>
+   <function>&#x3d;</function>
+   <rightvalue>languageCode</rightvalue>
+   </condition>
+  <condition>
+   <negated>Y</negated>
+   <operator>AND</operator>
+   <leftvalue>key</leftvalue>
+   <function>IS NULL</function>
+   <rightvalue/>
+   <value><name>constant</name><type>String</type><text>null</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
+  </conditions>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>960</xloc>
+      <yloc>992</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>write UTF8 properties </name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <separator/>
+    <enclosure/>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>N</header>
+    <footer>N</footer>
+    <format>UNIX</format>
+    <compression>None</compression>
+    <encoding>UTF-8</encoding>
+    <endedLine/>
+    <fileNameInField>Y</fileNameInField>
+    <fileNameField>dst_filename</fileNameField>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name>file</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
+      <extention/>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>N</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>Y</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>file_contents</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>2080</xloc>
+      <yloc>768</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -640,4 +1874,7 @@
    <slave-step-copy-partition-distribution>
 </slave-step-copy-partition-distribution>
    <slave_transformation>N</slave_transformation>
+<attributes><group><name>DataService</name>
+</group></attributes>
+
 </transformation>

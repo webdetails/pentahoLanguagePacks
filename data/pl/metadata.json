@@ -1,0 +1,30 @@
+{
+    "appTitle": "Instalator Pakietu Języka Polskiego",
+    "appWelcomeMessage": "Ten plugin instaluje definicje językowe dla języka polskiego w Pentaho 5",
+    "language": "Polski",
+    "languageCode": "pl",
+    "version": "0.1",
+    "pentahoVersion": "5.0.1",
+    "maintainer": {
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    },
+    "credits": [
+        {
+            "name": "",
+            "email": "",
+            "img": "",
+            "url": ""
+        }
+    ],
+    "sponsors": [
+        {
+            "name": "",
+            "email": "",
+            "img": "",
+            "url": ""
+        }
+    ]
+}

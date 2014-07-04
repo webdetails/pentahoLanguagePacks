@@ -1,3 +1,6 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 /*
  * WDStyleGuide Template CSS
  *
@@ -24,6 +27,18 @@
 /* =============================================================================
    Fonts
    ========================================================================== */
+@font-face {
+  font-family: 'OpenSansRegular';
+  src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSansLight';
+  src: url('../fonts/OpenSans-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'OpenSansSemibold';
+  src: url('../fonts/OpenSans-Semibold.ttf') format('truetype');
+}
 
 
 
@@ -43,10 +58,10 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-/*margin: 0;
-padding: 0;
-border: 0;
-        font-family: Open Sans, Arial, sans-serif;*/
+/* margin: 0; */
+/* padding: 0; */
+/* border: 0; */
+        font-family: OpenSansLight, Arial, sans-serif;
   }
 
 
@@ -59,557 +74,14 @@ border: 0;
 
 /* Window Background */
 body{
+    background-color: #FFFFFF;
 }
 /* Dashboard Background / Blueprint Container */
 div.container  {
-
+    max-width: 800px;
+    width:80%;
+    min-width: 600px;
 }
-
-/* =============================================================================
-   2. HEADER
-   ========================================================================== */
-.WDheader {
-
-    font-size:48px;
-}
-
-.WDh1 {}
-.WDh2 {}
-
-
-
-/* =============================================================================
-   3. FILTER CELLS
-   ========================================================================== */
-
-/* Filter Cells */
-.WDfilterCell {
-}
-
-/* Filter Cells header */
-.WDfilterCellHeader{
-}
-
-
-/* Filter Cells body */
-.WDfilterCellBody{
-}
-.no-svg .WDfilterCellBody{
-}
-.svg  .WDfilterCellBody{
-}
-
-.WDfilterCellBody *{
-}
-
-
-/********** FILTER ELEMENTS *********/
-
-.WDfilterCell select{
-}
-
-.WDfilterCellBody button {
-
-}
-.no-svg .WDfilterCellBody button {
-}
-.svg .WDfilterCellBody button {
-}
-
-.WDfilterCellBody button:hover {
-}
-.WDfilterCellBody button span {
-}
-
-
-/* Multi Button */
-.WDfilterCellBody .pentaho-toggle-button {
-
-}
-.no-svg .WDfilterCellBody .pentaho-toggle-button {
-}
-.svg .WDfilterCellBody .pentaho-toggle-button {
-}
-.WDfilterCellBody .pentaho-toggle-button-horizontal-first {
-}
-.WDfilterCellBody .pentaho-toggle-button-horizontal-last {
-}
-.WDfilterCellBody .pentaho-toggle-button:hover,
-  .WDfilterCellBody .pentaho-toggle-button:hover button{
-  }
-.WDfilterCellBody .pentaho-toggle-button-down {
-
-}
-.no-svg .WDfilterCellBody .pentaho-toggle-button-down {
-}
-.svg .WDfilterCellBody .pentaho-toggle-button-down {
-}
-
-.WDfilterCellBody .pentaho-toggle-button button {
-}
-.WDfilterCellBody .pentaho-toggle-button-horizontal-last button {
-}
-.WDfilterCellBody .pentaho-toggle-button-horizontal-first button {
-}
-.WDfilterCellBody .pentaho-toggle-button-down button {
-}
-
-
-/**** Chosen Select *****/
-/* All Chosen elements */
-.WDfilterCellBody .chzn-container{
-}
-.WDfilterCellBody .chzn-container * {
-}
-.WDfilterCellBody .chzn-container-active{
-}
-.WDfilterCellBody .chzn-drop{
-}
-.WDfilterCellBody .chzn-drop  .chzn-search{
-}
-.WDfilterCellBody .chzn-drop .chzn-search input{
-}
-.WDfilterCellBody .chzn-drop  .chzn-results{
-}
-.WDfilterCellBody .chzn-drop  .chzn-results li{
-
-}
-.WDfilterCellBody .chzn-drop .chzn-results em{
-}
-.WDfilterCellBody .chzn-drop  .chzn-results .active-result{
-}
-.WDfilterCellBody .chzn-drop  .chzn-results .highlighted{
-}
-.WDfilterCellBody .chzn-drop  .chzn-results .result-selected{
-}
-.WDfilterCellBody .chzn-drop  .chzn-results .no-results {
-}
-
-/* Single Select */
-.WDfilterCellBody .chzn-container-single .chzn-single{
-}
-.no-svg  .WDfilterCellBody .chzn-container-single .chzn-single{
-}
-
-.svg  .WDfilterCellBody .chzn-container-single .chzn-single{
-
-}
-.WDfilterCellBody .chzn-container-single:hover .chzn-single{
-}
-
-.WDfilterCellBody .chzn-container-single .chzn-single span{
-}
-.WDfilterCellBody .chzn-container-single .chzn-single div{ /* Arrow container */
-}
-.WDfilterCellBody .chzn-container-single .chzn-single div b,
-  .WDfilterCellBody .chzn-container-single .chzn-single-with-drop div b{ /* Arrow */
-  }
-.WDfilterCellBody .chzn-container-single:hover .chzn-single div b,
-  .WDfilterCellBody .chzn-container-single:hover .chzn-single-with-drop div b{ /* Arrow */
-  }
-.WDfilterCellBody .chzn-container-single .chzn-single.chzn-single-with-drop{
-}
-.WDfilterCellBody .chzn-container-single .chzn-single-with-drop span{
-}
-.WDfilterCellBody .chzn-container-single .chzn-single-with-drop div{ /* Arrow container */
-}
-.WDfilterCellBody .chzn-container-single .chzn-single-with-drop div b{
-}
-
-
-/* Multi Select */
-.WDfilterCellBody .chzn-container-multi.chzn-container{
-}
-.WDfilterCellBody .chzn-container-multi .chzn-drop{
-}
-.WDfilterCellBody .chzn-container-multi .chzn-drop .selectTooltipTriangle{
-}
-.WDfilterCellBody .chzn-container-multi .chzn-drop  .chzn-results{
-}
-
-.WDfilterCellBody .chzn-container-multi .chzn-choices {
-}
-.WDfilterCellBody .chzn-container-multi:hover .chzn-choices,
-  .WDfilterCellBody .chzn-container-multi.chzn-container-active .chzn-choices{
-  }
-.WDfilterCellBody .chzn-container-multi .chzn-choices  .search-choice {
-
-}
-.no-svg   .WDfilterCellBody .chzn-container-multi .chzn-choices  .search-choice {
-}
-.svg   .WDfilterCellBody .chzn-container-multi .chzn-choices  .search-choice {
-}
-.WDfilterCellBody .chzn-container-multi .chzn-choices .search-choice span{
-}
-.WDfilterCellBody .chzn-container-multi .chzn-choices .search-choice .search-choice-close{
-}
-.WDfilterCellBody .chzn-container-multi .chzn-choices .search-choice .search-choice-close:hover {
-}
-.WDfilterCellBody .chzn-container-multi .chzn-choices .search-field input{
-}
-
-
-
-/* =============================================================================
-   4. DATA CELLS
-   ========================================================================== */
-
-/* Data Cells */
-.WDdataCell {
-}
-
-/* Data Cells header*/
-.WDdataCellHeader{
-
-}
-.no-svg   .WDdataCellHeader {
-}
-.svg   .WDdataCellHeader {
-}
-
-/* Data Cells body */
-.WDdataCellBody {
-}
-
-/* =============================================================================
-   5. TABLES
-   ========================================================================== */
-
-.WDdataCellBody table {}
-
-
-/* Header */
-.WDdataCellBody  thead {}
-.WDdataCellBody thead tr {
-
-}
-.WDdataCellBody  thead th {
-
-}
-.WDdataCellBody thead th.sorting{
-}
-.WDdataCellBody thead th.sorting_asc{
-}
-.WDdataCellBody  thead th.sorting_desc{
-}
-.WDdataCellBody  thead th:first-child {
-}
-
-/* Body */
-.WDdataCellBody  tbody {}
-.WDdataCellBody  tbody tr {
-}
-.WDdataCellBody  tbody td{
-}
-.WDdataCellBody  tbody td,
-  .WDdataCellBody  tbody td.numeric,
-  .WDdataCellBody  tbody td.string {
-  }
-
-/* Footer */
-.WDdataCellBody  tfoot {
-}
-.WDdataCellBody  tfoot tr {
-}
-.WDdataCellBody  tfoot td{
-}
-.WDdataCellBody  tfoot tr:first-child td{
-}
-.WDdataCellBody  tfoot tr:last-child td{
-}
-.WDdataCellBody  tfoot td{
-}
-
-
-
-/* DataTables */
-.WDdataCellBody  .dataTables_wrapper{
-}
-.WDdataCellBody  .dataTables_wrapper tbody tr.odd td.sorting_1,
-  .WDdataCellBody  .dataTables_wrapper tbody tr.odd{
-  }
-.WDdataCellBody  .dataTables_wrapper tbody tr.even td.sorting_1,
-  .WDdataCellBody  .dataTables_wrapper tbody tr.even{
-  }
-
-/* Pagination and Page Info */
-
-.WDdataCellBody   .dataTables_info{
-}
-
-.WDdataCellBody  .dataTables_paginate{
-}
-.WDdataCellBody  .dataTables_paginate > span {
-}
-.WDdataCellBody  .dataTables_paginate > input {
-}
-.WDdataCellBody   .dataTables_paginate .paginate_button {
-}
-.WDdataCellBody  .dataTables_paginate .paginate_button.first,
-  .WDdataCellBody   .dataTables_paginate .paginate_button.last {
-  }
-.WDdataCellBody   .dataTables_paginate .paginate_button.previous {
-}
-.WDdataCellBody  .dataTables_paginate .paginate_button.next {
-}
-.WDdataCellBody   .dataTables_paginate .paginate_page {
-}
-.WDdataCellBody   .dataTables_paginate .paginate_of {
-}
-
-.WDdataCellBody   .dataTables_paginate .paginate_enabled_next {
-}
-.WDdataCellBody   .dataTables_paginate .paginate_enabled_previous{
-}
-.WDdataCellBody   .dataTables_paginate .paginate_disabled_next {
-}
-.WDdataCellBody   .dataTables_paginate .paginate_disabled_previous {
-}
-.WDdataCellBody   .dataTables_paginate .paginate_enabled_next:hover {
-}
-.WDdataCellBody   .dataTables_paginate .paginate_enabled_previous:hover {
-}
-.WDdataCellBody   .dataTables_paginate .paginate_enabled_next:active {
-}
-.WDdataCellBody   .dataTables_paginate .paginate_enabled_previous:active {
-}
-.WDdataCellBody   .dataTables_paginate .paginate_disabled_previous,
-.WDdataCellBody   .dataTables_paginate .paginate_enabled_previous,
-.WDdataCellBody   .dataTables_paginate .paginate_disabled_next,
-.WDdataCellBody  .dataTables_paginate .paginate_enabled_next {
-}
-
-/* Add Ins */
-.WDdataCellBody td .trend,
-.WDdataCellBody th .trend{
-}
-.WDdataCellBody  tfoot td .trend{
-}
-.WDdataCellBody  tfoot td .trend.down,
-.WDdataCellBody  tbody td .trend.down,
-.WDdataCellBody  thead th .trend.down {
-}
-.WDdataCellBody  tfoot td .trend.up,
-.WDdataCellBody  tbody td .trend.up,
-.WDdataCellBody  thead th .trend.up {
-}
-.WDdataCellBody  tfoot td .trend.neutral,
-.WDdataCellBody  tbody td .trend.neutral,
-.WDdataCellBody  thead th .trend.neutral {
-}
-
-
-
-/* =============================================================================
-   6. CHARTS
-   ========================================================================== */
-
-
-
-
-/* =============================================================================
-   7. SELECTORS AND BUTTONS
-   ========================================================================== */
-.WDfilterCell select{
-}
-
-button {
-}
-.no-svg   button {
-}
-.svg   button {
-}
-
-button:hover {
-}
-button span {
-}
-
-
-/* Buttons */
-
-.WDbutton button
-{
-    border: 2px groove #fdfaf1;
-    color: #eeeeee;
-
-    border-radius: 0;
-    text-align: center;
-    font-weight: bold;
-    font-size: 12px;
-    background: #8dc53e;
-    height: 100%;
-    width: 100%;
-}
-.WDbutton button:disabled,
-.WDbutton button:disabled:hover
-{
-    background: #f9f9f9; /* Old browsers */
-    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y5ZjlmOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZGU5ZTEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(top,  #f9f9f9 0%, #ede9e1 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9f9f9), color-stop(100%,#ede9e1)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #f9f9f9 0%,#ede9e1 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #f9f9f9 0%,#ede9e1 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #f9f9f9 0%,#ede9e1 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #f9f9f9 0%,#ede9e1 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#ede9e1',GradientType=0 ); /* IE6-8 */
-    color: #CCCCCC;
-}
-.WDbutton button:hover
-{
-    color: #ffffff;
-    background: #82bc31;
-}
-.WDbuttonbutton:active
-{
-    background: #9dd53a; /* Old browsers */
-    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzlkZDUzYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0iI2ExZDU0ZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjcyJSIgc3RvcC1jb2xvcj0iIzgwYzIxNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3Y2JjMGEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(top,  #9dd53a 0%, #a1d54f 40%, #80c217 72%, #7cbc0a 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9dd53a), color-stop(40%,#a1d54f), color-stop(72%,#80c217), color-stop(100%,#7cbc0a)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #9dd53a 0%,#a1d54f 40%,#80c217 72%,#7cbc0a 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #9dd53a 0%,#a1d54f 40%,#80c217 72%,#7cbc0a 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #9dd53a 0%,#a1d54f 40%,#80c217 72%,#7cbc0a 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #9dd53a 0%,#a1d54f 40%,#80c217 72%,#7cbc0a 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dd53a', endColorstr='#7cbc0a',GradientType=0 ); /* IE6-8 */
-}
-
-
-
-
-/* Multi Button */
-.pentaho-toggle-button {
-
-}
-.no-svg .pentaho-toggle-button {
-}
-.svg .pentaho-toggle-button {
-}
-.pentaho-toggle-button-horizontal-first {
-}
-.pentaho-toggle-button-horizontal-last {
-}
-.pentaho-toggle-button:hover,
-.pentaho-toggle-button:hover button{
-  }
-.pentaho-toggle-button-down {
-
-}
-.no-svg .pentaho-toggle-button-down {
-}
-.svg .pentaho-toggle-button-down {
-}
-
-.pentaho-toggle-button button {
-}
-.pentaho-toggle-button-horizontal-last button {
-}
-.pentaho-toggle-button-horizontal-first button {
-}
-.pentaho-toggle-button-down button {
-}
-
-/**** Chosen Select *****/
-/* All Chosen elements */
-.chzn-container{
-}
-.chzn-container * {
-}
-.chzn-container-active{
-}
-.chzn-drop{
-}
-.chzn-drop  .chzn-search{
-}
-.chzn-drop .chzn-search input{
-}
-.chzn-drop  .chzn-results{
-}
-.chzn-drop  .chzn-results li{
-
-}
-.chzn-drop .chzn-results em{
-}
-.chzn-drop  .chzn-results .active-result{
-}
-.chzn-drop  .chzn-results .highlighted{
-}
-.chzn-drop  .chzn-results .result-selected{
-}
-.chzn-drop  .chzn-results .no-results {
-}
-
-/* Single Select */
-.chzn-container-single .chzn-single{
-}
-.no-svg    .chzn-container-single .chzn-single{
-}
-
-.svg    .chzn-container-single .chzn-single{
-
-}
-.chzn-container-single:hover .chzn-single{
-}
-
-.chzn-container-single .chzn-single span{
-}
-.chzn-container-single .chzn-single div{ /* Arrow container */
-}
-.chzn-container-single .chzn-single div b,
-  .chzn-container-single .chzn-single-with-drop div b{ /* Arrow */
-  }
-.chzn-container-single:hover .chzn-single div b,
-  .chzn-container-single:hover .chzn-single-with-drop div b{ /* Arrow */
-  }
-.chzn-container-single .chzn-single.chzn-single-with-drop{
-}
-.chzn-container-single .chzn-single-with-drop span{
-}
-.chzn-container-single .chzn-single-with-drop div{ /* Arrow container */
-}
-.chzn-container-single .chzn-single-with-drop div b{
-}
-
-
-/* Multi Select */
-.chzn-container-multi.chzn-container{
-}
-.chzn-container-multi .chzn-drop{
-}
-.chzn-container-multi .chzn-drop .selectTooltipTriangle{
-}
-.chzn-container-multi .chzn-drop  .chzn-results{
-}
-
-.chzn-container-multi .chzn-choices {
-}
-.chzn-container-multi:hover .chzn-choices,
-  .chzn-container-multi.chzn-container-active .chzn-choices{
-  }
-.chzn-container-multi .chzn-choices  .search-choice {
-
-}
-.no-svg    .chzn-container-multi .chzn-choices  .search-choice {
-}
-.svg    .chzn-container-multi .chzn-choices  .search-choice {
-}
-.chzn-container-multi .chzn-choices .search-choice span{
-}
-.chzn-container-multi .chzn-choices .search-choice .search-choice-close{
-}
-.chzn-container-multi .chzn-choices .search-choice .search-choice-close:hover {
-}
-.chzn-container-multi .chzn-choices .search-field input{
-}
-
-
-
-/* =============================================================================
-   8. SITE MAP
-   ========================================================================== */
-
-.WDsiteMap {}
 
 
 
@@ -623,20 +95,292 @@ button span {
    Project Specific Items
    ========================================================================== */
 
-.welcomeMessage,
-.message
+
+.languageDialogContainer{
+    padding:0;
+    margin:0;
+    border:0;
+    background:none;
+
+    margin-top: 50px;
+    background-color:#F5F6F8;
+    border: 1px solid #CDDFE9;
+    height:250px;
+    position:relative;
+    width:100%;
+    padding-left:200px;
+}
+
+
+/* Messages */
+.languageDialogContainer .msgContainer .msg {
+  padding:0;
+  margin:0;
+  border:0;
+  background:none;
+
+  display: inline-block;
+
+    -webkit-transition: all 0.3s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+     -moz-transition: all 0.3s ease-out;  /* Firefox 4-15 */
+       -o-transition: all 0.3s ease-out;  /* Opera 10.50–12.00 */
+          transition: all 0.3s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+
+
+  opacity: 0;
+}
+.languageDialogContainer.welcome    .msgContainer .msg.welcome,
+.languageDialogContainer.installing .msgContainer .msg.installing,
+.languageDialogContainer.error      .msgContainer .msg.error,
+.languageDialogContainer.success    .msgContainer .msg.success{
+  opacity: 1;
+}
+
+
+/* Buttons */
+.languageDialogContainer .btnContainer .btn {
+  padding:0;
+  margin:0;
+  border:0;
+  border-style: none;
+  border-color: white;
+  background:none;
+
+
+  display:none;
+}
+.languageDialogContainer.welcome.notInstalled    .btnContainer .btn.install,
+.languageDialogContainer.welcome.notInstalled    .btnContainer .btn.cancel,
+.languageDialogContainer.error                   .btnContainer .btn.okError
 {
-    font-size: 12px;
+  display:inline-block;
+}
+
+.languageDialogContainer.welcome.notInstalled    .btnContainer .btn.cancel,
+.languageDialogContainer.success                 .btnContainer .btn.okSuccess
+{
+  display:none;
+}
+
+
+/* Info */
+.languageDialogContainer        .infoContainer .info {
+  padding:0;
+  margin:0;
+  border:0;
+  background:none;
+
+    -webkit-transition: all 0.3s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+     -moz-transition: all 0.3s ease-out;  /* Firefox 4-15 */
+       -o-transition: all 0.3s ease-out;  /* Opera 10.50–12.00 */
+          transition: all 0.3s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+
+  opacity: 0;
+}
+.languageDialogContainer.error   .infoContainer .info.log ,
+.languageDialogContainer.success .infoContainer .info.credits ,
+.languageDialogContainer.welcome .infoContainer .info.credits,
+.languageDialogContainer.installing .infoContainer .info.wait {
+  opacity: 1;
+}
+
+.languageDialogContainer.error   .infoContainer .info.credits a
+{
+  display:none;
+}
+
+
+
+.languageDialogContainer .imageWrapper {
+  width:200px;
+  height:100%;
+  display:block;
+  float:left;
+  margin-left:-200px;
+  padding-top:24px;
+  padding-left:57px;
+}
+.languageDialogContainer .contentWrapper {
+  width:100%;
+  height:100%;
+  display:block;
+  float:left;
+  position:relative;
+  padding-top:40px;
+}
+.languageDialogContainer .contentWrapper .topBar {
+  position:absolute;
+  top:-1px;
+  left:0px;
+  width:90px;
+  height:4px;
+  background: #F3CE49;
+}
+
+.languageDialogContainer .btnContainer{
+  position:absolute;
+  display:block;
+  width:auto;
+  bottom:15px;
+  right:30px;
+  z-index:1;
+}
+
+
+.languageDialogContainer .imageContainer
+{
+    background: transparent url('../img/welcome.png') 0px 0px no-repeat;
+    width: 95px;
+    height: 130px;
     display: block;
     float: left;
+    margin: 0;
 }
-
-.WDbutton
+.languageDialogContainer.installing .imageContainer
 {
-
+    background-image: url('../img/installing.gif');
 }
 
-.WDhidden
+
+.languageDialogContainer.error .imageContainer
 {
-    display: none;
+    background-image: url('../img/error.png');
 }
+.languageDialogContainer.success .imageContainer
+{
+    background-image: url('../img/success.png');
+}
+
+.languageDialogContainer .titleContainer
+{
+    color: #1973BC;
+    font-size: 18px;
+}
+.languageDialogContainer .titleContainer b
+{
+  width: 44px;
+  height: 28px;
+  background: transparent url('../img/flag.png') 0px 0px no-repeat;
+  display: inline-block;
+  background-size: 43.75px 27.5px;
+  margin-bottom: -10px;
+  margin-right: 2px;
+
+}
+
+.languageDialogContainer .msgContainer
+{
+    position:absolute;
+    left:0px;
+    top:100px;
+    padding: 20px 0;
+
+    width:100%;
+}
+.languageDialogContainer .msgContainer .msg
+{
+  color: #333333;
+  font-size: 14px;
+  padding-right:20px;
+
+  position:absolute;
+  top:0px;
+  left:0px;
+}
+
+.languageDialogContainer .infoContainer {
+  position:absolute;
+  left:0px;
+  top:200px;
+
+  width:100%;
+}
+.languageDialogContainer .infoContainer .info {
+  color: #333333;
+  font-size: 12px;
+
+  display: inline-block;
+  position:absolute;
+  top:0px;
+  left:0px;
+}
+
+.languageDialogContainer .infoContainer .info a,
+.languageDialogContainer .msgContainer .error a
+{
+  /* font-family: 'OpenSansSemibold', Arial, sans-serif; */
+  color: #1973BC;
+  text-decoration:none;
+}
+.languageDialogContainer .infoContainer .info a
+{
+  font-family: 'OpenSansSemibold', Arial, sans-serif; 
+  font-size: 12px;
+}
+
+.languageDialogContainer .msgContainer .error div
+{
+  color: #f41b20;
+}
+
+.languageDialogContainer .btnContainer .btn button{
+  font-family: 'OpenSansLight' , Arial, sans-serif;
+
+  background: #0c7297;
+  background: -moz-linear-gradient(top,  #0c7297 0%, #095f7d 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0c7297), color-stop(100%,#095f7d));
+  background: -webkit-linear-gradient(top,  #0c7297 0%,#095f7d 100%);
+  background: -o-linear-gradient(top,  #0c7297 0%,#095f7d 100%);
+  background: -ms-linear-gradient(top,  #0c7297 0%,#095f7d 100%);
+  background: linear-gradient(to bottom,  #0c7297 0%,#095f7d 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0c7297', endColorstr='#095f7d',GradientType=0 );
+
+  color: #FFFFFF;
+  height: 32px;
+  width: 95px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor:pointer;
+  padding-left:10px;
+  padding-right:10px;
+  margin-left:10px;
+
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color=#c9cacb)";/*IE 8*/
+  -moz-box-shadow: 2px 2px 2px #c9cacb;/*FF 3.5+*/
+  -webkit-box-shadow: 2px 2px 2px #c9cacb;/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+  box-shadow: 2px 2px 2px #c9cacb;/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color=#c9cacb); /*IE 5.5-7*/
+}
+.languageDialogContainer .btnContainer .btn button:hover {
+  background: #29abe2;
+  background: -moz-linear-gradient(top,  #29abe2 0%, #0a6281 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#29abe2), color-stop(100%,#0a6281));
+  background: -webkit-linear-gradient(top,  #29abe2 0%,#0a6281 100%);
+  background: -o-linear-gradient(top,  #29abe2 0%,#0a6281 100%);
+  background: -ms-linear-gradient(top,  #29abe2 0%,#0a6281 100%);
+  background: linear-gradient(to bottom,  #29abe2 0%,#0a6281 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29abe2', endColorstr='#0a6281',GradientType=0 );
+}
+.languageDialogContainer .btnContainer .btn.cancel button{
+  width:75px;
+}
+
+.languageDialogContainer .btnContainer .btn
+{
+    padding:0;
+    margin:0;
+    border:0;
+    background:none;
+
+    float: right;
+}
+
+.languageDialogContainer .msgContainer .success
+{
+    background: inherit;
+    border: none;
+    color: #008131;
+    padding: 0;
+}
+

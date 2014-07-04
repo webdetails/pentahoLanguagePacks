@@ -3,6 +3,75 @@
   "title": "main",
   "rows": [
    {
+    "id": "8180da5e-8bde-6e35-1578-25a864120be9",
+    "type": "LayoutResourceCode",
+    "typeDesc": "Resource",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "getResourceHackJS",
+      "type": "Id"
+     },
+     {
+      "name": "resourceType",
+      "value": "Javascript",
+      "type": "Label"
+     },
+     {
+      "name": "resourceCode",
+      "value": "Dashboards._res = function(relpath){\n    var pluginId = window.location.split('plugin/')[1].split('/api')[0];\n    return '/pentaho/api/repos/' + pluginId +  relpath;\n} ",
+      "type": "Resource"
+     }
+    ]
+   },
+   {
+    "id": "2dc80396-2c77-93b8-b6fe-53ea39a076e2",
+    "type": "LayoutResourceFile",
+    "typeDesc": "Resource",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "liquidCSS",
+      "type": "Id"
+     },
+     {
+      "name": "resourceFile",
+      "value": "/pentaho/api/repos/languagePackInstaller/static/system/css/liquid.css",
+      "type": "ResourceFile"
+     },
+     {
+      "name": "resourceType",
+      "value": "Css",
+      "type": "Label"
+     }
+    ]
+   },
+   {
+    "id": "a65140b4-290c-52fc-20ee-4bf230f7ee3d",
+    "type": "LayoutResourceFile",
+    "typeDesc": "Resource",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "borderBoxCSS",
+      "type": "Id"
+     },
+     {
+      "name": "resourceFile",
+      "value": "/pentaho/api/repos/languagePackInstaller/static/system/css/borderBox.css",
+      "type": "ResourceFile"
+     },
+     {
+      "name": "resourceType",
+      "value": "Css",
+      "type": "Label"
+     }
+    ]
+   },
+   {
     "id": "0e9e81d6-b6f1-2bec-8722-63ab75e228c1",
     "type": "LayoutResourceFile",
     "typeDesc": "Resource",
@@ -15,7 +84,7 @@
      },
      {
       "name": "resourceFile",
-      "value": "static/custom/css/langpack.css",
+      "value": "/pentaho/api/repos/languagePackInstaller/static/custom/css/langpack.css",
       "type": "ResourceFile"
      },
      {
@@ -26,7 +95,7 @@
     ]
    },
    {
-    "id": "eacfb550-6f41-926e-31a3-8bfe8e2e3cca",
+    "id": "03c53415-a807-d0f5-a6b3-538d6a8781c3",
     "type": "LayoutRow",
     "typeDesc": "Row",
     "parent": "UnIqEiD",
@@ -64,201 +133,14 @@
     ]
    },
    {
-    "id": "857912b0-694e-d0dc-c070-7ad833f80c78",
+    "id": "61d6a9a2-40e9-624c-844b-4173198e8273",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "eacfb550-6f41-926e-31a3-8bfe8e2e3cca",
+    "parent": "03c53415-a807-d0f5-a6b3-538d6a8781c3",
     "properties": [
      {
       "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "24",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "14ab4c61-a3b3-474c-64d7-2d70b11b130d",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "857912b0-694e-d0dc-c070-7ad833f80c78",
-    "properties": [
-     {
-      "name": "name",
-      "value": "titleObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "WDheader",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "49c96698-ca54-c3ad-6271-7cdd1cf80ea8",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "857912b0-694e-d0dc-c070-7ad833f80c78",
-    "properties": [
-     {
-      "name": "name",
-      "value": "welcomeMessageObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "welcomeMessage",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "860c8d12-2f38-16a5-c417-536d74c23052",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "857912b0-694e-d0dc-c070-7ad833f80c78",
-    "properties": [
-     {
-      "name": "name",
-      "value": "details",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "b05d92cf-2bd9-d178-ab51-d3b757466ae5",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "860c8d12-2f38-16a5-c417-536d74c23052",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
+      "value": "languageDialogWrapper",
       "type": "Id"
      },
      {
@@ -318,20 +200,20 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "languageDialogWrapper",
       "type": "String"
      }
     ]
    },
    {
-    "id": "ca0e086c-3992-1b23-d7ca-4cd19173083e",
+    "id": "1502a91e-da61-bbb2-2daa-605e3eaa9437",
     "type": "LayoutRow",
     "typeDesc": "Row",
-    "parent": "b05d92cf-2bd9-d178-ab51-d3b757466ae5",
+    "parent": "61d6a9a2-40e9-624c-844b-4173198e8273",
     "properties": [
      {
       "name": "name",
-      "value": "detailsCellHeader",
+      "value": "languageDialogContainer",
       "type": "Id"
      },
      {
@@ -356,101 +238,25 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "languageDialogContainer welcome notInstalled",
       "type": "String"
      }
     ]
    },
    {
-    "id": "66672fb9-aa84-8fcb-b42e-c78b1e00ada8",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "b05d92cf-2bd9-d178-ab51-d3b757466ae5",
-    "properties": [
-     {
-      "name": "name",
-      "value": "detailsCellObj",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "e1a3304a-0548-be60-6db7-b9acb2f2b77e",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "857912b0-694e-d0dc-c070-7ad833f80c78",
-    "properties": [
-     {
-      "name": "name",
-      "value": "",
-      "type": "Id"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "53af44bf-1868-4e45-f15c-65b4e9be4623",
+    "id": "2f960125-9b9b-c09d-f80c-7ee0976fa9c0",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "e1a3304a-0548-be60-6db7-b9acb2f2b77e",
+    "parent": "1502a91e-da61-bbb2-2daa-605e3eaa9437",
     "properties": [
      {
       "name": "name",
-      "value": "messageObj",
+      "value": "buttonsContainer",
       "type": "Id"
      },
      {
       "name": "columnSpan",
-      "value": "18",
+      "value": "",
       "type": "Integer"
      },
      {
@@ -505,56 +311,21 @@
      },
      {
       "name": "cssClass",
-      "value": "message",
+      "value": "btnContainer",
       "type": "String"
      }
     ]
    },
    {
-    "id": "ef2b92c7-0257-44e8-4666-dbb8a28722d0",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "e1a3304a-0548-be60-6db7-b9acb2f2b77e",
+    "id": "0744f991-2cab-5e2c-c0f9-0ab336305e41",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "2f960125-9b9b-c09d-f80c-7ee0976fa9c0",
     "properties": [
      {
       "name": "name",
       "value": "",
       "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "6",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
      },
      {
       "name": "height",
@@ -584,10 +355,10 @@
     ]
    },
    {
-    "id": "86df6b2b-cd4d-0626-6532-c22094d1167e",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "ef2b92c7-0257-44e8-4666-dbb8a28722d0",
+    "id": "df1620d6-8c61-1229-918d-ccaaafeed57c",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "0744f991-2cab-5e2c-c0f9-0ab336305e41",
     "properties": [
      {
       "name": "name",
@@ -595,6 +366,41 @@
       "type": "Id"
      },
      {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "height",
       "value": "",
       "type": "Integer"
@@ -616,21 +422,56 @@
      },
      {
       "name": "cssClass",
-      "value": "WDbutton",
+      "value": "btn install",
       "type": "String"
      }
     ]
    },
    {
-    "id": "ad33bb33-7c3f-873d-cbc3-eb51ea251190",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "ef2b92c7-0257-44e8-4666-dbb8a28722d0",
+    "id": "6c9e59cb-54e5-2d98-b021-3aaf79838f66",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "0744f991-2cab-5e2c-c0f9-0ab336305e41",
     "properties": [
      {
       "name": "name",
-      "value": "buttonUninstallObj",
+      "value": "buttonOkErrorObj",
       "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
      },
      {
       "name": "height",
@@ -654,21 +495,56 @@
      },
      {
       "name": "cssClass",
-      "value": "WDbutton WDhidden",
+      "value": "btn okError",
       "type": "String"
      }
     ]
    },
    {
-    "id": "22b1cae2-e926-246e-90af-1b015182f37e",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
-    "parent": "UnIqEiD",
+    "id": "b7f2af8d-58e4-4c94-c52f-2d2ed008fe6a",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "0744f991-2cab-5e2c-c0f9-0ab336305e41",
     "properties": [
      {
       "name": "name",
-      "value": "metadataTableObj",
+      "value": "buttonOkSuccessObj",
       "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
      },
      {
       "name": "height",
@@ -692,7 +568,80 @@
      },
      {
       "name": "cssClass",
-      "value": "WDhidden",
+      "value": "btn okSuccess",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "a19354ce-256f-fddd-376e-abf4c24d5849",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "0744f991-2cab-5e2c-c0f9-0ab336305e41",
+    "properties": [
+     {
+      "name": "name",
+      "value": "buttonCancelObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "btn cancel",
       "type": "String"
      }
     ]
@@ -716,64 +665,6 @@
     ]
    },
    {
-    "id": "1476ef60-9913-07f3-f227-e5d6be157b87",
-    "type": "ComponentstextComponent",
-    "typeDesc": "Text Component",
-    "parent": "OTHERCOMPONENTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "welcomeMessageComponent",
-      "type": "Id"
-     },
-     {
-      "name": "listeners",
-      "value": "['${p:metadataParam}']",
-      "type": "Listeners"
-     },
-     {
-      "name": "expression",
-      "value": "function f(){\n    var metadata = Dashboards.getParameterValue('${p:metadataParam}');\n        \n    $('#titleObj').empty().text(metadata.appTitle);        \n    $('head title').empty().text(metadata.appTitle);\n    $('.cpkHeader #cpkText').empty().text(metadata.appTitle);\n    \n    var msg = 'Maintained by <a href=\"mailto:' + metadata.maintainerEmail;\n    msg += '?Subject=' + escape(metadata.appTitle);\n    msg += '\" target=\"_top\">' + metadata.maintainerName + '</a>';\n    $('#messageObj').empty().html(msg);\n    \n    return metadata.appWelcomeMessage;\n}",
-      "type": "JavaScript"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
-     },
-     {
-      "name": "refreshPeriod",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "htmlObject",
-      "value": "${p:welcomeMessageObj}",
-      "type": "HtmlObject"
-     },
-     {
-      "name": "executeAtStart",
-      "value": "true",
-      "type": "Boolean"
-     },
-     {
-      "name": "preExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "postExecution",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
-      "name": "tooltip",
-      "value": "",
-      "type": "Html"
-     }
-    ]
-   },
-   {
     "id": "1f6734fd-b8de-9e22-c50c-45f595a6696b",
     "type": "ComponentsActionButtonComponent",
     "typeDesc": "Action Button Component",
@@ -790,13 +681,23 @@
       "type": "String"
      },
      {
-      "name": "failureCallback",
-      "value": "",
-      "type": "JavaScript"
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
      },
      {
       "name": "successCallback",
-      "value": "function f(){\n    this._setLabel('Success!')\n    this._disable();\n}",
+      "value": "function f(){\n    var ph = $('#' + this.htmlObject);\n    ph.parents('.languageDialogContainer')\n        .removeClass('welcome installing notInstalled')\n        .addClass('installed success');  \n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "failureCallback",
+      "value": "function f(){\n    var ph = $('#' + this.htmlObject);\n    ph.parents('.languageDialogContainer')\n        .removeClass('welcome installing installed')\n        .addClass('notInstalled error');  \n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    var ph = $('#' + this.htmlObject);\n    ph.parents('.languageDialogContainer')\n        .removeClass('welcome installed notInstalled')\n        .addClass('installing');  \n}",
       "type": "JavaScript"
      },
      {
@@ -806,13 +707,8 @@
      },
      {
       "name": "actionParameters",
-      "value": "[[\"languageCode\",\"'tlh'\"],[\"language\",\"languageDescriptionParam\"]]",
+      "value": "[]",
       "type": "ValuesArray"
-     },
-     {
-      "name": "priority",
-      "value": 5,
-      "type": "Integer"
      },
      {
       "name": "refreshPeriod",
@@ -820,8 +716,13 @@
       "type": "Integer"
      },
      {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
       "name": "buttonStyle",
-      "value": "themeroller",
+      "value": "classic",
       "type": "TableStyle"
      },
      {
@@ -852,20 +753,35 @@
     ]
    },
    {
-    "id": "19bbaa6d-a308-fb1c-80ed-3721b18c08d2",
+    "id": "d0820238-f8c3-e511-0dfa-64ae2bd53c06",
     "type": "ComponentsActionButtonComponent",
     "typeDesc": "Action Button Component",
     "parent": "OTHERCOMPONENTS",
     "properties": [
      {
       "name": "name",
-      "value": "buttonUninstallComponent",
+      "value": "buttonOkSuccess",
       "type": "Id"
      },
      {
       "name": "label",
-      "value": "Uninstall",
+      "value": "OK",
       "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
+     },
+     {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    window.opener = window;\n    window.close();\n}",
+      "type": "JavaScript"
      },
      {
       "name": "failureCallback",
@@ -873,18 +789,13 @@
       "type": "JavaScript"
      },
      {
-      "name": "successCallback",
-      "value": "function f(){\n    this._setLabel('Success!')\n}",
-      "type": "JavaScript"
-     },
-     {
       "name": "DataSource",
-      "value": "removePackEndpoint",
+      "value": "",
       "type": "Datasource"
      },
      {
       "name": "actionParameters",
-      "value": "[[\"'languageCode'\",\"'tlh'\"]]",
+      "value": "[]",
       "type": "ValuesArray"
      },
      {
@@ -899,12 +810,12 @@
      },
      {
       "name": "buttonStyle",
-      "value": "themeroller",
+      "value": "classic",
       "type": "TableStyle"
      },
      {
       "name": "htmlObject",
-      "value": "buttonUninstallObj",
+      "value": "${p:buttonOkSuccessObj}",
       "type": "HtmlObject"
      },
      {
@@ -930,19 +841,19 @@
     ]
    },
    {
-    "id": "d9c77462-6db7-21f2-d1ea-3c3a16d7ca82",
-    "type": "ComponentsTable",
-    "typeDesc": "table Component",
+    "id": "b546bc69-4d59-7559-5ab2-c6071d68c88f",
+    "type": "ComponentsActionButtonComponent",
+    "typeDesc": "Action Button Component",
     "parent": "OTHERCOMPONENTS",
     "properties": [
      {
       "name": "name",
-      "value": "metadataTable",
+      "value": "buttonOkError",
       "type": "Id"
      },
      {
-      "name": "expandContainerObject",
-      "value": "",
+      "name": "label",
+      "value": "Try again",
       "type": "String"
      },
      {
@@ -951,34 +862,175 @@
       "type": "Listeners"
      },
      {
-      "name": "oLanguage",
+      "name": "successCallback",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "colHeaders",
-      "value": "[]",
-      "type": "Array"
+      "name": "expression",
+      "value": "function f(){\n    var ph = $('#' + this.htmlObject);\n    ph.parents('.languageDialogContainer')\n        .removeClass('installing error success')\n        .addClass('welcome');  \n}",
+      "type": "JavaScript"
      },
      {
-      "name": "colTypes",
-      "value": "[]",
-      "type": "colTypesCustom"
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
      },
      {
-      "name": "colFormats",
-      "value": "[]",
-      "type": "Array"
+      "name": "DataSource",
+      "value": "",
+      "type": "Datasource"
      },
      {
-      "name": "colWidths",
+      "name": "actionParameters",
       "value": "[]",
-      "type": "Array"
+      "type": "ValuesArray"
      },
      {
-      "name": "colSortable",
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:buttonOkErrorObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "0117aad3-5432-bac0-52d9-0a63db02cca9",
+    "type": "ComponentsActionButtonComponent",
+    "typeDesc": "Action Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "buttonCancel",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "Cancel",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
       "value": "[]",
-      "type": "Array"
+      "type": "Listeners"
+     },
+     {
+      "name": "successCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    window.opener = window;\n    window.close();\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "failureCallback",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "DataSource",
+      "value": "",
+      "type": "Datasource"
+     },
+     {
+      "name": "actionParameters",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "buttonStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:buttonCancelObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "1fa7985a-74a2-d455-c723-86f4e56083f0",
+    "type": "ComponentsQuery",
+    "typeDesc": "Query Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "getLanguageMetadata",
+      "type": "Id"
+     },
+     {
+      "name": "listeners",
+      "value": "[]",
+      "type": "Listeners"
      },
      {
       "name": "parameters",
@@ -986,69 +1038,14 @@
       "type": "ValuesArray"
      },
      {
-      "name": "expandParameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "paginate",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "displayLength",
+      "name": "resultvar",
       "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "lengthChange",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "filter",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "info",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "sort",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "expandOnClick",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "colSearchable",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "drawCallback",
-      "value": "",
-      "type": "JavaScript"
+      "type": "Result"
      },
      {
       "name": "dataSource",
       "value": "getPackMetadataEndpoint",
       "type": "Datasource"
-     },
-     {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
-      "name": "sDom",
-      "value": "",
-      "type": "JavaScript"
      },
      {
       "name": "refreshPeriod",
@@ -1061,18 +1058,8 @@
       "type": "Integer"
      },
      {
-      "name": "tableStyle",
-      "value": "classic",
-      "type": "TableStyle"
-     },
-     {
-      "name": "paginationType",
-      "value": "two_button",
-      "type": "PaginationType"
-     },
-     {
       "name": "htmlObject",
-      "value": "metadataTableObj",
+      "value": "",
       "type": "HtmlObject"
      },
      {
@@ -1081,23 +1068,18 @@
       "type": "Boolean"
      },
      {
-      "name": "paginateServerside",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
       "name": "preExecution",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
-      "value": "function f(data){\n\n    var dict = {};\n    _.each(data.resultset, function (row){\n       dict[row[0]] = row[1]; \n    });\n\n    Dashboards.fireChange('metadataParam', dict);\n    Dashboards.log(JSON.stringify(dict));\n    return data;\n}",
+      "name": "postExecution",
+      "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
-      "value": "",
+      "name": "postFetch",
+      "value": "function f(json){\n    \n    var json0 = {\n        \"appTitle\": \"{{language}} Language Pack Installer\",\n        \"appWelcomeMessage\": \"This plugin installs language definitions for the {{language}} language in Pentaho 5\",\n        \"language\": \"{{language}}\",\n        \"languageCode\": \"{{languageCode}}\",\n        \"version\": \"0.1\",\n        \"pentahoVersion\": \"5.0.1\",\n        \"maintainer\": {\n            \"name\": \"\",\n            \"email\": \"\",\n            \"img\": \"\",\n            \"url\": \"http:\\/\\/www.pentaho.com\"\n        },\n        \"credits\": [\n            {\n                \"name\": \"\",\n                \"email\": \"\",\n                \"img\": \"\",\n                \"url\": \"\"\n            }\n        ],\n        \"sponsors\": [\n            {\n                \"name\": \"\",\n                \"email\": \"\",\n                \"img\": \"\",\n                \"url\": \"\"\n            }\n        ],\n    \n    };\n    \n    //json[\"appTitle\"]=CDF.i18n(\"languagePack.title\");\n    //json[\"appWelcomeMessage\"]=CDF.i18n(\"languagePack.description\");\n    //Dashboards.log(JSON.stringify(json), 'debug');\n    Dashboards.fireChange('${p:metadataParam}', json);\n    \n    return json;\n    \n}",
       "type": "JavaScript"
      },
      {
@@ -1114,16 +1096,64 @@
       "name": "tooltip",
       "value": "",
       "type": "Html"
+     }
+    ]
+   },
+   {
+    "id": "0fb08b03-0586-4b07-6dc0-f83be1f9ec2f",
+    "type": "ComponentstextComponent",
+    "typeDesc": "Text Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "languageDialog",
+      "type": "Id"
      },
      {
-      "name": "extraOptions",
-      "value": "[]",
-      "type": "OptionArray"
+      "name": "listeners",
+      "value": "['${p:metadataParam}']",
+      "type": "Listeners"
      },
      {
-      "name": "clickAction",
+      "name": "expression",
+      "value": "function (){\n\n    var json = Dashboards.getParameterValue('${p:metadataParam}');\n    \n    $content = $(this.template(json));\n\n    $('#' + this.htmlObject).prepend( $content );\n    \n    \n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "htmlObject",
+      "value": "languageDialogContainer",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "function f(){\n\n    this.template = Mustache.compile(     \n        \"    <div class='imageWrapper'>\" +\n        \"       <div class='imageContainer'/>\" +\n        \"    </div>\" +\n        \"    <div class='contentWrapper'>\" +\n        \"       <div class='topBar'/>\" +\n        \"       <div class='titleContainer'><b></b>{{appTitle}}</div>\" +\n        \"       <div class='msgContainer'>\" +\n        \"          <div class='msg welcome'>{{appWelcomeMessage}}.</div>\" +\n        \"          <div class='msg installing'>Installing...</div>\" +\n        \"          <div class='msg success'>Successfully installed. You can close this tab now.<br>Please restart the server.</div>\" +\n        \"          <div class='msg error'><div>Error installing.</div>Report bugs related to the installer <a href='http://redmine.webdetails.org/projects/lpi'>here</a>.</div>\" +\n        \"          </div>\" +\n        \"       <div class='infoContainer'>\" +\n        \"          <div class='info log'>See the log for details</div>\" +\n        \"          {{#maintainer}}\" +\n        \"             <div class='info credits'>\" +\n        \"                Credits: <a href='mailto:{{email}}'>{{name}}</a>\" +\n        \"             </div>\" +\n        \"          {{/maintainer}}\"+\n        \"          <div class='info wait'>Please wait...</div>\" +\n        \"       </div>\"+\n        \"   </div>\"\n    );\n\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
      }
     ]
    },
@@ -1142,119 +1172,7 @@
     ]
    },
    {
-    "id": "0dc021e3-2f41-101a-bc6f-cb917444d6dd",
-    "type": "ComponentsParameter",
-    "typeDesc": "Simple parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "languageParam",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "Klingon",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "7aabd8a7-831b-225b-8fe9-b60bfcd8e13a",
-    "type": "ComponentsParameter",
-    "typeDesc": "Simple parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "languageCodeParam",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "tlh",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "715e369f-d905-16ff-d5ff-bbcff4e2398f",
-    "type": "ComponentsParameter",
-    "typeDesc": "Simple parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "pentahoVersionParam",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "5.0.1",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "5f507368-5b23-d610-aff1-d1f11015cc45",
-    "type": "ComponentsParameter",
-    "typeDesc": "Simple parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "languageDescriptionParam",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "tlhIngan",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "19e572fe-bfcd-6373-d69a-62157be3329d",
+    "id": "4f36a3fa-5b60-451f-deee-a9c4ccd22536",
     "type": "ComponentsParameter",
     "typeDesc": "Simple parameter",
     "parent": "GENERIC",
@@ -1280,91 +1198,39 @@
       "type": "Boolean"
      }
     ]
+   },
+   {
+    "id": "19e572fe-bfcd-6373-d69a-62157be3329d",
+    "type": "ComponentsParameter",
+    "typeDesc": "Simple parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "addButtonEvent",
+      "type": "Id"
+     },
+     {
+      "name": "propertyValue",
+      "value": "",
+      "type": "String"
+     },
+     {
+      "name": "parameterViewRole",
+      "value": "unused",
+      "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
    }
   ]
  },
  "datasources": {
   "rows": [
-   {
-    "id": "SQL",
-    "name": "SQL Queries",
-    "type": "Label",
-    "typeDesc": "<i>Group</i>",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "Group",
-      "value": "SQL Queries",
-      "type": "Label"
-     }
-    ]
-   },
-   {
-    "id": "0a56c773-c21a-33cb-c9aa-716d1c31731a",
-    "type": "Componentssql_sqlJndi",
-    "typeDesc": "sql over sqlJndi",
-    "meta": "CDA",
-    "meta_conntype": "sql.jndi",
-    "meta_datype": "sql",
-    "parent": "SQL",
-    "properties": [
-     {
-      "name": "name",
-      "value": "dummy",
-      "type": "Id"
-     },
-     {
-      "name": "access",
-      "value": "public",
-      "type": "Access"
-     },
-     {
-      "name": "jndi",
-      "value": "",
-      "type": "Jndi"
-     },
-     {
-      "name": "query",
-      "value": "",
-      "type": "SqlQuery"
-     },
-     {
-      "name": "parameters",
-      "value": "[]",
-      "type": "CdaParameters"
-     },
-     {
-      "name": "output",
-      "value": "[]",
-      "type": "IndexArray"
-     },
-     {
-      "name": "outputMode",
-      "value": "include",
-      "type": "OutputMode"
-     },
-     {
-      "name": "cdacolumns",
-      "value": "[]",
-      "type": "CdaColumnsArray"
-     },
-     {
-      "name": "cdacalculatedcolumns",
-      "value": "[]",
-      "type": "CdaCalculatedColumnsArray"
-     },
-     {
-      "name": "cacheDuration",
-      "value": 3600,
-      "type": "Integer"
-     },
-     {
-      "name": "cache",
-      "value": "true",
-      "type": "Boolean"
-     }
-    ]
-   },
    {
     "id": "LANGUAGEPACKINSTALLER_CPKENDPOINTS",
     "name": "LANGUAGEPACKINSTALLER Endpoints",
@@ -1380,24 +1246,8 @@
     ]
    },
    {
-    "id": "7ac5855c-b64e-52cf-cad5-99003b980612",
-    "type": "Componentslanguagepackinstaller_installpack_CPKENDPOINT",
-    "typeDesc": "installpack Endpoint",
-    "parent": "LANGUAGEPACKINSTALLER_CPKENDPOINTS",
-    "properties": [
-     {
-      "name": "name",
-      "value": "installPackEndpoint",
-      "type": "Id"
-     }
-    ],
-    "meta": "CPK",
-    "meta_pluginId": "languagepackinstaller",
-    "meta_endpoint": "installpack"
-   },
-   {
     "id": "28106a2b-5f6a-a0f3-98f8-294f8e697e3f",
-    "type": "Componentslanguagepackinstaller_removepack_CPKENDPOINT",
+    "type": "ComponentslanguagePackInstaller_removepack_CPKENDPOINT",
     "typeDesc": "removepack Endpoint",
     "parent": "LANGUAGEPACKINSTALLER_CPKENDPOINTS",
     "properties": [
@@ -1408,12 +1258,12 @@
      }
     ],
     "meta": "CPK",
-    "meta_pluginId": "languagepackinstaller",
+    "meta_pluginId": "languagePackInstaller",
     "meta_endpoint": "removepack"
    },
    {
     "id": "d392f018-cf03-c82a-3070-5c2758f58256",
-    "type": "Componentslanguagepackinstaller_getpackmetadata_CPKENDPOINT",
+    "type": "ComponentslanguagePackInstaller_getpackmetadata_CPKENDPOINT",
     "typeDesc": "getpackmetadata Endpoint",
     "parent": "LANGUAGEPACKINSTALLER_CPKENDPOINTS",
     "properties": [
@@ -1424,10 +1274,26 @@
      }
     ],
     "meta": "CPK",
-    "meta_pluginId": "languagepackinstaller",
+    "meta_pluginId": "languagePackInstaller",
     "meta_endpoint": "getpackmetadata"
+   },
+   {
+    "id": "c87e1028-6413-303a-9d18-54811fa398e5",
+    "type": "ComponentslanguagePackInstaller_installpack_CPKENDPOINT",
+    "typeDesc": "installpack Endpoint",
+    "parent": "LANGUAGEPACKINSTALLER_CPKENDPOINTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "installPackEndpoint",
+      "type": "Id"
+     }
+    ],
+    "meta": "CPK",
+    "meta_pluginId": "languagePackInstaller",
+    "meta_endpoint": "installpack"
    }
   ]
  },
- "filename": "/system/languagepackinstaller/dashboards/main.cdfde"
+ "filename": "/system/languagePackInstaller/dashboards/main.cdfde"
 }

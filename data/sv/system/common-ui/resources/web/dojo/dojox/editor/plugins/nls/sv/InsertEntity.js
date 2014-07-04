@@ -1,0 +1,3 @@
+({
+    insertEntity: "Infoga symbol"
+})

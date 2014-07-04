@@ -1,0 +1,30 @@
+{
+    "appTitle": "Spanish Language Pack Installer",
+    "appWelcomeMessage": "This plugin installs language definitions for the Spanish language in Pentaho 5",
+    "language": "Spanish",
+    "languageCode": "es",
+    "version": "0.7.2",
+    "pentahoVersion": "5.0.1",
+    "maintainer": {
+        "name": "Domingo Lavin",
+        "email": "domingo.lavin@vinkos.com",
+        "img": "",
+        "url": "http:\/\/www.pentaho.com"
+    },
+    "credits": [
+        {
+            "name": "",
+            "email": "",
+            "img": "",
+            "url": ""
+        }
+    ],
+    "sponsors": [
+        {
+            "name": "",
+            "email": "",
+            "img": "",
+            "url": ""
+        }
+    ]
+}
