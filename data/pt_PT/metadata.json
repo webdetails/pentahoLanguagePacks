@@ -13,10 +13,10 @@
     },
     "credits": [
         {
-			"name": "Xpand-IT",
-			"email": "mail@xpand-it.com",
-			"img": "http:\/\/www.xpand-it.com\/templates\/xpandit-experience\/images\/logo.png",
-			"url": "http:\/\/www.xpand-it.com"
+            "name": "Xpand-IT",
+            "email": "mail@xpand-it.com",
+            "img": "http:\/\/www.xpand-it.com\/templates\/xpandit-experience\/images\/logo.png",
+            "url": "http:\/\/www.xpand-it.com"
         }
     ],
     "sponsors": [
@@ -26,6 +26,5 @@
             "img": "",
             "url": ""
         }
-    ],
-
+    ]
 }
