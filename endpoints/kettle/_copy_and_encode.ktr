@@ -249,7 +249,7 @@
            <schema_name/>
            </partitioning>
        <formula><field_name>processed_file_content</field_name>
-<formula_string>org.apache.commons.lang.StringEscapeUtils.escapeJava&#x28;file_content.replaceAll&#x28;&#x22;&#x3c;TRANSLATE ME&#x3e;&#x22;, &#x22;&#x22;&#x29;&#x29;.replaceAll&#x28;&#x22;&#x5c;&#x5c;&#x5c;&#x5c;n&#x22;, &#x22;&#x5c;n&#x22;&#x29;</formula_string>
+<formula_string>org.apache.commons.lang.StringEscapeUtils.escapeJava&#x28;file_content.replaceAll&#x28;&#x22;&#x3c;TRANSLATE ME&#x3e;&#x22;, &#x22;&#x22;&#x29;&#x29;.replaceAll&#x28;&#x22;&#x5c;&#x5c;&#x5c;&#x5c;n&#x22;, &#x22;&#x5c;n&#x22;&#x29;.replaceAll&#x28;&#x22;&#x5c;&#x5c;&#x5c;&#x5c;u&#x22;, &#x22;&#x5c;&#x5c;u&#x22;&#x29;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
