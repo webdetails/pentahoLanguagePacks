@@ -1,3 +1,6 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 var HelpMixin = Base.extend({
     _docstring: function (){
         return "Mixin that provides documentation for the developer"; //brief description (always available)
@@ -70,9 +73,9 @@ var HelpMixin = Base.extend({
 
 
 
-var ActionComponent = UnmanagedComponent.extend(new HelpMixin()).extend({
+var ActionComponent = ActionComponent || UnmanagedComponent.extend(new HelpMixin()).extend({
     _docstring: function (){
-        return "Abstract class for components calling a CPK endpoint";
+        return "Abstract class for components triggering a query on demand";
         /**
          Uses an UnmanagedComponent.synchronous() lifecycle.
          Methods/properties defined in CDE for all child classes:
@@ -82,8 +85,8 @@ var ActionComponent = UnmanagedComponent.extend(new HelpMixin()).extend({
          this.successCallback(data)
          this.failureCallback()
 
-         Each descendent is expected to override the following methods:
-         - draw()
+         Each descendant is expected to override the following methods:
+         - render()
 
          Quirks:
          - in this.actionParameters, static values should be quoted, in order to survive the "eval" in Dashboards.getParameterValue:
@@ -94,14 +97,15 @@ var ActionComponent = UnmanagedComponent.extend(new HelpMixin()).extend({
         /**
          Entry-point of the component, manages the actions
          */
-        var draw = _.bind(this.draw, this);
+        var render = _.bind(this.render, this);
         if(typeof this.manageCallee == "undefined" || this.manageCallee) {
-            this.synchronous(draw);
+            this.synchronous(render);
         } else {
-            draw();
+            render();
         }
 
     },
+    render: function() {},
     triggerAction: function () {
         /**
          Call the endpoint, passing any parameters
@@ -114,8 +118,22 @@ var ActionComponent = UnmanagedComponent.extend(new HelpMixin()).extend({
 
         return Dashboards.getQuery(ad).fetchData(params, _.bind(successCallback, this), _.bind(failureCallback, this));
         if (Dashboards.debug) {
-            Dashboards.log('ActionComponent.triggerAction('+ qd.pluginId + ', ' + qd.endpoint + ') was called', 'debug');
+            Dashboards.log('ActionComponent.triggerAction('+ ad.pluginId + ', ' + ad.endpoint + ') was called', 'debug');
         }
+    },
+    hasAction: function(){
+        /**
+         Detect if the endpoint is defined
+         */
+        if ( ! this.actionDefinition){
+            return false;
+        }
+        if (Dashboards.detectQueryType){
+            return !! Dashboards.detectQueryType(this.actionDefinition);
+        } else {
+            return !! this.actionDefinition.queryType && Dashboards.hasQuery(this.actionDefinition.queryType);
+        }
+
     }
 
 

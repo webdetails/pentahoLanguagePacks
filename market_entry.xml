@@ -1,0 +1,57 @@
+<market_entry>
+  <id>@langpack.name@</id> <!-- The ID is used to uniquely identify this plugin in the system (Both) -->
+  <type>Platform</type> <!-- The type of the plugin tells the marketplace how to install the plugin, and where it's applicable. (Both)
+                             Values include:
+                               - Platform - Appears in the BA Server Marketplace
+                               - Step, JobEntry, Partitioner, SpoonPlugin, Database, Repository, ImportRule, Mixed - Appears in Kettle
+                        -->
+  <name>@langpack.metadata.appTitle@</name> <!-- The name of the plugin presented to the user (Both) -->
+  <description>
+	  <![CDATA[
+	  @langpack.metadata.appWelcomeMessage@ <br /><br />
+
+	  Report <a href="http://redmine.webdetails.org/projects/lpi">here</a>
+	  any translation issues or suggestions for improvement
+	  ]]>
+	  @langpack.metadata.appWelcomeMessage@
+  </description> <!-- The description of the plugin presented to the user (Both) -->
+  <documentation_url>@langpack.metadata.appWelcomeMessage@</documentation_url> <!-- a url to documentation about the plugin (Both) -->
+  <author>@langpack.metadata.maintainer.name@</author> <!-- The name of the author of the plugin (Both) -->
+  <author_url>@langpack.metadata.maintainer.url@</author_url> <!-- The location of the author's website (BA Server only) -->
+  <author_logo>@langpack.metadata.maintainer.img@</author_logo> <!-- The location of the author's logo (BA Server only) -->
+  <license>MPL 2.0</license>
+  <dependencies>CDF, CDA, CDE, CGG</dependencies>
+  <img>https://github.com/webdetails/pentahoLanguagePacks/raw/master/data/@langCode@/resources/img/flag.png</img> <!-- an image representing your plugin, displayed in the Marketplace (BA Server only) -->
+  <small_img>https://github.com/webdetails/pentahoLanguagePacks/raw/master/data/@langCode@/resources/img/flag.png</small_img>  <!-- a small image representing your plugin, displayed in the Marketplace (BA Server only) -->
+  <installation_notes>
+	  <![CDATA[You can run the Language Pack Installer as an administrator from
+	  the Tools menu. The installer will then copy the language packs over your
+	  installation, requiring a reboot in the end.  <br /><br />
+
+	  Please note that if you upgrade one of the translated plugins, you will
+	  need to run the Language Pack Installer again. <br /><br/>
+
+	  Report <a href="http://redmine.webdetails.org/projects/lpi">here</a>
+	  any translation issues or suggestions for improvement
+
+	  ]]>
+  </installation_notes> <!-- an optional set of notes that displays during install for a plugin (BA Server only) -->
+  <versions> <!-- The BA Server currently supports multiple versions of the same plugin with branches, Kettle currently does not, only the first is read,  -->
+    <version>
+      <branch>@project.stage@</branch> <!-- Tells the Marketplace what branch this plugin belongs to (BA Server only) -->
+      <version>@project.revision@</version> <!-- The version of the plugin (Both) -->
+      <name>@project.stage@</name> <!-- A User friendly name for the plugin (BA Server only) -->
+      <package_url>@langpack.package.url@</package_url> <!-- The download URL of the actual plugin (Both) -->
+      <samples_url></samples_url> <!-- The download URL of samples for this plugin (BA Server only) -->
+      <description>Latest Release</description> <!-- the description of the specific version (BA Server only) -->
+      <changelog></changelog> <!-- a list of changes since the last update (BA Server only) -->
+      <build_id></build_id> <!-- If two versions of a plugin have the same version, you can still distinguish them using the build id - useful for trunk-snapshot versions (BA Server only) --> <!-- In the BA Server, if you specify min and max parent versions, the plugin will only appear in the marketplace if the BA Server is within range of those versions. -->
+      <min_parent_version>5.0</min_parent_version> <!-- the minimum system version this plugin is compatible with (BA Server only) -->
+      <min_parent_version>5.1.99</min_parent_version> <!-- the maximum system version this plugin is compatible with (BA Server only) -->
+    </version>
+  </versions>
+  <screenshots>
+      <screenshot id="1">https://raw.github.com/webdetails/pentahoLanguagePacks/master/data/@langCode@/resources/img/screenshot_1.png</screenshot>
+      <screenshot id="2">https://raw.github.com/webdetails/pentahoLanguagePacks/master/data/@langCode@/resources/img/screenshot_2.png</screenshot>
+  </screenshots>
+</market_entry>
