@@ -54,10 +54,15 @@ There are basically two ways to get the plugin/application:
    * unzip the file and rename the folder to `languagePackInstaller`
    * move/copy the `languagePackInstaller` folder to your `pentaho-solutions/system`.
 
+
 2. Alternatively, you can **clone the git repository** hosted on github:
    * open a terminal and go to your `pentaho-solutions/system` folder
    * `git clone git@github.com:webdetails/pentahoLanguagePacks.git languagePackInstaller`
    
+The plugin is shipped without the java libraries. To get them, you will need to go to the command line. 
+In the `pentaho-solutions/system/languagePackInstaller` folder, run `ant resolve`.
+If your system does not have the `ant` utility, download it from [Apache ant](http://ant.apache.org/bindownload.cgi).
+
 Don't forget that the plugin will only be loaded (and thus be available) at the next restart of the BI server.
 
 ## 2. Translate the files
