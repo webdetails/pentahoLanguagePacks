@@ -359,6 +359,30 @@
     </step>
 
   <step>
+    <name>File exists 3</name>
+    <type>FileExists</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <filenamefield>dst_parent</filenamefield>
+    <resultfieldname>dst_exists</resultfieldname>
+    <includefiletype>N</includefiletype>
+    <filetypefieldname/>
+    <addresultfilenames>N</addresultfilenames>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>800</xloc>
+      <yloc>640</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>Filter rows</name>
     <type>FilterRows</type>
     <description/>
@@ -1261,6 +1285,35 @@
     </step>
 
   <step>
+    <name>dst_exists&#x3f; 2</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Copy rows to result</send_true_to>
+<send_false_to>junk 2 2</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>dst_exists</leftvalue>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>Boolean</type><text>Y</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>896</xloc>
+      <yloc>640</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>dst_folder &#x28;up to &#x2f;nls&#x2f;&#x29;</name>
     <type>Janino</type>
     <description/>
@@ -1657,6 +1710,25 @@
     </step>
 
   <step>
+    <name>junk 2 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>896</xloc>
+      <yloc>544</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>junk 3</name>
     <type>Dummy</type>
     <description/>
@@ -2026,78 +2098,6 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>1856</xloc>
       <yloc>768</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>File exists 3</name>
-    <type>FileExists</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <filenamefield>dst_parent</filenamefield>
-    <resultfieldname>dst_exists</resultfieldname>
-    <includefiletype>N</includefiletype>
-    <filetypefieldname/>
-    <addresultfilenames>N</addresultfilenames>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>800</xloc>
-      <yloc>640</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>dst_exists&#x3f; 2</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<send_true_to>Copy rows to result</send_true_to>
-<send_false_to>junk 2 2</send_false_to>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>dst_exists</leftvalue>
- <function>&#x3d;</function>
- <rightvalue/>
- <value><name>constant</name><type>Boolean</type><text>Y</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>896</xloc>
-      <yloc>640</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>junk 2 2</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>896</xloc>
-      <yloc>544</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

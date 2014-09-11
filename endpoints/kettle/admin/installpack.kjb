@@ -13,12 +13,12 @@
     <parameters>
         <parameter>
             <name>cpk.plugin.dir</name>
-            <default_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;</default_value>
+            <default_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;..&#x2f;</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>cpk.solution.system.dir</name>
-            <default_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;..&#x2f;</default_value>
+            <default_value>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;..&#x2f;..&#x2f;</default_value>
             <description/>
         </parameter>
         <parameter>
