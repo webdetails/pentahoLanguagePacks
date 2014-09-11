@@ -1,6 +1,7 @@
 #!/bin/bash
 
-ORIGIN=~/webdetails/servers/biserver-ee-51/biserver-ee
+ORIGIN=~/webdetails/servers/biserver-ee-520
+#ORIGIN=Applications/Pentaho520/server/biserver-ee/biserver-ee
 DEST=~/webdetails/plugins/languagePackInstaller/data
 
 HERE=$(pwd)
