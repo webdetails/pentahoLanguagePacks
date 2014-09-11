@@ -3,29 +3,6 @@
   "title": "main",
   "rows": [
    {
-    "id": "8180da5e-8bde-6e35-1578-25a864120be9",
-    "type": "LayoutResourceCode",
-    "typeDesc": "Resource",
-    "parent": "UnIqEiD",
-    "properties": [
-     {
-      "name": "name",
-      "value": "getResourceHackJS",
-      "type": "Id"
-     },
-     {
-      "name": "resourceType",
-      "value": "Javascript",
-      "type": "Label"
-     },
-     {
-      "name": "resourceCode",
-      "value": "Dashboards._res = function(relpath){\n    var pluginId = window.location.split('plugin/')[1].split('/api')[0];\n    return '/pentaho/api/repos/' + pluginId +  relpath;\n} ",
-      "type": "Resource"
-     }
-    ]
-   },
-   {
     "id": "2dc80396-2c77-93b8-b6fe-53ea39a076e2",
     "type": "LayoutResourceFile",
     "typeDesc": "Resource",
@@ -38,7 +15,7 @@
      },
      {
       "name": "resourceFile",
-      "value": "/pentaho/api/repos/languagePackInstaller/static/system/css/liquid.css",
+      "value": "${system:/static/system/css/liquid.css}",
       "type": "ResourceFile"
      },
      {
@@ -61,7 +38,7 @@
      },
      {
       "name": "resourceFile",
-      "value": "/pentaho/api/repos/languagePackInstaller/static/system/css/borderBox.css",
+      "value": "${system:/static/system/css/borderBox.css}",
       "type": "ResourceFile"
      },
      {
@@ -84,7 +61,7 @@
      },
      {
       "name": "resourceFile",
-      "value": "/pentaho/api/repos/languagePackInstaller/static/custom/css/langpack.css",
+      "value": "${system:/static/custom/css/langpack.css}",
       "type": "ResourceFile"
      },
      {
@@ -1255,6 +1232,16 @@
       "name": "name",
       "value": "removePackEndpoint",
       "type": "Id"
+     },
+     {
+      "name": "stepName",
+      "value": "OUTPUT",
+      "type": "String"
+     },
+     {
+      "name": "kettleOutput",
+      "value": "Inferred",
+      "type": "kettleOutputCustom"
      }
     ],
     "meta": "CPK",
@@ -1271,6 +1258,16 @@
       "name": "name",
       "value": "getPackMetadataEndpoint",
       "type": "Id"
+     },
+     {
+      "name": "stepName",
+      "value": "OUTPUT",
+      "type": "String"
+     },
+     {
+      "name": "kettleOutput",
+      "value": "Inferred",
+      "type": "kettleOutputCustom"
      }
     ],
     "meta": "CPK",
@@ -1287,6 +1284,16 @@
       "name": "name",
       "value": "installPackEndpoint",
       "type": "Id"
+     },
+     {
+      "name": "stepName",
+      "value": "OUTPUT",
+      "type": "String"
+     },
+     {
+      "name": "kettleOutput",
+      "value": "Inferred",
+      "type": "kettleOutputCustom"
      }
     ],
     "meta": "CPK",
