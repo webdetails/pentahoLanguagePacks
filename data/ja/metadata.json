@@ -5,27 +5,27 @@
     "languageCode": "ja",
     "version": "14.09.12",
     "pentahoVersion": "5.2.0",
+    "maturity": {
+        "lane": "Community",
+        "phase": "2"
+    },
     "maintainer": {
         "name": "Akito Tanaka",
         "email": "akito.tanaka@ksk-anl.com",
         "img": "",
         "url": "http://ksk-anl.com/"
     },
-    "credits": [
-        {
-            "name": "Akito Tanaka",
-            "email": "akito.tanaka@ksk-anl.com",
-            "img": "",
-            "url": "http://ksk-anl.com/"
-        }
-    ],
-    "sponsors": [
-        {
-            "name": "Akito Tanaka",
-            "email": "akito.tanaka@ksk-anl.com",
-            "img": "",
-            "url": "http://ksk-anl.com/"
-        }
-    ]
+    "credits": [{
+        "name": "Akito Tanaka",
+        "email": "akito.tanaka@ksk-anl.com",
+        "img": "",
+        "url": "http://ksk-anl.com/"
+    }],
+    "sponsors": [{
+        "name": "Akito Tanaka",
+        "email": "akito.tanaka@ksk-anl.com",
+        "img": "",
+        "url": "http://ksk-anl.com/"
+    }]
 
 }

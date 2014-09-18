@@ -5,27 +5,27 @@
     "languageCode": "es",
     "version": "14.09.12",
     "pentahoVersion": "5.2.0",
+    "maturity": {
+        "lane": "Community",
+        "phase": "2"
+    },
     "maintainer": {
         "name": "Domingo Lavin",
         "email": "domingo.lavin@vinkos.com",
         "img": "",
         "url": "http:\/\/www.pentaho.com"
     },
-    "credits": [
-        {
-            "name": "Antonio García Domínguez",
-            "email": "antonio.garciadominguez@uca.es",
-            "img": "",
-            "url": "http:\/\/neptuno.uca.es\/~agarcia"
-        }
-    ],
-    "sponsors": [
-        {
-            "name": "",
-            "email": "",
-            "img": "",
-            "url": ""
-        }
-    ]
+    "credits": [{
+        "name": "Antonio García Domínguez",
+        "email": "antonio.garciadominguez@uca.es",
+        "img": "",
+        "url": "http:\/\/neptuno.uca.es\/~agarcia"
+    }],
+    "sponsors": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }]
 
 }

@@ -5,27 +5,32 @@
     "languageCode": "de",
     "version": "14.09.12",
     "pentahoVersion": "5.2.0",
+    "maturity": {
+        "lane": "Community",
+        "phase": "2"
+    },
     "maintainer": {
         "name": "Thomas Starl",
         "email": "pentaho-localization@tink.de",
         "img": "",
         "url": ""
     },
-    "credits": [
-        {
-            "name": "Thomas Starl",
-            "email": "pentaho-localization@tink.de",
-            "img": "",
-            "url": ""
-        }
-    ],
-    "sponsors": [
-        {
-            "name": "",
-            "email": "",
-            "img": "",
-            "url": ""
-        }
-    ]
+    "credits": [{
+        "name": "Thomas Starl",
+        "email": "pentaho-localization@tink.de",
+        "img": "",
+        "url": ""
+    }, {
+        "name": "Sarah Klemm",
+        "email": "sarah.klemm@medavis.de",
+        "img": "",
+        "url": ""
+    }],
+    "sponsors": [{
+        "name": "Medavis GmbH",
+        "email": "",
+        "img": "",
+        "url": "www.medavis.com"
+    }]
 
 }

@@ -5,27 +5,27 @@
     "languageCode": "ca",
     "version": "14.09.12",
     "pentahoVersion": "5.2.0",
+    "maturity": {
+        "lane": "Community",
+        "phase": "2"
+    },
     "maintainer": {
         "name": "Blau Advisors Strategic Partners,S.L.",
         "email": "pentaho@blauadvisors.com",
         "img": "",
         "url": "http:\/\/www.blauadvisors.com"
     },
-    "credits": [
-        {
-            "name": "Blau Advisors Strategic Partners,S.L.",
-            "email": "pentaho@blauadvisors.com",
-            "img": "",
-            "url": "http:\/\/www.blauadvisors.com"
-        }
-    ],
-    "sponsors": [
-        {
-            "name": "Blau Advisors Strategic Partners,S.L.",
-            "email": "pentaho@blauadvisors.com",
-            "img": "",
-            "url": "http:\/\/www.blauadvisors.com"
-        }
-    ]
+    "credits": [{
+        "name": "Blau Advisors Strategic Partners,S.L.",
+        "email": "pentaho@blauadvisors.com",
+        "img": "",
+        "url": "http:\/\/www.blauadvisors.com"
+    }],
+    "sponsors": [{
+        "name": "Blau Advisors Strategic Partners,S.L.",
+        "email": "pentaho@blauadvisors.com",
+        "img": "",
+        "url": "http:\/\/www.blauadvisors.com"
+    }]
 
 }
