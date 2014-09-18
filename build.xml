@@ -159,6 +159,9 @@
                     <exclude name="${bin.dir.relative}/**"/>
                     <exclude name="data/**"/>
                     <exclude name="${dist.dir.relative}/**"/>
+                    <exclude name="translations/**"/>
+                    <exclude name="tools/**"/>
+                    <exclude name="documentation/**"/>
                 </fileset>
                 <fileset dir="${basedir}">
                     <include name="data/${langCode}/system/**"/>
@@ -344,6 +347,12 @@
                 <package_url>${langpack.package.url}</package_url>
                 <description>${here.languagePack.title}</description>
                 <build_id>${sequential.build.id}</build_id>
+                <min_parent_version>5.0</min_parent_version>
+                <max_parent_version>5.2.99</max_parent_version>
+                <development_stage>
+                  <lane>${langpack.metadata.maturity.lane}</lane>
+                  <phase>${langpack.metadata.maturity.phase}</phase>
+                </development_stage>
             </version>
         </echoxml>
 
@@ -357,6 +366,8 @@
                 <filter token="langpack.metadata.maintainer.name" value="${langpack.metadata.maintainer.name}"/>
                 <filter token="langpack.metadata.maintainer.url" value="${langpack.metadata.maintainer.url}"/>
                 <filter token="langpack.metadata.maintainer.img" value="${langpack.metadata.maintainer.img}"/>
+                <filter token="langpack.metadata.maturity.lane" value="${langpack.metadata.maturity.lane}"/>
+                <filter token="langpack.metadata.maturity.phase" value="${langpack.metadata.maturity.phase}"/>
                 <filter token="langpack.package.url" value="${langpack.package.url}"/>
                 <filter token="langCode" value="${langCode}"/>
                 <filter token="project.stage" value="${project.stage}"/>
