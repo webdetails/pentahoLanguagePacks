@@ -5,27 +5,27 @@
     "languageCode": "pt_PT",
     "version": "14.09.12",
     "pentahoVersion": "5.2.0",
+    "maturity": {
+        "lane": "Community",
+        "phase": "2"
+    },
     "maintainer": {
         "name": "Xpand-IT",
         "email": "mail@xpand-it.com",
         "img": "http:\/\/www.xpand-it.com\/templates\/xpandit-experience\/images\/logo.png",
         "url": "http:\/\/www.xpand-it.com"
     },
-    "credits": [
-        {
-            "name": "Xpand-IT",
-            "email": "mail@xpand-it.com",
-            "img": "http:\/\/www.xpand-it.com\/templates\/xpandit-experience\/images\/logo.png",
-            "url": "http:\/\/www.xpand-it.com"
-        }
-    ],
-    "sponsors": [
-        {
-            "name": "",
-            "email": "",
-            "img": "",
-            "url": ""
-        }
-    ]
+    "credits": [{
+        "name": "Xpand-IT",
+        "email": "mail@xpand-it.com",
+        "img": "http:\/\/www.xpand-it.com\/templates\/xpandit-experience\/images\/logo.png",
+        "url": "http:\/\/www.xpand-it.com"
+    }],
+    "sponsors": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }]
 
 }
