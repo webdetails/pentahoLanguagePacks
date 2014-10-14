@@ -249,20 +249,13 @@
                 <!-- <?xml version="1.0" encoding="UTF-8" standalone="no"?> -->
                 <plugin loader="DEFAULT" title="${langpack.name}" name="${langpack.name}">
                     <overlays>
-                        <!-- <overlay id="startup.menu_langPacks"> -->
-                        <!--     <menubar id="toolsmenu"> -->
-                        <!--         <menubar id="languagePacks" label="Language Packs"> -->
-                        <!--             <menuitem id="ola" label="Ola"/> -->
-                        <!--         </menubar> -->
-                        <!--     </menubar> -->
-                        <!-- </overlay> -->
                         <overlay id="startup.${langpack.name}" resourcebundle="content/${langpack.name}/resources/lang/messages">
                             <menubar id="toolsmenu">
-                                <!-- <menupopup id="languagePacks" label="Language Packs"> -->
+                                <menubar id="languagePacks" label="${Launcher.menuLanguagePacks}" layout="vertical">
                                     <menuitem id="${langpack.name}"
                                               label="${languagePack.title}"
                                               command="mantleXulHandler.openUrl('${languagePack.title}','${languagePack.title}','plugin/${langpack.name}/api/main')"/>
-                                <!-- </menupopup> -->
+                                </menubar>
                             </menubar>
 
                         </overlay>
@@ -318,11 +311,11 @@
         <!-- Update dashboards -->
         <upper string="${plugin.name}" to="plugin.NAME" />
         <upper string="${langpack.name}" to="langpack.NAME" />
-        <replace dir="${stage.dir}/${langpack.name}/dashboards" includes="*.cdfde">
+        <replace dir="${stage.dir}/${langpack.name}/dashboards" includes="**/*.cdfde">
             <replacefilter token="&quot;${plugin.name}&quot;" value="&quot;${langpack.name}&quot;"/> <!--covers: meta_pluginID -->
             <replacefilter token="Components${plugin.name}_" value="Components${langpack.name}_"/> <!--covers: CPK datasources -->
-            <replacefilter token="/${plugin.name}/" value="/${langpack.name}/"/> <!--covers: resource paths, filename -->
             <replacefilter token="${plugin.NAME}" value="${langpack.NAME}"/> <!--covers: CPK datasources -->
+            <replacefilter token="/${plugin.name}/" value="/${langpack.name}/"/> <!--covers: resource paths, filename -->
         </replace>
 
         <!-- Inherit the project.revision property -->
@@ -334,7 +327,7 @@
         <!-- create a zip file -->
         <zip zipfile="${dist.dir}/${langpack.zipfile}"
              basedir="${stage.dir}"
-             excludes="**/Thumbs.db **/.DS_Store"
+             excludes="**/Thumbs.db **/.DS_Store **/.git"
              includes="${langpack.name}/**/*" />
         <move tofile="${dist.dir}/${langpack.name}-${langpack.distribution.version}.zip" file="${dist.dir}/${langpack.zipfile}"/>
 
@@ -347,8 +340,8 @@
                 <package_url>${langpack.package.url}</package_url>
                 <description>${here.languagePack.title}</description>
                 <build_id>${sequential.build.id}</build_id>
-                <min_parent_version>5.0</min_parent_version>
-                <max_parent_version>5.2.99</max_parent_version>
+                <min_parent_version>${marketplace.metadata.min_parent_version}</min_parent_version>
+                <max_parent_version>${marketplace.metadata.max_parent_version}</max_parent_version>
                 <development_stage>
                   <lane>${langpack.metadata.maturity.lane}</lane>
                   <phase>${langpack.metadata.maturity.phase}</phase>
