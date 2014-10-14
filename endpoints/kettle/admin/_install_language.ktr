@@ -229,7 +229,7 @@
   <hop> <from>exclude &#x2a;.js to be patched</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>Dummy &#x28;do nothing&#x29;</from><to>is .properties &#x3f;</to><enabled>Y</enabled> </hop>
   <hop> <from>.js to be patched</from><to>Write to log 4</to><enabled>Y</enabled> </hop>
-  <hop> <from>.js to be patched</from><to>add language</to><enabled>N</enabled> </hop>
+  <hop> <from>.js to be patched</from><to>add language</to><enabled>Y</enabled> </hop>
   <hop> <from>is .properties &#x3f;</from><to>File exists 2</to><enabled>Y</enabled> </hop>
   <hop> <from>File exists 2</from><to>folder exists&#x3f;</to><enabled>Y</enabled> </hop>
   <hop> <from>is .properties &#x3f;</from><to>dst_folder &#x28;up to &#x2f;nls&#x2f;&#x29;</to><enabled>Y</enabled> </hop>
@@ -457,9 +457,9 @@
 <condition>
  <negated>N</negated>
  <leftvalue>file_exists</leftvalue>
- <function>TRUE</function>
+ <function>&#x3d;</function>
  <rightvalue/>
- </condition>
+ <value><name>constant</name><type>Boolean</type><text>Y</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -757,6 +757,34 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>1376</xloc>
       <yloc>864</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Merge Join</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>FULL OUTER</join_type>
+<step1>keyvalue 2</step1>
+<step2>Group by dst_filename</step2>
+    <keys_1>
+      <key>dst_filename</key>
+    </keys_1>
+    <keys_2>
+      <key>dst_filename</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1280</xloc>
+      <yloc>768</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1821,6 +1849,32 @@
     </step>
 
   <step>
+    <name>keyvalue 2</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>keyvalue2</field_name>
+<formula_string>languageCode &#x2b; &#x22;&#x3d;&#x22;&#x2b;language &#x2b; &#x22;&#x5c;n&#x22;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1152</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>read UTF8 properties</name>
     <type>TextFileInput</type>
     <description/>
@@ -2144,60 +2198,6 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>1856</xloc>
-      <yloc>768</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>keyvalue 2</name>
-    <type>Janino</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-       <formula><field_name>keyvalue2</field_name>
-<formula_string>languageCode &#x2b; &#x22;&#x3d;&#x22;&#x2b;language &#x2b; &#x22;&#x5c;n&#x22;</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field/>
-</formula>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1152</xloc>
-      <yloc>768</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Merge Join</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<join_type>FULL OUTER</join_type>
-<step1>keyvalue 2</step1>
-<step2>Group by dst_filename</step2>
-    <keys_1>
-      <key>dst_filename</key>
-    </keys_1>
-    <keys_2>
-      <key>dst_filename</key>
-    </keys_2>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1280</xloc>
       <yloc>768</yloc>
       <draw>Y</draw>
       </GUI>
