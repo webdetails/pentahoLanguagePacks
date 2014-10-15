@@ -11,7 +11,7 @@
     <parameters>
         <parameter>
             <name>cpk.plugin.dir</name>
-            <default_value>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;</default_value>
+            <default_value>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;..&#x2f;</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -26,12 +26,12 @@
         </parameter>
         <parameter>
             <name>language</name>
-            <default_value>Espan&#xf5;l</default_value>
+            <default_value>Portugu&#xea;s do Brasil</default_value>
             <description/>
         </parameter>
         <parameter>
             <name>languageCode</name>
-            <default_value>es</default_value>
+            <default_value>pt_BR</default_value>
             <description/>
         </parameter>
         <parameter>
@@ -218,21 +218,14 @@
   <hop> <from>add header</from><to>Select values 4</to><enabled>Y</enabled> </hop>
   <hop> <from>get target&#x2f; &#x2a;supported_messages.properties</from><to>File exists</to><enabled>Y</enabled> </hop>
   <hop> <from>dst_exists&#x3f;</from><to>junk 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>key&#x3d;value</from><to>strip comments</to><enabled>Y</enabled> </hop>
-  <hop> <from>strip comments</from><to>Group by 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>add header</from><to>Write to log 3</to><enabled>N</enabled> </hop>
-  <hop> <from>read UTF8 properties</from><to>strip this languageCode</to><enabled>Y</enabled> </hop>
+  <hop> <from>strip comments</from><to>Group by dst_filename</to><enabled>Y</enabled> </hop>
+  <hop> <from>add header</from><to>Write to log 3</to><enabled>Y</enabled> </hop>
   <hop> <from>dst_exists&#x3f;</from><to>destination filenames</to><enabled>Y</enabled> </hop>
-  <hop> <from>destination filenames</from><to>read UTF8 properties</to><enabled>Y</enabled> </hop>
-  <hop> <from>add key&#x3d;value</from><to>add header</to><enabled>Y</enabled> </hop>
-  <hop> <from>strip this languageCode</from><to>Sort rows 3</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows 3</from><to>Unique rows 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Unique rows 2</from><to>sort&#x3a; dst_filename</to><enabled>Y</enabled> </hop>
-  <hop> <from>sort&#x3a; dst_filename</from><to>key&#x3d;value</to><enabled>Y</enabled> </hop>
   <hop> <from>File exists</from><to>dst_exists&#x3f;</to><enabled>Y</enabled> </hop>
   <hop> <from>Get all &#x2a;_&#x24;&#x7b;languageCode&#x7d;.properties, &#x2a;.js</from><to>Filter rows</to><enabled>Y</enabled> </hop>
   <hop> <from>get target&#x2f; messages&#x2a;.properties</from><to>exclude &#x2a;.js to be patched</to><enabled>Y</enabled> </hop>
-  <hop> <from>exclude &#x2a;.js to be patched</from><to>.js to be patched</to><enabled>Y</enabled> </hop>
   <hop> <from>exclude &#x2a;.js to be patched</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>Dummy &#x28;do nothing&#x29;</from><to>is .properties &#x3f;</to><enabled>Y</enabled> </hop>
   <hop> <from>.js to be patched</from><to>Write to log 4</to><enabled>Y</enabled> </hop>
@@ -246,12 +239,24 @@
   <hop> <from>is .properties &#x3f; 2</from><to>copy all&#x2a;.js</to><enabled>Y</enabled> </hop>
   <hop> <from>is .properties &#x3f; 2</from><to>copy and encode files</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values 4</from><to>write UTF8 properties </to><enabled>Y</enabled> </hop>
-  <hop> <from>Group by 2</from><to>Get Variables 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get Variables 2</from><to>add key&#x3d;value</to><enabled>Y</enabled> </hop>
   <hop> <from>File exists 3</from><to>dst_exists&#x3f; 2</to><enabled>Y</enabled> </hop>
   <hop> <from>get _languageCode.jar filename</from><to>File exists 3</to><enabled>Y</enabled> </hop>
   <hop> <from>dst_exists&#x3f; 2</from><to>Copy rows to result</to><enabled>Y</enabled> </hop>
   <hop> <from>dst_exists&#x3f; 2</from><to>junk 2 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>destination filenames</from><to>Sort</to><enabled>Y</enabled> </hop>
+  <hop> <from>sort&#x3a; dst_filename</from><to>keyvalue</to><enabled>Y</enabled> </hop>
+  <hop> <from>exclude &#x2a;.js to be patched</from><to>File exists 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>File exists 4</from><to>Filter rows 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows 2</from><to>.js to be patched</to><enabled>Y</enabled> </hop>
+  <hop> <from>keyvalue</from><to>strip comments</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort</from><to>read UTF8 properties</to><enabled>Y</enabled> </hop>
+  <hop> <from>read UTF8 properties</from><to>strip this languageCode</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort</from><to>keyvalue 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>keyvalue 2</from><to>Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>Group by dst_filename</from><to>Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join</from><to>contents &#x2b; languageCode</to><enabled>Y</enabled> </hop>
+  <hop> <from>strip this languageCode</from><to>Sort rows 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>contents &#x2b; languageCode</from><to>add header</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>.js to be patched</name>
@@ -383,6 +388,30 @@
     </step>
 
   <step>
+    <name>File exists 4</name>
+    <type>FileExists</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <filenamefield>dst_filename</filenamefield>
+    <resultfieldname>file_exists</resultfieldname>
+    <includefiletype>N</includefiletype>
+    <filetypefieldname/>
+    <addresultfilenames>N</addresultfilenames>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>896</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>Filter rows</name>
     <type>FilterRows</type>
     <description/>
@@ -407,6 +436,35 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>256</xloc>
       <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows 2</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>.js to be patched</send_true_to>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>file_exists</leftvalue>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>Boolean</type><text>Y</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>832</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -547,39 +605,6 @@
     </step>
 
   <step>
-    <name>Get Variables 2</name>
-    <type>GetVariable</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <name>new_keyvalue</name>
-        <variable>&#x24;&#x7b;languageCode&#x7d;&#x3d;&#x24;&#x7b;language&#x7d;</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1376</xloc>
-      <yloc>768</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>Get all &#x2a;_&#x24;&#x7b;languageCode&#x7d;.properties, &#x2a;.js</name>
     <type>GetFileNames</type>
     <description/>
@@ -697,10 +722,10 @@
     </step>
 
   <step>
-    <name>Group by 2</name>
+    <name>Group by dst_filename</name>
     <type>GroupBy</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -727,23 +752,39 @@
           <type>CONCAT_STRING</type>
           <valuefield/>
         </field>
-        <field>
-          <aggregate>languageCode</aggregate>
-          <subject>languageCode</subject>
-          <type>LAST</type>
-          <valuefield/>
-        </field>
-        <field>
-          <aggregate>language</aggregate>
-          <subject>language</subject>
-          <type>LAST</type>
-          <valuefield/>
-        </field>
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>1376</xloc>
       <yloc>864</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Merge Join</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<join_type>FULL OUTER</join_type>
+<step1>keyvalue 2</step1>
+<step2>Group by dst_filename</step2>
+    <keys_1>
+      <key>dst_filename</key>
+    </keys_1>
+    <keys_2>
+      <key>dst_filename</key>
+    </keys_2>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1280</xloc>
+      <yloc>768</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -872,6 +913,40 @@
     </step>
 
   <step>
+    <name>Sort</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>dst_filename</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1024</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>Sort rows 3</name>
     <type>SortRows</type>
     <description/>
@@ -905,8 +980,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>960</xloc>
-      <yloc>1120</yloc>
+      <xloc>1088</xloc>
+      <yloc>992</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -932,7 +1007,7 @@
         <case_insensitive>N</case_insensitive>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1120</xloc>
+      <xloc>1088</xloc>
       <yloc>1120</yloc>
       <draw>Y</draw>
       </GUI>
@@ -1109,32 +1184,6 @@
     </step>
 
   <step>
-    <name>add key&#x3d;value</name>
-    <type>Janino</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-       <formula><field_name>file_contents</field_name>
-<formula_string>&#x28;file_contents &#x3d;&#x3d; null &#x3f;  &#x22;&#x22; &#x3a; file_contents&#x29; &#x2b; new_keyvalue &#x2b; &#x22;&#x5c;n&#x22;</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field>file_contents</replace_field>
-</formula>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1504</xloc>
-      <yloc>768</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>add language</name>
     <type>ScriptValueMod</type>
     <description/>
@@ -1160,6 +1209,32 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>1120</xloc>
       <yloc>256</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>contents &#x2b; languageCode</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>file_contents</field_name>
+<formula_string>&#x28;file_contents &#x3d;&#x3d; null &#x3f;  &#x22;&#x22; &#x3a; file_contents&#x29; &#x2b; keyvalue2</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field>file_contents</replace_field>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1472</xloc>
+      <yloc>768</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1249,7 +1324,7 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>960</xloc>
+      <xloc>928</xloc>
       <yloc>768</yloc>
       <draw>Y</draw>
       </GUI>
@@ -1351,7 +1426,7 @@
            <schema_name/>
            </partitioning>
 <send_true_to>Dummy &#x28;do nothing&#x29;</send_true_to>
-<send_false_to>.js to be patched</send_false_to>
+<send_false_to>File exists 4</send_false_to>
     <compare>
 <condition>
  <negated>Y</negated>
@@ -1684,7 +1759,7 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1248</xloc>
+      <xloc>1504</xloc>
       <yloc>992</yloc>
       <draw>Y</draw>
       </GUI>
@@ -1741,14 +1816,14 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1088</xloc>
+      <xloc>832</xloc>
       <yloc>992</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>key&#x3d;value</name>
+    <name>keyvalue</name>
     <type>Janino</type>
     <description/>
     <distribute>N</distribute>
@@ -1759,7 +1834,7 @@
            <schema_name/>
            </partitioning>
        <formula><field_name>keyvalue</field_name>
-<formula_string>key &#x2b; &#x22;&#x3d;&#x22; &#x2b;value &#x2b; &#x22;&#x5c;n&#x22;</formula_string>
+<formula_string>key &#x2b; &#x22;&#x3d;&#x22;&#x2b;value &#x2b; &#x22;&#x5c;n&#x22;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -1767,8 +1842,34 @@
 </formula>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1376</xloc>
-      <yloc>1120</yloc>
+      <xloc>1248</xloc>
+      <yloc>992</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>keyvalue 2</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>keyvalue2</field_name>
+<formula_string>languageCode &#x2b; &#x22;&#x3d;&#x22;&#x2b;language &#x2b; &#x22;&#x5c;n&#x22;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1152</xloc>
+      <yloc>768</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1777,7 +1878,7 @@
     <name>read UTF8 properties</name>
     <type>TextFileInput</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -1787,7 +1888,7 @@
     <accept_filenames>Y</accept_filenames>
     <passing_through_fields>Y</passing_through_fields>
     <accept_field>dst_filename</accept_field>
-    <accept_stepname>destination filenames</accept_stepname>
+    <accept_stepname>Sort</accept_stepname>
     <separator>&#x3d;</separator>
     <enclosure/>
     <enclosure_breaks>N</enclosure_breaks>
@@ -1881,7 +1982,7 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>960</xloc>
-      <yloc>896</yloc>
+      <yloc>864</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1938,7 +2039,7 @@
     <name>sort&#x3a; dst_filename</name>
     <type>SortRows</type>
     <description/>
-    <distribute>N</distribute>
+    <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -1979,7 +2080,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-<send_true_to>Group by 2</send_true_to>
+<send_true_to>Group by dst_filename</send_true_to>
 <send_false_to>junk</send_false_to>
     <compare>
 <condition>

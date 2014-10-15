@@ -3,9 +3,9 @@
     <overlays>
         <overlay id="startup.languagePackInstaller" resourcebundle="content/languagePackInstaller/resources/lang/messages">
             <menubar id="toolsmenu">
-                <!-- <menubar id="languagePacks" label="${Launcher.menuLanguagePacks}" layout="vertical"> -->
+                <menubar id="languagePacks" label="${Launcher.menuLanguagePacks}" layout="vertical">
                     <menuitem id="languagePackInstaller" label="${Launcher.appTitle}" command="mantleXulHandler.openUrl('${Launcher.appTitle}','${Launcher.appTitle}','plugin/languagePackInstaller/api/main')"/>
-                <!-- </menubar> -->
+                </menubar>
             </menubar>
         </overlay>
     </overlays>
