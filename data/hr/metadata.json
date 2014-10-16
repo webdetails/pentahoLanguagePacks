@@ -4,28 +4,28 @@
     "language": "hrvatski",
     "languageCode": "hr",
     "version": "0.1",
-    "pentahoVersion": "5.1.0",
+    "pentahoVersion": "5.2.0",
+    "maturity": {
+        "lane": "Community",
+        "phase": "2"
+    },
     "maintainer": {
         "name": "",
         "email": "",
         "img": "",
         "url": ""
     },
-    "credits": [
-        {
-            "name": "",
-            "email": "",
-            "img": "",
-            "url": ""
-        }
-    ],
-    "sponsors": [
-        {
-            "name": "",
-            "email": "",
-            "img": "",
-            "url": ""
-        }
-    ]
+    "credits": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }],
+    "sponsors": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }]
 
 }

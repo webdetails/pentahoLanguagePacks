@@ -4,28 +4,28 @@
     "language": "Simplified Chinese",
     "languageCode": "zh_CN",
     "version": "0.0",
-    "pentahoVersion": "5.1.0",
+    "pentahoVersion": "5.2.0",
+    "maturity": {
+        "lane": "Community",
+        "phase": "2"
+    },
     "maintainer": {
         "name": "Brandon Jackson",
         "email": "usbrandon@gmail.com",
         "img": "",
         "url": ""
     },
-    "credits": [
-        {
-            "name": "",
-            "email": "",
-            "img": "",
-            "url": ""
-        }
-    ],
-    "sponsors": [
-        {
-            "name": "",
-            "email": "",
-            "img": "",
-            "url": ""
-        }
-    ]
+    "credits": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }],
+    "sponsors": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }]
 
 }

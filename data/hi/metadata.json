@@ -3,28 +3,28 @@
     "appWelcomeMessage": "This plugin installs language definitions for the Hindi language in Pentaho 5",
     "language": "हिंदी",
     "languageCode": "hi",
-    "version": "14.07.03",
-    "pentahoVersion": "5.1.0",
+    "version": "14.10.16",
+    "pentahoVersion": "5.2.0",
+    "maturity": {
+        "lane": "Community",
+        "phase": "2"
+    },
     "maintainer": {
         "name": "InfoAxon Technologies",
         "email": "nikhil.kapoor@infoaxon.com",
         "img": "",
         "url": "http:\/\/www.infoaxon.com"
     },
-    "credits": [
-        {
-            "name": "InfoAxon Technologies",
-            "email": "nikhil.kapoor@infoaxon.com",
-            "img": "",
-            "url": "http:\/\/www.infoaxon.com"
-        }
-    ],
-    "sponsors": [
-        {
-            "name": "InfoAxon Technologies",
-            "email": "contactus@infoaxon.com",
-            "img": "",
-            "url": "http:\/\/www.infoaxon.com"
-        }
-    ]
+    "credits": [{
+        "name": "InfoAxon Technologies",
+        "email": "nikhil.kapoor@infoaxon.com",
+        "img": "",
+        "url": "http:\/\/www.infoaxon.com"
+    }],
+    "sponsors": [{
+        "name": "InfoAxon Technologies",
+        "email": "contactus@infoaxon.com",
+        "img": "",
+        "url": "http:\/\/www.infoaxon.com"
+    }]
 }

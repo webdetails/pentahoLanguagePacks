@@ -4,28 +4,28 @@
     "language": "Klingon",
     "languageCode": "tlh",
     "version": "0.0",
-    "pentahoVersion": "5.1.0",
+    "pentahoVersion": "5.2.0",
+    "maturity": {
+        "lane": "Community",
+        "phase": "2"
+    },
     "maintainer": {
         "name": "Marc Okrand",
         "email": "Marc.Okrand@gmail.com",
         "img": "",
         "url": "http:\/\/www.google.com"
     },
-    "credits": [
-        {
-            "name": "",
-            "email": "",
-            "img": "",
-            "url": ""
-        }
-    ],
-    "sponsors": [
-        {
-            "name": "",
-            "email": "",
-            "img": "",
-            "url": ""
-        }
-    ]
+    "credits": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }],
+    "sponsors": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }]
 
 }

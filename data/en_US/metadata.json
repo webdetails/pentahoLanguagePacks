@@ -1,0 +1,31 @@
+{
+    "appTitle": "English (US) Language Pack Installer",
+    "appWelcomeMessage": "This plugin installs language definitions for the English (US) language in Pentaho 5",
+    "language": "English (US)",
+    "languageCode": "en_US",
+    "version": "0.0",
+    "pentahoVersion": "5.2.0",
+    "maturity": {
+        "lane": "Community",
+        "phase": "2"
+    },
+    "maintainer": {
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    },
+    "credits": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }],
+    "sponsors": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }]
+
+}
