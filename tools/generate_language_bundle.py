@@ -51,6 +51,9 @@ plugin_folder =  os.path.realpath(os.path.join(os.getcwd(), '..', '..')) # There
 
 force = False
 translation_marker = '<TRANSLATE ME>'# not used anymore
+if languageCode.startswith('en'):
+    translation_marker = ''
+
 suffix = '_' + languageCode_underscore + '.properties';
 def rreplace(s, old, new, occurrence=1):
     # like str.replace, but starts from the end
@@ -287,6 +290,8 @@ for root, dirs, filenames in os.walk('.'):
             for p in js_patterns:
                 if p.lower() in gg:
                     copy(src, dst)
+        if ('pentaho-mobile-plugin' in gg and gg.endswith('.' + languageCode_underscore + '.js')):
+            copy(src, dst)
 
 
 
