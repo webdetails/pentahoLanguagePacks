@@ -1,6 +1,6 @@
 define({
-    TITLE_LABEL: 'Authentication',
-    AUTHENTICATION_METHOD_LABEL: 'Authentication Method',
+    TITLE_LABEL: 'Autenticação',
+    AUTHENTICATION_METHOD_LABEL: 'Tipo de Autenticação',
     AUTHENTICATION_METHOD_DESCRIPTION_LABEL: 'Select where user and their log in credentials will be managed:',
     AUTHENTICATION_METHOD_CHANGE_FROM_JCR_TO_JCR: 'You have not completed configuring your external authentication method. You will loose any changes you have made. Do you want to continue?',
     AUTHENTICATION_METHOD_CHANGE_FROM_JCR_TO_LDAP: 'Switching authentication method will start a new configuration and may change users, roles and login passwords. Are you sure you want to make this change?',
@@ -47,7 +47,7 @@ define({
     //ldap custom user search configuration
     LDAP_USER_SEARCH_TITLE: 'User Search',
 
-    //ldap custom roles configuration 
+    //ldap custom roles configuration
     LDAP_ROLES_TITLE: 'Roles',
     LDAP_ROLE_BASE_LABEL: 'Role Attribute:',
     LDAP_ROLE_SEARCH_FILTER_LABEL: 'Role Search Filter:',
