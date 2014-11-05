@@ -1,6 +1,6 @@
 define({
-    TITLE_LABEL: 'Autenticação',
-    AUTHENTICATION_METHOD_LABEL: 'Tipo de Autenticação',
+    TITLE_LABEL: 'Autentica\u00e7\u00e3o',
+    AUTHENTICATION_METHOD_LABEL: 'Tipo de Autentica\u00e7\u00e3o',
     AUTHENTICATION_METHOD_DESCRIPTION_LABEL: 'Select where user and their log in credentials will be managed:',
     AUTHENTICATION_METHOD_CHANGE_FROM_JCR_TO_JCR: 'You have not completed configuring your external authentication method. You will loose any changes you have made. Do you want to continue?',
     AUTHENTICATION_METHOD_CHANGE_FROM_JCR_TO_LDAP: 'Switching authentication method will start a new configuration and may change users, roles and login passwords. Are you sure you want to make this change?',
