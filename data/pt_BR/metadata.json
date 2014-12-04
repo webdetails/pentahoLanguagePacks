@@ -5,39 +5,37 @@
     "languageCode": "pt_BR",
     "version": "14.10.17",
     "pentahoVersion": "5.2.0",
+    "maturity": {
+        "lane": "Community",
+        "phase": "2"
+    },
     "maintainer": {
         "name": "Oncase, Open Consulting, IT4biz",
         "email": "pentahobr@yahoogrupos.com.br",
         "img": "",
         "url": "http://br.groups.yahoo.com/neo/groups/pentahobr/info"
     },
-    "credits": [
-        {
-            "name": "Oncase",
-            "email": "iande@oncase.com.br",
-            "img": "",
-            "url": "http://www.oncase.com.br/"
-        },
-        {
-            "name": "Open Consulting",
-            "email": "rgouvea@openconsulting.com.br",
-            "img": "",
-            "url": "http://www.openconsulting.com.br/"
-        },
-        {
-            "name": "IT4biz",
-            "email": "caio@it4biz.com.br",
-            "img": "http://www.it4biz.com.br/extras/logo-it4biz-wordpress.png",
-            "url": "http://www.it4biz.com.br/"
-        }
-    ],
-    "sponsors": [
-        {
-            "name": "",
-            "email": "",
-            "img": "",
-            "url": ""
-        }
-    ]
+    "credits": [{
+        "name": "Oncase",
+        "email": "iande@oncase.com.br",
+        "img": "",
+        "url": "http://www.oncase.com.br/"
+    }, {
+        "name": "Open Consulting",
+        "email": "rgouvea@openconsulting.com.br",
+        "img": "",
+        "url": "http://www.openconsulting.com.br/"
+    }, {
+        "name": "IT4biz",
+        "email": "caio@it4biz.com.br",
+        "img": "http://www.it4biz.com.br/extras/logo-it4biz-wordpress.png",
+        "url": "http://www.it4biz.com.br/"
+    }],
+    "sponsors": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }]
 
 }
