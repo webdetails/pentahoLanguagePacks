@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the European variant of the Portuguese language in Pentaho 5",
     "language": "Português Europeu",
     "languageCode": "pt_PT",
-    "version": "14.10.17",
+    "version": "14.12.16",
     "pentahoVersion": "5.2.0",
     "maturity": {
         "lane": "Community",
