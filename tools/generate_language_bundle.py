@@ -51,6 +51,9 @@ plugin_folder =  os.path.realpath(os.path.join(os.getcwd(), '..', '..')) # There
 
 force = False
 translation_marker = '<TRANSLATE ME>'# not used anymore
+if languageCode.startswith('en'):
+    translation_marker = ''
+
 suffix = '_' + languageCode_underscore + '.properties';
 def rreplace(s, old, new, occurrence=1):
     # like str.replace, but starts from the end
@@ -234,6 +237,8 @@ for root, dirs, filenames in os.walk('.'):
             print "Skipped copying file", dst, "in the first round because it already exists"
             continue
 
+        if src.find('webapps/pentaho/js') > 0:
+            continue
 
 
         # Grab *messages_LANG.properties and  *supported_languages.properties
@@ -262,7 +267,9 @@ for root, dirs, filenames in os.walk('.'):
                     for el in z.namelist():
                         e = el.lower()
                         dst = os.path.realpath(os.path.join(destination_folder, root, f.replace('.jar', '_jar'), el.replace(languageCode_hyphen, languageCode_underscore) ))
+                        dst = re.sub('5.\d.\d.\d-\d+', '5.x', dst)
                         dst = re.sub('5.\d.\d', '5.x', dst)
+                        dst = re.sub('-\d.\d-', '-', dst) # remove version numbers
                         if e.endswith('messages_'+ suffix.lower()) or e.endswith('messages_'+ languageCode_hyphen.lower()  +'.properties'):
                             print 'Copying/patching:\n  ' +  os.path.realpath(os.path.join(origin_folder, src, el)) + '\nto\n  ' + dst + '\n'
                             tmpfolder = os.tmpnam()
@@ -279,21 +286,26 @@ for root, dirs, filenames in os.walk('.'):
         gg = src.lower() # Notice that gg means the full path in lowercase
         dst =  os.path.realpath(os.path.join(destination_folder, root, f ))
         js_patterns = [ '/'+languageCode_hyphen+'/', '_'+languageCode_hyphen+'.' ];
-        if ('nls' in gg) and gg.endswith('.js'):
+        if (not ('dojo' in gg) ) and ('nls' in gg) and gg.endswith('.js'):
             for p in js_patterns:
                 if p.lower() in gg:
                     copy(src, dst)
+        if ('pentaho-mobile-plugin' in gg and gg.endswith('.' + languageCode_underscore + '.js')):
+            copy(src, dst)
 
 
 
 # Second round: fill in the gaps, generate missing files
+print "SECOND ROUND"
 for root, dirs, filenames in os.walk('.'):
     for f in filenames:
         g = f.lower()
         src = os.path.join(root, f)
 
+
         # Ignore all files belonging to this plugin
         if plugin_folder in os.path.realpath(os.path.join(origin_folder, src)):
+            print 'Skipping '+plugin_folder
             continue
 
         # Ignore files that do not require further processing
@@ -302,12 +314,16 @@ for root, dirs, filenames in os.walk('.'):
         #    if os.path.exists(src.replace('_supported_languages.properties', '.properties')):
         #        continue
 
+        if src.find('webapps/pentaho/js') > 0:
+            continue
 
+        #print "processing file:" + src
         # Patch messages_LANG.properties with missing tokens
         is_regular = g.endswith('messages.properties')
         has_xul = g.endswith('.properties') and os.path.exists(src.replace('.properties', '.xul'))
         is_other = g.endswith('.properties') and os.path.exists(src.replace('.properties', '_supported_languages.properties'))
         if is_regular or has_xul or is_other:
+            print "round 2 elegible file:" + src
             dst_localised =  os.path.realpath(os.path.join(destination_folder, root, f.replace('.properties', suffix) ))
             with codecs.open(src, 'r', 'utf_8') as fin:
                 lines_src = fin.readlines()
@@ -335,7 +351,9 @@ for root, dirs, filenames in os.walk('.'):
                         is_other = e.endswith('.properties') and e.replace('.properties', '_supported_languages.properties') in z_list
                         if is_regular or has_xul or is_other:
                             dst = os.path.realpath(os.path.join(destination_folder, root, f.replace('.jar', '_jar'), el.replace('.properties', suffix) ))
+                            dst = re.sub('5.\d.\d.\d-\d+', '5.x', dst)
                             dst = re.sub('5.\d.\d', '5.x', dst)
+                            dst = re.sub('-\d.\d-', '-', dst)
                             fin = z.open(el, 'r') # Zipfiles don't support "with" statement
                             lines_src = fin.readlines()
                             fin.close()
@@ -343,7 +361,7 @@ for root, dirs, filenames in os.walk('.'):
 
         # Generate missing *nls/*LANG*/*.js
         gg = src.lower() # Notice that g means the full path
-        if gg.endswith('.js') and ('nls' in gg):
+        if gg.endswith('.js') and ('nls' in gg) and (not 'dojo' in gg):
             src_lang_code = ''
             dst = ''
             # The first scenario is when the folder nls/LANG/ exists

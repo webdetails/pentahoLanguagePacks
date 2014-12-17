@@ -51,7 +51,7 @@
             <version>
                 <branch>${project.stage}</branch>
                 <version>${distribution.version}</version>
-                <name>Trunk</name>
+                <name>${project.stage}</name>
                 <package_url>not defined</package_url>
                 <description>@PLUGIN_PACKAGE_DESCRIPTION@</description>
                 <build_id>${sequential.build.id}</build_id>
@@ -159,6 +159,9 @@
                     <exclude name="${bin.dir.relative}/**"/>
                     <exclude name="data/**"/>
                     <exclude name="${dist.dir.relative}/**"/>
+                    <exclude name="translations/**"/>
+                    <exclude name="tools/**"/>
+                    <exclude name="documentation/**"/>
                 </fileset>
                 <fileset dir="${basedir}">
                     <include name="data/${langCode}/system/**"/>
@@ -230,7 +233,7 @@
             <echo>Read from ${metadata.json}: appTitle = ${langpack.metadata.appTitle}...</echo>
 
             <!-- create the version file -->
-            <property name="langpack.distribution.version" value="${project.stage}-${langpack.metadata.version}"/>
+            <property name="langpack.distribution.version" value="${langpack.metadata.version}"/>
             <tstamp/>
             <property name="sequential.build.id" value="manual-${DSTAMP}"/>
             <echoxml file="${stage.dir}/${langpack.name}/version.xml">
@@ -246,20 +249,13 @@
                 <!-- <?xml version="1.0" encoding="UTF-8" standalone="no"?> -->
                 <plugin loader="DEFAULT" title="${langpack.name}" name="${langpack.name}">
                     <overlays>
-                        <!-- <overlay id="startup.menu_langPacks"> -->
-                        <!--     <menubar id="toolsmenu"> -->
-                        <!--         <menubar id="languagePacks" label="Language Packs"> -->
-                        <!--             <menuitem id="ola" label="Ola"/> -->
-                        <!--         </menubar> -->
-                        <!--     </menubar> -->
-                        <!-- </overlay> -->
                         <overlay id="startup.${langpack.name}" resourcebundle="content/${langpack.name}/resources/lang/messages">
                             <menubar id="toolsmenu">
-                                <!-- <menupopup id="languagePacks" label="Language Packs"> -->
+                                <menubar id="languagePacks" label="${Launcher.menuLanguagePacks}" layout="vertical">
                                     <menuitem id="${langpack.name}"
                                               label="${languagePack.title}"
                                               command="mantleXulHandler.openUrl('${languagePack.title}','${languagePack.title}','plugin/${langpack.name}/api/main')"/>
-                                <!-- </menupopup> -->
+                                </menubar>
                             </menubar>
 
                         </overlay>
@@ -315,11 +311,11 @@
         <!-- Update dashboards -->
         <upper string="${plugin.name}" to="plugin.NAME" />
         <upper string="${langpack.name}" to="langpack.NAME" />
-        <replace dir="${stage.dir}/${langpack.name}/dashboards" includes="*.cdfde">
+        <replace dir="${stage.dir}/${langpack.name}/dashboards" includes="**/*.cdfde">
             <replacefilter token="&quot;${plugin.name}&quot;" value="&quot;${langpack.name}&quot;"/> <!--covers: meta_pluginID -->
             <replacefilter token="Components${plugin.name}_" value="Components${langpack.name}_"/> <!--covers: CPK datasources -->
-            <replacefilter token="/${plugin.name}/" value="/${langpack.name}/"/> <!--covers: resource paths, filename -->
             <replacefilter token="${plugin.NAME}" value="${langpack.NAME}"/> <!--covers: CPK datasources -->
+            <replacefilter token="/${plugin.name}/" value="/${langpack.name}/"/> <!--covers: resource paths, filename -->
         </replace>
 
         <!-- Inherit the project.revision property -->
@@ -331,7 +327,7 @@
         <!-- create a zip file -->
         <zip zipfile="${dist.dir}/${langpack.zipfile}"
              basedir="${stage.dir}"
-             excludes="**/Thumbs.db **/.DS_Store"
+             excludes="**/Thumbs.db **/.DS_Store **/.git"
              includes="${langpack.name}/**/*" />
         <move tofile="${dist.dir}/${langpack.name}-${langpack.distribution.version}.zip" file="${dist.dir}/${langpack.zipfile}"/>
 
@@ -340,10 +336,16 @@
             <version>
                 <branch>${project.stage}</branch>
                 <version>${langpack.distribution.version}</version>
-                <name>Trunk</name>
+                <name>${project.stage}</name>
                 <package_url>${langpack.package.url}</package_url>
                 <description>${here.languagePack.title}</description>
                 <build_id>${sequential.build.id}</build_id>
+                <min_parent_version>${marketplace.metadata.min_parent_version}</min_parent_version>
+                <max_parent_version>${marketplace.metadata.max_parent_version}</max_parent_version>
+                <development_stage>
+                  <lane>${langpack.metadata.maturity.lane}</lane>
+                  <phase>${langpack.metadata.maturity.phase}</phase>
+                </development_stage>
             </version>
         </echoxml>
 
@@ -357,10 +359,12 @@
                 <filter token="langpack.metadata.maintainer.name" value="${langpack.metadata.maintainer.name}"/>
                 <filter token="langpack.metadata.maintainer.url" value="${langpack.metadata.maintainer.url}"/>
                 <filter token="langpack.metadata.maintainer.img" value="${langpack.metadata.maintainer.img}"/>
+                <filter token="langpack.metadata.maturity.lane" value="${langpack.metadata.maturity.lane}"/>
+                <filter token="langpack.metadata.maturity.phase" value="${langpack.metadata.maturity.phase}"/>
                 <filter token="langpack.package.url" value="${langpack.package.url}"/>
                 <filter token="langCode" value="${langCode}"/>
+                <filter token="project.stage" value="${project.stage}"/>
                 <filter token="project.revision" value="${langpack.distribution.version}"/>
-                <filter token="project.version" value="${langpack.metadata.version}"/>
             </filterset>
         </copy>
         <available file="${basedir}/data/${langCode}/resources/img/flag.png" property="market.entry.img.present"/>
