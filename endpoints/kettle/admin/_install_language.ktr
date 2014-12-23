@@ -198,7 +198,6 @@
   <hop> <from>Select values</from><to>j</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values 2</from><to>j</to><enabled>Y</enabled> </hop>
   <hop> <from>Get &#x2a;.supported_languages.properties</from><to>Select values 3</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get Variables</from><to>j</to><enabled>Y</enabled> </hop>
   <hop> <from>j 4</from><to>get target&#x2f; messages&#x2a;.properties</to><enabled>Y</enabled> </hop>
   <hop> <from>j</from><to>j 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values 3</from><to>j 2</to><enabled>Y</enabled> </hop>
@@ -257,6 +256,7 @@
   <hop> <from>Merge Join</from><to>contents &#x2b; languageCode</to><enabled>Y</enabled> </hop>
   <hop> <from>strip this languageCode</from><to>Sort rows 3</to><enabled>Y</enabled> </hop>
   <hop> <from>contents &#x2b; languageCode</from><to>add header</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get Variables</from><to>j</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>.js to be patched</name>
@@ -456,10 +456,22 @@
     <compare>
 <condition>
  <negated>N</negated>
- <leftvalue>file_exists</leftvalue>
- <function>&#x3d;</function>
- <rightvalue/>
- <value><name>constant</name><type>Boolean</type><text>Y</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>file_exists</leftvalue>
+   <function>&#x3d;</function>
+   <rightvalue/>
+   <value><name>constant</name><type>Boolean</type><text>Y</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
+  <condition>
+   <negated>Y</negated>
+   <operator>AND</operator>
+   <leftvalue>baserver_version</leftvalue>
+   <function>STARTS WITH</function>
+   <rightvalue/>
+   <value><name>constant</name><type>String</type><text>5.0</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
+  </conditions>
+ </condition>
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -586,6 +598,18 @@
       <field>
         <name>target</name>
         <variable>&#x24;&#x7b;target&#x7d;</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>baserver_version</name>
+        <variable>&#x24;&#x7b;Internal.Kettle.Version&#x7d;</variable>
         <type>String</type>
         <format/>
         <currency/>
