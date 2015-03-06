@@ -4,7 +4,7 @@
     "language": "Español de Argentina",
     "languageCode": "es_AR",
     "version": "0.0",
-    "pentahoVersion": "5.2.0",
+    "pentahoVersion": "5.3.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"

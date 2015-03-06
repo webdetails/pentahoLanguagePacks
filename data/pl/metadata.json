@@ -4,7 +4,7 @@
     "language": "Polski",
     "languageCode": "pl",
     "version": "0.1",
-    "pentahoVersion": "5.2.0",
+    "pentahoVersion": "5.3.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"
