@@ -3,8 +3,8 @@
     "appWelcomeMessage": "This plugin installs language definitions for the Swedish language in Pentaho 5",
     "language": "Svenska",
     "languageCode": "sv",
-    "version": "0.0",
-    "pentahoVersion": "5.2.0",
+    "version": "0.2",
+    "pentahoVersion": "5.3.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"
