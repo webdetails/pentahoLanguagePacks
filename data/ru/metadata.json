@@ -4,7 +4,7 @@
     "language": "Русский язык",
     "languageCode": "ru",
     "version": "0.0",
-    "pentahoVersion": "5.3.0",
+    "pentahoVersion": "5.4.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"
