@@ -1,7 +1,7 @@
 {
     "appTitle": "Simplified Chinese Language Pack Installer",
     "appWelcomeMessage": "This plugin installs language definitions for the Simplified Chinese language in Pentaho 5",
-    "language": "Simplified Chinese",
+    "language": "简体中文",
     "languageCode": "zh_CN",
     "version": "0.0",
     "pentahoVersion": "5.4.0",
