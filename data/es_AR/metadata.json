@@ -1,0 +1,31 @@
+{
+    "appTitle": "Español de Argentina Language Pack Installer",
+    "appWelcomeMessage": "This plugin installs language definitions for the Español de Argentina language in Pentaho 5",
+    "language": "Español de Argentina",
+    "languageCode": "es_AR",
+    "version": "0.0",
+    "pentahoVersion": "5.4.0",
+    "maturity": {
+        "lane": "Community",
+        "phase": "2"
+    },
+    "maintainer": {
+        "name": "Marc Okrand",
+        "email": "Marc.Okrand@gmail.com",
+        "img": "",
+        "url": "http:\/\/www.google.com"
+    },
+    "credits": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }],
+    "sponsors": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }]
+
+}

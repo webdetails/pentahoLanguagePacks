@@ -3,8 +3,8 @@
     "appWelcomeMessage": "Aquest plugin instal·la les definicions d'idioma per l'idioma català en Pentaho 5",
     "language": "Català",
     "languageCode": "ca",
-    "version": "14.12.16",
-    "pentahoVersion": "5.2.0",
+    "version": "15.07.15",
+    "pentahoVersion": "5.4.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"

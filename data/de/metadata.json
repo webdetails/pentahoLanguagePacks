@@ -1,36 +1,31 @@
 {
-    "appTitle": "German Language Pack Installer",
-    "appWelcomeMessage": "This plugin installs language definitions for the German language in Pentaho 5",
+    "appTitle": "Deutscher Sprachpaketinstaller",
+    "appWelcomeMessage": "Dieses Plugin installiert Sprachdefinitionen für die deutsche Sprache in Pentaho 5",
     "language": "Deutsch",
     "languageCode": "de",
-    "version": "14.12.16",
-    "pentahoVersion": "5.2.0",
+    "version": "15.07.15",
+    "pentahoVersion": "5.4.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"
     },
     "maintainer": {
-        "name": "Thomas Starl",
-        "email": "pentaho-localization@tink.de",
+        "name": "",
+        "email": "",
         "img": "",
         "url": ""
     },
     "credits": [{
-        "name": "Thomas Starl",
-        "email": "pentaho-localization@tink.de",
-        "img": "",
-        "url": ""
-    }, {
-        "name": "Sarah Klemm",
-        "email": "sarah.klemm@medavis.de",
+        "name": "",
+        "email": "",
         "img": "",
         "url": ""
     }],
     "sponsors": [{
-        "name": "Medavis GmbH",
+        "name": "",
         "email": "",
         "img": "",
-        "url": "www.medavis.com"
+        "url": ""
     }]
 
 }

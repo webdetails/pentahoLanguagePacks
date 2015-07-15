@@ -1,9 +1,22 @@
-﻿ // this file must be UTF-8 encoded!!
+﻿
+/*
+ * Copyright 2002 - 2013 Pentaho Corporation.  All rights reserved.
+ *
+ * This software was developed by Pentaho Corporation and is provided under the terms
+ * of the Mozilla Public License, Version 1.1, or any later version. You may not use
+ * this file except in compliance with the license. If you need a copy of the license,
+ * please go to http://www.mozilla.org/MPL/MPL-1.1.txt. TThe Initial Developer is Pentaho Corporation.
+ *
+ * Software distributed under the Mozilla Public License is distributed on an "AS IS"
+ * basis, WITHOUT WARRANTY OF ANY KIND, either express or  implied. Please refer to
+ * the license for the specific language governing your rights and limitations.
+ */
+
 {
     step1Title: "Step 1: ビジネスモデルを選択",
     step2Title: "Step 2: アイテムを選択",
-    step3Title: "Step 3: アイテムカスタマイズ",
-    step4Title: "Step 4: レポートセッティング",
+    step3Title: "Step 3: アイテムをカスタマイズ",
+    step4Title: "Step 4: レポート設定",
     goBtnTxt: "表示",
     okBtnTxt: "Ok",
     cancelBtnTxt: "キャンセル",
@@ -201,10 +214,7 @@
     step2_div: "アイテムを選択",
     step3_div: "カスタマイズ",
     step4_div: "レポート設定",
-    IS_NULL: "NULLである",
-    IS_NOT_NULL: "NULLでない",
     dataaccessAddButtonText: "追加",
-    dataaccessEditButtonText: "編集",
     dataaccessDeleteButtonText: "削除",
     deleteModelWarningMessage: "選択されたデータソースに関連するすべてのコンテンツが動作するとは限りません。"
 

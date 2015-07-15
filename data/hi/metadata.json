@@ -3,8 +3,8 @@
     "appWelcomeMessage": "This plugin installs language definitions for the Hindi language in Pentaho 5",
     "language": "हिंदी",
     "languageCode": "hi",
-    "version": "14.12.16",
-    "pentahoVersion": "5.2.0",
+    "version": "15.07.15",
+    "pentahoVersion": "5.4.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"

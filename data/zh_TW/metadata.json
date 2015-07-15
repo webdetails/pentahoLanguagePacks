@@ -4,7 +4,7 @@
     "language": "Traditional Chinese",
     "languageCode": "zh_TW",
     "version": "0.0",
-    "pentahoVersion": "5.2.0",
+    "pentahoVersion": "5.4.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"
