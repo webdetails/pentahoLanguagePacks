@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the brazilian variant of the Portuguese language in Pentaho 5",
     "language": "Português do Brasil",
     "languageCode": "pt_BR",
-    "version": "14.12.16",
+    "version": "15.07.15",
     "pentahoVersion": "5.4.0",
     "maturity": {
         "lane": "Community",
