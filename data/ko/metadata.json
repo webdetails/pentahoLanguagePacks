@@ -3,7 +3,7 @@
     "appWelcomeMessage": "이 플러그인은 펜타호 5의 한국어 지원 리소스를 설치합니다.",
     "language": "한국어",
     "languageCode": "ko",
-    "version": "14.12.16",
+    "version": "15.07.15",
     "pentahoVersion": "5.4.0",
     "maturity": {
         "lane": "Community",

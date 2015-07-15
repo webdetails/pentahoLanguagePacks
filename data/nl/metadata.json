@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the Dutch language in Pentaho 5",
     "language": "Nederlans",
     "languageCode": "nl",
-    "version": "14.12.16",
+    "version": "15.07.15",
     "pentahoVersion": "5.4.0",
     "maturity": {
         "lane": "Community",

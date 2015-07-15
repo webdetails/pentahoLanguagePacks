@@ -3,7 +3,7 @@
     "appWelcomeMessage": "Ce plugin installe les définitions de la langue pour la langue anglaise dans Pentaho 5",
     "language": "France",
     "languageCode": "fr",
-    "version": "0.0",
+    "version": "15.07.15",
     "pentahoVersion": "5.4.0",
     "maturity": {
         "lane": "Communauté",

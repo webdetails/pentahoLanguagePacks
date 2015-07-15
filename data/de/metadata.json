@@ -3,7 +3,7 @@
     "appWelcomeMessage": "Dieses Plugin installiert Sprachdefinitionen für die deutsche Sprache in Pentaho 5",
     "language": "Deutsch",
     "languageCode": "de",
-    "version": "0.0",
+    "version": "15.07.15",
     "pentahoVersion": "5.4.0",
     "maturity": {
         "lane": "Community",
