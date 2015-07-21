@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the Thai language in Pentaho 5",
     "language": "Thai",
     "languageCode": "th",
-    "version": "0.0",
+    "version": "15.07.15",
     "pentahoVersion": "5.4.0",
     "maturity": {
         "lane": "Community",
