@@ -1,0 +1,31 @@
+{
+    "appTitle": "Ukrainian Language Pack Installer",
+    "appWelcomeMessage": "This plugin installs language definitions for the Ukrainian language in Pentaho 5",
+    "language": "Ukrainian",
+    "languageCode": "uk",
+    "version": "0.0",
+    "pentahoVersion": "5.4.0",
+    "maturity": {
+        "lane": "Community",
+        "phase": "2"
+    },
+    "maintainer": {
+        "name": "The Maintainer",
+        "email": "Maintainer@somecompany.com",
+        "img": "",
+        "url": "http:\/\/www.somecompany.com"
+    },
+    "credits": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }],
+    "sponsors": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }]
+
+}
