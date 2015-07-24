@@ -6,7 +6,7 @@
     "version": "14.07.03",
     "pentahoVersion": "5.1.0",
     "maintainer": {
-        "name": "Oncase, Open Consulting, IT4biz",
+        "name": "Oncase, Open Consulting, IT4biz, Ambiente Livre",
         "email": "pentahobr@yahoogrupos.com.br",
         "img": "",
         "url": "http://br.groups.yahoo.com/neo/groups/pentahobr/info"
@@ -30,6 +30,12 @@
             "img": "http://www.it4biz.com.br/extras/logo-it4biz-wordpress.png",
             "url": "http://www.it4biz.com.br/"
         }
+      {
+          "name": "Ambiente Livre",
+          "email": "marcio@ambientelivre.com.br",
+          "img": "http://www.ambientelivre.com.br/templates/ambientelivre/images/logo-ambientelivre.gif",
+          "url": "http://www.ambientelivre.com.br/"
+      }
     ],
     "sponsors": [
         {
