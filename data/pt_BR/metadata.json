@@ -10,7 +10,7 @@
         "phase": "2"
     },
     "maintainer": {
-        "name": "Oncase, Open Consulting, IT4biz",
+        "name": "Oncase, Open Consulting, IT4biz, Ambiente Livre",
         "email": "pentahobr@yahoogrupos.com.br",
         "img": "",
         "url": "http://br.groups.yahoo.com/neo/groups/pentahobr/info"
@@ -30,6 +30,11 @@
         "email": "caio@it4biz.com.br",
         "img": "http://www.it4biz.com.br/extras/logo-it4biz-wordpress.png",
         "url": "http://www.it4biz.com.br/"
+    }, {
+        "name": "Ambiente Livre",
+        "email": "marcio@ambientelivre.com.br",
+        "img": "http://www.ambientelivre.com.br/images/stories/logoambientelivre.png",
+        "url": "http://www.ambientelivre.com.br/"
     }],
     "sponsors": [{
         "name": "",
