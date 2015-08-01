@@ -10,22 +10,22 @@
         "phase": "2"
     },
     "maintainer": {
-        "name": "Brandon Jackson",
-        "email": "usbrandon@gmail.com",
+        "name": "Shanghai Datafor",
+        "email": "support@datafor.com.cn",
         "img": "",
-        "url": ""
+        "url": "http://www.datafor.com.cn/"
     },
     "credits": [{
-        "name": "",
-        "email": "",
+        "name": "Shanghai Datafor",
+        "email": "support@datafor.com.cn",
         "img": "",
-        "url": ""
+        "url": "http://www.datafor.com.cn/"
     }],
     "sponsors": [{
-        "name": "",
-        "email": "",
+        "name": "Shanghai Datafor",
+        "email": "support@datafor.com.cn",
         "img": "",
-        "url": ""
+        "url": "http://www.datafor.com.cn/"
     }]
 
 }
