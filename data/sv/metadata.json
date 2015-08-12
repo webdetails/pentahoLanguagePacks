@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the Swedish language in Pentaho 5",
     "language": "Svenska",
     "languageCode": "sv",
-    "version": "0.0",
+    "version": "0.3",
     "pentahoVersion": "5.4.0",
     "maturity": {
         "lane": "Community",
@@ -16,10 +16,10 @@
         "url": "http:\/\/www.omicron.se"
     },
     "credits": [{
-        "name": "",
-        "email": "",
+        "name": "Omicron Ceti AB",
+        "email": "info@omicron.se",
         "img": "",
-        "url": ""
+        "url": "http:\/\/www.omicron.se"
     }],
     "sponsors": [{
         "name": "",
