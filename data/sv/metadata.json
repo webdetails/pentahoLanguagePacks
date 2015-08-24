@@ -10,7 +10,7 @@
         "phase": "2"
     },
     "maintainer": {
-        "name": "Kenneth Wrife",
+        "name": "Kenneth Wrife, Omicron Ceti AB",
         "email": "ken@omicron.se",
         "img": "",
         "url": "http:\/\/www.omicron.se"
@@ -22,10 +22,10 @@
         "url": "http:\/\/www.omicron.se"
     }],
     "sponsors": [{
-        "name": "",
-        "email": "",
+        "name": "Omicron Ceti AB",
+        "email": "info@omicron.se",
         "img": "",
-        "url": ""
+        "url": "http:\/\/www.omicron.se"
     }]
 
 }
