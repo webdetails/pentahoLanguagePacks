@@ -1,13 +1,13 @@
 define({
-    TITLE_LABEL: 'Authentication',
-    AUTHENTICATION_METHOD_LABEL: 'Authentication Method',
+    TITLE_LABEL: 'Autentisering',
+    AUTHENTICATION_METHOD_LABEL: 'Metod för autentisering',
     AUTHENTICATION_METHOD_DESCRIPTION_LABEL: 'Select where user and their log in credentials will be managed:',
     AUTHENTICATION_METHOD_CHANGE_FROM_JCR_TO_JCR: 'You have not completed configuring your external authentication method. You will loose any changes you have made. Do you want to continue?',
     AUTHENTICATION_METHOD_CHANGE_FROM_JCR_TO_LDAP: 'Switching authentication method will start a new configuration and may change users, roles and login passwords. Are you sure you want to make this change?',
     AUTHENTICATION_METHOD_CHANGE_FROM_LDAP_TO_JCR: 'Setting the Authentication method to Local will remove your current LDAP security settings. Do you want to proceed?',
-    AUTHENTICATION_METHOD_TITLE: 'Authentication Method Change',
-    PENTAHO: 'Local - Use basic Pentaho authentication',
-    LDAP: 'External - Use LDAP / Active Directory server',
+    AUTHENTICATION_METHOD_TITLE: 'Byt metod för autentisering',
+    PENTAHO: 'Lokal - Använd Pentaho standard metod för autentisering',
+    LDAP: 'Extern - Använd LDAP / Active Directory server',
 
     //ldap server configuration
     LDAP_CONNECTION_TITLE_LABEL: 'LDAP Server Connection',
@@ -93,33 +93,33 @@ define({
     LDAP_CONNECTOR_TEST_PASSED: 'Connection to the LDAP server was successful.',
     LDAP_CONNECTOR_TEST_FAILED: 'Unable to connect to LDAP server. Verify settings and try again.',
 
-    SAVE: 'Save',
+    SAVE: 'Spara',
     TEST: 'Test',
-    CANCEL: 'Cancel',
-    YES: 'Yes',
-    YES_CHANGE: 'Yes, Continue',
-    NO: 'No',
+    CANCEL: 'Avbryt',
+    YES: 'Ja',
+    YES_CHANGE: 'Ja, Fortsätt',
+    NO: 'Nej',
     OK: 'OK',
-    CLOSE: 'Close',
-    TEST_PASSED: 'Test Passed',
-    TEST_FAILED: 'Test Failed',
+    CLOSE: 'Stäng',
+    TEST_PASSED: 'Test OK',
+    TEST_FAILED: 'Test misslyckades',
 
     CONFIGURATION_SAVED: 'Changes to authentication method have been saved, however, your changes will not take effect until you restart the server.',
 
     //licenseManager
-    PRODUCT: 'Product',
-    START_DATE: 'Start Date',
-    END_DATE: 'End Date',
+    PRODUCT: 'Produkt',
+    START_DATE: 'Startdatum',
+    END_DATE: 'Slutdatum',
     VERSION: 'Version',
-    LICENSES: 'Licenses',
-    DELETE_TITLE: 'Delete Selected License?',
+    LICENSES: 'Licens',
+    DELETE_TITLE: 'Tag bort markerad licens?',
     DELETE_WARNING: 'You are about to delete the selected license. Do you want to continue?',
 
     LICENSE_VALID_LICENSE_FOUND_LOG: 'Valid biserver-ee license found',
     LICENSE_NO_VALID_LICENSE_FOUND_LOG: 'No valid biserver-ee license found',
     LICENSE_NO_VALID_LICENSE_MESSAGE_HEADER: "Missing or expired license.",
     LICENSE_NO_VALID_LICENSE_MESSAGE_BODY: 'To continue you must update your Pentaho BI Platform license. If you are not ready now you may <a href="%CONTEXT_PATH%\Logout" target="_top">log out</a> and come back later.',
-    LICENSE_CANCEL_BUTTON: 'Log Out',
+    LICENSE_CANCEL_BUTTON: 'Logga ut',
     LICENSE_OK_BUTTON: 'Ok'
 
 });
