@@ -15,7 +15,7 @@
               description="Name of the resource directory"/>
     <tstamp/>
     <!-- Build the project.revision property -->
-    <property name="distribution.version" value="${project.stage}-${project.version}"/>
+    <property name="distribution.version" value="${project.revision}"/>
     <echo>distribution.version = ${distribution.version}</echo>
     <property name="plugin.artifact.id" value="${plugin.name}"/>
     <property name="plugin.zipfile" value="${plugin.artifact.id}-${distribution.version}.zip"/>
@@ -233,7 +233,12 @@
             <echo>Read from ${metadata.json}: appTitle = ${langpack.metadata.appTitle}...</echo>
 
             <!-- create the version file -->
-            <property name="langpack.distribution.version" value="${langpack.metadata.version}"/>
+            <condition property="langpack.distribution.version" 
+                       value="${langpack.metadata.version}" 
+                       else="${distribution.version}">
+                <isset property="langpack.metadata.version"/>
+            </condition>
+            <!--<property name="langpack.distribution.version" value="${langpack.metadata.version}"/>-->
             <tstamp/>
             <property name="sequential.build.id" value="manual-${DSTAMP}"/>
             <echoxml file="${stage.dir}/${langpack.name}/version.xml">
@@ -399,13 +404,21 @@
     <target name="build-language-packs" depends="clean, resolve"
             description="Builds all language packs">
         <antcall target="install-antcontrib"/>
-        <foreach target="infer-and-build-language-pack" param="langCodeFolder">
-            <path>
-                <dirset dir="${basedir}/data/">
-                    <include name="*"/>
-                </dirset>
-            </path>
-        </foreach>
+        <if>
+            <isset property="languageCodes"/>
+            <then>
+                <foreach list="${languageCodes}" target="infer-and-build-language-pack" param="langCodeFolder"/>
+            </then>
+            <else>
+                <foreach target="infer-and-build-language-pack" param="langCodeFolder">
+                    <path>
+                        <dirset dir="${basedir}/data/">
+                            <include name="*"/>
+                        </dirset>
+                    </path>
+                </foreach>
+            </else>
+        </if>
     </target>
 
     <target name="install-packs" depends="build-language-packs">
