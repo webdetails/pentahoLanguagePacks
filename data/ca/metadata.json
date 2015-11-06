@@ -1,10 +1,9 @@
 {
     "appTitle": "Paquet d'instal·lació de l'idioma català",
-    "appWelcomeMessage": "Aquest plugin instal·la les definicions d'idioma per l'idioma català en Pentaho 5",
+    "appWelcomeMessage": "Aquest plugin instal·la les definicions d'idioma per l'idioma català en Pentaho",
     "language": "Català",
     "languageCode": "ca",
-    "version": "15.07.15",
-    "pentahoVersion": "5.4.0",
+    "pentahoVersion": "6.0.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"
@@ -27,5 +26,4 @@
         "img": "",
         "url": "http:\/\/www.blauadvisors.com"
     }]
-
 }

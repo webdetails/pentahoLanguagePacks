@@ -1,19 +1,18 @@
 {
     "appTitle": "Greek Language Pack Installer",
-    "appWelcomeMessage": "This plugin installs language definitions for the Greek language in Pentaho 5",
+    "appWelcomeMessage": "This plugin installs language definitions for the Greek language in Pentaho",
     "language": "Greek",
     "languageCode": "el",
-    "version": "0.0",
-    "pentahoVersion": "5.4.0",
+    "pentahoVersion": "6.0.0",
     "maturity": {
         "lane": "Community",
         "phase": "1"
     },
     "maintainer": {
-        "name": "Some Guy",
-        "email": "Some.Guy@somewhere.com",
+        "name": "",
+        "email": "",
         "img": "",
-        "url": "http:\/\/www.somewhere.com"
+        "url": ""
     },
     "credits": [{
         "name": "",
@@ -27,5 +26,4 @@
         "img": "",
         "url": ""
     }]
-
 }
