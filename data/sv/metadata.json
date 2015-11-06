@@ -1,10 +1,9 @@
 {
     "appTitle": "Swedish Language Pack Installer",
-    "appWelcomeMessage": "This plugin installs language definitions for the Swedish language in Pentaho 5",
+    "appWelcomeMessage": "This plugin installs language definitions for the Swedish language in Pentaho",
     "language": "Svenska",
     "languageCode": "sv",
-    "version": "0.8",
-    "pentahoVersion": "5.4.0",
+    "pentahoVersion": "6.0.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"
@@ -27,5 +26,4 @@
         "img": "",
         "url": "http:\/\/www.omicron.se"
     }]
-
 }

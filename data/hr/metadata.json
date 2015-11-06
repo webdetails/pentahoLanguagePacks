@@ -1,10 +1,9 @@
 {
     "appTitle": "Croatian Language Pack Installer",
-    "appWelcomeMessage": "This plugin installs language definitions for the Croatian language in Pentaho 5",
+    "appWelcomeMessage": "This plugin installs language definitions for the Croatian language in Pentaho",
     "language": "hrvatski",
     "languageCode": "hr",
-    "version": "0.1",
-    "pentahoVersion": "5.4.0",
+    "pentahoVersion": "6.0.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"
@@ -27,5 +26,4 @@
         "img": "",
         "url": ""
     }]
-
 }
