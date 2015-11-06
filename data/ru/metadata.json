@@ -1,10 +1,9 @@
 {
     "appTitle": "Russian Language Pack Installer",
-    "appWelcomeMessage": "This plugin installs language definitions for the Russian language in Pentaho 5",
+    "appWelcomeMessage": "This plugin installs language definitions for the Russian language in Pentaho",
     "language": "Русский язык",
     "languageCode": "ru",
-    "version": "0.0",
-    "pentahoVersion": "5.4.0",
+    "pentahoVersion": "6.0.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"
@@ -27,5 +26,4 @@
         "img": "",
         "url": ""
     }]
-
 }

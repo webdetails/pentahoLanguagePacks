@@ -1,31 +1,29 @@
 {
     "appTitle": "Simplified Chinese Language Pack Installer",
-    "appWelcomeMessage": "This plugin installs language definitions for the Simplified Chinese language in Pentaho 5",
-    "language": "Simplified Chinese",
+    "appWelcomeMessage": "This plugin installs language definitions for the Simplified Chinese language in Pentaho",
+    "language": "简体中文",
     "languageCode": "zh_CN",
-    "version": "0.0",
-    "pentahoVersion": "5.4.0",
+    "pentahoVersion": "6.0.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"
     },
     "maintainer": {
-        "name": "Brandon Jackson",
-        "email": "usbrandon@gmail.com",
+        "name": "Shanghai Datafor",
+        "email": "support@datafor.com.cn",
         "img": "",
-        "url": ""
+        "url": "http://www.datafor.com.cn/"
     },
     "credits": [{
-        "name": "",
-        "email": "",
+        "name": "Shanghai Datafor",
+        "email": "support@datafor.com.cn",
         "img": "",
-        "url": ""
+        "url": "http://www.datafor.com.cn/"
     }],
     "sponsors": [{
-        "name": "",
-        "email": "",
+        "name": "Shanghai Datafor",
+        "email": "support@datafor.com.cn",
         "img": "",
-        "url": ""
+        "url": "http://www.datafor.com.cn/"
     }]
-
 }
