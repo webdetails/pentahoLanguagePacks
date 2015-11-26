@@ -1,0 +1,29 @@
+{
+    "appTitle": "Lithuanian Language Pack Installer",
+    "appWelcomeMessage": "This plugin installs language definitions for the lithuanian language in Pentaho",
+    "language": "Lithuanian",
+    "languageCode": "lt",
+    "pentahoVersion": "6.0.0",
+    "maturity": {
+        "lane": "Community",
+        "phase": "0"
+    },
+    "maintainer": {
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    },
+    "credits": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }],
+    "sponsors": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }]
+}
