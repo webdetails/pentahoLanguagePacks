@@ -55,6 +55,16 @@ if languageCode.startswith('en'):
     translation_marker = ''
 
 suffix = '_' + languageCode_underscore + '.properties';
+
+def replace_version(dst):
+    dst = re.sub('5.\d.\d.\d-\d+', '', dst)
+    dst = re.sub('5.\d.\d', '', dst)
+    dst = re.sub('6.\d.\d.\d-\d+', 'binks', dst)
+    dst = re.sub('6.\d.\d', 'binks', dst)
+    dst = re.sub('-\d.\d-', '-', dst) # remove version numbers
+    return dst
+
+
 def rreplace(s, old, new, occurrence=1):
     # like str.replace, but starts from the end
     # by default, only the last occurrence is replaced
@@ -62,6 +72,7 @@ def rreplace(s, old, new, occurrence=1):
     return new.join(li)
 
 def ensure_parent_folder_exists(dst):
+    print 'ensuring parent folder of ' + dst +  'exists'
     dst_parent = os.path.dirname(dst);
     if not os.path.exists(dst_parent):
         os.makedirs(dst_parent)
@@ -267,9 +278,7 @@ for root, dirs, filenames in os.walk('.'):
                     for el in z.namelist():
                         e = el.lower()
                         dst = os.path.realpath(os.path.join(destination_folder, root, f.replace('.jar', '_jar'), el.replace(languageCode_hyphen, languageCode_underscore) ))
-                        dst = re.sub('5.\d.\d.\d-\d+', '5.x', dst)
-                        dst = re.sub('5.\d.\d', '5.x', dst)
-                        dst = re.sub('-\d.\d-', '-', dst) # remove version numbers
+                        dst = replace_version(dst)
                         if e.endswith('messages_'+ suffix.lower()) or e.endswith('messages_'+ languageCode_hyphen.lower()  +'.properties'):
                             print 'Copying/patching:\n  ' +  os.path.realpath(os.path.join(origin_folder, src, el)) + '\nto\n  ' + dst + '\n'
                             tmpfolder = os.tmpnam()
@@ -351,9 +360,7 @@ for root, dirs, filenames in os.walk('.'):
                         is_other = e.endswith('.properties') and e.replace('.properties', '_supported_languages.properties') in z_list
                         if is_regular or has_xul or is_other:
                             dst = os.path.realpath(os.path.join(destination_folder, root, f.replace('.jar', '_jar'), el.replace('.properties', suffix) ))
-                            dst = re.sub('5.\d.\d.\d-\d+', '5.x', dst)
-                            dst = re.sub('5.\d.\d', '5.x', dst)
-                            dst = re.sub('-\d.\d-', '-', dst)
+                            dst = replace_version(dst)
                             fin = z.open(el, 'r') # Zipfiles don't support "with" statement
                             lines_src = fin.readlines()
                             fin.close()
