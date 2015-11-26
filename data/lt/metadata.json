@@ -1,18 +1,18 @@
 {
-    "appTitle": "@$locale@ Language Pack Installer",
-    "appWelcomeMessage": "This plugin installs language definitions for the @$locale@ language in Pentaho",
-    "language": "@$locale@",
+    "appTitle": "Lithuanian Language Pack Installer",
+    "appWelcomeMessage": "This plugin installs language definitions for the lithuanian language in Pentaho",
+    "language": "Lithuanian",
     "languageCode": "lt",
     "pentahoVersion": "6.0.0",
     "maturity": {
         "lane": "Community",
-        "phase": "2"
+        "phase": "0"
     },
     "maintainer": {
-        "name": "Marc Okrand",
-        "email": "Marc.Okrand@gmail.com",
+        "name": "",
+        "email": "",
         "img": "",
-        "url": "http:\/\/www.google.com"
+        "url": ""
     },
     "credits": [{
         "name": "",
