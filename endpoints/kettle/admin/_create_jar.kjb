@@ -72,7 +72,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>64</xloc>
-      <yloc>112</yloc>
+      <yloc>176</yloc>
       </entry>
     <entry>
       <name>Success</name>
@@ -81,8 +81,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>640</xloc>
-      <yloc>112</yloc>
+      <xloc>784</xloc>
+      <yloc>176</yloc>
       </entry>
     <entry>
       <name>_get_jar_filename</name>
@@ -115,7 +115,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>208</xloc>
-      <yloc>112</yloc>
+      <yloc>176</yloc>
       </entry>
     <entry>
       <name>Delete file</name>
@@ -126,8 +126,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>416</xloc>
-      <yloc>224</yloc>
+      <xloc>528</xloc>
+      <yloc>336</yloc>
       </entry>
     <entry>
       <name>File Exists</name>
@@ -137,8 +137,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>336</xloc>
-      <yloc>112</yloc>
+      <xloc>448</xloc>
+      <yloc>224</yloc>
       </entry>
     <entry>
       <name>_zip</name>
@@ -176,8 +176,81 @@
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>496</xloc>
+      <xloc>608</xloc>
+      <yloc>224</yloc>
+      </entry>
+    <entry>
+      <name>Delete file 2</name>
+      <description/>
+      <type>DELETE_FILE</type>
+      <filename>&#x24;&#x7b;target_jar&#x7d;</filename>
+      <fail_if_file_not_exists>N</fail_if_file_not_exists>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>528</xloc>
+      <yloc>16</yloc>
+      </entry>
+    <entry>
+      <name>File Exists 2</name>
+      <description/>
+      <type>FILE_EXISTS</type>
+      <filename>&#x24;&#x7b;target_jar&#x7d;</filename>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>448</xloc>
       <yloc>112</yloc>
+      </entry>
+    <entry>
+      <name>Zip file</name>
+      <description/>
+      <type>ZIP_FILE</type>
+      <zipfilename>&#x24;&#x7b;target_jar&#x7d;</zipfilename>
+      <compressionrate>1</compressionrate>
+      <ifzipfileexists>2</ifzipfileexists>
+      <wildcard/>
+      <wildcardexclude/>
+      <sourcedirectory>&#x24;&#x7b;src_folder&#x7d;</sourcedirectory>
+      <movetodirectory/>
+      <afterzip>0</afterzip>
+      <addfiletoresult>N</addfiletoresult>
+      <isfromprevious>N</isfromprevious>
+      <createparentfolder>Y</createparentfolder>
+      <adddate>N</adddate>
+      <addtime>N</addtime>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <createMoveToDirectory>N</createMoveToDirectory>
+      <include_subfolders>Y</include_subfolders>
+      <stored_source_path_depth>1</stored_source_path_depth>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>592</xloc>
+      <yloc>112</yloc>
+      </entry>
+    <entry>
+      <name>6.x &#x3f;</name>
+      <description/>
+      <type>SIMPLE_EVAL</type>
+      <valuetype>field</valuetype>
+      <fieldname>&#x24;&#x7b;Internal.Kettle.Version&#x7d;</fieldname>
+      <variablename/>
+      <fieldtype>string</fieldtype>
+      <mask/>
+      <comparevalue>6</comparevalue>
+      <minvalue/>
+      <maxvalue/>
+      <successcondition>startswith</successcondition>
+      <successnumbercondition>equal</successnumbercondition>
+      <successbooleancondition>false</successbooleancondition>
+      <successwhenvarset>N</successwhenvarset>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>320</xloc>
+      <yloc>176</yloc>
       </entry>
   </entries>
   <hops>
@@ -189,15 +262,6 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>_get_jar_filename</from>
-      <to>File Exists</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>File Exists</from>
@@ -228,6 +292,69 @@
     </hop>
     <hop>
       <from>_zip</from>
+      <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>File Exists 2</from>
+      <to>Delete file 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Delete file 2</from>
+      <to>Zip file</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>File Exists 2</from>
+      <to>Zip file</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>_get_jar_filename</from>
+      <to>6.x &#x3f;</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>6.x &#x3f;</from>
+      <to>File Exists</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>6.x &#x3f;</from>
+      <to>File Exists 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Zip file</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
