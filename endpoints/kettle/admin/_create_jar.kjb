@@ -231,15 +231,15 @@
       <yloc>112</yloc>
       </entry>
     <entry>
-      <name>6.x &#x3f;</name>
+      <name>6.0 &#x3f;</name>
       <description/>
       <type>SIMPLE_EVAL</type>
-      <valuetype>field</valuetype>
+      <valuetype>variable</valuetype>
       <fieldname>&#x24;&#x7b;Internal.Kettle.Version&#x7d;</fieldname>
-      <variablename/>
+      <variablename>&#x24;&#x7b;Internal.Kettle.Version&#x7d;</variablename>
       <fieldtype>string</fieldtype>
       <mask/>
-      <comparevalue>6</comparevalue>
+      <comparevalue>6.0</comparevalue>
       <minvalue/>
       <maxvalue/>
       <successcondition>startswith</successcondition>
@@ -328,7 +328,7 @@
     </hop>
     <hop>
       <from>_get_jar_filename</from>
-      <to>6.x &#x3f;</to>
+      <to>6.0 &#x3f;</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -336,7 +336,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>6.x &#x3f;</from>
+      <from>6.0 &#x3f;</from>
       <to>File Exists</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -345,7 +345,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>6.x &#x3f;</from>
+      <from>6.0 &#x3f;</from>
       <to>File Exists 2</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
