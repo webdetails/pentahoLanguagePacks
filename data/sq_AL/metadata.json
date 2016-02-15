@@ -1,0 +1,29 @@
+{
+    "appTitle": "Albanian Language Pack Installer",
+    "appWelcomeMessage": "This plugin installs language definitions for the Albanian language in Pentaho",
+    "language": "Albanian",
+    "languageCode": "sq_AL",
+    "pentahoVersion": "6.0.1",
+    "maturity": {
+        "lane": "Community",
+        "phase": "2"
+    },
+    "maintainer": {
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    },
+    "credits": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }],
+    "sponsors": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }]
+}

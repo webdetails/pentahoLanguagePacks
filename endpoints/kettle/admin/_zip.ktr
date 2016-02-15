@@ -86,8 +86,9 @@
   <notepads>
   </notepads>
   <order>
-  <hop> <from>Get source dir and target zip file</from><to>Zip it</to><enabled>Y</enabled> </hop>
-  <hop> <from>Generate Rows</from><to>Get source dir and target zip file</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get File Names</from><to>Get source dir and target zip file</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get source dir and target zip file</from><to>Select values</to><enabled>Y</enabled> </hop>
+  <hop> <from>Select values</from><to>Zip it</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Get source dir and target zip file</name>
@@ -101,18 +102,6 @@
            <schema_name/>
            </partitioning>
     <fields>
-      <field>
-        <name>source</name>
-        <variable>&#x24;&#x7b;src_folder&#x7d;</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
       <field>
         <name>target</name>
         <variable>&#x24;&#x7b;target_jar&#x7d;</variable>
@@ -210,17 +199,21 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 	logBasic( source );
 	logBasic( target );
  	try {
-		FileOutputStream fos = new FileOutputStream( target );
- 		ZipOutputStream out = new ZipOutputStream( new BufferedOutputStream( fos ) );
-		//out.setMethod( ZipOutputStream.STORED );
 		List fileList = new ArrayList();
-		generateFileList( fileList, new File( source ) ); 
-        for ( int i=0; i < fileList.size(); i++ ) {
-			String file = (String)fileList.get(i);
-			addToZip( source, file, out );
+		generateFileList( fileList, new File( source ) );
+		if(fileList.size() > 0){
+			FileOutputStream fos = new FileOutputStream( target );
+ 			ZipOutputStream out = new ZipOutputStream( new BufferedOutputStream( fos ) );
+			//out.setMethod( ZipOutputStream.STORED );
+        		for ( int i=0; i < fileList.size(); i++ ) {
+				String file = (String)fileList.get(i);
+				addToZip( source, file, out );
+			}
+			out.close();
+			fos.close();
+		} else {
+			logBasic( "No files to add to the zip file. ");
 		}
-		out.close();
-		fos.close();
 	} catch( Exception e ) {
 		logBasic( "Error creating the zip file." );
 	}
@@ -237,15 +230,15 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     </fields><clear_result_fields>N</clear_result_fields>
 <info_steps></info_steps><target_steps></target_steps><usage_parameters></usage_parameters>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>400</xloc>
+      <xloc>544</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Generate Rows</name>
-    <type>RowGenerator</type>
+    <name>Get File Names</name>
+    <type>GetFileNames</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -254,16 +247,57 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <fields>
-    </fields>
-    <limit>1</limit>
-    <never_ending>N</never_ending>
-    <interval_in_ms>5000</interval_in_ms>
-    <row_time_field>now</row_time_field>
-    <last_time_field>FiveSecondsAgo</last_time_field>
+    <filter>
+      <filterfiletype>all_files</filterfiletype>
+    </filter>
+    <doNotFailIfNoFile>N</doNotFailIfNoFile>
+    <rownum>N</rownum>
+    <isaddresult>Y</isaddresult>
+    <filefield>N</filefield>
+    <rownum_field/>
+    <filename_Field/>
+    <wildcard_Field/>
+    <exclude_wildcard_Field/>
+    <dynamic_include_subfolders>N</dynamic_include_subfolders>
+    <limit>0</limit>
+    <file>
+      <name>&#x24;&#x7b;src_folder&#x7d;</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>96</xloc>
+      <xloc>64</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>      <field>        <name>filename</name>
+        <rename>source</rename>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>target</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>432</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
       </GUI>
