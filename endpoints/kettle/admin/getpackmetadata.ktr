@@ -85,15 +85,17 @@
   <created_date>2013&#x2f;07&#x2f;04 18&#x3a;48&#x3a;57.073</created_date>
   <modified_user>-</modified_user>
   <modified_date>2013&#x2f;07&#x2f;04 18&#x3a;48&#x3a;57.073</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <order>
   <hop> <from>import metadata.json</from><to>Select values</to><enabled>Y</enabled> </hop>
-  <hop> <from>import metadata.json</from><to>Write to log</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
   <hop> <from>import metadata.json</from><to>Set Variables</to><enabled>Y</enabled> </hop>
   <hop> <from>Load utf8 file content in memory</from><to>import metadata.json</to><enabled>Y</enabled> </hop>
+  <hop> <from>import metadata.json</from><to>Write to log</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Load utf8 file content in memory</name>
@@ -114,7 +116,7 @@
     <rownum_field/>
     <encoding>UTF-8</encoding>
     <file>
-      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;..&#x2f;data&#x2f;metadata.json</name>
+      <name>&#x24;&#x7b;cpk.plugin.dir&#x7d;&#x2f;data&#x2f;metadata.json</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -245,7 +247,7 @@
       <displayHeader>Y</displayHeader>
       <limitRows>N</limitRows>
       <limitRowsNumber>0</limitRowsNumber>
-      <logmessage>Transformation&#x3a; cpk.webapp.dir &#x3d; &#x24;&#x7b;cpk.webapp.dir&#x7d;</logmessage>
+      <logmessage>Injected variables&#x3a; &#xa;cpk.webapp.dir &#x3d; &#x24;&#x7b;cpk.webapp.dir&#x7d;&#xa;cpk.plugin.dir &#x3d; &#x24;&#x7b;cpk.plugin.dir&#x7d;</logmessage>
     <fields>
       </fields>
      <cluster_schema/>
@@ -272,9 +274,11 @@
     <rownum>N</rownum>
     <addresultfile>N</addresultfile>
     <readurl>N</readurl>
+    <removeSourceField>N</removeSourceField>
     <IsIgnoreEmptyFile>N</IsIgnoreEmptyFile>
     <doNotFailIfNoFile>Y</doNotFailIfNoFile>
     <ignoreMissingPath>N</ignoreMissingPath>
+    <defaultPathLeafToNull>N</defaultPathLeafToNull>
     <rownum_field/>
     <file>
       <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;..&#x2f;..&#x2f;data&#x2f;metadata.json</name>
@@ -351,7 +355,7 @@
       </field>
       <field>
         <name>rawData</name>
-        <path>.</path>
+        <path>&#x24;</path>
         <type>String</type>
         <format/>
         <currency/>
