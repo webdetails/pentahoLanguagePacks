@@ -1,13 +1,13 @@
 define({
     TITLE_LABEL: 'Autenticação',
     Autenticaçã o_METHOD_LABEL: 'Método de Autenticação',
-    Autenticaçã o_METHOD_DESCRIPTION_LABEL: 'Selecione onde gerir os usuários e as suas credenciais de início de sessão:',
+    Autenticaçã o_METHOD_DESCRIPTION_LABEL: 'Selecione onde gerir os utilizadores e as suas credenciais de início de sessão:',
     Autenticaçã o_METHOD_CHANGE_FROM_JCR_TO_JCR: 'Não concluiu a configuração do seu método de autenticação externa. Todas as suas alterações serão perdidas. Deseja continuar?',
-    Autenticaçã o_METHOD_CHANGE_FROM_JCR_TO_LDAP: 'Alterar o método de autenticação iniciará uma nova configuração e pode alterar os usuários, funções e senhas de início de sessão. Tem certeza que deseja fazer esta alteração?',
+    Autenticaçã o_METHOD_CHANGE_FROM_JCR_TO_LDAP: 'Alterar o método de autenticação iniciará uma nova configuração e poderá alterar os utilizadores, funções e senhas de início de sessão. Tem a certeza que deseja fazer esta alteração?',
     Autenticaçã o_METHOD_CHANGE_FROM_LDAP_TO_JCR: 'Definir o método de Autenticação para Local removerá as configurações de segurança LDAP atuais. Deseja continuar?',
     Autenticaçã o_METHOD_TITLE: 'Alterar o Método de Autenticação',
     PENTAHO: 'Local - Usar a Autenticação do Pentaho',
-    LDAP: 'Externa - Usar servidor LDAP / Active Directory',
+    LDAP: 'Externo - Usar servidor LDAP / Active Directory',
 
     //ldap server configuration
     LDAP_CONNECTION_TITLE_LABEL: 'Conexão ao Servidor LDAP',
@@ -15,7 +15,7 @@ define({
     LDAP_USER_LABEL: 'Nome de Utilizador:',
     LDAP_PASSWORD_LABEL: 'Palavra-passe:',
     LDAP_TEST_CONNECTION_LABEL: 'Testar a conexão LDAP',
-    LDAP_SERVER_URL_DESCRIPTION: 'URL de conexão a usar para conectar ao servidor de diretório',
+    LDAP_SERVER_URL_DESCRIPTION: 'URL de conexão a usar para conectar ao diretório de servidor',
     LDAP_USER_DESCRIPTION: 'Nome de utilizador com acesso de leitura ao diretório',
     LDAP_PASSWORD_DESCRIPTION: 'Palavra-passe do utilizador especificado acima',
     LDAP_TEST_SERVER_CONNECTION_LABEL: 'Testar a Conexão ao Servidor',
@@ -35,8 +35,8 @@ define({
     LDAP_TYPE_SELECTOR_CUSTOM_OPTION_LABEL: 'Configuração Personalizada',
 
     //ldap apache configuration
-    LDAP_USER_BASE_LABEL: 'Base de Utilizador:',
-    LDAP_USER_SEARCH_BASE_LABEL: 'Base de Pesquisa:',
+    LDAP_USER_BASE_LABEL: 'Utilizador Base:',
+    LDAP_USER_SEARCH_BASE_LABEL: 'Pesquisa Base:',
     LDAP_USER_SEARCH_FILTER_LABEL: 'Filtro de Pesquisa:',
     LDAP_GROUP_BASE_LABEL: 'Grupo Base: ',
     LDAP_USER_BASE_DESCRIPTION: '',
@@ -47,22 +47,22 @@ define({
     //ldap custom user search configuration
     LDAP_USER_SEARCH_TITLE: 'Pesquisa de Utilizador',
 
-    //ldap custom roles configuration 
+    //ldap custom roles configuration
     LDAP_ROLES_TITLE: 'Funções',
     LDAP_ROLE_BASE_LABEL: 'Atributo da Função',
-    LDAP_ROLE_SEARCH_FILTER_LABEL: 'Filtro de Pesquisa de Função:',
-    LDAP_ROLE_SEARCH_BASE_LABEL: 'Base de Pesquisa de Função:',
+    LDAP_ROLE_SEARCH_FILTER_LABEL: 'Filtro de Pesquisa por Função:',
+    LDAP_ROLE_SEARCH_BASE_LABEL: 'Base de Pesquisa por Função:',
     LDAP_ROLE_BASE_DESCRIPTION: 'O atributo usado para valores de funções',
     LDAP_ROLE_SEARCH_FILTER_DESCRIPTION: 'Filtro para Pesquisas de "todas as funções"',
     LDAP_ROLE_SEARCH_BASE_DESCRIPTION: 'Base para Pesquisas de "todas as funções"',
 
     //ldap custom populator configuration
     LDAP_POPULATOR_TITLE: 'Populator',
-    LDAP_POPULATOR_GROUP_ROLE_ATTRIBUTE_LABEL: 'Atributo de Função de Grupo:',
+    LDAP_POPULATOR_GROUP_ROLE_ATTRIBUTE_LABEL: 'Atributo de Função por Grupo:',
     LDAP_POPULATOR_GROUP_ROLE_ATTRIBUTE_DESCRIPTION: 'O atributo de onde se obtém o nome das funções.',
-    LDAP_POPULATOR_GROUP_SEARCH_BASE_LABEL: 'Base de Pesquisa de Grupo:',
+    LDAP_POPULATOR_GROUP_SEARCH_BASE_LABEL: 'Base de Pesquisa por Grupo:',
     LDAP_POPULATOR_GROUP_SEARCH_BASE_DESCRIPTION: 'Base (por DN de utilizador ou nome de utilizador) para pesquisas de função.',
-    LDAP_POPULATOR_GROUP_SEARCH_FILTER_LABEL: 'Filtro de Pesquisa de Grupo:',
+    LDAP_POPULATOR_GROUP_SEARCH_FILTER_LABEL: 'Filtro de Pesquisa por Grupo:',
     LDAP_POPULATOR_GROUP_SEARCH_FILTER_DESCRIPTION: 'Filtro usado para pesquisar no grupo.',
     LDAP_POPULATOR_ROLE_PREFIX_LABEL: 'Prefixo de Função:',
     LDAP_POPULATOR_ROLE_PREFIX_DESCRIPTION: 'Prefixo que precede o nome da função obtido do Atributo de Função de Grupo; O valor pode ser um texto vazio.',
@@ -89,11 +89,11 @@ define({
 
     LDAP_POPULATOR_TEST: 'Testar LDAP Populator',
     LDAP_USER_TEST: 'Testar Utilizador LDAP',
-    LDAP_ROLES_TEST: 'Testar Função LDAP',
+    LDAP_ROLES_TEST: 'Testar Funções LDAP',
     LDAP_CONNECTOR_TEST_PASSED: 'Conexão com o servidor LDAP foi bem sucedida.',
     LDAP_CONNECTOR_TEST_FAILED: 'Não foi possível conectar ao servidor LDAP. Verifique as configurações e tente novamente. ',
 
-    SAVE: 'Salvar',
+    SAVE: 'Guardar',
     TEST: 'Testar',
     CANCEL: 'Cancelar',
     YES: 'Sim',
@@ -104,7 +104,7 @@ define({
     TEST_PASSED: 'Teste Bem Sucedido',
     TEST_FAILED: 'Teste Falhou',
 
-    CONFIGURATION_SAVED: 'As alterações ao método de Autenticação foram salvas, mas não terão efeito até que reinicie o servidor.',
+    CONFIGURATION_SAVED: 'As alterações ao método de Autenticação foram guardadas, mas não terão efeito até que reinicie o servidor.',
 
     //licenseManager
     PRODUCT: 'Produto',
