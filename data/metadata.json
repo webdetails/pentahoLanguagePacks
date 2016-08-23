@@ -1,18 +1,18 @@
 {
-    "appTitle": "Klingon Language Pack Installer",
-    "appWelcomeMessage": "This plugin installs language definitions for the Klingon language in Pentaho",
-    "language": "Klingon",
-    "languageCode": "tlh",
+    "appTitle": "Albanian Language Pack Installer",
+    "appWelcomeMessage": "This plugin installs language definitions for the Albanian language in Pentaho",
+    "language": "Shqip",
+    "languageCode": "sq_AL",
     "pentahoVersion": "6.1.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"
     },
     "maintainer": {
-        "name": "Marc Okrand",
-        "email": "Marc.Okrand@gmail.com",
+        "name": "Olti Buzi",
+        "email": "oltibuzi@gmail.com",
         "img": "",
-        "url": "http:\/\/www.google.com"
+        "url": "http:\/\/www.twitter.com\/oltimus"
     },
     "credits": [{
         "name": "",
