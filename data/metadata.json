@@ -1,9 +1,9 @@
 {
-    "appTitle": "Albanian Language Pack Installer",
+    "appTitle": "Plugin instalimi per gjuhen shqipe",
     "appWelcomeMessage": "This plugin installs language definitions for the Albanian language in Pentaho",
     "language": "Shqip",
     "languageCode": "sq_AL",
-    "pentahoVersion": "6.1.0",
+    "pentahoVersion": "6.0.1",
     "maturity": {
         "lane": "Community",
         "phase": "2"
@@ -12,7 +12,7 @@
         "name": "Olti Buzi",
         "email": "oltibuzi@gmail.com",
         "img": "",
-        "url": "http:\/\/www.twitter.com\/oltimus"
+        "url": "http:\/\/twitter.com\/oltimus"
     },
     "credits": [{
         "name": "",
