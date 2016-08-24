@@ -1,6 +1,6 @@
 {
-    "appTitle": "Plugin instalimi per gjuhen shqipe",
-    "appWelcomeMessage": "This plugin installs language definitions for the Albanian language in Pentaho",
+    "appTitle": "Paketë instalimi për gjuhën shqipe",
+    "appWelcomeMessage": "Kjo paketë instalon përkthimet në gjuhën shqipe për Pentaho",
     "language": "Shqip",
     "languageCode": "sq_AL",
     "pentahoVersion": "6.0.1",
