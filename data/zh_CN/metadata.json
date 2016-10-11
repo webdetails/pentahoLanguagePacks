@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the Simplified Chinese language in Pentaho",
     "language": "简体中文",
     "languageCode": "zh_CN",
-    "pentahoVersion": "6.0.0",
+    "pentahoVersion": "7.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"

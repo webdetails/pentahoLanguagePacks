@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the Greek language in Pentaho",
     "language": "Greek",
     "languageCode": "el",
-    "pentahoVersion": "6.0.0",
+    "pentahoVersion": "7.0",
     "maturity": {
         "lane": "Community",
         "phase": "1"

@@ -3,7 +3,7 @@
     "appWelcomeMessage": "Kjo paketë instalon përkthimet në gjuhën shqipe për Pentaho",
     "language": "Shqip",
     "languageCode": "sq_AL",
-    "pentahoVersion": "6.0.1",
+    "pentahoVersion": "7.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"
