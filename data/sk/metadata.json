@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the Slovak language in Pentaho",
     "language": "Slovak",
     "languageCode": "sk",
-    "pentahoVersion": "6.1.0",
+    "pentahoVersion": "7.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"

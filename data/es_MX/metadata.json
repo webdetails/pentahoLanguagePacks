@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the mexican variant of the Spanish language in Pentaho",
     "language": "Mexico's Spanish",
     "languageCode": "es_MX",
-    "pentahoVersion": "6.0.0",
+    "pentahoVersion": "7.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"

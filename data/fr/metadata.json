@@ -3,7 +3,7 @@
     "appWelcomeMessage": "Ce plugin installe les définitions de la langue pour la langue française dans Pentaho",
     "language": "France",
     "languageCode": "fr",
-    "pentahoVersion": "6.0.0",
+    "pentahoVersion": "7.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"

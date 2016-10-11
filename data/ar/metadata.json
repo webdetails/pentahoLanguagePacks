@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the Arabic language in Pentaho",
     "language": "العربية",
     "languageCode": "ar",
-    "pentahoVersion": "6.0.0",
+    "pentahoVersion": "7.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"

@@ -4,7 +4,7 @@
     "language": "Galego",
     "languageCode": "gl_ES",
     "version": "0.0",
-    "pentahoVersion": "6.0.0",
+    "pentahoVersion": "7.0",
     "maturity": {
         "lane": "Community",
         "phase": "1"

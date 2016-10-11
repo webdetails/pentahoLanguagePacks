@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the Danish language in Pentaho",
     "language": "Danish",
     "languageCode": "da",
-    "pentahoVersion": "6.0.0",
+    "pentahoVersion": "7.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"

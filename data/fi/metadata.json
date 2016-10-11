@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the Finnish language in Pentaho",
     "language": "Suomi",
     "languageCode": "fi",
-    "pentahoVersion": "6.0.0",
+    "pentahoVersion": "7.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"

@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the @$locale@ language in Pentaho",
     "language": "@$locale@",
     "languageCode": "gl_GL",
-    "pentahoVersion": "6.1.0",
+    "pentahoVersion": "7.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"
