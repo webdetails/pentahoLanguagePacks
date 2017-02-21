@@ -200,10 +200,13 @@
   <hop> <from>Select values</from><to>j</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values 2</from><to>j</to><enabled>Y</enabled> </hop>
   <hop> <from>Get &#x2a;.supported_languages.properties</from><to>Select values 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>j 4</from><to>get target&#x2f; messages&#x2a;.properties</to><enabled>Y</enabled> </hop>
   <hop> <from>j</from><to>j 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values 3</from><to>j 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>j 2</from><to>get target&#x2f; &#x2a;supported_messages.properties</to><enabled>Y</enabled> </hop>
   <hop> <from>j</from><to>j 4</to><enabled>Y</enabled> </hop>
   <hop> <from>Get all _jar</from><to>select jar folders</to><enabled>Y</enabled> </hop>
+  <hop> <from>j 3</from><to>get _languageCode.jar filename</to><enabled>Y</enabled> </hop>
   <hop> <from>j</from><to>j 3</to><enabled>Y</enabled> </hop>
   <hop> <from>select jar folders</from><to>j 3</to><enabled>Y</enabled> </hop>
   <hop> <from>Copy rows to result</from><to>OUTPUT</to><enabled>Y</enabled> </hop>
@@ -213,11 +216,14 @@
   <hop> <from>j</from><to>Write to log 2</to><enabled>Y</enabled> </hop>
   <hop> <from>strip comments</from><to>junk</to><enabled>Y</enabled> </hop>
   <hop> <from>strip this languageCode</from><to>junk 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>get target&#x2f; &#x2a;supported_messages.properties</from><to>File exists</to><enabled>Y</enabled> </hop>
   <hop> <from>dst_exists&#x3f;</from><to>junk 2</to><enabled>Y</enabled> </hop>
   <hop> <from>dst_exists&#x3f;</from><to>destination filenames</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort rows 3</from><to>Unique rows 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Unique rows 2</from><to>sort&#x3a; dst_filename</to><enabled>Y</enabled> </hop>
   <hop> <from>File exists</from><to>dst_exists&#x3f;</to><enabled>Y</enabled> </hop>
   <hop> <from>Get all &#x2a;_&#x24;&#x7b;languageCode&#x7d;.properties, &#x2a;.js</from><to>Filter rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>get target&#x2f; messages&#x2a;.properties</from><to>exclude &#x2a;.js to be patched</to><enabled>Y</enabled> </hop>
   <hop> <from>exclude &#x2a;.js to be patched</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>Dummy &#x28;do nothing&#x29;</from><to>is .properties &#x3f;</to><enabled>Y</enabled> </hop>
   <hop> <from>.js to be patched</from><to>Write to log 4</to><enabled>Y</enabled> </hop>
@@ -232,33 +238,27 @@
   <hop> <from>is .properties &#x3f; 2</from><to>copy and encode files</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values 4</from><to>write UTF8 properties </to><enabled>Y</enabled> </hop>
   <hop> <from>File exists 3</from><to>dst_exists&#x3f; 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>get _languageCode.jar filename</from><to>File exists 3</to><enabled>Y</enabled> </hop>
   <hop> <from>dst_exists&#x3f; 2</from><to>Copy rows to result</to><enabled>Y</enabled> </hop>
   <hop> <from>dst_exists&#x3f; 2</from><to>junk 2 2</to><enabled>Y</enabled> </hop>
   <hop> <from>destination filenames</from><to>Sort</to><enabled>Y</enabled> </hop>
+  <hop> <from>sort&#x3a; dst_filename</from><to>keyvalue</to><enabled>Y</enabled> </hop>
   <hop> <from>exclude &#x2a;.js to be patched</from><to>File exists 4</to><enabled>Y</enabled> </hop>
   <hop> <from>File exists 4</from><to>Filter rows 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Filter rows 2</from><to>.js to be patched</to><enabled>Y</enabled> </hop>
+  <hop> <from>keyvalue</from><to>strip comments</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort</from><to>read UTF8 properties</to><enabled>Y</enabled> </hop>
   <hop> <from>read UTF8 properties</from><to>strip this languageCode</to><enabled>Y</enabled> </hop>
-  <hop> <from>strip this languageCode</from><to>Sort rows 3</to><enabled>Y</enabled> </hop>
-  <hop> <from>Get Variables</from><to>j</to><enabled>Y</enabled> </hop>
-  <hop> <from>j 4</from><to>get target&#x2f; messages&#x2a;.properties</to><enabled>Y</enabled> </hop>
-  <hop> <from>get target&#x2f; messages&#x2a;.properties</from><to>exclude &#x2a;.js to be patched</to><enabled>Y</enabled> </hop>
-  <hop> <from>j 3</from><to>get _languageCode.jar filename</to><enabled>Y</enabled> </hop>
-  <hop> <from>get _languageCode.jar filename</from><to>File exists 3</to><enabled>Y</enabled> </hop>
-  <hop> <from>j 2</from><to>get target&#x2f; supported_messages&#x2a;.properties 2</to><enabled>Y</enabled> </hop>
-  <hop> <from>get target&#x2f; supported_messages&#x2a;.properties 2</from><to>File exists</to><enabled>Y</enabled> </hop>
   <hop> <from>Sort</from><to>keyvalue 2</to><enabled>Y</enabled> </hop>
   <hop> <from>keyvalue 2</from><to>Merge Join</to><enabled>Y</enabled> </hop>
-  <hop> <from>create content</from><to>Select values 4</to><enabled>Y</enabled> </hop>
-  <hop> <from>keyvalue</from><to>strip comments</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select values 4</from><to>Write to log</to><enabled>Y</enabled> </hop>
-  <hop> <from>Unique rows 2</from><to>keyvalue</to><enabled>Y</enabled> </hop>
+  <hop> <from>Group by dst_filename</from><to>Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>strip this languageCode</from><to>Sort rows 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get Variables</from><to>j</to><enabled>Y</enabled> </hop>
   <hop> <from>strip comments</from><to>Group by dst_filename</to><enabled>Y</enabled> </hop>
-  <hop> <from>Group by dst_filename</from><to>sort&#x3a; dst_filename</to><enabled>Y</enabled> </hop>
-  <hop> <from>sort&#x3a; dst_filename</from><to>Merge Join</to><enabled>Y</enabled> </hop>
-  <hop> <from>Merge Join</from><to>Unique rows</to><enabled>Y</enabled> </hop>
-  <hop> <from>Unique rows</from><to>create content</to><enabled>Y</enabled> </hop>
+  <hop> <from>add header surrogate</from><to>Write to log 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>add header surrogate</from><to>Select values 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>Merge Join</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value</from><to>add header surrogate</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>.js to be patched</name>
@@ -781,8 +781,8 @@
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1408</xloc>
-      <yloc>1008</yloc>
+      <xloc>1344</xloc>
+      <yloc>928</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -791,7 +791,7 @@
     <name>Merge Join</name>
     <type>MergeJoin</type>
     <description/>
-    <distribute>N</distribute>
+    <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -800,7 +800,7 @@
            </partitioning>
 <join_type>FULL OUTER</join_type>
 <step1>keyvalue 2</step1>
-<step2>sort&#x3a; dst_filename</step2>
+<step2>Group by dst_filename</step2>
     <keys_1>
       <key>dst_filename</key>
     </keys_1>
@@ -809,7 +809,37 @@
     </keys_2>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1392</xloc>
+      <xloc>1296</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;var file_contents &#x3d; &#x28;file_contents &#x3d;&#x3d; null &#x3f;  &#x22;&#x22; &#x3a; file_contents&#x29; &#x2b; keyvalue2&#x3b;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>file_contents</name>
+        <rename>file_contents</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1488</xloc>
       <yloc>768</yloc>
       <draw>Y</draw>
       </GUI>
@@ -847,6 +877,8 @@
            </partitioning>
     <fields>      <field>        <name>uri</name>
         <rename>target_folder</rename>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -869,6 +901,8 @@
            </partitioning>
     <fields>      <field>        <name>uri</name>
         <rename>source_folder</rename>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -891,7 +925,12 @@
            </partitioning>
     <fields>      <field>        <name>uri</name>
         <rename>src_filename</rename>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>      <field>        <name>path</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -905,7 +944,7 @@
     <name>Select values 4</name>
     <type>SelectValues</type>
     <description/>
-    <distribute>N</distribute>
+    <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
@@ -913,11 +952,17 @@
            <schema_name/>
            </partitioning>
     <fields>      <field>        <name>dst_filename</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>      <field>        <name>file_contents</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1696</xloc>
+      <xloc>1936</xloc>
       <yloc>768</yloc>
       <draw>Y</draw>
       </GUI>
@@ -1051,6 +1096,38 @@
     </step>
 
   <step>
+    <name>Write to log 3</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_basic</loglevel>
+      <displayHeader>Y</displayHeader>
+      <limitRows>N</limitRows>
+      <limitRowsNumber>0</limitRowsNumber>
+      <logmessage/>
+    <fields>
+      <field>
+        <name>dst_filename</name>
+        </field>
+      <field>
+        <name>file_contents</name>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1744</xloc>
+      <yloc>928</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>Write to log 4</name>
     <type>WriteToLog</type>
     <description/>
@@ -1132,6 +1209,36 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>352</xloc>
       <yloc>128</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>add header surrogate</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;var file_contents &#x3d; &#x22;&#x23;Patched by languagePackInstaller&#x5c;n&#x22; &#x2b; file_contents&#x3b;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>file_contents</name>
+        <rename>file_contents</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1744</xloc>
+      <yloc>768</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1400,6 +1507,98 @@
     </step>
 
   <step>
+    <name>get _languageCode.jar filename</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>dst_filename</field_name>
+<formula_string>src_folders.replace&#x28;source_folder, target_folder&#x29;.replace&#x28;&#x22;_jar&#x22;, &#x22;_&#x22; &#x2b; languageCode &#x2b; &#x22;.jar&#x22;&#x29;.replace&#x28;&#x22;file&#x3a;&#x2f;&#x2f;&#x22;, &#x22;&#x22;&#x29;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+       <formula><field_name>dst_parent</field_name>
+<formula_string>dst_filename.substring&#x28;0, dst_filename.lastIndexOf&#x28;&#x22;&#x2f;&#x22;&#x29;&#x29;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>640</xloc>
+      <yloc>640</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>get target&#x2f; &#x2a;supported_messages.properties</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>dst_filename</field_name>
+<formula_string>src_filename.replace&#x28;source_folder, target_folder&#x29;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>576</xloc>
+      <yloc>768</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>get target&#x2f; messages&#x2a;.properties</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>dst_filename</field_name>
+<formula_string>src_filename.replace&#x28;source_folder, target_folder&#x29;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+       <formula><field_name>dst_folder</field_name>
+<formula_string>dst_filename.substring&#x28;0, dst_filename.lastIndexOf&#x28;&#x22;&#x2f;&#x22;&#x29;&#x29;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>704</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>is .properties &#x3f;</name>
     <type>FilterRows</type>
     <description/>
@@ -1513,7 +1712,7 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>416</xloc>
+      <xloc>400</xloc>
       <yloc>768</yloc>
       <draw>Y</draw>
       </GUI>
@@ -1594,8 +1793,8 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1584</xloc>
-      <yloc>1120</yloc>
+      <xloc>1504</xloc>
+      <yloc>992</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1653,6 +1852,58 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>832</xloc>
       <yloc>992</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>keyvalue</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>keyvalue</field_name>
+<formula_string>key &#x2b; &#x22;&#x3d;&#x22;&#x2b;value &#x2b; &#x22;&#x5c;n&#x22;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1248</xloc>
+      <yloc>1040</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>keyvalue 2</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <formula><field_name>keyvalue2</field_name>
+<formula_string>languageCode &#x2b; &#x22;&#x3d;&#x22;&#x2b;language &#x2b; &#x22;&#x5c;n&#x22;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1152</xloc>
+      <yloc>768</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1783,6 +2034,8 @@
            </partitioning>
     <fields>      <field>        <name>uri</name>
         <rename>src_folders</rename>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -1805,6 +2058,8 @@
            </partitioning>
     <fields>      <field>        <name>uri</name>
         <rename>src_filename</rename>
+        <length>-2</length>
+        <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -1842,8 +2097,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1392</xloc>
-      <yloc>864</yloc>
+      <xloc>1248</xloc>
+      <yloc>1120</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1871,8 +2126,8 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1488</xloc>
-      <yloc>1120</yloc>
+      <xloc>1376</xloc>
+      <yloc>1088</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1976,259 +2231,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1856</xloc>
-      <yloc>768</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>get target&#x2f; messages&#x2a;.properties</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;var dst_filename &#x3d; src_filename.replace&#x28;source_folder, target_folder&#x29;&#x3b;&#xa;var dst_folder &#x3d; dst_filename.substring&#x28;0, dst_filename.lastIndexOf&#x28;&#x22;&#x2f;&#x22;&#x29;&#x29;&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>dst_filename</name>
-        <rename>dst_filename</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>dst_folder</name>
-        <rename>dst_folder</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>720</xloc>
-      <yloc>32</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>get _languageCode.jar filename</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;var dst_filename &#x3d; src_folders.replace&#x28;source_folder, target_folder&#x29;.replace&#x28;&#x22;_jar&#x22;, &#x22;_&#x22; &#x2b; languageCode &#x2b; &#x22;.jar&#x22;&#x29;.replace&#x28;&#x22;file&#x3a;&#x2f;&#x2f;&#x22;, &#x22;&#x22;&#x29;&#xa;var dst_parent &#x3d; dst_filename.substring&#x28;0, dst_filename.lastIndexOf&#x28;&#x22;&#x2f;&#x22;&#x29;&#x29;&#x3b;&#xa;&#xa;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>dst_filename</name>
-        <rename>dst_filename</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>dst_parent</name>
-        <rename>dst_parent</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>608</xloc>
-      <yloc>640</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>get target&#x2f; supported_messages&#x2a;.properties 2</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;var dst_filename &#x3d; src_filename.replace&#x28;source_folder, target_folder&#x29;&#x3b;&#xa;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>dst_filename</name>
-        <rename>dst_filename</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>592</xloc>
-      <yloc>768</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>keyvalue 2</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;var keyvalue2 &#x3d; languageCode &#x2b;&#x22;&#x3d;&#x22; &#x2b; language &#x2b; &#x22;&#x5c;n&#x22;&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>keyvalue2</name>
-        <rename>keyvalue2</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1152</xloc>
-      <yloc>768</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>create content</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;file_contents &#x3d; &#x28;file_contents &#x3d;&#x3d; null&#x29; &#x3f; &#x22;&#x22; &#x3a; &#x28;file_contents &#x2b; keyvalue2&#x29;&#x3b;&#xa;file_contents &#x3d; &#x22;&#x23;Patched by languagePackInstaller&#x5c;n&#x22; &#x2b; file_contents&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>file_contents</name>
-        <rename>file_contents</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>Y</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1600</xloc>
-      <yloc>768</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>keyvalue</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;var keyvalue &#x3d; key &#x2b; &#x22;&#x3d;&#x22;&#x2b;value &#x2b; &#x22;&#x5c;n&#x22;&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>keyvalue</name>
-        <rename>keyvalue</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1360</xloc>
-      <yloc>1120</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Write to log</name>
-    <type>WriteToLog</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <loglevel>log_level_basic</loglevel>
-      <displayHeader>Y</displayHeader>
-      <limitRows>N</limitRows>
-      <limitRowsNumber>0</limitRowsNumber>
-      <logmessage>Supported_languages&#x3a;</logmessage>
-    <fields>
-      <field>
-        <name>dst_filename</name>
-        </field>
-      <field>
-        <name>file_contents</name>
-        </field>
-      </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1776</xloc>
-      <yloc>672</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Unique rows</name>
-    <type>Unique</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <count_rows>N</count_rows>
-      <count_field/>
-      <reject_duplicate_row>N</reject_duplicate_row>
-      <error_description/>
-    <fields>      <field>        <name>dst_filename</name>
-        <case_insensitive>Y</case_insensitive>
-        </field>      <field>        <name>file_contents</name>
-        <case_insensitive>Y</case_insensitive>
-        </field>      </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1504</xloc>
-      <yloc>768</yloc>
+      <xloc>1936</xloc>
+      <yloc>928</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
