@@ -1,0 +1,29 @@
+{
+    "appTitle": "@$locale@ Language Pack Installer",
+    "appWelcomeMessage": "This plugin installs language definitions for the @$locale@ language in Pentaho",
+    "language": "@$locale@",
+    "languageCode": "gl_GL",
+    "pentahoVersion": "7.0",
+    "maturity": {
+        "lane": "Community",
+        "phase": "2"
+    },
+    "maintainer": {
+        "name": "Marc Okrand",
+        "email": "Marc.Okrand@gmail.com",
+        "img": "",
+        "url": "http:\/\/www.google.com"
+    },
+    "credits": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }],
+    "sponsors": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }]
+}

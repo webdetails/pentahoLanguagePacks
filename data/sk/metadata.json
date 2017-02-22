@@ -1,0 +1,29 @@
+{
+    "appTitle": "Slovak Language Pack Installer",
+    "appWelcomeMessage": "This plugin installs language definitions for the Slovak language in Pentaho",
+    "language": "Slovak",
+    "languageCode": "sk",
+    "pentahoVersion": "7.0",
+    "maturity": {
+        "lane": "Community",
+        "phase": "2"
+    },
+    "maintainer": {
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    },
+    "credits": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }],
+    "sponsors": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }]
+}

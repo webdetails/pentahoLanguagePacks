@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the Traditional Chinese language in Pentaho",
     "language": "Traditional Chinese",
     "languageCode": "zh_TW",
-    "pentahoVersion": "6.0.0",
+    "pentahoVersion": "7.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"

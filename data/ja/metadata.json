@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the Japanese language in Pentaho",
     "language": "Japanese",
     "languageCode": "ja",
-    "pentahoVersion": "6.0.0",
+    "pentahoVersion": "7.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"

@@ -3,7 +3,7 @@
     "appWelcomeMessage": "This plugin installs language definitions for the English language in Pentaho",
     "language": "English",
     "languageCode": "en",
-    "pentahoVersion": "6.0.0",
+    "pentahoVersion": "7.0",
     "maturity": {
         "lane": "Community",
         "phase": "2"
