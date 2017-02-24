@@ -66,6 +66,8 @@ def replace_version(dst):
     dst = re.sub('-5.\d.\d', '', dst)
     dst = re.sub('-6.\d.\d.\d-\d+', '', dst)
     dst = re.sub('-6.\d.\d', '', dst)
+    dst = re.sub('-7.\d.\d.\d-\d+', '', dst)
+    dst = re.sub('-7.\d.\d', '', dst)
     dst = re.sub('-\d.\d-', '-', dst) # remove version numbers
     return dst
 
