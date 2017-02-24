@@ -1,0 +1,29 @@
+{
+    "appTitle": "Turkish Language Pack Installer",
+    "appWelcomeMessage": "This plugin installs language definitions for the Turkish language in Pentaho",
+    "language": "Türkçe",
+    "languageCode": "tr",
+    "pentahoVersion": "7.0",
+    "maturity": {
+        "lane": "Community",
+        "phase": "1"
+    },
+    "maintainer": {
+        "name": "TUBİTAK",
+        "email": "caglaokutan@gmail.com",
+        "img": "",
+        "url": "http:\/\/www.tubitak.gov.tr"
+    },
+    "credits": [{
+       "name": "TUBİTAK",
+        "email": "caglaokutan@gmail.com",
+        "img": "",
+        "url": "http:\/\/www.tubitak.gov.tr"
+    }],
+    "sponsors": [{
+        "name": "TUBİTAK",
+        "email": "caglaokutan@gmail.com",
+        "img": "",
+        "url": "http:\/\/www.tubitak.gov.tr"
+    }]
+}
