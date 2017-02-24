@@ -1,0 +1,29 @@
+{
+    "appTitle": "Tamil Language Pack Installer",
+    "appWelcomeMessage": "This plugin installs language definitions for the Tamil language in Pentaho",
+    "language": "தமிழ்",
+    "languageCode": "ta",
+    "pentahoVersion": "7.0",
+    "maturity": {
+        "lane": "Community",
+        "phase": "1"
+    },
+    "maintainer": {
+        "name": "SARA IT Services",
+        "email": "shivasakthi18@gmail.com",
+        "img": "",
+        "url": "http:\/\/www.saraitservices.com"
+    },
+    "credits": [{
+       "name": "SARA IT Services",
+        "email": "shivasakthi18@gmail.com",
+        "img": "",
+        "url": "http:\/\/www.saraitservices.com"
+    }],
+    "sponsors": [{
+        "name": "SARA IT Services",
+        "email": "shivasakthi18@gmail.com",
+        "img": "",
+        "url": "http:\/\/www.saraitservices.com"
+    }]
+}
