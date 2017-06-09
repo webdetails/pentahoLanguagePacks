@@ -1,0 +1,30 @@
+{
+    "appTitle": "Galician (Spain) Language Pack Installer",
+    "appWelcomeMessage": "This plugin installs language definitions for the Galician language in Pentaho",
+    "language": "Galego",
+    "languageCode": "gl",
+    "version": "8.0",
+    "pentahoVersion": "8.0.0",
+    "maturity": {
+        "lane": "Community",
+        "phase": "1"
+    },
+    "maintainer": {
+        "name": "Bahia Software SLU",
+        "email": "oficina.bi@bahiasoftware.es",
+        "img": "",
+        "url": "http:\/\/www.pentaho.com"
+    },
+    "credits": [{
+        "name": "Bahia Software SLU",
+        "email": "oficina.bi@bahiasoftware.es",
+        "img": "",
+        "url": ""
+    }],
+    "sponsors": [{
+        "name": "",
+        "email": "",
+        "img": "",
+        "url": ""
+    }]
+}
