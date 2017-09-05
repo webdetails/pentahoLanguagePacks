@@ -2,7 +2,7 @@
     "appTitle": "Galician (Spain) Language Pack Installer",
     "appWelcomeMessage": "This plugin installs language definitions for the Galician language in Pentaho 6",
     "language": "Galego",
-    "languageCode": "gl_ES",
+    "languageCode": "gl",
     "version": "0.0",
     "pentahoVersion": "6.0.0",
     "maturity": {
