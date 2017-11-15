@@ -1,5 +1,13 @@
 language: java
 jdk:
-  - oraclejdk8
-  
+- oraclejdk8
 script: ant build-language-packs
+deploy:
+  provider: releases
+  api_key:
+    secure: YE3LTNS6JrBbh63uq5/YyNJQFGnh957dqBRYtzVLO9TQYj+Oo5ETVJXV742jy9DZZrcb1eG45VMiinLL2ijPEUcKSLZ607Rad7iCak1avArgJ956nQKDyXP8oC3oM5r838MK/JEItJH7Mxw7C29ngLlaOOQwma6n4VJHKZyvs78=
+  file: dist/*
+  file_glob: true
+  skip_cleanup: true
+  on:
+    repo: webdetails/pentahoLanguagePacks
