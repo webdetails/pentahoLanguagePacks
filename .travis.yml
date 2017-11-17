@@ -10,4 +10,5 @@ deploy:
   file_glob: true
   skip_cleanup: true
   on:
+    branch: release
     repo: webdetails/pentahoLanguagePacks
