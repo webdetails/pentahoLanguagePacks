@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2.7
 
 # Script for generating a language pack from an existing Pentaho installation.
 #
@@ -62,6 +62,8 @@ def debug(msg):
         print msg
 
 def replace_version(dst):
+    dst = re.sub('-8.\d.\d.\d-\d+', '', dst)
+    dst = re.sub('-8.\d.\d', '', dst)
     dst = re.sub('-5.\d.\d.\d-\d+', '', dst)
     dst = re.sub('-5.\d.\d', '', dst)
     dst = re.sub('-6.\d.\d.\d-\d+', '', dst)
@@ -341,6 +343,7 @@ for root, dirs, filenames in os.walk('.'):
         if is_regular or has_xul or is_other:
             debug("round 2 elegible file:" + src)
             dst_localised =  os.path.realpath(os.path.join(destination_folder, root, f.replace('.properties', suffix) ))
+            dst_localised = replace_version(dst_localised)
             with codecs.open(src, 'r', 'utf_8') as fin:
                 lines_src = fin.readlines()
             try:
@@ -404,7 +407,7 @@ for root, dirs, filenames in os.walk('.'):
                         else: raise
                     copy(src, nls_file)
 
-
+print "THIRD ROUND"
 # Third round: convert the encoding of all *.properties to utf8
 for root, dirs, filenames in os.walk(destination_folder):
     for f in filenames:
