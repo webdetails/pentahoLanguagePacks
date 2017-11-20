@@ -52,5 +52,5 @@
     SHARE_HEADER_LABEL: "Freigabe",
     OK: "OK",
     CANCEL: "Abbrechen"
-        /* end strings for aclEditor */
+    /* end strings for aclEditor */
 }
