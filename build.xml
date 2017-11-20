@@ -53,7 +53,7 @@
                 <version>${distribution.version}</version>
                 <name>${project.stage}</name>
                 <package_url>not defined</package_url>
-                <description>@PLUGIN_PACKAGE_DESCRIPTION@</description>
+                <description>Latest Release</description>
                 <build_id>${sequential.build.id}</build_id>
             </version>
         </echoxml>
@@ -326,7 +326,7 @@
         <!-- Inherit the project.revision property -->
         <property name="langpack.artifact.id" value="${langpack.name}"/>
         <property name="langpack.zipfile" value="${langpack.artifact.id}-${langpack.distribution.version}.zip"/>
-        <property name="langpack.package.url" value="http://ci.analytical-labs.com/job/Webdetails-languagePackInstallers/lastSuccessfulBuild/artifact/dist/${langpack.zipfile}"/>
+        <property name="langpack.package.url" value="https://github.com/webdetails/pentahoLanguagePacks/releases/download/${langpack.distribution.version}/${langpack.zipfile}"/>
 
 
         <!-- create a zip file -->
@@ -343,7 +343,8 @@
                 <version>${langpack.distribution.version}</version>
                 <name>${project.stage}</name>
                 <package_url>${langpack.package.url}</package_url>
-                <description>${here.languagePack.title}</description>
+                <!-- <description>${here.languagePack.title}</description> -->
+                <description>Latest Release</description>
                 <build_id>${sequential.build.id}</build_id>
                 <min_parent_version>${marketplace.metadata.min_parent_version}</min_parent_version>
                 <max_parent_version>${marketplace.metadata.max_parent_version}</max_parent_version>
@@ -366,6 +367,8 @@
                 <filter token="langpack.metadata.maintainer.img" value="${langpack.metadata.maintainer.img}"/>
                 <filter token="langpack.metadata.maturity.lane" value="${langpack.metadata.maturity.lane}"/>
                 <filter token="langpack.metadata.maturity.phase" value="${langpack.metadata.maturity.phase}"/>
+                <filter token="marketplace.metadata.min_parent_version" value="${marketplace.metadata.min_parent_version}"/>
+                <filter token="marketplace.metadata.max_parent_version" value="${marketplace.metadata.max_parent_version}"/>
                 <filter token="langpack.package.url" value="${langpack.package.url}"/>
                 <filter token="langCode" value="${langCode}"/>
                 <filter token="project.stage" value="${project.stage}"/>
