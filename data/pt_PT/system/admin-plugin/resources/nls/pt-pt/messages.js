@@ -119,7 +119,8 @@ define({
     LICENSE_NO_VALID_LICENSE_FOUND_LOG: 'Nenhuma licença Biserver-EE válida encontrada',
     LICENSE_NO_VALID_LICENSE_MESSAGE_HEADER: "Licença ausente ou expirada.",
     LICENSE_NO_VALID_LICENSE_MESSAGE_BODY: 'Para continuar é necessário atualizar a sua licença Pentaho BI Platform. Se ainda não estiver preparado pode <a href="%CONTEXT_PATH%\Logout" target="_top">terminar a sessão</a> e voltar mais tarde.',
-    < TRANSLATE ME >
+    <
+    TRANSLATE ME >
     LICENSE_CANCEL_BUTTON: 'Terminar a Sessão',
     LICENSE_OK_BUTTON: 'Ok'
 
