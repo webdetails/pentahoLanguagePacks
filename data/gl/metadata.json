@@ -3,7 +3,6 @@
     "appWelcomeMessage": "This plugin installs language definitions for the Galician language in Pentaho",
     "language": "Galego",
     "languageCode": "gl",
-    "version": "8.0",
     "pentahoVersion": "8.0.0",
     "maturity": {
         "lane": "Community",
