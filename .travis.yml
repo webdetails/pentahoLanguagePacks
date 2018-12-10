@@ -5,7 +5,7 @@ script: ant build-language-packs
 deploy:
   provider: releases
   api_key:
-    secure: YE3LTNS6JrBbh63uq5/YyNJQFGnh957dqBRYtzVLO9TQYj+Oo5ETVJXV742jy9DZZrcb1eG45VMiinLL2ijPEUcKSLZ607Rad7iCak1avArgJ956nQKDyXP8oC3oM5r838MK/JEItJH7Mxw7C29ngLlaOOQwma6n4VJHKZyvs78=
+    secure: ADofUQPGKpl5hlJgxFCQnSqMtlrm9uCnEhgxj73HaB7SCUsLgf52UAwQ53IbI1uBePCH91yiqoAIeb6Gs7eecOc76OHP+YQAXp5dvNYvaaemxKQE98qdYNMm90nGBTneBcU0J6YSSmAO2DLxGnsPaEE+PoEQh/damICyOaqsFsk=
   file: dist/*
   file_glob: true
   skip_cleanup: true
