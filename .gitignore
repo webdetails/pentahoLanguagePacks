@@ -1,5 +1,7 @@
 *.DS_Store
-/.project
-/bin
-/dist
-/lib
+
+.project
+bin/
+dist/
+lib/
+.idea/
