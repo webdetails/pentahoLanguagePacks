@@ -2,9 +2,11 @@
   <id>@langpack.name@</id>
   <type>Platform</type>
   <name>@langpack.metadata.appTitle@</name>
+
   <category>
     <name>Language Pack</name>
   </category>
+
   <description>
     <![CDATA[
     @langpack.metadata.appWelcomeMessage@ <br /><br />
@@ -14,15 +16,19 @@
     ]]>
     @langpack.metadata.appWelcomeMessage@
   </description>
+
   <documentation_url>@langpack.metadata.appWelcomeMessage@</documentation_url>
+
   <author>@langpack.metadata.maintainer.name@</author>
   <author_url>@langpack.metadata.maintainer.url@</author_url>
   <author_logo>@langpack.metadata.maintainer.img@</author_logo>
+
   <license>MPL 2.0</license>
+
   <dependencies>CDF, CDA, CDE, CGG</dependencies>
   <img>https://github.com/webdetails/pentahoLanguagePacks/raw/master/data/@langCode@/resources/img/flag.png</img>
-  <small_img>https://github.com/webdetails/pentahoLanguagePacks/raw/master/data/@langCode@/resources/img/flag.png
-  </small_img>
+  <small_img>https://github.com/webdetails/pentahoLanguagePacks/raw/master/data/@langCode@/resources/img/flag.png</small_img>
+
   <installation_notes>
     <![CDATA[You can run the Language Pack Installer as an administrator from
     the Tools menu. The installer will then copy the language packs over your
@@ -35,24 +41,30 @@
 
     ]]>
   </installation_notes>
+
   <versions>
     <version>
       <branch>@project.stage@</branch>
       <version>@project.revision@</version>
+
       <name>@project.stage@</name>
       <package_url>@langpack.package.url@</package_url>
-      <samples_url></samples_url>
+
+      <samples_url/>
       <description>Latest Release</description>
-      <changelog></changelog>
-      <build_id></build_id>
+      <changelog/>
+      <build_id/>
+
       <min_parent_version>@marketplace.metadata.min_parent_version@</min_parent_version>
       <max_parent_version>@marketplace.metadata.max_parent_version@</max_parent_version>
+
       <development_stage>
         <lane>@langpack.metadata.maturity.lane@</lane>
         <phase>@langpack.metadata.maturity.phase@</phase>
       </development_stage>
     </version>
   </versions>
+
   <screenshots>
     <screenshot id="1">
       https://raw.github.com/webdetails/pentahoLanguagePacks/master/data/@langCode@/resources/img/screenshot_1.png

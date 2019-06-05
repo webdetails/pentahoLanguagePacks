@@ -28,18 +28,24 @@ jar_whitelist = [ # list of jars that will be scanned for messages.
     'pentaho-platform-',
     'pentaho-reporting-engine',
     #
-    #system
+    # system
     #
     'common-ui',
+    #
     # data-access
+    #
     'pentaho-bi-platform-data-access',
     'pentaho-database-gwt',
     'pentaho-modeler',
+    #
     # dashboards
+    #
     'pentaho-dashboard',
     'pentaho-dashboard-chart-editor',
     'pentaho-mql-editor',
+    #
     # pivot4j
+    #
     'pivot4j-analytics',
     'pivot4j-core'
 ]
