@@ -3,7 +3,9 @@
 	<cde-styles>
 		<path>system/languagePackInstaller/resources/styles</path>
 	</cde-styles>
-  	<cde-datasources/>
+
+	<cde-datasources/>
+
 	<cde-components>
 	  <!-- paths from solution with cde component definitions to be loaded-->
 	  <path>system/languagePackInstaller/resources/components</path>

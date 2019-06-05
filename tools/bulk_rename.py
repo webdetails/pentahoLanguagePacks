@@ -1,13 +1,12 @@
 #/usr/bin/python
+
 import os
 import sys
 import shutil
-# import zipfile
-# import codecs
 
-origin_folder = os.path.abspath('/Users/carlos/webdetails/bi/biserver-ce/pentaho-solutions/system/languagePackInstaller/data/se')
-origin_folder = os.path.abspath('/Users/carlos/Downloads/system');
 
+# Path to folder that contains the server property files.
+origin_folder = os.path.abspath('/path/to/data')
 os.chdir(origin_folder)
 
 src_suffix = 'es-mx';

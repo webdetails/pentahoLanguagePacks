@@ -1,7 +1,10 @@
 #!/bin/bash
 
-ORIGIN=/Users/carlos/webdetails/servers/6GA/biserver-ee
-DEST=/Users/carlos/webdetails/projects/languagePackInstaller/data
+# Path to pentaho-server
+ORIGIN=/path/to/pentaho-server
+
+# Path to Language Pack Installer data folder
+DEST=../data
 
 HERE=$(pwd)
 for locale in "$@"
