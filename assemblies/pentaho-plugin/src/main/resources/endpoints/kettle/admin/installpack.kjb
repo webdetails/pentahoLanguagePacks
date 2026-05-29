@@ -132,6 +132,9 @@
             </parameter>            <parameter>            <name>target</name>
             <stream_name/>
             <value>system</value>
+            </parameter>            <parameter>            <name>sub_folder</name>
+            <stream_name/>
+            <value>system</value>
             </parameter>            <parameter>            <name>target_folder</name>
             <stream_name/>
             <value>&#x24;&#x7b;cpk.solution.system.dir&#x7d;</value>
@@ -268,6 +271,9 @@
             </parameter>            <parameter>            <name>target</name>
             <stream_name/>
             <value>tomcat&#x2f;webapps&#x2f;pentaho</value>
+            </parameter>            <parameter>            <name>sub_folder</name>
+            <stream_name/>
+            <value>pentaho</value>
             </parameter>            <parameter>            <name>target_folder</name>
             <stream_name/>
             <value>&#x24;&#x7b;cpk.webapp.dir&#x7d;</value>
