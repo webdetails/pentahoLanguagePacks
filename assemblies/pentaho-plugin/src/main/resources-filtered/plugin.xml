@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin loader="DEFAULT" title="${langpack.name}" name="${langpack.name}">
+  <overlays>
+    <overlay id="startup.${langpack.name}" resourcebundle="content/${langpack.name}/resources/lang/messages">
+      <menubar id="toolsmenu">
+        <menubar id="languagePacks" label="${Launcher.menuLanguagePacks}" layout="vertical">
+          <menuitem id="${langpack.name}"
+                    label="${languagePack.title}"
+                    command="mantleXulHandler.openUrl('${languagePack.title}','${languagePack.title}','plugin/${langpack.name}/api/main')"/>
+        </menubar>
+      </menubar>
+    </overlay>
+  </overlays>
+  <lifecycle-listener class="pt.webdetails.cpk.CpkLifecycleListener"/>
+  <static-paths>
+    <static-path localFolder="static" url="/${langpack.name}/static"/>
+    <static-path localFolder="resources" url="/${langpack.name}/resources"/>
+  </static-paths>
+  <content-types>
+    <content-type>
+      <title>${langpack.title}</title>
+      <description>${langpack.description}</description>
+      <company logo="${maintainer.img}" name="${maintainer.name}" url="${maintainer.url}"/>
+    </content-type>
+  </content-types>
+  <content-generator class="pt.webdetails.cpk.CpkContentGenerator" id="${langpack.name}" title="${langpack.title}" type="${langpack.name}"/>
+</plugin>

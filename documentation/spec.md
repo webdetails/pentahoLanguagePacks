@@ -4,7 +4,7 @@ Language Pack Installer
 =============
 
 This application simplifies the process of deploying language packs.
-Once installed from the marketplace, this application provides a means for patching a Pentaho installation with a set of messages translated to some language (Klingon in this example.)
+Once installed via the Pentaho Plugin Manager, this application provides a means for patching a Pentaho installation with a set of messages translated to some language (Klingon in this example.)
 
 ## Global, long-term vision
 
@@ -164,4 +164,3 @@ Display information on the contributors to the language pack.
 	
 ## Edit dashboard
 Not to be implemented in this version
-

@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>language-pack-installer-pentaho-plugin</artifactId>
+  <packaging>pom</packaging>
+  <name>Language Pack Installer Pentaho Plugin</name>
+
+  <parent>
+    <groupId>org.pentaho.ctools</groupId>
+    <artifactId>language-pack-installer-assemblies</artifactId>
+    <version>11.1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <properties>
+    <plugin.name>languagePackInstaller</plugin.name>
+    <data.dir>${project.basedir}/../../data</data.dir>
+    <assembly.phase>package</assembly.phase>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>pentaho</groupId>
+      <artifactId>cpf-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>pentaho</groupId>
+      <artifactId>cpf-pentaho</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.pentaho.ctools</groupId>
+      <artifactId>cpk-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.pentaho.ctools</groupId>
+      <artifactId>cpk-pentaho5</artifactId>
+    </dependency>
+
+    <!-- Test -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.10.2</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <configuration>
+          <escapeString>\</escapeString>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>compile-tests</id>
+            <phase>test-compile</phase>
+            <goals>
+              <goal>testCompile</goal>
+            </goals>
+            <configuration>
+              <source>11</source>
+              <target>11</target>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+        <configuration>
+          <systemPropertyVariables>
+            <data.dir>${data.dir}</data.dir>
+          </systemPropertyVariables>
+          <testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>assembly-plugin-zip</id>
+            <phase>${assembly.phase}</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <configuration>
+              <descriptors>
+                <descriptor>src/assembly/assembly.xml</descriptor>
+              </descriptors>
+              <appendAssemblyId>false</appendAssemblyId>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <!--
+      Provides resolved defaults for resources-filtered/ tokens when building the main
+      plugin zip (mvn clean package, no -DlangCode).  Inactive during per-locale builds
+      so that properties-maven-plugin can set the real locale values at runtime without
+      the model interpolator having already locked them to these defaults.
+    -->
+    <profile>
+      <id>main-build-defaults</id>
+      <activation>
+        <property>
+          <name>!langCode</name>
+        </property>
+      </activation>
+      <properties>
+        <langpack.name>${plugin.name}</langpack.name>
+        <langpack.title>Language Pack Installer</langpack.title>
+        <langpack.description>Application for installing language packs</langpack.description>
+        <langpack.version>${project.version}</langpack.version>
+        <build.id>release</build.id>
+        <maintainer.name/>
+        <maintainer.url/>
+        <maintainer.img/>
+      </properties>
+    </profile>
+
+    <!--
+      Build a standalone language-specific installer plugin.
+      Usage: mvn package -DlangCode=pt_PT
+
+      Execution order:
+        initialize        → antrun: parse metadata.json + messages.properties → write target/locale.properties
+        generate-resources → properties-maven-plugin: load locale.properties into Maven project properties
+        process-resources  → maven-resources-plugin: filter resources-filtered/ → target/filtered-templates/
+        prepare-package    → maven-dependency-plugin: copy CPK/CPF JARs to target/lib/
+        package            → antrun: file staging, patching non-template files, zip
+    -->
+    <profile>
+      <id>build-language-pack</id>
+      <activation>
+        <property>
+          <name>langCode</name>
+        </property>
+      </activation>
+      <properties>
+        <assembly.phase>none</assembly.phase>
+        <filtered.templates.dir>${project.build.directory}/filtered-templates</filtered.templates.dir>
+      </properties>
+      <build>
+        <plugins>
+
+          <!--
+            Step 1 — initialize: parse metadata.json + messages.properties,
+                                  write target/locale.properties
+            Step 3b — prepare-package: strip <TRANSLATE ME> from processed-data/
+          -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>3.1.0</version>
+            <executions>
+              <execution>
+                <id>write-locale-properties</id>
+                <phase>initialize</phase>
+                <goals><goal>run</goal></goals>
+                <configuration>
+                  <target>
+                    <mkdir dir="${project.build.directory}"/>
+                    <property name="langCode"        value="${langCode}"/>
+                    <property name="data.dir"        value="${data.dir}"/>
+                    <property name="project.version" value="${project.version}"/>
+                    <loadresource property="_json">
+                      <file file="${data.dir}/${langCode}/metadata.json"/>
+                    </loadresource>
+                    <loadproperties prefix="msg">
+                      <file file="${data.dir}/${langCode}/resources/lang/messages.properties"/>
+                    </loadproperties>
+                    <tstamp/>
+                    <script language="groovy"><![CDATA[
+                      def json    = new groovy.json.JsonSlurper().parseText(project.getProperty("_json"))
+                      def lc      = project.getProperty("langCode")
+                      def lp      = "languagePack_" + lc
+                      def ver     = json.version ?: project.getProperty("project.version")
+                      def title  = project.getProperty("msg.languagePack.title")       ?: ""
+                      def desc   = project.getProperty("msg.languagePack.description") ?: ""
+                      def mName  = json.maintainer?.name  ?: ""
+                      def mUrl   = json.maintainer?.url   ?: ""
+                      def mImg   = json.maintainer?.img   ?: ""
+
+                      def props  = new java.util.Properties()
+                      props.setProperty("langpack.name",        lp)
+                      // Used by plugin.xml, cpk.xml, settings.xml, plugin.spring.xml
+                      props.setProperty("langpack.title",       title)
+                      props.setProperty("langpack.description", desc)
+                      props.setProperty("langpack.version",     ver)
+                      props.setProperty("build.id",             "build-" + project.getProperty("DSTAMP"))
+                      props.setProperty("maintainer.name",      mName)
+                      props.setProperty("maintainer.url",       mUrl)
+                      props.setProperty("maintainer.img",       mImg)
+                      def f = new File(project.getProperty("project.build.directory") + "/locale.properties")
+                      f.withWriter("UTF-8") { props.store(it, "Generated locale properties — do not edit") }
+                    ]]></script>
+                  </target>
+                </configuration>
+              </execution>
+
+              <execution>
+                <id>prepare-langpack-outputs</id>
+                <phase>prepare-package</phase>
+                <goals><goal>run</goal></goals>
+                <configuration>
+                  <target>
+                    <!-- Strip <TRANSLATE ME> placeholders from the staged (not original) locale data -->
+                    <replace dir="${project.build.directory}/processed-data"
+                             token="&lt;TRANSLATE ME&gt;" value=""/>
+                  </target>
+                </configuration>
+              </execution>
+            </executions>
+            <dependencies>
+              <dependency>
+                <groupId>org.apache.groovy</groupId>
+                <artifactId>groovy-all</artifactId>
+                <version>4.0.24</version>
+                <type>pom</type>
+              </dependency>
+            </dependencies>
+          </plugin>
+
+          <!-- Step 2 — generate-resources: load locale.properties into Maven project properties -->
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>properties-maven-plugin</artifactId>
+            <version>1.2.1</version>
+            <executions>
+              <execution>
+                <id>load-locale-properties</id>
+                <phase>generate-resources</phase>
+                <goals><goal>read-project-properties</goal></goals>
+                <configuration>
+                  <files>
+                    <file>${project.build.directory}/locale.properties</file>
+                  </files>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+          <!-- Step 3a — process-resources: filter all resources-filtered/ with locale properties -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-resources-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>filter-templates</id>
+                <phase>process-resources</phase>
+                <goals><goal>copy-resources</goal></goals>
+                <configuration>
+                  <outputDirectory>${filtered.templates.dir}</outputDirectory>
+                  <escapeString>\</escapeString>
+                  <resources>
+                    <resource>
+                      <directory>${project.basedir}/src/main/resources-filtered</directory>
+                      <filtering>true</filtering>
+                    </resource>
+                  </resources>
+                </configuration>
+              </execution>
+              <!--
+                Copy locale data (system/ and tomcat/) to a staging location so
+                <TRANSLATE ME> can be stripped without touching /data/ in place.
+              -->
+              <execution>
+                <id>copy-locale-data</id>
+                <phase>process-resources</phase>
+                <goals><goal>copy-resources</goal></goals>
+                <configuration>
+                  <outputDirectory>${project.build.directory}/processed-data/${langCode}</outputDirectory>
+                  <resources>
+                    <resource>
+                      <directory>${data.dir}/${langCode}</directory>
+                      <includes>
+                        <include>system/**</include>
+                        <include>tomcat/**</include>
+                      </includes>
+                      <filtering>false</filtering>
+                    </resource>
+                  </resources>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+          <!-- Step 4 — package: assemble the per-locale plugin zip -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <executions>
+              <!-- Disable the parent POM's assembly_package execution; it has no descriptor here -->
+              <execution>
+                <id>assembly_package</id>
+                <phase>none</phase>
+              </execution>
+              <execution>
+                <id>assemble-language-pack</id>
+                <phase>package</phase>
+                <goals><goal>single</goal></goals>
+                <configuration>
+                  <descriptors>
+                    <descriptor>src/assembly/assembly-langpack.xml</descriptor>
+                  </descriptors>
+                  <finalName>${langpack.name}-${langpack.version}</finalName>
+                  <appendAssemblyId>false</appendAssemblyId>
+                  <outputDirectory>${project.build.directory}/dist</outputDirectory>
+                  <!--
+                    Keep attach=false here. The ZIP is written to target/dist/ and then
+                    attached with the correct locale classifier by build-helper-maven-plugin
+                    below, giving each locale a distinct Maven coordinate:
+                    org.pentaho.ctools:language-pack-installer-pentaho-plugin:<version>:zip:<langCode>
+                  -->
+                  <attach>false</attach>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+          <!--
+            Step 5 — package (after assembly): attach the locale ZIP with ${langCode} as
+            classifier so mvn deploy publishes it as a proper Maven artifact.
+            Declared after maven-assembly-plugin so it runs after the ZIP is created.
+          -->
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>build-helper-maven-plugin</artifactId>
+            <version>3.6.0</version>
+            <executions>
+              <execution>
+                <id>attach-locale-zip</id>
+                <phase>package</phase>
+                <goals><goal>attach-artifact</goal></goals>
+                <configuration>
+                  <artifacts>
+                    <artifact>
+                      <file>${project.build.directory}/dist/${langpack.name}-${langpack.version}.zip</file>
+                      <type>zip</type>
+                      <classifier>${langCode}</classifier>
+                    </artifact>
+                  </artifacts>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+
+        </plugins>
+      </build>
+    </profile>
+
+    <!--
+      Build standalone installers for ALL locales locally.
+      Usage: mvn package -Pbuild-all-language-packs
+
+      For CI deployment of all locale ZIPs, use the GitHub Actions matrix in merge.yml,
+      which scans data/ at runtime and runs 'mvn deploy -DlangCode=XX' per locale in parallel.
+      That way each locale is built exactly once and CI gets parallel execution for free.
+    -->
+    <profile>
+      <id>build-all-language-packs</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.soebes.maven.plugins</groupId>
+            <artifactId>iterator-maven-plugin</artifactId>
+            <version>0.5.1</version>
+            <executions>
+              <execution>
+                <id>build-all-language-packs</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>invoker</goal>
+                </goals>
+                <configuration>
+                  <folder>${data.dir}</folder>
+                  <excludes>
+                    <exclude>en</exclude>
+                  </excludes>
+                  <itemVariableName>langCode</itemVariableName>
+                  <goals>
+                    <goal>package</goal>
+                  </goals>
+                  <properties>
+                    <skipTests>true</skipTests>
+                  </properties>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+</project>

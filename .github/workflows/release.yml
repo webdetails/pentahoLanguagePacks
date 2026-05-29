@@ -1,0 +1,157 @@
+name: Language Pack Installer Release Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        required: true
+        description: "Release version (e.g. 11.1.0)"
+      dry_run:
+        type: boolean
+        default: true
+        description: "Dry run — build everything but skip Artifactory deploy and GitHub Release."
+
+# Never cancel a release in progress.
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+env:
+  RESOLVE_REPO_MIRROR: https://${{ vars.ARTIFACTORY_HOST }}/artifactory/pnt-mvn
+  NEXUS_DEPLOY_USER: ${{ secrets.PENTAHO_CICD_ONE_USER }}
+  NEXUS_DEPLOY_PASSWORD: ${{ secrets.PENTAHO_CICD_ONE_KEY }}
+
+jobs:
+  # Scan data/ so the locale matrix stays in sync with the repo automatically.
+  setup-locale-matrix:
+    name: Discover Locales
+    runs-on: ubuntu-latest
+    outputs:
+      locales: ${{ steps.list.outputs.locales }}
+    steps:
+      - uses: actions/checkout@v6
+      - name: List locales from data/
+        id: list
+        run: |
+          LOCALES=$(ls data/ | grep -v '^en$\|^metadata' | sort \
+            | jq -R -s 'split("\n") | map(select(length > 0))' -c)
+          echo "locales=$LOCALES" >> "$GITHUB_OUTPUT"
+
+  # Build (and deploy) the main installer plugin ZIP.
+  # mvn versions:set strips -SNAPSHOT so Artifactory treats this as a permanent release artifact.
+  deploy-installer:
+    name: ${{ inputs.dry_run && 'Build' || 'Deploy' }} Installer Plugin
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Retrieve Maven settings
+        id: common-maven
+        uses: pentaho/actions-common@stable
+
+      - name: Set release version
+        run: |
+          mvn versions:set -DnewVersion=${{ inputs.version }} -DgenerateBackupPoms=false \
+            -s ${{ steps.common-maven.outputs.settings-file-path }} -B
+
+      - name: Deploy installer to Artifactory
+        if: ${{ !inputs.dry_run }}
+        run: |
+          mvn deploy -DskipTests -s ${{ steps.common-maven.outputs.settings-file-path }} -B --no-transfer-progress
+
+      - name: Build installer (dry run — no deploy)
+        if: ${{ inputs.dry_run }}
+        run: |
+          mvn package -DskipTests -s ${{ steps.common-maven.outputs.settings-file-path }} -B --no-transfer-progress
+
+      - name: Upload installer zip
+        uses: actions/upload-artifact@v7
+        with:
+          name: release-language-pack-installer
+          path: assemblies/pentaho-plugin/target/language-pack-installer-pentaho-plugin-*.zip
+          retention-days: 7
+
+  # Build (and deploy) each locale ZIP in parallel.
+  # Each is published to Artifactory as a release (not SNAPSHOT) artifact under its locale classifier:
+  #   org.pentaho.ctools:language-pack-installer-pentaho-plugin:<version>:zip:<locale>
+  deploy-locale:
+    name: ${{ inputs.dry_run && 'Build' || 'Deploy' }} ${{ matrix.locale }}
+    runs-on: ubuntu-latest
+    needs: setup-locale-matrix
+    strategy:
+      fail-fast: false
+      matrix:
+        locale: ${{ fromJson(needs.setup-locale-matrix.outputs.locales) }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Retrieve Maven settings
+        id: common-maven
+        uses: pentaho/actions-common@stable
+
+      - name: Set release version
+        run: |
+          mvn versions:set -DnewVersion=${{ inputs.version }} -DgenerateBackupPoms=false \
+            -s ${{ steps.common-maven.outputs.settings-file-path }} -B
+
+      - name: Deploy ${{ matrix.locale }} to Artifactory
+        if: ${{ !inputs.dry_run }}
+        run: |
+          mvn deploy -pl assemblies/pentaho-plugin -DlangCode=${{ matrix.locale }} -DskipTests \
+            -s ${{ steps.common-maven.outputs.settings-file-path }} -B --no-transfer-progress
+
+      - name: Build ${{ matrix.locale }} (dry run — no deploy)
+        if: ${{ inputs.dry_run }}
+        run: |
+          mvn package -pl assemblies/pentaho-plugin -DlangCode=${{ matrix.locale }} -DskipTests \
+            -s ${{ steps.common-maven.outputs.settings-file-path }} -B --no-transfer-progress
+
+      - name: Upload ${{ matrix.locale }} zip
+        uses: actions/upload-artifact@v7
+        with:
+          name: release-languagePack_${{ matrix.locale }}
+          path: assemblies/pentaho-plugin/target/dist/languagePack_${{ matrix.locale }}-*.zip
+          retention-days: 7
+
+  # Collect all ZIPs from every parallel job and publish a GitHub Release.
+  # Skipped on dry runs.
+  github-release:
+    name: Create GitHub Release v${{ inputs.version }}
+    runs-on: ubuntu-latest
+    needs: [ deploy-installer, deploy-locale ]
+    if: ${{ !inputs.dry_run }}
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Download all release artifacts
+        uses: actions/download-artifact@v7
+        with:
+          pattern: release-*
+          merge-multiple: true
+          path: release-assets/
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ inputs.version }}
+          name: "Language Pack Installer ${{ inputs.version }}"
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+          files: release-assets/*.zip

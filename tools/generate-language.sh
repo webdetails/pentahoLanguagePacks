@@ -1,7 +1,23 @@
 #!/bin/bash
+#
+# Generates language pack data from an existing Pentaho installation.
+# Usage: ./generate-language.sh <locale> [locale2 ...]
+#
+# Environment variables:
+#   PENTAHO_HOME - path to Pentaho BI Server (e.g., /opt/pentaho/server)
+#   DATA_DIR     - output data directory (default: ../data)
+#
 
-ORIGIN=/Users/carlos/webdetails/servers/6GA/biserver-ee
-DEST=/Users/carlos/webdetails/projects/languagePackInstaller/data
+set -euo pipefail
+
+ORIGIN="${PENTAHO_HOME:?Set PENTAHO_HOME to your Pentaho BI Server root (e.g., /opt/pentaho/server)}"
+DEST="${DATA_DIR:-$(cd "$(dirname "$0")/../data" && pwd)}"
+
+if [ $# -eq 0 ]; then
+    echo "Usage: ./generate-language.sh <locale> [locale2 ...]"
+    echo "  Set PENTAHO_HOME to your Pentaho server root before running."
+    exit 1
+fi
 
 HERE=$(pwd)
 for locale in "$@"
