@@ -1,17 +1,21 @@
-#/usr/bin/python
+#!/usr/bin/env python
+"""Bulk-renames locale files from one suffix to another.
+
+Usage: python bulk_rename.py <folder> <src_suffix> <dst_suffix>
+Example: python bulk_rename.py /path/to/data/es_MX es-mx es
+"""
 import os
 import sys
-import shutil
-# import zipfile
-# import codecs
 
-origin_folder = os.path.abspath('/Users/carlos/webdetails/bi/biserver-ce/pentaho-solutions/system/languagePackInstaller/data/se')
-origin_folder = os.path.abspath('/Users/carlos/Downloads/system');
+if len(sys.argv) < 4:
+    print("Usage: python bulk_rename.py <folder> <src_suffix> <dst_suffix>")
+    sys.exit(1)
+
+origin_folder = os.path.abspath(sys.argv[1])
+src_suffix = sys.argv[2]
+dst_suffix = sys.argv[3]
 
 os.chdir(origin_folder)
-
-src_suffix = 'es-mx';
-dst_suffix = 'es';
 
 # First round: copy files that are already translated, even if only partially
 for root, dirs, filenames in os.walk('.'):
@@ -20,8 +24,6 @@ for root, dirs, filenames in os.walk('.'):
         g = f.lower()
 
         if g.endswith(src_suffix.lower() + '.properties'):
-            os.rename(src, os.path.join(root,f.replace(src_suffix + '.properties', dst_suffix + '.properties')))
+            os.rename(src, os.path.join(root, f.replace(src_suffix + '.properties', dst_suffix + '.properties')))
         if g.endswith(src_suffix.lower() + '.js'):
-            os.rename(src, os.path.join(root,f.replace(src_suffix + '.js', dst_suffix + '.js')))
-        if g.endswith(src_suffix.lower() + '.js'):
-            os.rename(src, os.path.join(root,f.replace(src_suffix.lower() + '.js', dst_suffix + '.js')))
+            os.rename(src, os.path.join(root, f.replace(src_suffix + '.js', dst_suffix + '.js')))

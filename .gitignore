@@ -1,5 +1,20 @@
-*.DS_Store
-/.project
-/bin
-/dist
-/lib
+# Build output
+target/
+bin/
+dist/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+.settings/
+.project
+.classpath
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Legacy build artifacts (no longer used)
+lib/
+build-res/

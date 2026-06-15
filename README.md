@@ -9,18 +9,57 @@ This project contains:
 * an application, the *Pentaho Language Pack Installer*;
 * all sets of localised messages (one folder per locale)
 
-Whenever a given localisation reaches a state in which it becomes usable, trimmed versions of the installer are released to the Pentaho Marketplace, containing only the files relevant to that locale.
+Whenever a given localisation reaches a state in which it becomes usable, trimmed versions of the installer are released as standalone plugin zips (one per locale).
 
-If you are **only interested in installing an existing language pack**, then you should **simply download it from the marketplace.**
+If you are **only interested in installing an existing language pack**, then you should **install it via the Pentaho Plugin Manager** or download a pre-built zip from the [releases page](https://github.com/webdetails/pentahoLanguagePacks/releases).
 The instructions that follow are mainly directed to developers and translators.
 
 ### Disclaimer
 
 The language pack installers work by massively copying files to your Pentaho installation, eventually overwriting and patching existing files in your installation.
 
-If you upgrade some plugin (using the marketplace, for instance), you may need to run the language pack installer again in order to patch your installation with the localisation files.
+If you upgrade some plugin, you may need to run the language pack installer again in order to patch your installation with the localisation files.
 
 We heavily recommend that you test the installer in a dedicated BI server before using this installer in a production setting. Please backup both your server and your solution!
+
+
+## Pre-requisites for building the project
+
+* Maven, version 3.6+
+* Java JDK 17+
+* This [settings.xml](https://github.com/pentaho/maven-parent-poms/blob/master/maven-support-files/settings.xml) in your `<user-home>/.m2` directory
+
+## Building it
+
+```bash
+mvn clean package
+```
+
+The plugin zip will be generated in `assemblies/pentaho-plugin/target/`.
+
+## Building a standalone language pack for a specific locale
+
+```bash
+mvn clean package -DlangCode=pt_PT
+```
+
+This produces a standalone `languagePack_pt_PT` installer zip in `assemblies/pentaho-plugin/target/dist/`.
+
+## Building all language packs
+
+```bash
+mvn clean package -Pbuild-all-language-packs
+```
+
+This iterates over all locales in `data/` (excluding `en`) and produces one zip per locale.
+
+## Running validation tests
+
+```bash
+mvn test -pl assemblies/pentaho-plugin
+```
+
+This validates all locale metadata, directory structure, and required files across all 43+ locales.
 
 
 # Contributing with a translation
@@ -37,31 +76,26 @@ You don't have to do all the work at once: you can do as many iterations as you 
 ## 1. Install the application
 
 ### Satisfy the dependencies
-The Language Pack Installer requires Pentaho 5+, and depends on the following CTools:
+The Language Pack Installer requires Pentaho 11.0+, and depends on the following CTools:
 
 * CDF: Community Dashboard Framework
 * CDE: Community Dashboard Editor
 
-You can install these packages from the Pentaho Marketplace, or manually download them from [Pentaho's Continuous Integration server](http://ci.pentaho.com) and unzip the .zip file to your `pentaho-solutions/system` folder.
-
-If you are using the Enterprise Edition, we recommend you to install the Pentaho Marketplace. Follow the instructions at [Pedro Alves's blog](http://pedroalves-bi.blogspot.pt/2013/11/ctools-for-pentaho-50-is-available-cdf.html).
+You can install these packages via the Pentaho Plugin Manager.
 
 ### Download the plugin
 
 There are basically two ways to get the plugin/application:
 
-1. You can **download a zip file** from [github](https://github.com/webdetails/pentahoLanguagePacks):
-   * unzip the file and rename the folder to `languagePackInstaller`
-   * move/copy the `languagePackInstaller` folder to your `pentaho-solutions/system`.
+1. **Build from source** (recommended for developers):
+   * Clone the git repository: `git clone git@github.com:webdetails/pentahoLanguagePacks.git`
+   * Build: `mvn clean package`
+   * Unzip `assemblies/pentaho-plugin/target/language-pack-installer-pentaho-plugin-*.zip` to your `pentaho-solutions/system/` folder
 
-
-2. Alternatively, you can **clone the git repository** hosted on github:
-   * open a terminal and go to your `pentaho-solutions/system` folder
-   * `git clone git@github.com:webdetails/pentahoLanguagePacks.git languagePackInstaller`
-
-The plugin is shipped without the java libraries. To get them, you will need to go to the command line.
-In the `pentaho-solutions/system/languagePackInstaller` folder, run `ant resolve`.
-If your system does not have the `ant` utility, download it from [Apache ant](http://ant.apache.org/bindownload.cgi).
+2. **Download from GitHub releases**:
+   * Download the zip from the [releases page](https://github.com/webdetails/pentahoLanguagePacks/releases)
+   * Unzip and rename the folder to `languagePackInstaller`
+   * Move/copy to your `pentaho-solutions/system/`
 
 Don't forget that the plugin will only be loaded (and thus be available) at the next restart of the BI server.
 
@@ -69,12 +103,12 @@ Don't forget that the plugin will only be loaded (and thus be available) at the 
 
 You just need to edit the files under `data/${languageCode}`, where `${languageCode}` stands for the language code (e.g. `fr`, `pt_PT`).
 
-If the language of your choice is not available, [create an issue in our bug tracker](http://redmine.webdetails.org/projects/lpi/) and we will generate the pack for you. Take a look at the Appendix 1 for the currently supported locales.
+If the language of your choice is not available, [create an issue in our bug tracker](https://pentaho-public.atlassian.net/jira/software/c/projects/BISERVER/list) and we will generate the pack for you. Take a look at the Appendix 1 for the currently supported locales.
 
-Even though we don't recommend it, you can try to generate the file bundle. yourself:
+Even though we don't recommend it, you can try to generate the file bundle yourself:
 the script `tools/generate-language.sh` can be used to generate a language pack from scratch, i.e. from the original messages in English. It works by copying the default tokens and appending a `<TRANSLATE ME>` to each string.
 The script tries to recycle any existing items already on your installation.
-Currently you will need to manually edit the file to get it to work on your system.
+Currently, you will need to manually edit the file to get it to work on your system.
 
 Concerning the translation process, please observe the following notes:
 
@@ -97,16 +131,19 @@ If you login as admin, you'll see an item under the *Tools* menu.
 <br/>You can also use the direct REST call. Assuming you are working in your local machine, the URL is : [http://localhost:8080/pentaho/plugin/languagePackInstaller/api/main](http://localhost:8080/pentaho/plugin/languagePackInstaller/api/main)
 
 The installer works by installing whatever language is specified in the `data/metadata.json` file. By default, the field `languageCode` is set to `tlh`, which is the language code for the Klingon language, an artificial language familiar to those who watched *Star Trek*.
-We didn't bother to translate Pentaho into Klingon, however you if you submit a contribution, we will merge it!
+We didn't bother to translate Pentaho into Klingon, however if you submit a contribution, we will merge it!
 
 Typically, if you are working on the `data/${languageCode}` folder, you should edit the file `data/${languageCode}/metadata.json` and copy its contents to `data/metadata.json`.
 
-Needless to say: you will need to run the plugin every time you want to patch your Pentaho server with the localised version.
+Needless to say: you will need to run the plugin every time you want to patch your Pentaho server with the localized version.
 
-Even though we don't recommend it, you can also generate the individual, locale-specific language packs.
-These plugins are obtained by cloning the plugin, stripping the `data` folder to the bare minimum and performing some other tasks such as character escaping.
-We already automated the process:  run `ant -DlangCode=pt_PT clean resolve build-language-pack` (replace `pt_PT` with the appropriate language code).
-You will see that the folder `bin/languagePack_pt_PT` was created.
+Even though we don't recommend it, you can also generate the individual, locale-specific language packs:
+
+```bash
+mvn clean package -DlangCode=pt_PT
+```
+
+(Replace `pt_PT` with the appropriate language code.) The generated pack will appear in `assemblies/pentaho-plugin/target/dist/`.
 
 
 ### Common issues
@@ -117,7 +154,7 @@ This error disappears as soon as these symbols are eliminated.
 ## 4. Send your work back to us
 
 As soon as you are done with a major block of work, you should send us your work so that it is shared with the rest of the Pentaho community.
-If you remembered to increase the entry `version` in the file `data/${languageCode}/metadata.json`, the Pentaho Marketplace will notify the users that an update is available.
+If you remembered to increase the entry `version` in the file `data/${languageCode}/metadata.json`, the update will be available in the next plugin release.
 
 If you don't know what `git` is, just zip the whole plugin and send it [back to us](mailto:community@pentaho.com). We will merge it at the earliest opportunity.
 

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.pentaho.ctools</groupId>
+  <artifactId>language-pack-installer</artifactId>
+  <version>11.1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Language Pack Installer</name>
+  <description>Pentaho Language Pack Installer - installs localized versions of the Pentaho BI Server UI</description>
+
+  <parent>
+    <groupId>org.pentaho</groupId>
+    <artifactId>pentaho-ce-jar-parent-pom</artifactId>
+    <version>11.1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <scm>
+    <developerConnection>scm:git:git@github.com:webdetails/pentahoLanguagePacks.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+
+  <properties>
+    <pentaho-cpf-plugin.version>11.1.0.0-SNAPSHOT</pentaho-cpf-plugin.version>
+    <pentaho-cpk-plugin.version>11.1.0.0-SNAPSHOT</pentaho-cpk-plugin.version>
+
+    <plugin.name>languagePackInstaller</plugin.name>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>pentaho</groupId>
+        <artifactId>cpf-core</artifactId>
+        <version>${pentaho-cpf-plugin.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>*</groupId>
+            <artifactId>*</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>pentaho</groupId>
+        <artifactId>cpf-pentaho</artifactId>
+        <version>${pentaho-cpf-plugin.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>*</groupId>
+            <artifactId>*</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>org.pentaho.ctools</groupId>
+        <artifactId>cpk-core</artifactId>
+        <version>${pentaho-cpk-plugin.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>*</groupId>
+            <artifactId>*</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>org.pentaho.ctools</groupId>
+        <artifactId>cpk-pentaho5</artifactId>
+        <version>${pentaho-cpk-plugin.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>*</groupId>
+            <artifactId>*</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>assemblies</module>
+  </modules>
+
+</project>
