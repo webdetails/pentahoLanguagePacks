@@ -105,8 +105,8 @@ You just need to edit the files under `data/${languageCode}`, where `${languageC
 
 If the language of your choice is not available, [create an issue in our bug tracker](https://pentaho-public.atlassian.net/jira/software/c/projects/BISERVER/list) and we will generate the pack for you. Take a look at the Appendix 1 for the currently supported locales.
 
-Even though we don't recommend it, you can try to generate the file bundle yourself:
-the script `tools/generate-language.sh` can be used to generate a language pack from scratch, i.e. from the original messages in English. It works by copying the default tokens and appending a `<TRANSLATE ME>` to each string.
+Even though we don't recommend it, you can try to sync the file bundle yourself:
+the script `tools/sync_language.sh` can sync a language pack from your Pentaho installation, reusing existing translations and appending `<TRANSLATE ME>` only for missing strings.
 The script tries to recycle any existing items already on your installation.
 Currently, you will need to manually edit the file to get it to work on your system.
 
