@@ -1,4 +1,3 @@
-﻿
 {
     step1Title: "Etape 1: Choisir la source de données",
     step2Title: "Etape 2: Effectuer les sélections",

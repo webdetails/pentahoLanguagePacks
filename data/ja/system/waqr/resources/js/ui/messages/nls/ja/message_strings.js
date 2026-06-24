@@ -1,4 +1,4 @@
-﻿ // this file must be UTF-8 encoded!!
+// this file must be UTF-8 encoded!!
 {
     step1Title: "Step 1: ビジネスモデルを選択",
     step2Title: "Step 2: アイテムを選択",

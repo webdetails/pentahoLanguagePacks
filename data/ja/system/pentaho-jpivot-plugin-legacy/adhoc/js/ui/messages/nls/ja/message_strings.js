@@ -1,4 +1,3 @@
-﻿
 /*
  * Copyright 2002 - 2013 Pentaho Corporation.  All rights reserved.
  *
