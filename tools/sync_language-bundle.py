@@ -235,7 +235,7 @@ def add_missing_properties(lines_src, dst_localised, encoding='utf_8', marker=tr
         return value.rstrip().endswith(':')
 
     def looks_like_english_text(value):
-        # Use franc + conservative heuristics to avoid overwriting non-English text.
+        # Use langid + conservative heuristics to avoid overwriting non-English text.
         text = value.strip()
         if len(text) < 15:
             return False
