@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import os
 import sys
@@ -12,7 +12,7 @@ force_copy = False
 if len(sys.argv) > 5:
     force_copy = (sys.argv[5] == 'force')
     if force_copy:
-        print "A forced copy was requested. I'm hoping you know what you are doing"
+        print("A forced copy was requested. I'm hoping you know what you are doing")
 
 os.chdir(origin_folder)
 for root, dirs, filenames in os.walk('.'):
@@ -29,7 +29,7 @@ for root, dirs, filenames in os.walk('.'):
             if force_copy or not os.path.exists(dst_parent):
                 os.makedirs(dst_parent)
             # Copy files
-            print 'Copying ' +  os.path.realpath(os.path.join(origin_folder, src)) + ' to ' + dst
+            print('Copying ' +  os.path.realpath(os.path.join(origin_folder, src)) + ' to ' + dst)
             shutil.copy2(src, dst)
 
         elif g.endswith('supported_languages.properties'):
@@ -42,7 +42,7 @@ for root, dirs, filenames in os.walk('.'):
                         file.write('#')
 
             # Patch the file
-            print 'Patching ' + dst
+            print('Patching ' + dst)
             with open(dst, 'r+') as file:
                 lines = file.readlines()
                 for line in lines:
@@ -50,5 +50,5 @@ for root, dirs, filenames in os.walk('.'):
                         break
 
                 else:
-                    print 'Creating ' + dst
+                    print('Creating ' + dst)
                     file.write('\n' + languageCode + ' = ' + language + '\n')

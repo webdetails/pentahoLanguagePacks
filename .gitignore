@@ -1,20 +1,17 @@
 # Build output
 target/
-bin/
-dist/
 
 # IDE
-.idea/
-.vscode/
-*.iml
-.settings/
-.project
-.classpath
+/.idea/
+/.vscode/
+/*.iml
+/.settings/
+/.project
+/.classpath
+
+!data/
+!data/**
 
 # OS
 .DS_Store
 Thumbs.db
-
-# Legacy build artifacts (no longer used)
-lib/
-build-res/

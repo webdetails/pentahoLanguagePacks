@@ -1,14 +1,14 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Bulk-renames locale files from one suffix to another.
 
-Usage: python bulk_rename.py <folder> <src_suffix> <dst_suffix>
-Example: python bulk_rename.py /path/to/data/es_MX es-mx es
+Usage: python3 bulk_rename.py <folder> <src_suffix> <dst_suffix>
+Example: python3 bulk_rename.py /path/to/data/es_MX es-mx es
 """
 import os
 import sys
 
 if len(sys.argv) < 4:
-    print("Usage: python bulk_rename.py <folder> <src_suffix> <dst_suffix>")
+    print("Usage: python3 bulk_rename.py <folder> <src_suffix> <dst_suffix>")
     sys.exit(1)
 
 origin_folder = os.path.abspath(sys.argv[1])
