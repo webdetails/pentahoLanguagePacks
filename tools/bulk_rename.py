@@ -1,4 +1,15 @@
 #!/usr/bin/env python3
+# ******************************************************************************
+#
+# Pentaho
+#
+# Copyright (C) 2026 by Pentaho Canada Inc. : http://www.pentaho.com
+#
+# Use of this software is governed by the Business Source License included
+# in the LICENSE.TXT file.
+#
+# Change Date: 2030-06-15
+# ******************************************************************************
 """Bulk-renames locale files from one suffix to another.
 
 Usage: python3 bulk_rename.py <folder> <src_suffix> <dst_suffix>

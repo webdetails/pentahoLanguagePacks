@@ -84,7 +84,7 @@ The `settings.xml` provided by `pentaho/actions-common` uses `${env.RESOLVE_REPO
 
 | Variable | Used by | Purpose |
 |---|---|---|
-| `ARTIFACTORY_HOST` | all workflows | `one.hitachivantara.com` — Pentaho's Artifactory hostname. Expands to `RESOLVE_REPO_MIRROR=https://one.hitachivantara.com/artifactory/pnt-mvn` at build time. |
+| `ARTIFACTORY_HOST` | all workflows | `repo.pentaho.com` — Pentaho's Artifactory hostname. Expands to `RESOLVE_REPO_MIRROR=https://repo.pentaho.com/artifactory/pnt-mvn` at build time. |
 
 > **⚠️ Cross-org note — current CI blocker:** This repo lives in the `webdetails` GitHub org,
 > which is **separate** from the `pentaho` org. Secrets and variables defined at the `pentaho`
@@ -95,7 +95,7 @@ The `settings.xml` provided by `pentaho/actions-common` uses `${env.RESOLVE_REPO
 > do this **once**:
 >
 > 1. Go to `webdetails/pentahoLanguagePacks → Settings → Secrets and variables → Actions`
-> 2. **Variables tab:** add `ARTIFACTORY_HOST` = `one.hitachivantara.com`
+> 2. **Variables tab:** add `ARTIFACTORY_HOST` = `repo.pentaho.com`
 > 3. **Secrets tab:** add `PENTAHO_CICD_ONE_USER` and `PENTAHO_CICD_ONE_KEY`
 >
 > Until `ARTIFACTORY_HOST` is set, every workflow job will fail with:
