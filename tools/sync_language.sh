@@ -1,4 +1,15 @@
 #!/bin/bash
+# ******************************************************************************
+#
+# Pentaho
+#
+# Copyright (C) 2026 by Pentaho Canada Inc. : http://www.pentaho.com
+#
+# Use of this software is governed by the Business Source License included
+# in the LICENSE.TXT file.
+#
+# Change Date: 2030-06-15
+# ******************************************************************************
 #
 # Syncs language pack data from an existing Pentaho installation.
 # Usage: ./sync_language.sh <locale> [locale2 ...] [--prune] [--keep-missing-plugins] [--refresh-existing-js-markers]
